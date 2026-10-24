@@ -4,6 +4,8 @@ Measure a part's safety factor, find a legal single-parameter repair, verify it
 with PartLab and save the result. The model proposes changes, Python enforces
 the rules, and an independent evaluator checks the recorded evidence.
 
+![PartLab agent architecture](docs/assets/architecture.png)
+
 [Run it](RUN.md) · [Full report](REPORT.md) · [Design decisions](DECISIONS.md) · [Code walkthrough](docs/REVIEWER_GUIDE.md) · [Original task](TASK.md)
 
 ## Results
@@ -65,8 +67,6 @@ The [complete acceptance map](REPORT.md#acceptance-criteria) covers each task,
 agent, evaluator and handoff requirement individually, including the limits.
 
 ## Architecture
-
-![PartLab agent architecture](docs/assets/architecture.png)
 
 Each candidate starts from the original part: **restore → change one parameter
 → mesh → apply default load → solve → save if SF ≥ 2**. The agent stops at the
