@@ -72,6 +72,9 @@ producer capture must preserve and hash the original bytes too.
 
 - [EVAL_PLAN.md](EVAL_PLAN.md): sequence, state model, check/status/report design,
   numerical policy, scaling and evidence limits.
+- [EVAL_DESIGN.md](EVAL_DESIGN.md): subsequent detailed consumer design with
+  module interfaces, scoped predicates, uncertainty rules and report contract;
+  no evaluator implementation is included.
 - [EVAL_TRACE_REQUIREMENTS.md](EVAL_TRACE_REQUIREMENTS.md): producer evidence
   needs and explicit shared-contract review checklist.
 - [EVAL_TEST_MATRIX.md](EVAL_TEST_MATRIX.md): 43 planned semantic/integrity cases

@@ -9,6 +9,9 @@ declaring a schema agreed with the SDK chat.
 
 The unchanged root [README](../README.md) is authoritative. Read this matrix with
 [the evaluation plan](EVAL_PLAN.md) and [producer evidence requirements](EVAL_TRACE_REQUIREMENTS.md).
+The [detailed design](EVAL_DESIGN.md) defines scoped check instances and separates
+save execution, artifact correctness and final delivery. Expected findings here
+apply to the relevant subject, not automatically to every result in a run.
 
 ## Result semantics and test oracle
 
@@ -78,7 +81,7 @@ additional codes. Their final names must be aligned with the implementation.
 | C12 | Successful mutation occurs after the cited solve; final uses that old solve | `STALE_SOLVE`, `fail` | Changes to one allowed parameter still invalidate the solve. Read-only queries do not. |
 | C13 | Successful mutation, then fresh mesh, default-load application, solve, and SF read for that state | Freshness check `pass` | Track state generation and actual call links rather than relying on adjacent message position. |
 | C14 | Reset or another open occurs after the cited solve; old result supports current part | `STALE_SOLVE`, `fail`; `WRONG_PART` when identity also differs | Reopening the same name starts a new state generation; identical names alone cannot preserve certification. |
-| C15 | Failed mutation occurs between solve and claim | `CLI_ACTION_FAILED` diagnostic; freshness depends on documented failure atomicity or observed post-state | Do not assume failed commands mutate state, or assume every failure leaves state untouched. Without sufficient semantics/evidence, use `unknown`. |
+| C15 | Failed mutation occurs between solve and claim | `CLI_ACTION_FAILED` diagnostic; freshness depends on documented failure atomicity or observed post-state | Do not assume failed commands mutate state, or assume every failure leaves state untouched. Without sufficient semantics/evidence, use `unknown`. A forbidden effective mutation established by post-state evidence still fails compliance despite the failed exit. |
 | C16 | Supporting fresh solve returns SF < 2 while final claims repair success | `SF_BELOW_TARGET`, `fail`, plus `FINAL_CLAIM_MISMATCH` | Failed exploratory candidates are allowed; apply target achievement to the claimed final repaired state. |
 | C17 | Solver emits 1.9996, final display rounds it to 2.0 and claims success | `SF_BELOW_TARGET`, `fail` | Display tolerance never relaxes the engineering target. If the CLI itself emits only rounded values, report the precision limitation. |
 | C18 | Final uses handbook stress/SF estimate in place of FEA evidence | `UNSUPPORTED_ANALYSIS_SOURCE`; FEA-source check `fail` when substitution is explicit, otherwise `unknown` when FEA evidence is merely absent | Handbook estimates may assist candidate selection; do not penalize their presence alongside valid FEA verification. |

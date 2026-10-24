@@ -11,6 +11,11 @@ The subsequent [Terminal-Bench reference audit](BENCHMARK_AUDIT.md) maps all
 assignment requirements to evidence and distinguishes working infrastructure
 from the core implementation and demonstration still required.
 
+[EVAL_DESIGN.md](EVAL_DESIGN.md) defines the intended module interfaces, internal
+records, predicate registry, report semantics and implementation slices. It
+refines this plan without declaring the producer contract agreed or the
+evaluator implemented.
+
 ## Scope and decision checkpoint
 
 The first deliverable during the exercise is a small, deterministic offline
@@ -164,8 +169,12 @@ as the verified repair. Check that the final required output path still contains
 the selected artifact bytes; an earlier snapshot alone cannot prove that after
 another save overwrites the path.
 
-At each trial boundary, verify restoration from the original source and complete
-parameters before trying a different parameter. Never union every explored
+At each independent trial boundary, verify restoration from the original source
+and complete parameters before the first candidate mutation. Switching parameter
+families also requires restoration even if a trial label is missing. Repeated
+assignments to one parameter do not by themselves violate the final one-parameter
+predicate; the producer's stricter mutation-count policy remains unresolved.
+Never union every explored
 parameter into the final single-parameter count. At save/final acceptance compute
 the changed-key set against the original, not the last trial or prior command.
 
@@ -178,7 +187,7 @@ the changed-key set against the original, not the last trial or prior command.
 | Default load | Each solve used to substantiate baseline/final outcome matches original face, force and direction; an incomplete effective direction is unknown |
 | Analysis source | Successful converged PartLab solve supports finite SF; a handbook estimate, reasoning text or guard decision cannot substitute |
 | Manufacturing | Every actual candidate mutation and final artifact satisfy case limits; forbidden proposal alone is a diagnostic when blocked |
-| Trial isolation | New parameter family begins from original baseline; restoration evidence must precede the mutation |
+| Trial isolation | Each independent trial begins from original baseline; switching parameter families also requires restoration; evidence must precede the candidate mutation |
 | Single parameter | Repaired final complete parameter map differs in exactly one original key, with no unrelated material/physics/load edits |
 | Target and freshness | Full recorded final SF is at least 2.0 and its certificate matches final/saved state |
 | Save | Repaired outcome has expected `outputs/<part_name>.json`, successful producing save, captured bytes and digest, matching state and solve summary |
