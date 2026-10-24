@@ -66,6 +66,21 @@ reliability ranking. [Findings and interpretation](reports/model-benchmark-20261
 The [complete acceptance map](REPORT.md#acceptance-criteria) covers each task,
 agent, evaluator and handoff requirement individually, including the limits.
 
+## Why Harbor, Docker, Scout and Sierra Tau²
+
+| Tool or reference | Decision and reason | What we verified |
+| --- | --- | --- |
+| **Harbor — execution checks** | Use a separate verifier with trusted originals and explicit artifact transfer to check run isolation and delivery. | Two scripted oracle runs scored **1**; a no-op scored **0**. [Rationale](evaluation/docs/HARBOR_SETUP.md#what-the-smoke-check-proves) · [Evidence](reports/main-integration-20261024/harbor.json) |
+| **Docker — reproducibility** | Run checks in a pinned container with networking disabled and source mounted read-only, so host-only success is not the sole evidence. | **156 evaluator tests and 19 expected cases** passed in the container. [Invocation](reports/main-integration-20261024/docker-execution.json) · [Results](reports/main-integration-20261024/docker/evaluator/verification.json) |
+| **Inspect Scout — report browsing** | Display the existing evaluator's verdicts and raw-evidence references, preserving failed, unknown and rejected results. | **17 contract tests**, **19 transcripts** and **133 dimension results**. [Decisions](evaluation/docs/SCOUT_AUDIT.md#decisions-and-requirements) · [Evidence](reports/main-integration-20261024/scout.json) |
+| **Sierra Tau² — design reference** | Audit explicit verdict coverage, valid alternative solutions, and accounting for failed or interrupted runs against pinned reference code. | Four focused regressions test the applicable lessons. [Reference audit and decisions](evaluation/docs/TAU2_REFERENCE_AUDIT.md) · [Tests](evaluation/tests/test_tau2_review.py) |
+
+Harbor is an infrastructure smoke check; Scout presents existing grades.
+Sierra Tau² was reviewed as a reference, not run as a benchmark. These are
+separate from the live model and harness experiments above. The core evaluator
+works without Harbor or Scout; container setup needs downloaded or cached
+dependencies. [Full integration decisions](DECISIONS.md#19-keep-optional-viewers-and-execution-checks-outside-the-grading-core).
+
 ## Architecture
 
 Each candidate starts from the original part: **restore → change one parameter
@@ -101,11 +116,6 @@ python3.12 evaluation/scripts/verify.py --output-dir /tmp/partlab-eval-check-001
 To run the agent, follow [RUN.md](RUN.md) for the pinned environment and ignored
 local `.env`. Live runs require an OpenRouter API key and the supplied Linux
 AMD64 PartLab binary. Every run starts in an isolated, reset session.
-
-Optional integrations are also included: [Scout](evaluation/scout_setup/README.md)
-displays the existing verdicts; [Harbor](evaluation/docs/HARBOR_SETUP.md) checks
-the execution environment with oracle and no-op controls. Neither is required
-to grade the traces or acts as another engineering judge.
 
 **Remaining handoff item:** the human recording link. The repository does not
 establish a recorded one-hour session. Search, portability and benchmark limits

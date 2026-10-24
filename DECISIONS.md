@@ -297,6 +297,25 @@ judge engineering correctness. Harbor checks a separate container execution
 and verification environment using successful oracle and failing no-op controls.
 Neither integration is required to evaluate the captured PartLab traces.
 
+Harbor's separate verifier uses pristine references and receives only explicitly
+exported artifacts. This checks isolation and delivery rather than allowing
+the agent's working copy to define correctness. Two scripted oracle runs scored
+1; a no-op scored 0. They are infrastructure controls, not live model repairs.
+See the [Harbor decisions](evaluation/docs/HARBOR_SETUP.md#what-the-smoke-check-proves).
+
+Docker repeats the evaluator checks in a pinned environment with networking
+disabled and source mounted read-only. The combined 156-test suite and 19
+expected outcomes passed there as well as on the host. The
+[recorded command](reports/main-integration-20261024/docker-execution.json)
+defines the tested boundary; this does not claim a general security audit.
+
+Scout preserves separate verdicts and evidence references instead of reducing
+them to one success flag. Its import follows the full batch manifest, including
+rejected inputs, and verifies persisted results against source reports. This
+makes browsing useful without quietly losing failed cases or changing grades.
+See the [Scout decisions](evaluation/docs/SCOUT_AUDIT.md#decisions-and-requirements)
+and [17-test, 19-transcript verification](reports/main-integration-20261024/README.md).
+
 This permits richer inspection and environment checks without changing the
 core verdicts or requiring their dependencies for a basic replay. Docker build
 source is tracked; image layers, local databases and job directories are not.
@@ -305,6 +324,25 @@ runtime is offline. The consolidated verification preserves original receipts
 and adds fresh checks for the final layout rather than relabeling old results.
 See [integration decisions](docs/INTEGRATION_DECISIONS.md) and
 [combined verification](reports/main-integration-20261024/README.md).
+
+### 20. Use Sierra Tau² as a design reference, with local task semantics
+
+The evaluator audit reviewed Sierra's Tau² grading and run-accounting code at
+pinned revision `cc1df47baa1544a34bb8c8e5c4ca72ad223b96a2`. It checked whether
+every adverse finding reaches a verdict, valid alternative repair paths remain
+valid, blocked proposals differ from executed mutations, and incomplete runs
+retain both uncertainty and observed failures. Complete batch accounting keeps
+rejected inputs visible rather than reporting only selected successes.
+
+The reason is to test our evaluator design against concrete reference behavior
+while retaining PartLab's requirements. We use separate evidence-based verdicts,
+exact structured claims and recorded-state reconstruction. We do not copy a
+scalar reward, require one reference trajectory, add an LLM judge or invent
+repeated-trial statistics. Four focused regression tests were added by the
+audit. Tau² itself was not run, and no Tau² score or leaderboard result is claimed.
+See the [mapped decisions](evaluation/docs/TAU2_REFERENCE_AUDIT.md#decisions-and-mapped-evidence),
+[regressions](evaluation/tests/test_tau2_review.py) and
+[reference acceptance](evaluation/docs/REFERENCE_ACCEPTANCE.md).
 
 ## Detailed decision records
 
@@ -321,4 +359,8 @@ current combined layout.
 | Synthetic fixtures, adversarial examples and raw capture | [Fixture decisions](evaluation/docs/EVAL_FIXTURE_DECISIONS.md) |
 | Acceptance criteria and demonstrated portability | [Evaluation rubric](evaluation/docs/EVAL_RUBRIC.md) |
 | Second live SDK and native message mapping | [Harness portability](docs/HARNESS_PORTABILITY.md) |
+| Harbor verifier isolation and artifact transfer | [Harbor rationale and controls](evaluation/docs/HARBOR_SETUP.md#what-the-smoke-check-proves) |
+| Docker environment and offline verification | [Recorded invocation](reports/main-integration-20261024/docker-execution.json), [combined verification](reports/main-integration-20261024/README.md) |
+| Scout projection, complete imports and persisted evidence | [Scout decisions](evaluation/docs/SCOUT_AUDIT.md) |
+| Sierra Tau² lessons and deliberate local differences | [Reference audit](evaluation/docs/TAU2_REFERENCE_AUDIT.md) |
 | Layout, source history, cleanup and optional integrations | [Consolidation decisions](docs/INTEGRATION_DECISIONS.md) |

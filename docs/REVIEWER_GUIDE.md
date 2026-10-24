@@ -12,7 +12,7 @@ reproduction; you do not need to read every raw payload to review the design.
    performed and the remaining limitations. Its [acceptance map](../REPORT.md#acceptance-criteria)
    connects every assignment requirement to behavior and evidence, including
    the two real SDK harnesses.
-3. [DECISIONS.md](../DECISIONS.md) explains 19 implementation choices and their
+3. [DECISIONS.md](../DECISIONS.md) explains 20 implementation choices and their
    tradeoffs. [ARCHITECTURE.md](ARCHITECTURE.md) shows how the pieces fit together.
 4. Follow the bracket trace below to inspect a delivered repair; then inspect
    the flange and deliberately flawed traces to see how failure is handled.
@@ -117,6 +117,7 @@ without credentials.
 | [evaluation/fixtures/](../evaluation/fixtures/) and [evaluation/reports/](../evaluation/reports/) | Preserved example captures, deliberate defects and source-pinned historical evaluation results. |
 | [evaluation/scout_setup/](../evaluation/scout_setup/) | Optional findings viewer: [bridge.py](../evaluation/scout_setup/bridge.py) and [scanners.py](../evaluation/scout_setup/scanners.py) project existing verdicts into Scout. No additional engineering judge. |
 | [evaluation/harbor_setup/](../evaluation/harbor_setup/) | Optional Docker task: [check.py](../evaluation/harbor_setup/check.py) runs controls; [task/](../evaluation/harbor_setup/task/) contains environment, verifier and oracle source. See the [setup guide](../evaluation/docs/HARBOR_SETUP.md). |
+| [Sierra Tau² reference audit](../evaluation/docs/TAU2_REFERENCE_AUDIT.md) | Pinned reference review, mapped decisions and four focused regressions. Tau² was used to review the evaluator design, not run as another model benchmark. |
 | [scripts/check_setup.py](../scripts/check_setup.py), [inspect_partlab_io.py](../scripts/inspect_partlab_io.py), [check_openrouter.py](../scripts/check_openrouter.py) and [test_check_openrouter.py](../scripts/test_check_openrouter.py) | Optional setup, CLI probing and provider smoke-test utilities. Not required to evaluate existing traces; the provider smoke test makes paid calls. |
 
 Historical reports remain intact so their provenance can be inspected; they
