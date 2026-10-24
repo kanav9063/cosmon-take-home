@@ -16,6 +16,9 @@ import subprocess
 import sys
 from datetime import datetime, timezone
 
+from harbor.models.task.task import Task
+from harbor.models.task.verifier_mode import resolve_verifier_environment_definition
+
 
 ROOT = Path(__file__).resolve().parents[1]
 HARBOR = ROOT / ".venv-harbor/bin/harbor"
@@ -61,8 +64,21 @@ def main() -> None:
     task = suite / "task"
     shutil.copytree(ROOT / "harbor_setup/task", task,
                     ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
-    shutil.copy2(ROOT / "partlab", task / "environment/partlab")
-    shutil.copytree(ROOT / "parts", task / "environment/parts")
+    for context in ("environment", "tests"):
+        shutil.copy2(ROOT / "partlab", task / context / "partlab")
+        shutil.copytree(ROOT / "parts", task / context / "parts")
+    staged_task = Task(task)
+    require(staged_task.config.artifacts == ["/logs/artifacts"],
+            "Smoke task must export only its explicit evidence directory")
+    require(staged_task.config.verifier.environment_mode.value == "separate",
+            "Smoke task requires a separate verifier")
+    definition = resolve_verifier_environment_definition(staged_task.config, staged_task.paths)
+    require(definition is not None and definition.bundled_tests
+            and definition.directory == task / "tests",
+            "Verifier must use the trusted tests build context")
+    require(staged_task.config.environment.network_mode.value == "no-network"
+            and definition.config.network_mode.value == "no-network",
+            "Both environments must disable runtime networking")
     summary = {
         "purpose": "infrastructure-preparation-only",
         "model_calls": 0,
@@ -70,6 +86,9 @@ def main() -> None:
         "dependency_lock_sha256": digest(ROOT / "harbor_setup/requirements.lock"),
         "suite": str(suite.relative_to(ROOT)),
         "original_sha256": before,
+        "verifier_environment_mode": "separate",
+        "artifact_sources": ["/logs/artifacts"],
+        "network_policy": {"agent": "no-network", "verifier": "no-network"},
         "checks": [],
     }
 
@@ -96,10 +115,33 @@ def main() -> None:
             require(trial.get("exception_info") is None, f"Trial exception: {trial_file}")
             require(trial["agent_info"]["name"] == agent, f"Wrong agent: {trial_file}")
             require(trial["agent_info"].get("model_info") is None, f"Unexpected model: {trial_file}")
+            require(trial.get("verifier_environment_mode") == "separate",
+                    f"Verifier did not run in a separate environment: {trial_file}")
             rewards = (trial.get("verifier_result") or {}).get("rewards")
             require(rewards == {"reward": expected_reward}, f"Unexpected reward {rewards}: {trial_file}")
             directory = trial_file.parent
             verifier_report = json.loads((directory / "verifier/report.json").read_text())
+            isolation = verifier_report.get("isolation", {})
+            require(isolation == {
+                "unexported_marker_absent": True,
+                "solution_absent_in_verifier": True,
+                "tests_absent_at_agent_start": True,
+                "solution_absent_at_agent_start": True,
+                "startup_artifact_received": True,
+                "pristine_inputs": "/reference",
+                "reference_sha256": {
+                    "partlab": before["partlab"],
+                    "parts/bracket_v3.json": before["parts/bracket_v3.json"],
+                },
+            }, f"Verifier isolation/evidence transfer check failed: {trial_file}")
+            manifest = json.loads((directory / "artifacts/manifest.json").read_text())
+            require(len(manifest) == 1
+                    and manifest[0]["source"] == "/logs/artifacts"
+                    and manifest[0]["destination"] == "artifacts/logs/artifacts"
+                    and manifest[0]["status"] == "ok",
+                    f"Unexpected artifact transfer: {manifest}")
+            require((directory / "artifacts/logs/artifacts/environment-start.json").is_file(),
+                    "Missing captured agent startup proof")
             exit_file = directory / "agent/exit-code.txt"
             require(not exit_file.exists() or exit_file.read_text().strip() == "0",
                     f"Agent script exited unsuccessfully: {exit_file}")
@@ -111,6 +153,9 @@ def main() -> None:
                 "verifier_report_sha256": digest(directory / "verifier/report.json"),
                 "exception": None,
                 "agent_exit": "success",
+                "verifier_environment_mode": trial["verifier_environment_mode"],
+                "verifier_isolation": "pass",
+                "explicit_evidence_transfer": "pass",
             }
             if agent == "oracle":
                 require(verifier_report.get("passed") is True, "Oracle verifier did not finish successfully")

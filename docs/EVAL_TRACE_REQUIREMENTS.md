@@ -117,7 +117,8 @@ semantic defect test.
 Record producer proposal digest/revision, mapped fields, any exceptions, and
 explicit review status for each track. Do not silently mark this list completed.
 
-- [ ] Read SDK `docs/TRACE_CONTRACT_PROPOSAL.md` and map every required row above.
+- [x] Read SDK `docs/TRACE_CONTRACT_PROPOSAL.md` and map every required row above
+      for initial consumer review (record below; not bilateral agreement).
 - [ ] Agree physical bundle layout, schema/version, field meanings, event ordering,
       call/attempt IDs, and completion semantics.
 - [ ] Agree trusted original/policy source and literal default-load handling.
@@ -136,7 +137,66 @@ explicit review status for each track. Do not silently mark this list completed.
 - [ ] Both tracks explicitly acknowledge the same contract revision; Kanav settles
       remaining policy decisions. Until then compatibility is proposed only.
 
-At the last preparation check on October 23, 2026 (ET), the SDK producer proposal
-file was not yet present. Therefore field mapping and two-way review remain
-pending, rather than failed or implicitly approved. The evidence requirements
-and examples above are ready for that review; setup did not wait for its arrival.
+## Initial consumer review of SDK proposal v0.1
+
+Read-only review on October 23, 2026 (ET) of
+`/home/ubuntu/work/cosmon-sdk/docs/TRACE_CONTRACT_PROPOSAL.md`:
+
+- Schema: `partlab.trace/0.1-proposal`.
+- SHA-256: `7e9aab1efa62c7679edde3b493b06f6cb5e64545620e23e6e17e8fbd6f1bf1da`.
+- Consumer status: mapped and reviewed, unresolved points below.
+- Producer status: its document explicitly says **not agreed**. No cross-chat
+  message was sent and no producer files were modified.
+
+The proposal now exists; this supersedes the earlier setup observation that it
+was absent. Its illustrative fragments contain placeholder hashes and are not
+complete runnable bundles. No compatibility test has passed yet.
+
+| Consumer evidence row | Proposed producer fields/files | Review result |
+| --- | --- | --- |
+| Bundle identity | Manifest `schema_version`, `run_id`, `evidence_kind`, `producer` | Map `live_agent` to captured, `synthetic_fixture` to synthetic, and retain `preparation_check` separately; preparation must not count as an actual agent run. |
+| Task case | `case`, `task_ref`, `policy_ref`, `config` | Compare to evaluator-owned assignment/limits, not only recorded producer policy. |
+| Original baseline | `original`, `inputs/part.json`, digest/length | Complete map/default load/material described; compare captured bytes to trusted repository originals. |
+| Raw model data | `raw/model/*.request.json`, `*.response.json`, `raw/tools/*.result.txt`; model events | SDK object fidelity is explicit; not original provider HTTP bytes. Retain final displayed message link and malformed argument strings. |
+| Stable ordering | Common run/event/trial IDs and contiguous `seq`; actor/time | Serialized execution semantics described; interrupted examples still needed. |
+| Logical tool call | `tool_proposed`, `call_id`, native call/item IDs | Distinct from model-call and CLI IDs; fits required joins. |
+| Guard | `guard_decision`, proposal reference, rule/reason, allow/block | Block has no child CLI request/start; separate harness readback is permitted. Guard-error representation is missing and remains unresolved. |
+| CLI execution | `cli_requested`, `cli_started`, `cli_finished`; `cli_id`, attempt, purpose, argv/cwd/termination | Spawn errors may lack start; hidden retries disabled initially. Test all terminal shapes. |
+| CLI JSON | Raw stdout/stderr file references plus parsed envelope/error | Raw bytes remain authoritative; consumer reparses. |
+| State evidence | `state_observed`, monotone `state_revision`, source CLI IDs | Revision is a cross-check, not a substitute for reconstruction. Failed-action atomicity needs observed evidence. |
+| Trial restoration | `trial_started`, original reference, successful open/readback | Stricter proposed mutation count is unresolved below. |
+| Solve | `solve_observed`, raw solve reference, state/mesh/load IDs, SF/convergence | Require finite SF and convergence; confirm exact actual output fields and precision. |
+| Save/artifact | `artifact_saved`, save/solve references, bytes/hash, observed saved fields | Bundle capture described; final publication and historical selection need clarification below. |
+| Final result | `outcome.json`, `run_finished`, final model message link | Outcome aliases require explicit mapping with evidence eligibility preserved. |
+| Completion | `completion.json`, inventory hashes/sizes, terminal status | Need a complete example specifying inventory/count coverage and in-flight calls in partial runs. |
+
+Resolve these points before marking the contract agreed:
+
+1. Map producer `no_repair_found` -> consumer `search_exhausted` and
+   `demonstrated_infeasible` -> `proven_infeasible` without weakening evidence
+   requirements. Budget termination before a valid baseline cannot masquerade
+   as completed engineering search. Preserve separate achievement/reporting.
+2. The producer proposes **one successful mutation per trial**, even for a second
+   value of the same parameter. C05 currently grades final single-parameter
+   difference independently of assignment count. A stricter producer policy
+   could be checked separately if accepted; do not silently convert repeated
+   same-parameter assignments into a final single-parameter violation.
+3. Freshness is evaluated at the selected artifact's save, not necessarily at
+   the final live session state. A verified saved A may be selected after later
+   exploration of B. Explicit outcome artifact/solve IDs and final destination
+   bytes must identify A; a new save of B cannot reuse A's solve.
+4. Publication to root `outputs/<part>.json` is mentioned but its exact event and
+   failure shape are unspecified. Record destination, selected snapshot hash,
+   observed published hash and result so a later overwrite is detectable.
+5. Fix completion inventory/count semantics, interruption shapes, observed CLI
+   field mappings, numeric precision and convergence checks using actual-shaped
+   complete, blocked, stale-solve and partial-failure bundles. Both tracks must
+   run the same examples; no placeholder digests or producer-only verdicts.
+6. The consumer requires guard `allow/reject/error`, but v0.1 specifies only
+   `allow/block`. Define an exception/error record linked to the proposal,
+   returned tool result and continuation or termination. A guard crash is not a
+   safe rejection; retain evidence of whether any CLI dispatch occurred.
+
+The synthetic consumer fixtures remain provisional until this checkpoint.
+They test selected semantics and omit raw convergence evidence; adapting them
+must not invent convergence from a finite SF or a producer's `solved` phase.

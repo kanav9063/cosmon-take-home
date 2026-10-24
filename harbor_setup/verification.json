@@ -8,7 +8,7 @@
     "compose": "2.40.3+ds1-0ubuntu1~24.04.1"
   },
   "dependency_lock_sha256": "dab3455969e10475fecf8ff1cbbe2820790fb6fb518d519fe80f998127f39840",
-  "suite": ".harbor-jobs/20261024T011529.577463Z",
+  "suite": ".harbor-jobs/20261024T011934.963436Z",
   "original_sha256": {
     "README.md": "66c7a27bdfeae291aa42ecaa3681c2d53341d613369eaeb38b0bc5c78d805ebe",
     "partlab": "9b202e1ba07861f52f12005108e81815ef14d92f2db3ba322fc51422746ab183",
@@ -19,44 +19,61 @@
     "parts/flange_v1.json": "0e6535b551bb5a441e207fd4d057774c14de0e40c55f7ada83c17fdbd8b7ab7f",
     "parts/housing_v1.json": "3875c6a153eb20313141c79a24a541d0c97bb74430a39bb5cc6fd4e976a55d56"
   },
+  "verifier_environment_mode": "separate",
+  "artifact_sources": [
+    "/logs/artifacts"
+  ],
+  "network_policy": {
+    "agent": "no-network",
+    "verifier": "no-network"
+  },
   "checks": [
     {
       "agent": "oracle",
       "reward": 1.0,
-      "trial_result": ".harbor-jobs/20261024T011529.577463Z/oracle/task__2txysW2/result.json",
-      "trial_result_sha256": "fb7822416b69221b138ae381bf3ddd90867f365a6eef4804452325058da3deb5",
-      "verifier_report": ".harbor-jobs/20261024T011529.577463Z/oracle/task__2txysW2/verifier/report.json",
-      "verifier_report_sha256": "728a1b66ed33576bd163cf24aa8d57ffeafa7789529804db34770a1a42e810a0",
+      "trial_result": ".harbor-jobs/20261024T011934.963436Z/oracle/task__VSJt8N7/result.json",
+      "trial_result_sha256": "35a637a7a491f8dfb84585594f725b144c31a7dea1adf2cddf7e8dd46ded2fd8",
+      "verifier_report": ".harbor-jobs/20261024T011934.963436Z/oracle/task__VSJt8N7/verifier/report.json",
+      "verifier_report_sha256": "2b6ac60e7c8c916ff10794f8151b860d2e3f7021981112c5b9ce08594446b65f",
       "exception": null,
       "agent_exit": "success",
+      "verifier_environment_mode": "separate",
+      "verifier_isolation": "pass",
+      "explicit_evidence_transfer": "pass",
       "safety_factor": 1.428,
-      "artifact_dir": ".harbor-jobs/20261024T011529.577463Z/oracle/task__2txysW2/artifacts/logs/artifacts",
+      "artifact_dir": ".harbor-jobs/20261024T011934.963436Z/oracle/task__VSJt8N7/artifacts/logs/artifacts",
       "command_count": 7,
       "artifact_capture": "pass"
     },
     {
       "agent": "oracle",
       "reward": 1.0,
-      "trial_result": ".harbor-jobs/20261024T011529.577463Z/oracle/task__eu6aBnX/result.json",
-      "trial_result_sha256": "3cc8519b52340cc6060f9e7537a78ef7497d158c789ab285dab16cd508b14c2c",
-      "verifier_report": ".harbor-jobs/20261024T011529.577463Z/oracle/task__eu6aBnX/verifier/report.json",
-      "verifier_report_sha256": "728a1b66ed33576bd163cf24aa8d57ffeafa7789529804db34770a1a42e810a0",
+      "trial_result": ".harbor-jobs/20261024T011934.963436Z/oracle/task__q9wDwbG/result.json",
+      "trial_result_sha256": "ce6cc606a0423ef74fbd8a6d97a69b17cc7398462c63f5a479166702942e9c92",
+      "verifier_report": ".harbor-jobs/20261024T011934.963436Z/oracle/task__q9wDwbG/verifier/report.json",
+      "verifier_report_sha256": "2b6ac60e7c8c916ff10794f8151b860d2e3f7021981112c5b9ce08594446b65f",
       "exception": null,
       "agent_exit": "success",
+      "verifier_environment_mode": "separate",
+      "verifier_isolation": "pass",
+      "explicit_evidence_transfer": "pass",
       "safety_factor": 1.428,
-      "artifact_dir": ".harbor-jobs/20261024T011529.577463Z/oracle/task__eu6aBnX/artifacts/logs/artifacts",
+      "artifact_dir": ".harbor-jobs/20261024T011934.963436Z/oracle/task__q9wDwbG/artifacts/logs/artifacts",
       "command_count": 7,
       "artifact_capture": "pass"
     },
     {
       "agent": "nop",
       "reward": 0.0,
-      "trial_result": ".harbor-jobs/20261024T011529.577463Z/nop/task__EzXpqEC/result.json",
-      "trial_result_sha256": "90da5947073a0daef9f3e3ca421636c2d40e6d37c661c6ce54f0403b79ab52aa",
-      "verifier_report": ".harbor-jobs/20261024T011529.577463Z/nop/task__EzXpqEC/verifier/report.json",
-      "verifier_report_sha256": "b9cf69dd5c99f5c95be61c1e346e25fca056930830da5bdacd8c475082430bbc",
+      "trial_result": ".harbor-jobs/20261024T011934.963436Z/nop/task__hVLsWnz/result.json",
+      "trial_result_sha256": "5ed840182ce1db48f20f045c3c31fc7d42883c77cfefdd3e8081dd8a9ed07533",
+      "verifier_report": ".harbor-jobs/20261024T011934.963436Z/nop/task__hVLsWnz/verifier/report.json",
+      "verifier_report_sha256": "46413c63328314ff73d5437e9c642fb0485e36ccda6c0aa29c0a3cdb23cdf83f",
       "exception": null,
       "agent_exit": "success",
+      "verifier_environment_mode": "separate",
+      "verifier_isolation": "pass",
+      "explicit_evidence_transfer": "pass",
       "fresh_environment": "pass",
       "expected_missing_output": "pass"
     }

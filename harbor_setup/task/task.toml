@@ -1,8 +1,9 @@
 schema_version = "1.4"
+artifacts = ["/logs/artifacts"]
 
 [task]
 name = "cosmon/partlab-infrastructure-smoke"
-version = "1.0.0"
+version = "1.1.0"
 description = "Scripted baseline CLI exercise for local Harbor setup verification."
 
 [metadata]
@@ -13,7 +14,13 @@ timeout_sec = 60.0
 
 [verifier]
 timeout_sec = 60.0
-environment_mode = "shared"
+environment_mode = "separate"
+
+[verifier.environment]
+build_timeout_sec = 600.0
+cpus = 1
+memory_mb = 512
+network_mode = "no-network"
 
 [environment]
 build_timeout_sec = 600.0

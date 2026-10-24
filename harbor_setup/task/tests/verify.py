@@ -6,7 +6,7 @@ import math
 from pathlib import Path
 
 
-APP = Path("/app")
+REFERENCE = Path("/reference")
 ARTIFACTS = Path("/logs/artifacts")
 VERIFIER = Path("/logs/verifier")
 PURPOSE = "scripted-cli-infrastructure-preparation"
@@ -22,7 +22,7 @@ def require(condition, message):
 
 
 def verify():
-    original_path = APP / "parts/bracket_v3.json"
+    original_path = REFERENCE / "parts/bracket_v3.json"
     original = json.loads(original_path.read_text())
     outcome = json.loads((ARTIFACTS / "outcome.json").read_text())
     commands_path = ARTIFACTS / "commands.jsonl"
@@ -33,6 +33,8 @@ def verify():
     ]
     require(outcome["purpose"] == PURPOSE, "incorrect preparation label")
     require(outcome["part"] == "bracket_v3", "incorrect part")
+    require(outcome["agent_only_marker_created"] is True,
+            "oracle did not record creating its unexported marker")
     require(len(records) == outcome["command_count"] == len(expected_names),
             "missing or extra CLI records")
     require([r["argv"][1] for r in records] == expected_names,
@@ -50,7 +52,7 @@ def verify():
         results[record["argv"][1]] = envelope["result"]
 
     require(outcome["original_hashes"] == {
-        "partlab": digest(APP / "partlab"),
+        "partlab": digest(REFERENCE / "partlab"),
         "parts/bracket_v3.json": digest(original_path),
     }, "original input hash mismatch")
     require(outcome["commands_sha256"] == digest(commands_path),
@@ -89,10 +91,36 @@ def verify():
     return {"safety_factor": sf, "command_count": len(records)}
 
 
+def verify_isolation():
+    require(not Path("/app/unexported-agent-marker").exists(),
+            "unexported agent state leaked into verifier")
+    require(not Path("/solution").exists(), "oracle solution leaked into verifier")
+    require((Path("/tests") / "verify.py").is_file(), "trusted tests missing")
+    startup = json.loads((ARTIFACTS / "environment-start.json").read_text())
+    require(startup == {
+        "purpose": "infrastructure-preparation-only",
+        "tests_absent_at_start": True,
+        "solution_absent_at_start": True,
+    }, "agent image included tests or solution at startup")
+    return {
+        "unexported_marker_absent": True,
+        "solution_absent_in_verifier": True,
+        "tests_absent_at_agent_start": True,
+        "solution_absent_at_agent_start": True,
+        "startup_artifact_received": True,
+        "pristine_inputs": "/reference",
+        "reference_sha256": {
+            "partlab": digest(REFERENCE / "partlab"),
+            "parts/bracket_v3.json": digest(REFERENCE / "parts/bracket_v3.json"),
+        },
+    }
+
+
 def main():
     VERIFIER.mkdir(parents=True, exist_ok=True)
     report = {"purpose": "infrastructure-preparation-only", "passed": False}
     try:
+        report["isolation"] = verify_isolation()
         report.update(verify())
         report["passed"] = True
     except (OSError, ValueError, KeyError, TypeError, IndexError) as error:

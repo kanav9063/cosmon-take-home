@@ -3,4 +3,6 @@ FROM python:3.12-slim-bookworm@sha256:6a0e06f5ba0b373d051aabd3fffb9b873f27f9a2a3
 WORKDIR /app
 COPY --chmod=755 partlab /app/partlab
 COPY parts /app/parts
+COPY --chmod=755 start.sh /usr/local/bin/partlab-smoke-start
 ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1
+ENTRYPOINT ["/usr/local/bin/partlab-smoke-start"]

@@ -12,8 +12,9 @@ It does not make Harbor a requirement of the take-home's core evaluator.
 - Ubuntu Docker Engine **29.1.3**, Compose **2.40.3**, Buildx **0.30.1**.
 - Docker's system service is enabled and running. User `ubuntu` belongs to the
   `docker` group. Existing shell processes may need a fresh group session.
-- The container uses a digest-pinned `python:3.12-slim-bookworm` image. Its
-  runtime network access is disabled for this no-model smoke task.
+- Agent and verifier containers use a digest-pinned
+  `python:3.12-slim-bookworm` image. Runtime network access is disabled in both
+  for this no-model smoke task.
 
 The existing `.venv/`, original README, binary and parts remain intact. Local
 environments and `.harbor-jobs/` are ignored by Git. This setup does not install
@@ -69,12 +70,25 @@ parts under a new `.harbor-jobs/<UTC timestamp>/` directory. It runs:
    output, so verification must produce reward `0`. This checks that a valid
    pass is not hard-coded and earlier oracle output does not leak into a new run.
 
+The task explicitly sets `environment_mode = "separate"` and exports only
+`/logs/artifacts`. Trusted tests and pristine binary/part references are baked
+into a separate verifier image under `/tests` and `/reference`; the verifier
+does not use the agent's working copy as its reference. The agent image's startup
+entrypoint checks that it contains neither tests nor a solution, before Harbor
+uploads the scripted oracle. The oracle then creates an unexported marker under
+`/app`; the verifier checks that neither this marker nor `/solution` arrived.
+These are infrastructure isolation checks, not an adversarial security audit.
+
 The wrapper checks expected trial counts, completion, zero execution errors,
 agent identity, absence of a model, exact rewards, artifact collection and hashes,
 and that the starter files remain unchanged. It also checks oracle script exit
 status, the verifier's specific missing-output reason for the no-op, and that
 the container's binary/part hashes match the staged host originals. It fails if
 those checks fail, even when Harbor's own process exits successfully.
+It additionally asserts separate mode in every trial result, both resolved
+network policies, the exact successful artifact-manifest entry, the transferred
+startup record and the verifier's isolation results. A no-op still transfers
+the startup record but lacks the required outcome; it must fail for that reason.
 
 This verifies local Docker build/start, Harbor trial orchestration, oracle
 execution, verification, result persistence and artifact export. It is **not** a
@@ -89,9 +103,9 @@ errors; all three trial results passed the wrapper's assertions:
 
 | Trial | Observed result |
 | --- | --- |
-| Oracle attempt 1 | Reward 1; seven CLI commands; baseline SF 1.428; artifacts and hashes verified |
-| Oracle attempt 2 | Reward 1; seven CLI commands; baseline SF 1.428; artifacts and hashes verified |
-| No-op | Reward 0; expected missing `outcome.json`; no inherited oracle output |
+| Oracle attempt 1 | Reward 1; seven CLI commands; baseline SF 1.428; artifacts, hashes and separate-verifier isolation verified |
+| Oracle attempt 2 | Reward 1; seven CLI commands; baseline SF 1.428; artifacts, hashes and separate-verifier isolation verified |
+| No-op | Reward 0; expected missing `outcome.json`; startup evidence transferred; no inherited oracle output |
 
 `pip check` reported no broken requirements. Docker was active and enabled.
 A post-run Docker listing contained no remaining trial containers. The original
@@ -102,13 +116,18 @@ Each run writes full Harbor results and console logs under its timestamped
 `.harbor-jobs/` directory. `summary.json` is written only when the wrapper's
 assertions pass. The checked setup result is copied to
 [harbor_setup/verification.json](../harbor_setup/verification.json).
+After staging this suite, the task instructions were expanded to spell out the
+existing output fields and isolation checks. The runnable scripts, images and
+task configuration match the recorded suite.
 
 For each trial, Harbor 0.24.0 stores:
 
 - `result.json`: timestamps, agent identity, execution status and verifier reward.
 - `verifier/report.json` and `verifier/reward.txt`: the task's actual check result.
 - `artifacts/logs/artifacts/`: exported raw CLI output, baseline summary and saved
-  baseline JSON for successful oracle attempts.
+  baseline JSON for successful oracle attempts; startup record for every trial.
+- `artifacts/manifest.json`: the explicit `/logs/artifacts` collection entry and
+  its status. A completed trial alone does not establish artifact completeness.
 
 `HARBOR_TELEMETRY=0` is set before the smoke checker invokes Harbor. No `--upload`
 or `--launch` is used. Only local Docker environments run; the task does not use
@@ -123,6 +142,13 @@ describes its Python package and default Docker backend. Its
 the scripted oracle; its [verifier documentation](https://docs.harborframework.com/tasks/verifier)
 describes reward files. The installed 0.24.0 source was used to confirm schema
 version 1.4, CLI flags and artifact paths because the live documentation can
-describe a different release. This task explicitly uses a shared verifier as a
-minimal infrastructure test; it does not assert isolation from an adversarial
-agent.
+describe a different release. Task version 1.1.0 explicitly uses a separate
+verifier; the earlier 1.0.0 smoke used a shared verifier. Current Harbor docs
+describe separate mode as the default for new tasks starting in 0.25, so this
+0.24 setup does not depend on that default.
+
+The subsequent [Terminal-Bench 4.0 audit](BENCHMARK_AUDIT.md) motivated the
+isolation and explicit transfer checks and records the remaining assignment
+completion gates. See also Harbor's
+[separate-verifier guide](https://docs.harborframework.com/tasks/separate-verifier)
+and [artifact collection semantics](https://docs.harborframework.com/jobs/artifact-collection).

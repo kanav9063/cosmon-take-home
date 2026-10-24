@@ -23,6 +23,11 @@ System `python3` also works. Optional file arguments select fixtures. Output is 
 
 `expected.json` records anticipated future evaluator findings. It is **expectation data**, not produced evaluation output. These are semantic-unit examples: they lack complete raw-capture evidence and cannot establish an end-to-end integrity pass. The search-exhausted fixture has no fabricated compliance failure, but repair achievement is `fail` (not achieved) and feasibility remains `unknown`. The stale fixture changes thickness again after the last solve, then saves the new snapshot and claims the old SF; the final snapshot and parameter claim agree, isolating freshness as the intended flaw. Required/forbidden finding codes identify the specific assertion without suppressing related final/artifact explanations. All synthetic files remain independent of live PartLab session state.
 
+The simplified examples also omit raw solver-convergence evidence. Their
+`fresh_solve` expectations test state/solve linkage only. Full baseline/repair
+validation must additionally check convergence from the agreed raw producer
+format; do not infer it from a `solved` phase or finite SF.
+
 ## Proposed package fields
 
 - `schema_version: eval-fixture-proposal/0`, `source_kind: synthetic`, `fixture_id`, `run_id`, and `provenance` label the package and invented values.

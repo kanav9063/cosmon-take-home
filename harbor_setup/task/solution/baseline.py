@@ -18,6 +18,10 @@ def digest(path):
 
 def main():
     ARTIFACTS.mkdir(parents=True, exist_ok=True)
+    if Path("/tests").exists():
+        raise RuntimeError("Trusted verifier tests leaked into the agent environment")
+    # This file is intentionally not exported. The verifier must never see it.
+    (APP / "unexported-agent-marker").write_text("agent environment only\n")
     original_path = APP / "parts" / f"{PART}.json"
     original = json.loads(original_path.read_text())
     original_hashes = {
@@ -68,6 +72,7 @@ def main():
         "saved_sha256": digest(saved_path),
         "commands_sha256": digest(commands_path),
         "command_count": len(commands),
+        "agent_only_marker_created": True,
     }
     (ARTIFACTS / "outcome.json").write_text(json.dumps(outcome, indent=2) + "\n")
     print(json.dumps(outcome, indent=2))

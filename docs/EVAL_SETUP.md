@@ -74,7 +74,8 @@ producer capture must preserve and hash the original bytes too.
   numerical policy, scaling and evidence limits.
 - [EVAL_TRACE_REQUIREMENTS.md](EVAL_TRACE_REQUIREMENTS.md): producer evidence
   needs and explicit shared-contract review checklist.
-- [EVAL_TEST_MATRIX.md](EVAL_TEST_MATRIX.md): 42 planned semantic/integrity cases,
+- [EVAL_TEST_MATRIX.md](EVAL_TEST_MATRIX.md): 43 planned semantic/integrity cases
+  (including the convergence case added during the benchmark reference audit),
   plus boundary, isolation and batch checks; none run by a semantic evaluator yet.
 - [Synthetic fixtures](../eval_preparation/README.md) and their packaging checker.
 

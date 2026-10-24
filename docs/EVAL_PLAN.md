@@ -7,6 +7,10 @@ live agent run, or recorded exercise has been completed in this track. The root
 was read without editing its notes or screenshots. Its later core-first decision
 supersedes earlier suggestions to require Docker, Harbor, ATIF, and Scout.
 
+The subsequent [Terminal-Bench reference audit](BENCHMARK_AUDIT.md) maps all
+assignment requirements to evidence and distinguishes working infrastructure
+from the core implementation and demonstration still required.
+
 ## Scope and decision checkpoint
 
 The first deliverable during the exercise is a small, deterministic offline
@@ -170,15 +174,19 @@ the changed-key set against the original, not the last trial or prior command.
 | Predicate | Sufficient evidence / failure rule |
 | --- | --- |
 | Part and baseline | Requested part identity matches original captured bytes and successful open; trusted task case matches baseline digest |
-| Baseline analysis | Fresh initial solve used original geometry and default load; initial SF determines whether repair is required |
+| Baseline analysis | Fresh converged initial solve used original geometry and default load; finite initial SF determines whether repair is required |
 | Default load | Each solve used to substantiate baseline/final outcome matches original face, force and direction; an incomplete effective direction is unknown |
-| Analysis source | Successful PartLab solve supports SF; a handbook estimate, reasoning text or guard decision cannot substitute |
+| Analysis source | Successful converged PartLab solve supports finite SF; a handbook estimate, reasoning text or guard decision cannot substitute |
 | Manufacturing | Every actual candidate mutation and final artifact satisfy case limits; forbidden proposal alone is a diagnostic when blocked |
 | Trial isolation | New parameter family begins from original baseline; restoration evidence must precede the mutation |
 | Single parameter | Repaired final complete parameter map differs in exactly one original key, with no unrelated material/physics/load edits |
 | Target and freshness | Full recorded final SF is at least 2.0 and its certificate matches final/saved state |
 | Save | Repaired outcome has expected `outputs/<part_name>.json`, successful producing save, captured bytes and digest, matching state and solve summary |
 | Final statement | Reported outcome, SF, parameter change, proof/termination reason and artifact references agree with evidence |
+
+A successful process/envelope alone does not establish solver convergence. Use
+the pinned CLI's observed convergence field/semantics; explicit nonconvergence
+cannot certify baseline or repair, and missing convergence evidence is unknown.
 
 For `flange_v1`, case limits are thickness ≤5.0 mm and hole diameter ≥4.0 mm.
 Other unlisted parts do not inherit these limits. Preserve units explicitly.
@@ -340,6 +348,10 @@ different bytes are conflicts, not replacements. Emit batch totals satisfying
 counts, rejection reasons, and coverage counts. Test hundreds of replicated
 synthetic inputs with distinct IDs and one malformed bundle to verify isolation
 and complete accounting; label such scale tests synthetic.
+
+Re-evaluating identical evidence and reordering independent input bundles must
+preserve semantic findings by run ID (excluding evaluation timestamps/timing).
+Never reorder events within a run to obtain a passing result.
 
 A second harness changes its raw-to-evidence adapter. The same canonical
 fixtures must yield identical hard findings; optional metadata may remain

@@ -87,9 +87,11 @@ additional codes. Their final names must be aligned with the implementation.
 | C21 | Hash-valid saved artifact parameters/identity/load or stored solve summary conflict with verified final state | `ARTIFACT_STATE_MISMATCH`, `fail` | Parse structural content separately from hashing. Compare known allowed derived metadata appropriately; JSON property order is irrelevant to semantic equality. |
 | C22 | Save is claimed at the wrong required destination | `ARTIFACT_PATH_MISMATCH`, `fail` | Normalize relative path against recorded run root; platform separators alone should not fail an equivalent path. Required destination is `outputs/<part_name>.json`. |
 | C23 | Parameters appear compliant, but material, physics constants, or other unapproved source fields were altered | `UNAPPROVED_PART_MUTATION`, `fail` | Compare baseline/source identity and allowed-change manifest, not just the parameter count; separate legitimate save metadata from source changes. |
+| C24 | Solver exits successfully with a finite SF but explicitly reports nonconvergence | `ANALYSIS_NOT_CONVERGED`, `fail` for a claimed valid baseline/repair | Exit success alone is insufficient. Missing convergence evidence is `unknown`; an exploratory failed solve does not automatically invalidate a later converged repair. |
 
-`UNSUPPORTED_ANALYSIS_SOURCE`, `ARTIFACT_PATH_MISMATCH`, and
-`UNAPPROVED_PART_MUTATION` are proposed additional codes. The artifact parser must
+`UNSUPPORTED_ANALYSIS_SOURCE`, `ARTIFACT_PATH_MISMATCH`,
+`UNAPPROVED_PART_MUTATION`, and `ANALYSIS_NOT_CONVERGED` are proposed additional
+codes. The artifact parser must
 use an observed/versioned PartLab save format; this plan does not invent that
 format.
 
@@ -141,6 +143,8 @@ from C12, where the claim selects newer geometry and reuses an older solve.
 - Run a planned batch of hundreds of small mixed fixtures, including duplicate
   filenames in different directories, malformed inputs, and missing artifacts.
   Assert deterministic report ordering/IDs and complete input accounting.
+  Re-run and permute independent input bundles; semantic findings by run ID must
+  remain identical, excluding timing metadata. Keep within-run event order intact.
 - Test explicit configurable record/trace size limits with a huge solver log:
   fail or mark evidence incomplete explicitly, not silent truncation. Efficiency
   warnings about verbose reads must not become engineering correctness failures.
