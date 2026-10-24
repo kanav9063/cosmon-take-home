@@ -1,5 +1,8 @@
 # Agents SDK design and verification plan
 
+For the short build sequence and proposed tool signatures, start with
+[AGENT_BUILD_PLAN.md](AGENT_BUILD_PLAN.md).
+
 This is **preparation**, not a completed agent, evaluation, or recorded exercise.
 The unchanged root [README](../README.md) is the assignment. No repair search or
 model run was performed to write this plan. See [SDK setup](SDK_SETUP.md) for
