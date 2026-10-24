@@ -99,6 +99,12 @@ cost **$0.371235631**. See [REPORT.md](REPORT.md) for interpretation and limits.
 
 ## Evidence and limits
 
+The optional [Anthropic ToolRunner harness](docs/HARNESS_PORTABILITY.md) has its
+own installation and reproduction commands. Its two additional live traces
+pass the unchanged evaluator and native capture checks. Install
+`requirements-anthropic.txt` to run all 22 agent tests; the 21 baseline tests
+remain available with `requirements.lock` alone.
+
 The [submission report](REPORT.md) records the actual outcomes, test counts,
 constraint check and known limits. The [architecture](docs/ARCHITECTURE.md)
 explains the implementation. The original task remains in [TASK.md](TASK.md).

@@ -99,6 +99,10 @@ and a trusted evaluator case. New manufacturing rules need a guard in
 additional renamed synthetic parts were checked offline. This establishes
 name/configuration extensibility, not compatibility with an arbitrary CAD API.
 
+The [second-harness proof](HARNESS_PORTABILITY.md) shows Anthropic ToolRunner
+emitting the same trace contract and reusing the executor and evaluator.
+Native HTTP messages remain distinct from the original SDK-object captures.
+
 The [report](../REPORT.md) links the measured outcomes and checks. The
 [trace contract](../evaluation/docs/EVAL_IMPLEMENTATION_CONTRACT.md) specifies
 the persisted format; its existing version is retained for compatibility with

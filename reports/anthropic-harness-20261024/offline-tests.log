@@ -1,0 +1,7 @@
+test_native_tool_runner_preserves_capture_and_blocks_manufacturing_violation (test_anthropic_runner.NativeRunnerTests.test_native_tool_runner_preserves_capture_and_blocks_manufacturing_violation) ... Executing <Task pending name='Task-2' coro=<NativeRunnerTests.test_native_tool_runner_preserves_capture_and_blocks_manufacturing_violation() running at /home/ubuntu/work/cosmon-sdk/tests/test_anthropic_runner.py:63> wait_for=<Future pending cb=[Task.task_wakeup()] created at /usr/lib/python3.12/asyncio/base_events.py:449> cb=[_run_until_complete_cb() at /usr/lib/python3.12/asyncio/base_events.py:182] created at /usr/lib/python3.12/asyncio/runners.py:100> took 0.179 seconds
+ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.306s
+
+OK

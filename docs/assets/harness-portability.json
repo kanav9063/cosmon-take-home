@@ -1,0 +1,183 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Two harnesses, one evidence contract",
+    "locale": "en",
+    "output": ".archify/architecture-harness-portability-20261023-190100/harness-portability.html",
+    "quality_profile": "showcase"
+  },
+  "components": [
+    {
+      "id": "sdk",
+      "type": "backend",
+      "label": "OpenAI Agents SDK",
+      "sublabel": "Actual SDK object capture",
+      "pos": [
+        40,
+        40
+      ],
+      "size": [
+        220,
+        75
+      ]
+    },
+    {
+      "id": "anthropic",
+      "type": "backend",
+      "label": "Anthropic ToolRunner",
+      "sublabel": "Native HTTP body capture",
+      "pos": [
+        40,
+        250
+      ],
+      "size": [
+        220,
+        75
+      ]
+    },
+    {
+      "id": "contract",
+      "type": "backend",
+      "label": "7-tool interface",
+      "sublabel": "Shared tools + capture boundary",
+      "pos": [
+        390,
+        140
+      ],
+      "size": [
+        245,
+        75
+      ]
+    },
+    {
+      "id": "engine",
+      "type": "security",
+      "label": "Same Engine",
+      "sublabel": "Guards and serialized state",
+      "pos": [
+        790,
+        140
+      ],
+      "size": [
+        200,
+        75
+      ]
+    },
+    {
+      "id": "partlab",
+      "type": "backend",
+      "label": "PartLab CLI",
+      "sublabel": "Fresh solve and verified save",
+      "pos": [
+        790,
+        350
+      ],
+      "size": [
+        200,
+        75
+      ]
+    },
+    {
+      "id": "trace",
+      "type": "database",
+      "label": "Portable trace bundle",
+      "sublabel": "partlab.trace/0.1-proposal",
+      "pos": [
+        390,
+        350
+      ],
+      "size": [
+        245,
+        75
+      ]
+    },
+    {
+      "id": "evaluator",
+      "type": "backend",
+      "label": "Unchanged evaluator",
+      "sublabel": "cosmon-eval/1 consumer",
+      "pos": [
+        40,
+        465
+      ],
+      "size": [
+        220,
+        75
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "sdk_contract",
+      "from": "sdk",
+      "to": "contract",
+      "label": "invoke + record"
+    },
+    {
+      "id": "anthropic_contract",
+      "from": "anthropic",
+      "to": "contract",
+      "label": "invoke + record"
+    },
+    {
+      "id": "invoke_engine",
+      "from": "contract",
+      "to": "engine",
+      "label": "same 7 tools",
+      "variant": "emphasis"
+    },
+    {
+      "id": "cli",
+      "from": "engine",
+      "to": "partlab",
+      "label": "validated CLI",
+      "variant": "security"
+    },
+    {
+      "id": "model_capture",
+      "from": "contract",
+      "to": "trace",
+      "label": "model events"
+    },
+    {
+      "id": "cli_capture",
+      "from": "engine",
+      "to": "trace",
+      "label": "tool + CLI evidence"
+    },
+    {
+      "id": "evaluate",
+      "from": "trace",
+      "to": "evaluator",
+      "label": "offline grading",
+      "variant": "emphasis"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Adapter responsibility",
+      "items": [
+        "Preserve real model inputs, outputs and tool identities",
+        "SDK objects and native HTTP bodies stay distinctly labelled"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Tested shared boundary",
+      "items": [
+        "Both harnesses run the same guarded executor and seven tools",
+        "Same trace schema and unchanged offline evaluator"
+      ]
+    },
+    {
+      "dot": "slate",
+      "title": "Scope",
+      "items": [
+        "Implementation schematic from inspected working-tree sources",
+        "Anthropic adapter and live evidence were not yet committed when drawn"
+      ]
+    }
+  ]
+}

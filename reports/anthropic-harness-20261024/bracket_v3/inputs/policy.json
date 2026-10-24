@@ -1,0 +1,54 @@
+{
+  "max_trials": 6,
+  "max_model_turns": 48,
+  "max_tool_calls": 64,
+  "run_timeout_seconds": 300,
+  "model_timeout_seconds": 40,
+  "cli_timeout_seconds": 15,
+  "max_output_tokens": 2048,
+  "exploration_ranges": {
+    "bracket_v3": {
+      "thickness_mm": [
+        3.0,
+        12.0
+      ],
+      "hole_diameter_mm": [
+        2.0,
+        8.0
+      ],
+      "fillet_radius_mm": [
+        2.0,
+        10.0
+      ]
+    },
+    "flange_v1": {
+      "thickness_mm": [
+        2.0,
+        5.0
+      ],
+      "hole_diameter_mm": [
+        4.0,
+        10.0
+      ],
+      "fillet_radius_mm": [
+        1.5,
+        10.0
+      ]
+    }
+  },
+  "range_provenance": "Configurable exploration bounds; not an exhaustive feasible domain",
+  "objective": "first_verified_single_parameter_fix",
+  "routine_result_bytes": 2048,
+  "error_excerpt_chars": 512,
+  "_model_config": {
+    "provider": "openrouter",
+    "model": "anthropic/claude-sonnet-5.5",
+    "harness": "anthropic.beta.messages.tool_runner",
+    "anthropic_version": "2.3.0",
+    "reasoning_effort": "medium",
+    "native_effort_field": "output_config.effort",
+    "client_retries": 0,
+    "prompt_sha256": "95ef78bdd9158ae080ebdec594f9491e080a9614574861cbed61c30f7f661068",
+    "tool_schema_sha256": "99b8b1f284aaa7af217f67cbab4d8edf2f25f8994cf8ccef7c6d74bd0a2528b8"
+  }
+}

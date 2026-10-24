@@ -1,0 +1,221 @@
+{
+  "schema_version": "partlab.model-comparison/1",
+  "created_at": "2026-10-24T01:59:56.813903+00:00",
+  "planned_runs": 2,
+  "runs": [
+    {
+      "id": "bracket_v3",
+      "part": "bracket_v3",
+      "model": "anthropic/claude-sonnet-5.5",
+      "bundle": "bracket_v3",
+      "run_id": "fbb70ddb-286c-4050-9b44-ff21c98b96b8",
+      "launcher_status": "repaired",
+      "launcher_error_category": null,
+      "declared_outcome": "repaired",
+      "reason_code": "first_verified_fix_saved",
+      "observed_outcome": "repaired",
+      "result_category": "verified_repair",
+      "baseline_sf": 1.428,
+      "best_or_final_sf": 3.072,
+      "changed_parameter": {
+        "name": "thickness_mm",
+        "from": 3.0,
+        "to": 5
+      },
+      "evaluation": {
+        "capture_integrity": "pass",
+        "process_compliance": "pass",
+        "reporting_accuracy": "pass",
+        "repair_achievement": "pass",
+        "final_correctness": "pass",
+        "delivery": "pass"
+      },
+      "evaluation_status": "evaluated",
+      "evaluation_findings": [],
+      "elapsed_seconds": 13.687275927979499,
+      "timing_source": "runner_wall_clock",
+      "model_requests": 11,
+      "model_responses": 11,
+      "model_failures": [],
+      "tool_proposals": 10,
+      "tool_returns": 10,
+      "cli_requests": 14,
+      "cli_completions": 14,
+      "trial_count": 1,
+      "provider_reported_cost_usd": 0.089238,
+      "costed_responses": 11,
+      "cost_complete_for_returned_responses": true,
+      "tokens_from_returned_responses": {
+        "input_tokens": 41839,
+        "output_tokens": 556,
+        "total_tokens": null
+      },
+      "completion_present": true,
+      "malformed_event_lines": 0,
+      "prompt_sha256": "95ef78bdd9158ae080ebdec594f9491e080a9614574861cbed61c30f7f661068",
+      "tool_schema_sha256": "99b8b1f284aaa7af217f67cbab4d8edf2f25f8994cf8ccef7c6d74bd0a2528b8",
+      "reasoning_effort": "medium",
+      "policy": {
+        "max_trials": 6,
+        "max_model_turns": 48,
+        "max_tool_calls": 64,
+        "run_timeout_seconds": 300,
+        "model_timeout_seconds": 40,
+        "cli_timeout_seconds": 15,
+        "max_output_tokens": 2048,
+        "exploration_ranges": {
+          "bracket_v3": {
+            "thickness_mm": [
+              3.0,
+              12.0
+            ],
+            "hole_diameter_mm": [
+              2.0,
+              8.0
+            ],
+            "fillet_radius_mm": [
+              2.0,
+              10.0
+            ]
+          },
+          "flange_v1": {
+            "thickness_mm": [
+              2.0,
+              5.0
+            ],
+            "hole_diameter_mm": [
+              4.0,
+              10.0
+            ],
+            "fillet_radius_mm": [
+              1.5,
+              10.0
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "flange_v1",
+      "part": "flange_v1",
+      "model": "anthropic/claude-sonnet-5.5",
+      "bundle": "flange_v1",
+      "run_id": "80093943-222f-4a74-8df0-350781c6134a",
+      "launcher_status": "no_repair_found",
+      "launcher_error_category": null,
+      "declared_outcome": "no_repair_found",
+      "reason_code": "agent_stopped",
+      "observed_outcome": "search_exhausted",
+      "result_category": "bounded_search_no_repair",
+      "baseline_sf": 0.212,
+      "best_or_final_sf": 0.839,
+      "changed_parameter": null,
+      "evaluation": {
+        "capture_integrity": "pass",
+        "process_compliance": "pass",
+        "reporting_accuracy": "pass",
+        "repair_achievement": "fail",
+        "final_correctness": "not_applicable",
+        "delivery": "not_applicable"
+      },
+      "evaluation_status": "evaluated",
+      "evaluation_findings": [],
+      "elapsed_seconds": 25.26280619064346,
+      "timing_source": "runner_wall_clock",
+      "model_requests": 20,
+      "model_responses": 20,
+      "model_failures": [],
+      "tool_proposals": 19,
+      "tool_returns": 19,
+      "cli_requests": 27,
+      "cli_completions": 27,
+      "trial_count": 3,
+      "provider_reported_cost_usd": 0.209432,
+      "costed_responses": 20,
+      "cost_complete_for_returned_responses": true,
+      "tokens_from_returned_responses": {
+        "input_tokens": 98786,
+        "output_tokens": 1186,
+        "total_tokens": null
+      },
+      "completion_present": true,
+      "malformed_event_lines": 0,
+      "prompt_sha256": "ef576f0a8a64ed96eb8204fdc8b52ca50c5d08385120d1d8611b1efc1c6b5654",
+      "tool_schema_sha256": "99b8b1f284aaa7af217f67cbab4d8edf2f25f8994cf8ccef7c6d74bd0a2528b8",
+      "reasoning_effort": "medium",
+      "policy": {
+        "max_trials": 6,
+        "max_model_turns": 48,
+        "max_tool_calls": 64,
+        "run_timeout_seconds": 300,
+        "model_timeout_seconds": 40,
+        "cli_timeout_seconds": 15,
+        "max_output_tokens": 2048,
+        "exploration_ranges": {
+          "bracket_v3": {
+            "thickness_mm": [
+              3.0,
+              12.0
+            ],
+            "hole_diameter_mm": [
+              2.0,
+              8.0
+            ],
+            "fillet_radius_mm": [
+              2.0,
+              10.0
+            ]
+          },
+          "flange_v1": {
+            "thickness_mm": [
+              2.0,
+              5.0
+            ],
+            "hole_diameter_mm": [
+              4.0,
+              10.0
+            ],
+            "fillet_radius_mm": [
+              1.5,
+              10.0
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "model": "anthropic/claude-sonnet-5.5",
+      "planned_runs": 2,
+      "result_categories": {
+        "verified_repair": 1,
+        "bounded_search_no_repair": 1
+      },
+      "observed_cost_usd": 0.29867,
+      "runs_with_reported_cost": 2
+    }
+  ],
+  "evaluation_directory": "evaluation-20261024T015956Z-e5971b",
+  "evaluator": {
+    "version": "1.1.0",
+    "python": "3.12.3",
+    "sources": {
+      "evaluate.py": "e20006538ee80bc17f30d162c618d7bb7c7e3a6dfcec6319c8d411836fb89f2e",
+      "eval_types.py": "b03ec65d0b6a08fa473826fd168bdd9dcabb2f90bf9e1c983cc37bde24fd63e0",
+      "trace_adapter.py": "7911652c4bf8b41a8e09a97c7b1db52950ade009aff905ee7f67ac9c1153ad53",
+      "eval_state.py": "7ea4d66cae608df73d7ebc8069150e28aaf9c42b6bcc764a443d7316ac81b8a9",
+      "eval_checks.py": "c6900b6d885e0cf1bdf59e487bf6be550fb254f638cf0e2f95609109742d8f1b"
+    },
+    "sha256": "574e16b3ee1b386b2ddb1eb3f5e5f95b49672f33ff593515b57a83b50121bc85"
+  },
+  "interpretation": "One observed run per model and assigned part. A truthful bounded flange search with no repair is distinct from a provider, execution or reporting failure. Repair achievement is reported separately; no overall model ranking is inferred.",
+  "limitations": [
+    "Single stochastic runs do not establish reliability, statistical significance or a universal quality ranking.",
+    "No repair found within configured ranges and trials is not a proof of infeasibility. The flange outcome is not assumed in advance.",
+    "Provider routing, caching, supported reasoning behavior and transient load can affect latency, tokens and cost despite shared harness settings.",
+    "Costs and tokens include only usage exposed in captured responses; failed requests may be unbilled or unreported, not necessarily free.",
+    "Independent evaluation verifies recorded evidence consistency without replaying the solver or calling a model.",
+    "Missing or unfinished planned runs remain listed and unverified. Raw trace bundles are never rewritten by this summary."
+  ]
+}

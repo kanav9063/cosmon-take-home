@@ -1,0 +1,14 @@
+{
+  "inputs": [
+    {
+      "id": "bracket_v3",
+      "path": "bracket_v3",
+      "case": "bracket_v3"
+    },
+    {
+      "id": "flange_v1",
+      "path": "flange_v1",
+      "case": "flange_v1"
+    }
+  ]
+}

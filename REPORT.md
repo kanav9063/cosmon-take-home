@@ -53,6 +53,21 @@ does not establish task success or repair a malformed final response. See the
 does not establish a reliability ranking; provider routing and caching also
 affect observed cost and latency.
 
+## Second harness and trace portability
+
+Two additional live runs use Anthropic Python SDK ToolRunner 2.3.0 with
+`anthropic/claude-sonnet-5.5`. The runner preserves native HTTP message bodies
+and maps tool-use events into the existing trace contract. The shared PartLab
+executor, prompt, tools and evaluator are unchanged. Bracket was repaired at
+SF 3.072; flange returned a valid bounded no-repair report with best SF 0.839.
+Both passed the native capture audit and expected independent evaluation
+checks. Provider-reported cost was $0.298670 for these two runs.
+
+The [portability design and evidence](docs/HARNESS_PORTABILITY.md) explain what
+the adapter changes and how it preserves native arguments and exact tool
+returns. This demonstrates a real harness substitution. It does not establish
+arbitrary-harness compatibility or a controlled performance advantage.
+
 ## Acceptance criteria
 
 | Assignment criterion | Implemented behavior and evidence |
@@ -84,7 +99,10 @@ The bracket passes capture, process, correctness, delivery, reporting and repair
 achievement. Flange capture, process and reporting pass; repair achievement
 correctly fails. The evaluator does not turn honest failure into success.
 
-**21 agent tests and 154 evaluator tests passed.** Tests include state
+**22 agent tests (including the optional native harness) and 154 evaluator tests
+passed.** The [latest agent test log](reports/anthropic-harness-20261024/all-agent-tests.log)
+includes a real ToolRunner/CLI check with mocked HTTP: flange thickness 5.5 mm
+is rejected without CLI dispatch and native capture remains intact. Tests include state
 invalidation, concurrent proposals, malformed arguments, publication failure,
 subprocess cancellation and tool budgets. A deliberately edited trace preserves
 valid hashes but invalidates the cited solve; the evaluator flags `STALE_SOLVE`.
@@ -102,8 +120,9 @@ See [RUN.md](RUN.md) for reproducible agent, negative-check and evaluation comma
 
 - Search is bounded and stochastic; it does not prove that all legal flange
   designs are infeasible.
-- Raw model capture preserves SDK-exposed objects, not original HTTP bytes or
-  hidden reasoning. Hosted tracing is disabled.
+- The OpenAI harness preserves SDK-exposed objects; the Anthropic harness
+  preserves native HTTP request/response bodies. Neither claims access to
+  unexposed model internals. Hosted tracing is disabled.
 - Generic part-name handling and the final tool-call budget stop were verified
   offline after the two live captures. Additional synthetic parts use the same
   CLI schema; new manufacturing constraints need explicit policy.

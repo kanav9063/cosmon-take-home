@@ -1,0 +1,160 @@
+{
+  "runs": [
+    {
+      "id": "bracket_v3",
+      "model": "anthropic/claude-sonnet-5.5",
+      "status": "repaired",
+      "reason_code": "first_verified_fix_saved",
+      "elapsed_seconds": 13.687275927979499,
+      "outcome": {
+        "run_id": "fbb70ddb-286c-4050-9b44-ff21c98b96b8",
+        "status": "repaired",
+        "reason_code": "first_verified_fix_saved",
+        "initial_sf": 1.428,
+        "final_sf": 3.072,
+        "initial_solve_cli_id": "x0006",
+        "solve_cli_id": "x0013",
+        "changed_parameter": {
+          "name": "thickness_mm",
+          "from": 3.0,
+          "to": 5
+        },
+        "artifact_id": "a0001",
+        "artifact_ref": {
+          "path": "outputs/bracket_v3.json",
+          "sha256": "1c4dc1a15277c897dba11a9e131dabfcaa32ff9c6f9a920a59a5309a82c66c6a",
+          "bytes": 492
+        },
+        "final_message_ref": {
+          "path": "raw/model/final.txt",
+          "sha256": "059f96f9f3ded9d7118abe0283d28c9d2ece96b15b17ed7359616214c51ec6c1",
+          "bytes": 139
+        },
+        "final_message_format": "json/1",
+        "search": {
+          "scope": "bounded_exploration_not_infeasibility_proof",
+          "ranges": {
+            "thickness_mm": [
+              3.0,
+              12.0
+            ],
+            "hole_diameter_mm": [
+              2.0,
+              8.0
+            ],
+            "fillet_radius_mm": [
+              2.0,
+              10.0
+            ]
+          },
+          "budget": {
+            "max_trials": 6,
+            "max_tool_calls": 64,
+            "max_model_turns": 48,
+            "run_timeout_seconds": 300
+          },
+          "trials": [
+            {
+              "trial_id": "t0001",
+              "name": "thickness_mm",
+              "value": 5,
+              "solve_cli_id": "x0013",
+              "safety_factor": 3.072
+            }
+          ],
+          "max_trials": 6,
+          "tool_calls": 10,
+          "termination": "first_verified_fix_saved"
+        },
+        "final_claim_check": {
+          "valid": true,
+          "reason_code": "verified"
+        },
+        "model_calls": 11,
+        "harness": "anthropic.beta.messages.tool_runner",
+        "unexecuted_tool_call_ids": []
+      }
+    },
+    {
+      "id": "flange_v1",
+      "model": "anthropic/claude-sonnet-5.5",
+      "status": "no_repair_found",
+      "reason_code": "agent_stopped",
+      "elapsed_seconds": 25.26280619064346,
+      "outcome": {
+        "run_id": "80093943-222f-4a74-8df0-350781c6134a",
+        "status": "no_repair_found",
+        "reason_code": "agent_stopped",
+        "initial_sf": 0.212,
+        "final_sf": 0.839,
+        "initial_solve_cli_id": "x0006",
+        "solve_cli_id": "x0013",
+        "changed_parameter": null,
+        "artifact_id": null,
+        "artifact_ref": null,
+        "final_message_ref": {
+          "path": "raw/model/final.txt",
+          "sha256": "1ae15b6e027fe41315661185a790e9ecc7bb270a45e2b52e324e9e16ec4a26ae",
+          "bytes": 108
+        },
+        "final_message_format": "json/1",
+        "search": {
+          "scope": "bounded_exploration_not_infeasibility_proof",
+          "ranges": {
+            "thickness_mm": [
+              2.0,
+              5.0
+            ],
+            "hole_diameter_mm": [
+              4.0,
+              10.0
+            ],
+            "fillet_radius_mm": [
+              1.5,
+              10.0
+            ]
+          },
+          "budget": {
+            "max_trials": 6,
+            "max_tool_calls": 64,
+            "max_model_turns": 48,
+            "run_timeout_seconds": 300
+          },
+          "trials": [
+            {
+              "trial_id": "t0001",
+              "name": "thickness_mm",
+              "value": 5,
+              "solve_cli_id": "x0013",
+              "safety_factor": 0.839
+            },
+            {
+              "trial_id": "t0002",
+              "name": "fillet_radius_mm",
+              "value": 10,
+              "solve_cli_id": "x0020",
+              "safety_factor": 0.212
+            },
+            {
+              "trial_id": "t0003",
+              "name": "hole_diameter_mm",
+              "value": 4,
+              "solve_cli_id": "x0027",
+              "safety_factor": 0.354
+            }
+          ],
+          "max_trials": 6,
+          "tool_calls": 19,
+          "termination": "agent_stopped"
+        },
+        "final_claim_check": {
+          "valid": true,
+          "reason_code": "verified"
+        },
+        "model_calls": 20,
+        "harness": "anthropic.beta.messages.tool_runner",
+        "unexecuted_tool_call_ids": []
+      }
+    }
+  ]
+}

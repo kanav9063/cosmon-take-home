@@ -1,0 +1,29 @@
+test_cancelled_cli_preserves_partial_output_and_marks_unknown_state (test_agent_engine.EngineTests.test_cancelled_cli_preserves_partial_output_and_marks_unknown_state) ... ok
+test_completed_baseline_cannot_be_reloaded_without_candidate (test_agent_engine.EngineTests.test_completed_baseline_cannot_be_reloaded_without_candidate) ... ok
+test_concurrent_mutations_cannot_bypass_single_assignment (test_agent_engine.EngineTests.test_concurrent_mutations_cannot_bypass_single_assignment) ... ok
+test_each_trial_requires_restore_and_one_assignment (test_agent_engine.EngineTests.test_each_trial_requires_restore_and_one_assignment) ... ok
+test_failed_publication_cannot_be_reported_as_repaired (test_agent_engine.EngineTests.test_failed_publication_cannot_be_reported_as_repaired) ... ok
+test_invalid_operations_do_not_reach_cli (test_agent_engine.EngineTests.test_invalid_operations_do_not_reach_cli) ... ok
+test_rejected_calls_exhaust_tool_budget (test_agent_engine.EngineTests.test_rejected_calls_exhaust_tool_budget) ... ok
+test_verified_save_matches_fresh_solve_and_full_raw_evidence (test_agent_engine.EngineTests.test_verified_save_matches_fresh_solve_and_full_raw_evidence) ... ok
+test_invalid_ranges_and_path_like_names_rejected (test_agent_sdk.ConfigurationTests.test_invalid_ranges_and_path_like_names_rejected) ... ok
+test_third_and_fourth_parts_and_parameters_are_configured (test_agent_sdk.ConfigurationTests.test_third_and_fourth_parts_and_parameters_are_configured) ... ok
+test_claim_mismatch_is_not_corrected (test_agent_sdk.FinalClaimTests.test_claim_mismatch_is_not_corrected) ... ok
+test_duplicate_or_extra_keys_rejected (test_agent_sdk.FinalClaimTests.test_duplicate_or_extra_keys_rejected) ... ok
+test_oversized_boolean_and_nonfinite_final_numbers_are_rejected (test_agent_sdk.FinalClaimTests.test_oversized_boolean_and_nonfinite_final_numbers_are_rejected) ... ok
+test_tool_arguments_remain_strict (test_agent_sdk.FinalClaimTests.test_tool_arguments_remain_strict) ... ok
+test_unrounded_matching_claim (test_agent_sdk.FinalClaimTests.test_unrounded_matching_claim) ... ok
+test_model_failure_is_safe_and_recorded_without_fabricated_response (test_agent_sdk.SDKCaptureTests.test_model_failure_is_safe_and_recorded_without_fabricated_response) ... Executing <Task pending name='Task-420' coro=<SDKCaptureTests.test_model_failure_is_safe_and_recorded_without_fabricated_response() running at /home/ubuntu/work/cosmon-sdk/tests/test_agent_sdk.py:210> wait_for=<Task pending name='Task-426' coro=<preserve_tool_task_cancellation() running at /home/ubuntu/work/cosmon-sdk/.venv/lib/python3.12/site-packages/agents/run_internal/run_loop.py:978> cb=[Task.task_wakeup()] created at /usr/lib/python3.12/asyncio/tasks.py:420> cb=[_run_until_complete_cb() at /usr/lib/python3.12/asyncio/base_events.py:182] created at /usr/lib/python3.12/asyncio/runners.py:100> took 0.106 seconds
+ok
+test_new_named_parts_run_and_engine_still_rejects_unknown_parameters (test_agent_sdk.SDKCaptureTests.test_new_named_parts_run_and_engine_still_rejects_unknown_parameters) ... ok
+test_oversized_final_claim_keeps_raw_evidence_and_completion (test_agent_sdk.SDKCaptureTests.test_oversized_final_claim_keeps_raw_evidence_and_completion) ... ok
+test_real_sdk_captures_malformed_proposal_recovers_and_saves (test_agent_sdk.SDKCaptureTests.test_real_sdk_captures_malformed_proposal_recovers_and_saves) ... ok
+test_tool_budget_caps_multiple_calls_from_one_model_response (test_agent_sdk.SDKCaptureTests.test_tool_budget_caps_multiple_calls_from_one_model_response) ... ok
+test_tool_budget_stops_before_another_model_request_including_rejections (test_agent_sdk.SDKCaptureTests.test_tool_budget_stops_before_another_model_request_including_rejections) ... ok
+test_native_tool_runner_preserves_capture_and_blocks_manufacturing_violation (test_anthropic_runner.NativeRunnerTests.test_native_tool_runner_preserves_capture_and_blocks_manufacturing_violation) ... Executing <Task pending name='Task-1537' coro=<NativeRunnerTests.test_native_tool_runner_preserves_capture_and_blocks_manufacturing_violation() running at /home/ubuntu/work/cosmon-sdk/tests/test_anthropic_runner.py:69> wait_for=<Future pending cb=[Task.task_wakeup()] created at /usr/lib/python3.12/asyncio/base_events.py:449> cb=[_run_until_complete_cb() at /usr/lib/python3.12/asyncio/base_events.py:182] created at /usr/lib/python3.12/asyncio/runners.py:100> took 0.195 seconds
+ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 2.741s
+
+OK

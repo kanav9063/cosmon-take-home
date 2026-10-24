@@ -1,0 +1,4 @@
+# Optional second harness. Original pinned environment remains the baseline.
+-r requirements.lock
+anthropic==2.3.0
+docstring-parser==0.18.0
