@@ -373,3 +373,28 @@ must produce the supported evidence or supply a trusted adapter and run
 conformance. Capturing a different provider, selecting credentials/models,
 recording the exercise and assembling its combined submission are not hidden
 evaluator implementation tasks. No sibling files were edited.
+
+## D20 — Keep the five assignment requirements directly reviewable
+
+The user reiterated the core Part 2 rubric: schema portability, principled
+tuning, readable actionable reports, defensible scores, and a deliberately
+flawed trace with specific detection. The concise
+[rubric checklist](EVAL_RUBRIC.md) now links each requirement to implementation,
+evidence and a short reproducible command. This is the primary review path for
+those five requirements; the longer reference audits provide supporting detail.
+
+The check found two evidence gaps in otherwise working extension points: the
+extra-case regression used already-configured `housing_v1`, and the registered
+adapter regression delegated the original layout unchanged. Two additional
+regressions explicitly exercise an unseen trusted case and a different persisted
+capture representation. They strengthen what the tests demonstrate without
+rewriting grading logic or claiming compatibility with a future provider before
+its adapter exists. Synthetic inputs retain their source labels.
+
+Task thresholds and manufacturing limits remain trusted case data. Optional
+efficiency budgets and resource limits remain named configuration. Single-
+parameter changes, fresh solves and truthful evidence are correctness rules,
+not arbitrary score weights. The reproducible flawed trace remains a complete,
+hash-valid capture with a stale solve: `STALE_SOLVE` is the specific failure,
+with linked evidence and a corrective action. Unrelated manufacturing and
+multiple-parameter defects are explicitly excluded from that demonstration.

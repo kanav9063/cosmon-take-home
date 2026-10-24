@@ -144,6 +144,16 @@ is an exact method name, so a row can be located without interpreting prose.
   in [SCOUT_AUDIT.md](SCOUT_AUDIT.md); these tests do not require adding Scout to
   the standard-library grader's runtime.
 
+## Direct rubric portability proof
+
+The later [five-requirement rubric check](EVAL_RUBRIC.md) adds two explicit
+portability regressions in [test_rubric.py](../tests/test_rubric.py):
+`test_unseen_case_uses_trusted_data_for_load_target_and_parameter_bounds` and
+`test_foreign_harness_layout_preserves_grading_and_stale_solve_detection`.
+These strengthen the earlier housing-case and adapter-registration evidence.
+Eight focused checks, including these two, passed on the host and offline Docker;
+the original full-suite execution record is preserved unchanged.
+
 ## Remaining boundaries
 
 1. A new provider must supply real raw model/tool/CLI captures through the

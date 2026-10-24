@@ -74,6 +74,7 @@ up its existing group membership. The separate Harbor infrastructure task and
 its checked oracle/no-op results remain documented in `docs/HARBOR_SETUP.md`.
 
 Integration instructions: [API_INTEGRATION.md](docs/API_INTEGRATION.md).
+Five assignment requirements and quick proof: [EVAL_RUBRIC.md](docs/EVAL_RUBRIC.md).
 Detailed rationale: [EVAL_DECISIONS.md](docs/EVAL_DECISIONS.md).
 Executed coverage and limits: [EVAL_TEST_MATRIX.md](docs/EVAL_TEST_MATRIX.md).
 Current checked results: [REPORTS.md](reports/reference-audit/REPORTS.md).
