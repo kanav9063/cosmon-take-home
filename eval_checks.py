@@ -20,7 +20,7 @@ ALIASES = {"no_repair_found": "search_exhausted",
 OUTCOMES = {"already_safe", "repaired", "search_exhausted",
             "proven_infeasible", "execution_failure"}
 REPAIR_CHECKS = {"single_parameter", "save_execution", "artifact_integrity",
-                 "artifact_state", "output_delivery"}
+                 "artifact_provenance", "artifact_state", "output_delivery"}
 REMEDIATION = {
     "WRONG_PART": "Open the requested original part and retain its raw identity and parameter readback.",
     "UNAPPROVED_PART_MUTATION": "Restore the trusted original source fields and change only an allowed parameter.",
@@ -37,8 +37,11 @@ REMEDIATION = {
     "ARTIFACT_MISSING": "Capture the selected immutable saved bytes and their verified digest and length.",
     "ARTIFACT_HASH_MISMATCH": "Preserve the exact original saved bytes and correct their capture references.",
     "ARTIFACT_STATE_MISMATCH": "Save the selected solved state and preserve its exact compact output projection.",
+    "ARTIFACT_PROVENANCE_INVALID": "Capture the selected artifact after its actual producing save and retain its preceding solve reference.",
+    "ARTIFACT_PROVENANCE_UNESTABLISHED": "Retain the producing save, solve and subsequent artifact snapshot with their causal links.",
     "ARTIFACT_PATH_MISMATCH": "Publish the selected saved bytes to the required logical output path.",
     "FINAL_OUTPUT_MISMATCH": "Publish the selected artifact again after other exploration and record the final destination bytes.",
+    "PUBLICATION_STALE": "Observe and publish the required destination after the last possible write to that path.",
     "FINAL_CLAIM_MISMATCH": "Report only outcomes, numbers and artifacts supported by the retained raw evidence.",
     "UNSUPPORTED_INFEASIBILITY": "Report bounded search exhaustion unless an independent complete-domain proof verifier is available.",
 }
@@ -129,6 +132,18 @@ def _path(value: Any) -> str | None:
     return posixpath.normpath(value.replace("\\", "/"))
 
 
+def _physical_path(value: Any, cwd: Any = None) -> str | None:
+    """Resolve recorded POSIX paths lexically, without touching another run."""
+    path, directory = _path(value), _path(cwd)
+    if path is None:
+        return None
+    if posixpath.isabs(path):
+        return path
+    if directory is not None and posixpath.isabs(directory):
+        return posixpath.normpath(posixpath.join(directory, path))
+    return None
+
+
 def evaluate(run: EvidenceRun, history: History, case: Case,
              policy: dict | None = None) -> Evaluation:
     """Evaluate one run; all mutable accumulators are scoped to this call."""
@@ -147,6 +162,12 @@ def evaluate(run: EvidenceRun, history: History, case: Case,
     repair = claimed_repair or (saved_claim and declared != "already_safe")
     artifact_checks = repair or saved_claim
     refs = run.refs
+    failed_publications = [event for event in run.events if event.kind == "artifact_published"
+                           and event.data.get("status") == "failed"
+                           and any(isinstance(event.data.get(key), str) and event.data[key].strip()
+                                   for key in ("error_type", "error", "reason_code"))]
+    diagnostics.extend(Issue("PUBLICATION_FAILED", "The producer recorded a failed output publication.",
+                             "unknown", event.refs, event.seq) for event in failed_publications)
 
     def add(check_id, scope, subject, status, reason, code=None, evidence=None,
             expected=None, observed=None, action=None):
@@ -442,6 +463,22 @@ def evaluate(run: EvidenceRun, history: History, case: Case,
             "pass" if save else "fail" if run.execution_complete and not history.saves else "unknown",
             "A repaired deliverable must have an identified successful producing save.",
             None if save else "REQUIRED_SAVE_MISSING", save.refs if save else refs)
+        provenance_status, provenance_code = "unknown", "ARTIFACT_PROVENANCE_UNESTABLISHED"
+        if artifact and save and cert and artifact.solve_cli_id is not None:
+            save_action = actions.get(save.cli_id)
+            solve_action = actions.get(cert.cli_id)
+            # Historical saves remain valid, but an artifact cannot have been
+            # captured before the save that purportedly produced its bytes.
+            invalid = (artifact.event_seq <= save.seq or cert.seq >= save.seq or
+                       artifact.solve_cli_id != cert.cli_id)
+            if save_action and solve_action:
+                invalid |= (save_action.session_id != solve_action.session_id or
+                            solve_action.end_seq >= save_action.start_seq)
+            provenance_status = "fail" if invalid else "pass"
+            provenance_code = "ARTIFACT_PROVENANCE_INVALID" if invalid else None
+        add("artifact_provenance", "selected", selected_subject, provenance_status,
+            "The selected immutable snapshot must follow its producing save and consistently cite a preceding solve.",
+            provenance_code, _refs(artifact.refs if artifact else [], save.refs if save else [], cert.refs if cert else []))
         ai = artifact.integrity if artifact else "unknown"
         ai = ai if ai in {"pass", "fail", "unknown"} else "unknown"
         add("artifact_integrity", "selected", selected_subject, ai,
@@ -490,16 +527,58 @@ def evaluate(run: EvidenceRun, history: History, case: Case,
                 pub_status, pub_code = "fail", "FINAL_OUTPUT_MISSING"
             elif latest.data.get("_verified") is True and latest.data.get("status") == "ok":
                 if artifact and artifact.integrity == "pass" and artifact.sha256:
-                    if latest.data.get("_sha256") != artifact.sha256:
+                    if latest.data.get("artifact_id") == artifact.artifact_id and latest.seq <= artifact.event_seq:
+                        pub_status, pub_code = "fail", "ARTIFACT_PROVENANCE_INVALID"
+                    elif latest.data.get("_sha256") != artifact.sha256:
                         pub_status, pub_code = "fail", "FINAL_OUTPUT_MISMATCH"
                     elif run.complete and run.execution_complete:
                         pub_status, pub_code = "pass", None
         elif publications and any(e.data.get("artifact_id") == artifact_id and
                                   _path(e.data.get("path")) is not None for e in publications):
             pub_status, pub_code = "fail", "ARTIFACT_PATH_MISMATCH"
+        # A complete event ledger does not make an old destination snapshot
+        # current. A later save can overwrite it even if no new publication
+        # event was emitted. Failed writes have unknown filesystem effects.
+        later_writes, produced = [], []
+        if latest:
+            published_destination = _physical_path(latest.data.get("destination"))
+            requests = {event.cli_id: event for event in run.events if event.kind == "cli_requested"}
+            for action in run.actions:
+                if (action.name != "save-part" or action.end_seq <= latest.seq or
+                        action.termination == "spawn_error"):
+                    continue
+                requested = _path(action.argv[2]) if len(action.argv) >= 3 else None
+                observed_path = _path(action.result.get("saved_to")) if isinstance(action.result, dict) else None
+                request = requests.get(action.cli_id)
+                cwd = request.data.get("cwd") if request else None
+                physical_paths = {_physical_path(requested, cwd), _physical_path(observed_path, cwd)} - {None}
+                if published_destination is not None and physical_paths:
+                    touches_destination = published_destination in physical_paths
+                else:
+                    # Without an explicit physical publication destination,
+                    # the local profile binds the same logical output path.
+                    touches_destination = (destination in (requested, observed_path) or
+                                           (requested is None and observed_path is None))
+                if touches_destination:
+                    later_writes.append(action)
+            if later_writes:
+                pub_status, pub_code = "unknown", "PUBLICATION_STALE"
+                # A completed later write whose captured bytes differ is an
+                # affirmative mismatch, not merely absent final observation.
+                last_write = max(later_writes, key=lambda action: action.end_seq)
+                produced = [a for a in run.artifacts.values() if a.save_cli_id == last_write.cli_id and
+                            a.integrity == "pass" and a.event_seq > last_write.end_seq]
+                if last_write.success is True and produced and artifact and artifact.sha256:
+                    if any(a.sha256 != artifact.sha256 for a in produced):
+                        pub_status, pub_code = "fail", "FINAL_OUTPUT_MISMATCH"
+                    elif run.complete and run.execution_complete and artifact.integrity == "pass":
+                        # A verified snapshot of a later successful direct save
+                        # proves that this same destination still has the bytes.
+                        pub_status, pub_code = "pass", None
         add("output_delivery", "publication", selected_subject, pub_status,
             "The last observed required destination must contain the selected bytes, with complete final coverage.",
-            pub_code, latest.refs if latest else refs,
+            pub_code, _refs(latest.refs if latest else refs, *[a.refs for a in later_writes],
+                            *[a.refs for a in produced]),
             {"path": case.output_path, "sha256": artifact.sha256 if artifact else None},
             latest.data if latest else None)
     else:
@@ -614,15 +693,19 @@ def evaluate(run: EvidenceRun, history: History, case: Case,
     if declared == "execution_failure":
         observed_failures = [a for a in run.actions if a.success is False or a.termination in {"timeout", "signal", "spawn_error"}]
         failed_events = [e for e in run.events if e.kind == "model_failed" or
-                         (e.kind == "guard_decision" and e.data.get("decision") == "error")]
+                         (e.kind == "guard_decision" and e.data.get("decision") == "error")] + failed_publications
         if not observed_failures and not failed_events and not run.issues and not history.issues:
             claim_unknown.append("no execution/capture failure is observed")
         latest_failure = max([a.end_seq for a in observed_failures] +
                              [e.seq for e in failed_events], default=-1)
         recovery_actions = {"open-part", "set-parameter", "mesh", "apply-load", "solve", "save-part"}
-        if latest_failure >= 0 and not run.issues and any(
-                a.success is True and a.name in recovery_actions and a.end_seq > latest_failure
-                for a in run.actions):
+        recovered = (any(a.success is True and a.name in recovery_actions and a.end_seq > latest_failure
+                         for a in run.actions) or
+                     any(e.kind == "artifact_published" and e.data.get("status") == "ok" and
+                         e.seq > latest_failure and e.data.get("_verified") is True and
+                         isinstance(e.data.get("artifact_id"), str) and
+                         e.data["artifact_id"] in run.artifacts for e in run.events))
+        if latest_failure >= 0 and not run.issues and recovered:
             claim_unknown.append("earlier errors were followed by successful workflow progress; unrecovered failure termination is unestablished")
         if not outcome.get("reason_code"):
             claim_unknown.append("execution failure reason is missing")
@@ -631,7 +714,7 @@ def evaluate(run: EvidenceRun, history: History, case: Case,
         claim_errors.append("no independent complete-domain infeasibility proof verifier is supported")
     engineering = [c for c in checks if c.scope in {"selected", "selected_state"}
                    and c.check_id not in {"save_execution", "artifact_integrity"}]
-    delivery = [c for c in checks if c.check_id in {"save_execution", "artifact_integrity", "output_delivery"}]
+    delivery = [c for c in checks if c.check_id in {"save_execution", "artifact_integrity", "artifact_provenance", "output_delivery"}]
     if declared in {"repaired", "already_safe"}:
         if _status(engineering) == "fail" or (artifact_checks and _status(delivery) == "fail"):
             claim_errors.append("success claim contradicts an established final or delivery requirement")
@@ -705,10 +788,21 @@ def evaluate(run: EvidenceRun, history: History, case: Case,
         elif declared == "execution_failure" and not claim_errors and not claim_unknown:
             failed_saves = [a for a in run.actions if a.name == "save-part" and a.success is False and
                             any(c.seq < a.start_seq for c in safe_candidates)]
-            last_failure = max((a.end_seq for a in failed_saves), default=-1)
+            safe_ids = {c.cli_id for c in safe_candidates}
+            failed_deliveries = [event for event in failed_publications
+                                 if isinstance(event.data.get("artifact_id"), str) and
+                                 event.data["artifact_id"] in run.artifacts and
+                                 run.artifacts[event.data["artifact_id"]].solve_cli_id in safe_ids]
+            last_failure = max([a.end_seq for a in failed_saves] +
+                               [event.seq for event in failed_deliveries], default=-1)
             later_delivery = any(e.kind == "artifact_published" and e.seq > last_failure and
                                  e.data.get("status") == "ok" for e in run.events)
-            if run.complete and run.execution_complete and failed_saves and not later_delivery:
+            any_delivery = any(e.kind == "artifact_published" and e.data.get("status") == "ok"
+                               for e in run.events)
+            if (run.complete and run.execution_complete and failed_deliveries and
+                    not any_delivery):
+                achieved, reason = "fail", "A safe candidate was saved, but its observed publication failed and no delivery succeeded."
+            elif run.complete and run.execution_complete and failed_saves and not later_delivery:
                 achieved, reason = "fail", "A safe candidate was found, but its observed save failed and no later delivery succeeded."
             else:
                 achieved, reason = "unknown", "Execution failure does not establish a repaired deliverable."

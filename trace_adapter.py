@@ -283,6 +283,13 @@ def _actions(reader: Reader, run: EvidenceRun):
 
 def _payloads(reader: Reader, run: EvidenceRun):
     solve_events = {e.event_id: e.data.get("solve_cli_id") for e in run.events if e.kind == "solve_observed"}
+    actions = {action.cli_id: action for action in run.actions}
+    artifact_sequences = {}
+    for event in run.events:
+        if event.kind == "artifact_saved":
+            identity = event.data.get("artifact_id", event.event_id)
+            if isinstance(identity, str):
+                artifact_sequences.setdefault(identity, event.seq)
     for event in run.events:
         if event.kind == "artifact_saved":
             data = event.data
@@ -306,6 +313,22 @@ def _payloads(reader: Reader, run: EvidenceRun):
                                 solve_id,
                                 reference.get("path", "") if isinstance(reference, dict) and isinstance(reference.get("path"), str) else "", None,
                                 refs=list(event.refs), event_seq=event.seq)
+            save_action = actions.get(artifact.save_cli_id)
+            if save_action is None:
+                reader.issue("CALL_LINK_INVALID", "Artifact references an absent save attempt", refs=event.refs)
+            elif save_action.name != "save-part" or save_action.end_seq >= event.seq:
+                reader.issue("EVIDENCE_CONTRADICTION", "Artifact snapshot must follow its producing save attempt", "fail", event.refs + save_action.refs)
+            elif save_action.session_id != event.session_id:
+                reader.issue("CALL_LINK_INVALID", "Artifact and producing save use different sessions", "fail", event.refs + save_action.refs)
+            if isinstance(solve_id, str):
+                solve_action = actions.get(solve_id)
+                if solve_action is None:
+                    reader.issue("CALL_LINK_INVALID", "Artifact references an absent solve attempt", refs=event.refs)
+                elif (solve_action.name != "solve" or
+                      (save_action is not None and
+                       (solve_action.end_seq >= save_action.start_seq or
+                        solve_action.session_id != save_action.session_id))):
+                    reader.issue("EVIDENCE_CONTRADICTION", "Artifact solve must precede its save in the same session", "fail", event.refs + solve_action.refs)
             if item:
                 artifact.refs.append(item[1])
                 artifact.sha256 = item[1].sha256
@@ -325,7 +348,24 @@ def _payloads(reader: Reader, run: EvidenceRun):
             run.artifacts[identity] = artifact
         elif event.kind == "artifact_published":
             event.data["_verified"] = False
-            item = reader.reference(event.data.get("published_ref"), missing_code="ARTIFACT_MISSING")
+            identity = event.data.get("artifact_id")
+            artifact = run.artifacts.get(identity) if isinstance(identity, str) else None
+            if artifact is None or artifact.event_seq >= event.seq:
+                known_later = (isinstance(identity, str) and
+                               artifact_sequences.get(identity, -1) >= event.seq)
+                reader.issue("CALL_LINK_INVALID", "Publication must reference an earlier captured artifact",
+                             "fail" if known_later else "unknown", event.refs)
+            status = event.data.get("status")
+            has_error = any(isinstance(event.data.get(key), str) and event.data[key].strip()
+                            for key in ("error_type", "error", "reason_code"))
+            if status == "failed" and not has_error:
+                reader.issue("TRACE_INCOMPLETE", "Failed publication lacks recorded error information", refs=event.refs)
+            elif status not in ("ok", "failed"):
+                reader.issue("TRACE_PARSE_ERROR", "Publication status must be ok or failed", refs=event.refs)
+            # A failed copy may produce no destination bytes. If partial bytes
+            # were nevertheless captured, their reference must still validate.
+            item = (reader.reference(event.data.get("published_ref"), missing_code="ARTIFACT_MISSING")
+                    if status != "failed" or "published_ref" in event.data else None)
             if item:
                 event.data["_verified"] = True
                 event.data["_sha256"] = item[1].sha256

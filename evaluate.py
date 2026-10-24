@@ -6,6 +6,7 @@ import argparse
 from collections import Counter
 import json
 import os
+import platform
 from pathlib import Path
 import re
 import sys
@@ -23,6 +24,22 @@ WARNING_METRICS = frozenset({
     "failed_cli_attempts", "model_calls", "model_request_bytes",
     "model_response_bytes", "model_visible_tool_bytes", "repeated_read_calls",
 })
+DIMENSIONS = ("capture_integrity", "process_compliance", "final_correctness",
+              "delivery", "reporting_accuracy", "repair_achievement", "efficiency")
+
+
+def evaluator_provenance():
+    """Identify the installed grading code independently of its release label."""
+    sources = {name: digest((ROOT / name).read_bytes()) for name in
+               ("evaluate.py", "eval_types.py", "trace_adapter.py", "eval_state.py", "eval_checks.py")}
+    return {"version": EVALUATOR_VERSION, "python": platform.python_version(),
+            "sources": sources, "sha256": digest(canonical(sources))}
+
+
+def effective_case_policy(case):
+    return {"case_id": case.case_id, "original_sha256": case.original_sha256,
+            "target_sf": case.target_sf, "limits": case.limits, "output_path": case.output_path,
+            "binary_sha256": case.binary_sha256, "profile": case.profile}
 
 
 def validate_policy(policy=None):
@@ -103,11 +120,14 @@ def report_run(run, case, *, input_id="run", policy_digest="", policy=None, limi
     checks.sort(key=lambda c: c["instance_id"])
     return {
         "report_version": "partlab.eval/1", "evaluator_version": EVALUATOR_VERSION,
+        "evaluator": evaluator_provenance(),
         "profile": case.profile, "adapter": adapter, "input_id": input_id, "run_id": run.run_id,
         "source_kind": run.origin, "case_id": case.case_id,
         "input_digest": run.input_digest, "policy_digest": policy_digest,
         "configuration_digest": digest(canonical({"case_policy_digest": policy_digest,
+            "effective_case_policy": effective_case_policy(case),
             "warning_policy": policy, "limits": limits or Limits()})),
+        "effective_case_policy": jsonable(effective_case_policy(case)),
         "warning_policy": jsonable(policy), "resource_limits": jsonable(limits or Limits()),
         "trusted_original_sha256": case.original_sha256,
         "evaluation_status": "evaluated",
@@ -132,14 +152,18 @@ def evaluate_one(path, case: Case, *, input_id="run", adapter="partlab", limits=
     return report_run(run, case, input_id=input_id, policy_digest=policy_digest, policy=policy, limits=limits, adapter=adapter)
 
 
-def rejected(entry, reason, *, run_id=None, policy_digest=""):
+def rejected(entry, reason, *, run_id=None, policy_digest="", case=None, policy=None, limits=None):
+    policy = validate_policy(policy)
     return {
         "report_version": "partlab.eval/1", "evaluator_version": EVALUATOR_VERSION,
+        "evaluator": evaluator_provenance(), "adapter": entry.get("adapter", "partlab"),
         "input_id": entry["id"], "case_id": entry["case"], "run_id": run_id,
         "evaluation_status": "rejected", "policy_digest": policy_digest,
+        "effective_case_policy": jsonable(effective_case_policy(case)) if case else None,
+        "warning_policy": jsonable(policy), "resource_limits": jsonable(limits or Limits()),
         "reason": reason, "observed_outcome": "unverified", "checks": [],
         "findings": [{"code": "INPUT_REJECTED", "status": "unknown", "reason": reason}],
-        "summary": {"capture_integrity": {"status": "unknown", "members": [], "reason": reason}},
+        "summary": {name: {"status": "unknown", "members": [], "reason": reason} for name in DIMENSIONS},
     }
 
 
@@ -200,9 +224,11 @@ def evaluate_batch(manifest_path, output_dir, *, cases_path=ROOT / "eval_cases.j
     try:
         for entry in sorted(prepared, key=lambda e: e["id"]):
             if entry["id"] in duplicate_ids:
-                report = rejected(entry, "Duplicate run ID across manifest entries", run_id=duplicate_ids[entry["id"]], policy_digest=policy_digest)
+                report = rejected(entry, "Duplicate run ID across manifest entries", run_id=duplicate_ids[entry["id"]], policy_digest=policy_digest,
+                                  case=cases[entry["case"]], policy=policy, limits=limits)
             elif entry["id"] in preliminary_errors:
-                report = rejected(entry, preliminary_errors[entry["id"]], policy_digest=policy_digest)
+                report = rejected(entry, preliminary_errors[entry["id"]], policy_digest=policy_digest,
+                                  case=cases[entry["case"]], policy=policy, limits=limits)
             else:
                 report = evaluate_one(entry["source"], cases[entry["case"]], input_id=entry["id"],
                                       adapter=entry["adapter"], limits=limits, policy_digest=policy_digest, policy=policy)
@@ -217,6 +243,7 @@ def evaluate_batch(manifest_path, output_dir, *, cases_path=ROOT / "eval_cases.j
                 status = value.get("status", "unknown") if isinstance(value, dict) else value
                 dimension_counts.setdefault(dimension, Counter())[str(status)] += 1
         summary = {"report_version": "partlab.eval-batch/1", "status": "complete",
+                   "evaluator": evaluator_provenance(),
                    "requested": len(prepared), "evaluated": evaluated,
                    "explicitly_rejected": rejected_count, "policy_digest": policy_digest,
                    "warning_policy": jsonable(policy), "resource_limits": jsonable(limits or Limits()),

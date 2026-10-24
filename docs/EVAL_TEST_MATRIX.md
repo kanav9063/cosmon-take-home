@@ -7,7 +7,10 @@ are recorded in [EVAL_COVERAGE.md](EVAL_COVERAGE.md). The evaluator now has raw
 bundle, reconstruction, predicate, batch and integration tests. Synthetic bundles
 remain synthetic; the two scripted CLI captures are preparation evidence, not
 model-agent traces. Implementing the consumer profile does not declare bilateral
-agreement with a separate trace producer.
+agreement with a separate trace producer. The subsequent
+[reference acceptance audit](REFERENCE_ACCEPTANCE.md) adds two existing live SDK
+captures, its scripted guard check and additional regression controls. Current
+acceptance evaluates 19 bundles without making new model calls.
 
 The unchanged root [README](../README.md) is authoritative. Read this matrix with
 [the evaluation plan](EVAL_PLAN.md) and [producer evidence requirements](EVAL_TRACE_REQUIREMENTS.md).

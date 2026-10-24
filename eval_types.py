@@ -8,7 +8,7 @@ import json
 from pathlib import Path
 from typing import Any
 
-EVALUATOR_VERSION = "1.0.0"
+EVALUATOR_VERSION = "1.1.0"
 PROFILE = "partlab-cli/9b202e1b"
 BINARY_SHA256 = "9b202e1ba07861f52f12005108e81815ef14d92f2db3ba322fc51422746ab183"
 SCHEMA = "partlab.trace/0.1-proposal"

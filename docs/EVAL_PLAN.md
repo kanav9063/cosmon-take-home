@@ -4,8 +4,10 @@ Status: **evaluator implemented**, October 23, 2026. The original plan below is
 retained for decision history; later user authorization superseded its
 preparation-only implementation gate. See [EVAL_RUN.md](../EVAL_RUN.md),
 [EVAL_DECISIONS.md](EVAL_DECISIONS.md), and the
-[executed coverage map](EVAL_COVERAGE.md). No live model run or recorded exercise
-has been created in this eval track. The root
+[executed coverage map](EVAL_COVERAGE.md). Two existing live SDK captures are now
+copied unchanged and validated in this track; no new model calls or recorded
+exercise were made by this evaluator audit. See
+[current acceptance](REFERENCE_ACCEPTANCE.md). The root
 [README](../README.md) remains authoritative and unchanged. The
 [Notion planning page](https://app.notion.com/p/4026333fbd2f807badd4d8f1d1c6fe6f)
 was read without editing its notes or screenshots. Its later core-first decision
@@ -17,8 +19,9 @@ from the core implementation and demonstration still required.
 
 [EVAL_DESIGN.md](EVAL_DESIGN.md) defines the intended module interfaces, internal
 records, predicate registry, report semantics and implementation slices. The
-local implemented profile is explicit; producer interoperability remains the
-connection task and is not implicitly agreed by implementing the consumer.
+local implemented profile is explicit; the current SDK captures validate actual
+interoperability. Connecting a different provider remains an integration task
+and is not implicitly certified by implementing the consumer.
 
 ## Scope and decision checkpoint
 

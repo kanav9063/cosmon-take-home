@@ -1,11 +1,15 @@
 # Producer evidence requirements and contract checkpoint
 
-Status: **consumer implemented; producer connection outstanding**. The SDK track
+Status: **consumer implemented; existing SDK captures validated**. The SDK track
 owns its proposal. The user's subsequent implementation request authorized the
 local profile in [EVAL_IMPLEMENTATION_CONTRACT.md](EVAL_IMPLEMENTATION_CONTRACT.md).
 That profile specifies concrete mappings and tested extensions; it does not
 assert the other chat accepted them. [API_INTEGRATION.md](API_INTEGRATION.md)
-defines the remaining connection. No cross-chat message has been sent.
+defines the connection for a different producer. The
+[reference acceptance audit](REFERENCE_ACCEPTANCE.md) records the two completed
+live SDK bundles and scripted guard check now validated by this consumer.
+The proposal/checkpoint history below is retained; actual interoperability does
+not assert a separate chat's formal agreement. No cross-chat message was sent.
 
 ## Smallest sufficient evidence bundle
 

@@ -1,0 +1,62 @@
+{
+  "output": [
+    {
+      "id": "__fake_id__",
+      "content": [
+        {
+          "annotations": [],
+          "text": "{\"status\":\"no_repair_found\",\"initial_sf\":0.212,\"final_sf\":0.839,\"changed_parameter\":null,\"artifact_id\":null}",
+          "type": "output_text",
+          "logprobs": []
+        }
+      ],
+      "role": "assistant",
+      "status": "completed",
+      "type": "message",
+      "phase": null,
+      "provider_data": {
+        "model": "openai/gpt-6.1-sol",
+        "response_id": "gen-1792806262-UmetqkuiJWCoZkcDc3zv"
+      }
+    }
+  ],
+  "usage": {
+    "requests": 1,
+    "input_tokens": 6091,
+    "input_tokens_details": {
+      "cache_write_tokens": 147,
+      "cached_tokens": 5941
+    },
+    "output_tokens": 36,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 6127,
+    "request_usage_entries": []
+  },
+  "response_id": null,
+  "request_id": null,
+  "raw_usage": {
+    "completion_tokens": 36,
+    "prompt_tokens": 6091,
+    "total_tokens": 6127,
+    "completion_tokens_details": {
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cache_write_tokens": 147,
+      "cached_tokens": 5941,
+      "video_tokens": 0
+    },
+    "cost": 0.0013276,
+    "is_byok": false,
+    "cost_details": {
+      "upstream_inference_cost": 0.0013276,
+      "upstream_inference_prompt_cost": 0.0009676,
+      "upstream_inference_completions_cost": 0.00036
+    }
+  }
+}

@@ -10,13 +10,13 @@ python3 scripts/verify.py --output-dir /tmp/partlab-eval-verification
 
 Choose a **new** output directory on every invocation. This runs the regression
 suite, including a 200-input batch in both orders, then generates and asserts
-all 16 checked-in example reports. Read its `REPORTS.md`, `verification.json`,
+all 19 checked-in example and producer reports. Read its `REPORTS.md`, `verification.json`,
 `summary.json`, and individual `report-<input-id>.json` files.
 
-To evaluate only the checked-in examples:
+To evaluate all checked-in evidence, including the two existing live SDK runs:
 
 ```sh
-python3 evaluate.py --inputs fixtures/inputs.json --output-dir /tmp/partlab-eval-reports
+python3 evaluate.py --inputs fixtures/all-inputs.json --output-dir /tmp/partlab-eval-reports
 ```
 
 For new captures, create a JSON input manifest:
@@ -42,6 +42,9 @@ These are user-selected diagnostic budgets, not recommended universal thresholds
 Optional `--limits` accepts positive integer overrides for `max_file_bytes`,
 `max_total_bytes`, `max_record_bytes`, `max_files`, and `max_events`.
 Applied policy and limits are preserved in reports with a configuration digest.
+Reports also identify the effective case policy, evaluator source hashes and
+Python version. Rejected inputs remain unknown in every dimension so no
+per-dimension denominator silently shrinks.
 
 Generate fresh examples, including actual scripted PartLab captures:
 
@@ -73,8 +76,13 @@ its checked oracle/no-op results remain documented in `docs/HARBOR_SETUP.md`.
 Integration instructions: [API_INTEGRATION.md](docs/API_INTEGRATION.md).
 Detailed rationale: [EVAL_DECISIONS.md](docs/EVAL_DECISIONS.md).
 Executed coverage and limits: [EVAL_TEST_MATRIX.md](docs/EVAL_TEST_MATRIX.md).
-Checked results: [REPORTS.md](reports/eval-verification/REPORTS.md).
+Current checked results: [REPORTS.md](reports/reference-audit/REPORTS.md).
+Original 1.0.0 results: [REPORTS.md](reports/eval-verification/REPORTS.md).
+Current reference audit and acceptance: [REFERENCE_ACCEPTANCE.md](docs/REFERENCE_ACCEPTANCE.md).
 
-The remaining connection is the real producer/API capture mapping. No live model
-traces or narrated exercise were created here. The original `RUN.md` remains the
-assignment template for the agent owner to complete with real run commands.
+The actual SDK producer connection is now tested using two completed live traces
+copied unchanged from the sibling SDK workspace, plus its scripted guard check.
+See [capture provenance](fixtures/producer-provenance.json). This evaluator made
+no new model calls. A different API must provide the same required evidence;
+the existing CLI handles those bundles. The original `RUN.md` remains the
+assignment template owned by the agent exercise, including its recording.

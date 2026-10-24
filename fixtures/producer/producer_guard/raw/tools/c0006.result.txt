@@ -1,0 +1,1 @@
+{"ok":false,"error_type":"PolicyError","reason_code":"manufacturing.constraint","error":"thickness_mm must satisfy {'max': 5.0}; propose a legal value.","phase":"open","state_revision":5,"initial_sf":0.212,"best_sf":0.212,"best_solve_cli_id":"x0006","remaining_trials":6}

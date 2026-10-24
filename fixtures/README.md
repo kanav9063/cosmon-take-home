@@ -1,5 +1,14 @@
 # Inspectable evaluation inputs
 
+The complete current manifest is `fixtures/all-inputs.json`: the original 16
+examples plus three unchanged SDK producer captures under `producer/`.
+Two are completed live model runs (bracket and flange); the third is a scripted
+guard check. [producer-provenance.json](producer-provenance.json) records the
+source locations, IDs, origins and completion hashes. These captures were
+created in the SDK track and copied here after inventory validation; no new
+model call was made by this evaluator. The original `inputs.json` still selects
+only the original 16 examples for backwards-compatible reproduction.
+
 Run these bundles with `python3 evaluate.py --inputs fixtures/inputs.json
 --output-dir /tmp/new-eval-reports` from the repository root. The input manifest
 enumerates every requested run; no directory discovery or filename inference is

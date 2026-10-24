@@ -1,0 +1,9 @@
+{"evaluated": 1, "explicitly_rejected": 0, "requested": 1, "status": "complete"}
+{"example_bundles": 19, "live_model_runs": 2, "status": "pass", "tests_run": 154}
+...................................................................EVALUATOR ERROR: Report destination already exists; choose a new directory
+......INTERNAL EVALUATOR ERROR: RuntimeError: injected evaluator bug
+.................................................................................
+----------------------------------------------------------------------
+Ran 154 tests in 26.392s
+
+OK

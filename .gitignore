@@ -9,7 +9,9 @@
 # Language environments and caches, if used during the exercise.
 .venv/
 .venv-harbor/
+.venv-scout/
 .harbor-jobs/
+scout_setup/results/
 venv/
 __pycache__/
 *.py[cod]

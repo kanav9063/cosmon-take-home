@@ -1,0 +1,7 @@
+{
+  "inputs": [
+    {"id": "duplicate_a", "path": "../../fixtures/examples/repaired", "case": "bracket_v3"},
+    {"id": "duplicate_b", "path": "../../fixtures/examples/repaired", "case": "bracket_v3"},
+    {"id": "healthy_guard", "path": "../../fixtures/examples/guard_blocked", "case": "flange_v1"}
+  ]
+}

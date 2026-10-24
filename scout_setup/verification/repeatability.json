@@ -1,0 +1,24 @@
+{
+  "dimension_results": 133,
+  "docker_network": "none",
+  "docker_source_mount": "read-only",
+  "ignored_fields": [
+    "scan_location"
+  ],
+  "image": "python:3.12-slim-bookworm@sha256:6a0e06f5ba0b373d051aabd3fffb9b873f27f9a2a3a14bcbe37dee6f0e3bbc70",
+  "integration_sha256": {
+    "bridge.py": "412b6248d3c838208f32e085ede59b0430252df9e82b855ed05ac010f02049bd",
+    "requirements.lock": "8891c35f751ff76bcb3b7d8000eafa4831d53823126962a91ed30c67887f38b4",
+    "scanners.py": "ee41c0ab0b0ba95c382d0e35ddf3e06cad2a9549baccd80ee6659674b927e3cf"
+  },
+  "model_calls": 0,
+  "negative_dimension_results": 21,
+  "negative_explicitly_rejected": 2,
+  "negative_requested": 3,
+  "requested": 19,
+  "semantic_equality": [
+    "acceptance == repeat",
+    "acceptance == docker"
+  ],
+  "status": "pass"
+}

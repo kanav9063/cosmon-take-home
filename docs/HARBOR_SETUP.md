@@ -152,3 +152,15 @@ isolation and explicit transfer checks and records the remaining assignment
 completion gates. See also Harbor's
 [separate-verifier guide](https://docs.harborframework.com/tasks/separate-verifier)
 and [artifact collection semantics](https://docs.harborframework.com/jobs/artifact-collection).
+
+## Post-reference-audit recheck
+
+The unchanged infrastructure task was executed again in suite
+`.harbor-jobs/20261024T014508.152947Z` using
+`.venv-harbor/bin/python harbor_setup/check.py`. The
+[new verification record](../harbor_setup/verification-post-audit.json) retains
+all three trial/report hashes, package versions, lock digest, explicit separate
+verifier mode and both no-network policies. Both oracle attempts again returned
+reward 1; the no-op returned 0 for the expected missing output. All isolation,
+transfer, fresh-environment and original-file assertions passed. Model calls: 0.
+The original verification record remains historical evidence, unchanged.

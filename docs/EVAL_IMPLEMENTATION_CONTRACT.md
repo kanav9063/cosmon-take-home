@@ -60,6 +60,17 @@ to `main`. Raw schema version/time can be retained as metadata.
   published_ref, status}`. `path` is logical `outputs/<part>.json`; the referenced
   captured bytes establish the observed final destination. `status` is ok/failed.
   Later publication events supersede earlier ones for the same destination.
+  Optional `destination` records the absolute physical handoff file; combined
+  with CLI request `cwd`, it distinguishes a later private-workdir save from
+  a write to that handoff destination. Without it, matching logical output
+  paths share the local profile's output namespace. Paths are compared from
+  captured evidence, not opened on the current host.
+  An `ok` publication requires `published_ref`. A `failed` publication may omit
+  that reference when no destination bytes were captured, and must retain a
+  nonempty `error_type`, `error`, or `reason_code`. Any supplied reference is
+  verified even on failure. A fully captured failed publication does not make
+  the capture incomplete; it is execution-failure evidence and a diagnostic
+  if a later publication succeeds.
 - `run_finished`: `data.outcome_ref` points to the verified `outcome.json` loaded
   by the evaluator. It occurs exactly once as the last event; completion
   inventory closes capture.
@@ -84,3 +95,11 @@ CLI command; `Action.result` is independently parsed raw envelope `result`.
 Reducer entrypoint: `reconstruct(run: EvidenceRun, case: Case) -> History`.
 Checks entrypoint: `evaluate(run, history, case, policy=None) -> Evaluation`.
 Do not read expected outcomes from fixtures in either entrypoint.
+
+Evaluator 1.1 also checks causal artifact provenance: solve before save in the
+same session, captured snapshot after its producing save, and publication after
+its referenced snapshot. A later write to the delivered destination invalidates
+an earlier destination observation unless later verified bytes re-establish
+the selected artifact. A confirmed same-byte save or actual re-publication is
+sufficient; failed/uncaptured writes leave delivery unknown. Historical saved
+artifacts remain eligible when these final-destination requirements are met.

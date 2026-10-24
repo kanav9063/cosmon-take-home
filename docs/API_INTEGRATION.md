@@ -1,5 +1,13 @@
 # Connect a producer or model API
 
+The current SDK producer has now been exercised against this interface using
+its two completed live run bundles and scripted guard check, copied unchanged
+into [fixtures/producer](../fixtures/producer). The
+[provenance record](../fixtures/producer-provenance.json) identifies the original
+locations and completion hashes. These are actual producer outputs, not mock
+API payloads; no new model calls were required for evaluator acceptance.
+The procedure below remains the handoff for a different provider or harness.
+
 The evaluator is synchronous and offline. Connect the new API at the capture
 boundary; do not put a provider client inside the grading engine. An integration
 can either emit the supported local bundle or provide an explicit adapter that
@@ -98,8 +106,9 @@ bundle validator wherever possible instead of reimplementing this surface.
 - Check all expected model-visible requests/results were captured. Byte metrics
   are not token counts. Unknown provider usage remains null until mapped.
 
-The existing tests cover the internal adapter seam and the concrete local
-profile. They cannot certify a future provider's exporter before it exists.
+The tests cover the internal adapter seam, concrete local profile, and existing
+SDK-produced live bundles. They cannot certify a different future exporter
+before it exists.
 The SDK-owned proposal has not been silently amended or declared mutually
 agreed. Map its actual output to this local profile and version that mapping.
 

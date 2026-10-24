@@ -123,11 +123,33 @@ is an exact method name, so a row can be located without interpreting prose.
   `P.test_custom_case_rejects_missing_identity_fields_before_grading` rejects
   incomplete original revision/material metadata before grading begins.
 
+## Reference-audit additions in 1.1.0
+
+- [18 readiness regressions](../tests/test_readiness_review.py) cover artifact
+  causal ordering, later writes to the publication destination, separate private
+  save locations, known/unknown effects, same-byte rewrites, re-publication and
+  complete versus incomplete failure evidence. Exact decisions and test names
+  are in [READINESS_REVIEW.md](READINESS_REVIEW.md).
+- [Four Tau²-inspired regressions](../tests/test_tau2_review.py) require summary
+  membership for adverse checks, accept alternate valid trajectories, reject
+  unchanged unsafe no-op repairs, and retain proved violations in partial traces.
+- `P.test_report_pins_effective_case_and_installed_code` checks effective-policy
+  and source provenance. The existing 200-input test now also requires every
+  dimension's denominator to remain 200, including all three rejected entries.
+- [verify.py](../scripts/verify.py) asserts 19 bundled outcomes, including two
+  actual live producer captures and a scripted producer guard check, with
+  unchanged raw bytes and independent source-kind assertions.
+- [Optional Scout contract tests](../scout_setup/test_bridge.py) validate the
+  separate viewer import. Its persisted scan and reference parity are recorded
+  in [SCOUT_AUDIT.md](SCOUT_AUDIT.md); these tests do not require adding Scout to
+  the standard-library grader's runtime.
+
 ## Remaining boundaries
 
 1. A new provider must supply real raw model/tool/CLI captures through the
-   documented adapter seam. Simulated profile tests and scripted CLI recordings
-   verify local mechanics; they do not substitute for that integration test.
+   documented adapter seam. The existing SDK's two live bundles and scripted
+   guard capture are now included and checked; they do not certify a different
+   future provider before its own integration test.
 2. General free-form prose interpretation is deliberately unsupported. The
    deterministic `json/1` visible-claim contract is implemented; other formats
    receive an explicit unknown result.

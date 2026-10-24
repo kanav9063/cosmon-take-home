@@ -152,9 +152,23 @@ class PipelineTests(unittest.TestCase):
             summary = evaluate_batch(manifest_path, self.root / f"scale-reports-{index}")
             self.assertEqual((summary["requested"], summary["evaluated"], summary["explicitly_rejected"]), (200, 197, 3))
             self.assertEqual(len(summary["reports"]), 200)
+            for dimension, counts in summary["dimensions"].items():
+                self.assertEqual(sum(counts.values()), 200, dimension)
         first, second = self.root / "scale-reports-0", self.root / "scale-reports-1"
         self.assertEqual({p.name: p.read_bytes() for p in first.iterdir()},
                          {p.name: p.read_bytes() for p in second.iterdir()})
+
+    def test_report_pins_effective_case_and_installed_code(self):
+        from copy import deepcopy
+        path = scenario_bundle(self.root / "provenance")
+        case = deepcopy(self.cases["bracket_v3"])
+        initial = evaluate_one(path, case)
+        self.assertEqual(initial["evaluator"]["sources"]["evaluate.py"],
+                         digest((Path(__file__).resolve().parents[1] / "evaluate.py").read_bytes()))
+        case.target_sf += 1
+        changed = evaluate_one(path, case)
+        self.assertNotEqual(initial["configuration_digest"], changed["configuration_digest"])
+        self.assertNotEqual(initial["effective_case_policy"], changed["effective_case_policy"])
 
     def test_reports_cannot_overwrite_evidence_or_existing_runs(self):
         path = scenario_bundle(self.root / "valid")

@@ -1,0 +1,8 @@
+{
+  "ok": true,
+  "result": {
+    "element_size_mm": 1,
+    "elements": 2350,
+    "min_quality": 0.4557142857142857
+  }
+}

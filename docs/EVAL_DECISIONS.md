@@ -15,6 +15,7 @@ Detailed component records complement this file:
 - [Executed requirement coverage](EVAL_TEST_MATRIX.md)
 - [Concrete capture contract](EVAL_IMPLEMENTATION_CONTRACT.md)
 - [Connection and acceptance procedure](API_INTEGRATION.md)
+- [Tau²/Scout reference acceptance and current verification](REFERENCE_ACCEPTANCE.md)
 
 ## D01 — Authority and scope
 
@@ -271,7 +272,7 @@ The component decision records contain further rejected alternatives and exact
 test references. Generated verification records identify the source hashes and
 counts actually tested; passing prose or a planned matrix alone is not evidence.
 
-## Final verification checkpoint
+## Original 1.0.0 verification checkpoint
 
 - **131 automated tests passed** on the host and in the pinned Docker image.
   The container had `--network none`, a read-only source mount and temporary
@@ -297,6 +298,78 @@ accounting. The enclosing unittest result is the verification outcome.
 
 See [checked report index](../reports/eval-verification/REPORTS.md) and
 [source-digested verification](../reports/eval-verification/verification.json).
-No live model run is claimed. The next integration step is the documented
+No live model run was claimed at that checkpoint. The next integration step was the documented
 provider/producer mapping, followed by those real captures through this same
 offline evaluator.
+
+## D19 — Reference audit and 1.1.0 acceptance
+
+**Authority:** the user subsequently requested review of Sierra Tau²-bench and
+Inspect Scout, execution of the complete process, and closure of evaluator-side
+work. Reference research was authorized for this audit; evaluation runtime
+remained offline. A reference benchmark's different reward policy does not
+override this assignment or the user's accepted diagnostic/outcome decisions.
+
+**Reference selection:** inspect the official Tau² source at a fixed commit and
+Scout 0.6.1 at its release commit. Keep exact source links, interpretations and
+applicability in [TAU2_REFERENCE_AUDIT.md](TAU2_REFERENCE_AUDIT.md) and
+[SCOUT_AUDIT.md](SCOUT_AUDIT.md). Inspecting source is not executing Tau² or a
+model judge. Scout is actually installed and exercised as an optional viewer.
+
+**Corrections:** [READINESS_REVIEW.md](READINESS_REVIEW.md) records the reproduced
+save/snapshot ordering and stale-publication false passes, path identity rules,
+and legitimate publication-failure variant. Each correction has positive and
+negative raw-bundle regression controls. Rejected inputs now retain all seven
+dimension statuses as unknown, so every per-dimension denominator includes all
+requested entries. Reports retain effective case policy, Python version, source
+hashes and version 1.1.0; a changed direct-call case policy changes its digest.
+The additive output contract remains `partlab.eval/1`.
+
+**Actual producer evidence:** read completed SDK captures without invoking its
+agent or modifying the sibling tree. Verify inventory references and hashes;
+copy exact bytes only; verify the completion file is unchanged after copying.
+The [provenance inventory](../fixtures/producer-provenance.json) identifies source
+paths, observed git revision, completion hashes and evidence types. Git HEAD
+alone is not treated as a hash of uncommitted producer evidence. Two captures
+are real model runs made before this audit; the guard capture is scripted.
+They augment the original 16 examples to 19; the original manifest and original
+verification records remain available for historical reproduction.
+
+**Outcome interpretation:** the live bracket's repaired state and saved output
+pass. The live flange's bounded search did not find a repair; its truthful report
+passes. The scripted guard capture is evidence of safe refusal, not an invented
+model run or repair. No benchmark-wide success rate is inferred from these
+purposefully selected examples, and no model calls are made by re-evaluation.
+
+**Optional Scout:** keep its third-party packages in a separate pinned environment.
+Import explicit derived report projections, preserving original evidence labels,
+all dimensions, checks and raw references. Use a deterministic scanner with
+active message loading; reopen persisted results and compare every expected
+row and reference. Keep rejected inputs, test malformed import rejection,
+repeat the projection, and execute with networking disabled. A successful
+projection proves faithful display of grades; it does not independently prove
+the engineering grades. Detailed SC01–SC12 decisions are in the Scout audit.
+
+**Acceptance discipline:** changes invalidate earlier source-specific checks.
+An intermediate host run overlapped the final publication-failure correction;
+it and the concurrent malformed sweep were stopped and are not acceptance
+evidence. Host, Docker and malformed-input checks were restarted after source
+freeze. Harbor's unchanged infrastructure task was rerun independently. The
+final proof locations and counts are in
+[REFERENCE_ACCEPTANCE.md](REFERENCE_ACCEPTANCE.md).
+
+The first Scout persistence attempt exposed an upstream 0.6.1 DataFrame behavior:
+expanded rows flattened metadata into separate columns. The bridge rejected
+that mismatch instead of declaring success, then switched to the public nested
+transcript-result reader. SC13 records this correction. Final acceptance checks
+19 transcripts, 133 independent dimension results and 4,507 raw-reference
+occurrences, including repeat and offline Docker parity; a separate rejected
+input scan retains both rejections and all 21 dimension results.
+
+**Ownership boundary:** this release closes known evaluator-side work for the
+supported PartLab profile. The current SDK's vendored evaluator does not update
+automatically; choosing this release is an SDK integration action. New providers
+must produce the supported evidence or supply a trusted adapter and run
+conformance. Capturing a different provider, selecting credentials/models,
+recording the exercise and assembling its combined submission are not hidden
+evaluator implementation tasks. No sibling files were edited.

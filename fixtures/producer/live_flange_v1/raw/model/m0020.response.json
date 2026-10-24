@@ -1,0 +1,76 @@
+{
+  "output": [
+    {
+      "id": "__fake_id__",
+      "summary": [],
+      "type": "reasoning",
+      "content": [
+        {
+          "text": "**Exploring fillet options**\n\nI\u2019m thinking about the potential for a non-monotonic intermediate fillet. I\u2019d like to evaluate it through three trials with a thickness of 4, a fillet size of 5.5, and a hole size of 7. This combination seems reasonable for what I'm aiming to achieve. It\u2019ll be interesting to see how these variations work out in practice!",
+          "type": "reasoning_text"
+        }
+      ],
+      "encrypted_content": null,
+      "status": null,
+      "provider_data": {
+        "model": "openai/gpt-6.1-sol",
+        "response_id": "gen-1792806236-lMLGI2C6bcoWeHalV01a",
+        "_chat_completions_reasoning_field": "reasoning"
+      }
+    },
+    {
+      "arguments": "{}",
+      "call_id": "call_RmUtMdQBBDOBJOAFxMbQUdPN",
+      "name": "open_part",
+      "type": "function_call",
+      "id": "__fake_id__",
+      "async_": null,
+      "caller": null,
+      "namespace": null,
+      "status": null,
+      "provider_data": {
+        "model": "openai/gpt-6.1-sol",
+        "response_id": "gen-1792806236-lMLGI2C6bcoWeHalV01a"
+      }
+    }
+  ],
+  "usage": {
+    "requests": 1,
+    "input_tokens": 3957,
+    "input_tokens_details": {
+      "cache_write_tokens": 147,
+      "cached_tokens": 3807
+    },
+    "output_tokens": 48,
+    "output_tokens_details": {
+      "reasoning_tokens": 32
+    },
+    "total_tokens": 4005,
+    "request_usage_entries": []
+  },
+  "response_id": null,
+  "request_id": null,
+  "raw_usage": {
+    "completion_tokens": 48,
+    "prompt_tokens": 3957,
+    "total_tokens": 4005,
+    "completion_tokens_details": {
+      "audio_tokens": 0,
+      "reasoning_tokens": 32,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cache_write_tokens": 147,
+      "cached_tokens": 3807,
+      "video_tokens": 0
+    },
+    "cost": 0.0012342,
+    "is_byok": false,
+    "cost_details": {
+      "upstream_inference_cost": 0.0012342,
+      "upstream_inference_prompt_cost": 0.0007542,
+      "upstream_inference_completions_cost": 0.00048
+    }
+  }
+}
