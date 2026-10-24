@@ -27,13 +27,14 @@ Kanav has accepted these decisions:
 5. Stop at the first verified valid fix; further optimization is unnecessary.
 6. Use configurable exploration ranges without claiming that the search is
    complete. The actual numerical ranges remain to be chosen.
+7. Use OpenRouter with model `openai/gpt-6.1-sol` and medium reasoning.
 
 Everything below is an implementation recommendation unless it follows directly
 from those decisions or the README. Resolve these choices before live runs:
 
 | Decision | Recommendation, not an accepted final choice |
 | --- | --- |
-| Model and provider | Choose an explicit available model after checking credentials without printing secrets; record provider/model in each run. No silent SDK default. |
+| Model access verification | OpenRouter / `openai/gpt-6.1-sol` / medium reasoning are chosen. Verify live access and tool-calling compatibility; record the exact settings in every run. |
 | Candidate selection/order | Start with bounded model-proposed single-parameter trials. The first verified valid fix is the accepted stopping rule; the candidate proposal/order method remains open. |
 | Numerical candidate ranges | Choose the actual finite, positive exploration bounds for each parameter and label their source. Configurability and the absence of a completeness claim are accepted; the numeric bounds are not yet set. |
 | Budget | Set maximum candidate trials, model turns, output tokens, wall time, and any monetary cap before a paid run. Record the effective values. |
@@ -391,13 +392,13 @@ can select one focused test from this suite and explain exactly what it proves.
 ### Proposed live commands — not implemented or executed
 
 The CLI spelling below is a recommendation for the future implementation.
-Configure `COSMON_MODEL` and an approved run-budget config before using it;
+Use the selected model/effort and an approved run-budget config before using it;
 do not put secret values in commands or RUN.md. Exact configuration options
 must be implemented and documented rather than silently ignored.
 
 ```bash
-python -m cosmon_agent run --part bracket_v3 --model "$COSMON_MODEL" --run-id 11111111-1111-4111-8111-111111111111 --config run-config.json
-python -m cosmon_agent run --part flange_v1 --model "$COSMON_MODEL" --run-id 22222222-2222-4222-8222-222222222222 --config run-config.json
+python -m cosmon_agent run --part bracket_v3 --model openai/gpt-6.1-sol --reasoning-effort medium --run-id 11111111-1111-4111-8111-111111111111 --config run-config.json
+python -m cosmon_agent run --part flange_v1 --model openai/gpt-6.1-sol --reasoning-effort medium --run-id 22222222-2222-4222-8222-222222222222 --config run-config.json
 ```
 
 Use new UUIDs for subsequent runs; existing run directories must not be reused.

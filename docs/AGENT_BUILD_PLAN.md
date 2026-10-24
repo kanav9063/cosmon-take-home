@@ -7,6 +7,11 @@ dependency consistency, SDK tool schema/local invocation, PartLab baseline
 workflow (SF 1.428), and a closed-session solve returning StateError. No model
 request was made. See [SDK_SETUP.md](SDK_SETUP.md) for reproduction commands.
 
+The selected provider/model is **OpenRouter / `openai/gpt-6.1-sol` with medium
+reasoning**, explicitly chosen by Kanav. The ignored local `.env` stores the
+key and selected settings; [.env.example](../.env.example) contains nonsecret
+placeholders. Live access and tool-calling compatibility remain to be tested.
+
 ## What we want to build
 
 One agent receives a named part, reports its baseline safety factor under its
@@ -86,6 +91,6 @@ The former gives the model a meaningful engineering decision; the latter makes
 the search domain easier to enumerate. Neither establishes global infeasibility
 when the exploration bounds do not cover the whole legal design space.
 
-Exact numerical bounds, candidate ordering, model, budgets, retry/timeout
+Exact numerical bounds, candidate ordering, budgets, retry/timeout
 settings and the trace interface remain open. API credentials are not needed
 to settle the tool design or test the wrappers offline.

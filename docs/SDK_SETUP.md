@@ -75,9 +75,24 @@ and `model_calls: 0`; they are not the assignment's raw agent traces.
 
 `pip check` also passed. The shell has no configured `OPENAI_API_KEY`,
 `OPENAI_BASE_URL` or `OPENAI_MODEL`; only presence was inspected, never values.
-Provider account access and a model choice remain unverified. Codex and Claude
+At that check, provider account access was unverified and no model was selected. Codex and Claude
 CLIs are available; that does not establish OpenAI API access. uv and Docker
 are not on PATH. No account credentials are required for these setup checks.
+
+Subsequent configuration: Kanav selected OpenRouter model
+`openai/gpt-6.1-sol` with medium reasoning. `.env` is ignored and owner-readable/
+writable only; [.env.example](../.env.example) records the nonsecret settings.
+`OPENROUTER_REASONING_EFFORT` is our application's configuration name: the
+future agent must load it and set
+`ModelSettings(reasoning=Reasoning(effort="medium"))`. File loading and the live
+agent are not implemented yet. The model exists in OpenRouter's public catalog
+with tool calling and reasoning support; the installed SDK accepts medium
+reasoning. No paid request or credential validation was performed.
+The catalog does not advertise `temperature` or `parallel_tool_calls` for this
+model; omit optional unsupported settings until compatibility is established,
+and retain runner-side serialization regardless of provider options.
+Sources: [model](https://openrouter.ai/openai/gpt-6.1-sol),
+[reasoning settings](https://openrouter.ai/docs/guides/best-practices/reasoning-tokens).
 
 [reports/sdk-lock-replay.json](../reports/sdk-lock-replay.json) records a second
 check in a newly created temporary venv: installation from `requirements.lock`,
@@ -128,7 +143,7 @@ chat. The two chats have not messaged each other.
 
 Accepted here: stop at the first valid verified fix, and use configurable
 exploration ranges without claiming completeness. Still resolve the exact
-model/access, numerical ranges and candidate order, budgets/retries/timeouts,
+live model access, numerical ranges and candidate order, budgets/retries/timeouts,
 mesh and numeric policy, and the shared schema before live implementation.
 The exercise must still produce both real agent traces, required checks,
 saved repairs where found, offline eval and flawed-trace detection, the
