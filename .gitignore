@@ -8,6 +8,8 @@
 
 # Language environments and caches, if used during the exercise.
 .venv/
+.venv-harbor/
+.harbor-jobs/
 venv/
 __pycache__/
 *.py[cod]

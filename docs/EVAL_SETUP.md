@@ -3,6 +3,10 @@
 Prepared October 23, 2026 (ET), in `/home/ubuntu/work/cosmon-eval` on
 `setup/eval-plan`, starting from `20b46cd`.
 
+This record describes the initial preparation. Later, Kanav explicitly requested
+Harbor setup; its separate environment and infrastructure checks are documented
+in [HARBOR_SETUP.md](HARBOR_SETUP.md). The core `.venv/` remains dependency-free.
+
 This is preparation for the narrated one-hour exercise. No evaluator, model run,
 actual raw agent trace, repaired PartLab output, or exercise recording was made
 here. The starter `RUN.md` is still a submission template. Its actual agent/eval

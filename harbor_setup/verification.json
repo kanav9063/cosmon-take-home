@@ -1,0 +1,66 @@
+{
+  "purpose": "infrastructure-preparation-only",
+  "model_calls": 0,
+  "versions": {
+    "harbor": "0.24.0",
+    "python": "3.12.3",
+    "docker_server": "29.1.3",
+    "compose": "2.40.3+ds1-0ubuntu1~24.04.1"
+  },
+  "dependency_lock_sha256": "dab3455969e10475fecf8ff1cbbe2820790fb6fb518d519fe80f998127f39840",
+  "suite": ".harbor-jobs/20261024T011529.577463Z",
+  "original_sha256": {
+    "README.md": "66c7a27bdfeae291aa42ecaa3681c2d53341d613369eaeb38b0bc5c78d805ebe",
+    "partlab": "9b202e1ba07861f52f12005108e81815ef14d92f2db3ba322fc51422746ab183",
+    "parts/bracket_v1.json": "75d4fad2ed12a6f1ce16c02fcbcb3626ad07b627434299d91400eefb3e7ccfe4",
+    "parts/bracket_v2.json": "990107daa0bcd5c48c5cd5ba84a8c8d132833660f8e9fe5ad0bcd4c28e7258a4",
+    "parts/bracket_v3.json": "9756780586e273177a75155a9e814d514bae9cd21dcc4ee64dc6c32626fdadc8",
+    "parts/bracket_v3_thick.json": "f4a09ed6b27c9bdb9bbc2053640278837bc8918b65935b9d70dd216fa2e4b394",
+    "parts/flange_v1.json": "0e6535b551bb5a441e207fd4d057774c14de0e40c55f7ada83c17fdbd8b7ab7f",
+    "parts/housing_v1.json": "3875c6a153eb20313141c79a24a541d0c97bb74430a39bb5cc6fd4e976a55d56"
+  },
+  "checks": [
+    {
+      "agent": "oracle",
+      "reward": 1.0,
+      "trial_result": ".harbor-jobs/20261024T011529.577463Z/oracle/task__2txysW2/result.json",
+      "trial_result_sha256": "fb7822416b69221b138ae381bf3ddd90867f365a6eef4804452325058da3deb5",
+      "verifier_report": ".harbor-jobs/20261024T011529.577463Z/oracle/task__2txysW2/verifier/report.json",
+      "verifier_report_sha256": "728a1b66ed33576bd163cf24aa8d57ffeafa7789529804db34770a1a42e810a0",
+      "exception": null,
+      "agent_exit": "success",
+      "safety_factor": 1.428,
+      "artifact_dir": ".harbor-jobs/20261024T011529.577463Z/oracle/task__2txysW2/artifacts/logs/artifacts",
+      "command_count": 7,
+      "artifact_capture": "pass"
+    },
+    {
+      "agent": "oracle",
+      "reward": 1.0,
+      "trial_result": ".harbor-jobs/20261024T011529.577463Z/oracle/task__eu6aBnX/result.json",
+      "trial_result_sha256": "3cc8519b52340cc6060f9e7537a78ef7497d158c789ab285dab16cd508b14c2c",
+      "verifier_report": ".harbor-jobs/20261024T011529.577463Z/oracle/task__eu6aBnX/verifier/report.json",
+      "verifier_report_sha256": "728a1b66ed33576bd163cf24aa8d57ffeafa7789529804db34770a1a42e810a0",
+      "exception": null,
+      "agent_exit": "success",
+      "safety_factor": 1.428,
+      "artifact_dir": ".harbor-jobs/20261024T011529.577463Z/oracle/task__eu6aBnX/artifacts/logs/artifacts",
+      "command_count": 7,
+      "artifact_capture": "pass"
+    },
+    {
+      "agent": "nop",
+      "reward": 0.0,
+      "trial_result": ".harbor-jobs/20261024T011529.577463Z/nop/task__EzXpqEC/result.json",
+      "trial_result_sha256": "90da5947073a0daef9f3e3ca421636c2d40e6d37c661c6ce54f0403b79ab52aa",
+      "verifier_report": ".harbor-jobs/20261024T011529.577463Z/nop/task__EzXpqEC/verifier/report.json",
+      "verifier_report_sha256": "b9cf69dd5c99f5c95be61c1e346e25fca056930830da5bdacd8c475082430bbc",
+      "exception": null,
+      "agent_exit": "success",
+      "fresh_environment": "pass",
+      "expected_missing_output": "pass"
+    }
+  ],
+  "starter_unchanged": true,
+  "status": "pass"
+}

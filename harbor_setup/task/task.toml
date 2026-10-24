@@ -1,0 +1,22 @@
+schema_version = "1.4"
+
+[task]
+name = "cosmon/partlab-infrastructure-smoke"
+version = "1.0.0"
+description = "Scripted baseline CLI exercise for local Harbor setup verification."
+
+[metadata]
+purpose = "infrastructure-preparation-only"
+
+[agent]
+timeout_sec = 60.0
+
+[verifier]
+timeout_sec = 60.0
+environment_mode = "shared"
+
+[environment]
+build_timeout_sec = 600.0
+cpus = 1
+memory_mb = 512
+network_mode = "no-network"

@@ -364,7 +364,11 @@ is a fake simulator; neither mode establishes real-world engineering safety.
 
 ## Conditional integrations, verified from official sources
 
-No integration package was installed. These are follow-on options only:
+No integration package was installed during the initial preparation. Kanav later
+explicitly requested Harbor setup; see [HARBOR_SETUP.md](HARBOR_SETUP.md) for its
+separate environment and infrastructure verification. This does not implement
+the planned evaluator or establish the producer contract. The following remain
+integration design notes:
 
 - Scout documents ATIF ingestion via `inspect_scout.sources.atif` and an
   additional `harbor>=0.6.0` dependency requiring Python ≥3.12. It also accepts
