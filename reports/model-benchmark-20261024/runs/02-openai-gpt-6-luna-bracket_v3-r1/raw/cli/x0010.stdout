@@ -1,0 +1,8 @@
+{
+  "ok": true,
+  "result": {
+    "fillet_radius_mm": 2,
+    "hole_diameter_mm": 8,
+    "thickness_mm": 12
+  }
+}

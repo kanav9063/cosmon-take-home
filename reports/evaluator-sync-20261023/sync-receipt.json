@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "source_commit": "b60473ca172a2fad33c377e96c212f2adb6aa84f",
+  "evaluator_version": "1.1.0",
+  "imported_file_count": 24,
+  "all_imported_source_worktree_bytes_match_commit": true,
+  "all_destination_bytes_match_commit": true,
+  "core_sha256": {
+    "eval_checks.py": "c6900b6d885e0cf1bdf59e487bf6be550fb254f638cf0e2f95609109742d8f1b",
+    "eval_state.py": "7ea4d66cae608df73d7ebc8069150e28aaf9c42b6bcc764a443d7316ac81b8a9",
+    "eval_types.py": "b03ec65d0b6a08fa473826fd168bdd9dcabb2f90bf9e1c983cc37bde24fd63e0",
+    "evaluate.py": "e20006538ee80bc17f30d162c618d7bb7c7e3a6dfcec6319c8d411836fb89f2e",
+    "trace_adapter.py": "7911652c4bf8b41a8e09a97c7b1db52950ade009aff905ee7f67ac9c1153ad53"
+  },
+  "previous_provenance": "evaluation/provenance/1.0.0.json",
+  "test_command": "PYTHONPATH=evaluation .venv/bin/python -m unittest discover -s evaluation/tests -v",
+  "test_log": "evaluator-tests.log",
+  "test_exit_code": 0,
+  "test_count": 154,
+  "test_duration_seconds": 27.591,
+  "test_log_sha256": "7c98635a29b6f63eec3e0db7c9dac5ac2e7d79682aa7a5b829003b20e2edb062",
+  "test_log_bytes": 23644
+}

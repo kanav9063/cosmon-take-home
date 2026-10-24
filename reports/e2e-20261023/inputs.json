@@ -1,0 +1,19 @@
+{
+  "inputs": [
+    {
+      "id": "bracket",
+      "path": "bracket",
+      "case": "bracket_v3"
+    },
+    {
+      "id": "flange",
+      "path": "flange",
+      "case": "flange_v1"
+    },
+    {
+      "id": "guard-flange",
+      "path": "../guard-check-20261023-201100/trace",
+      "case": "flange_v1"
+    }
+  ]
+}

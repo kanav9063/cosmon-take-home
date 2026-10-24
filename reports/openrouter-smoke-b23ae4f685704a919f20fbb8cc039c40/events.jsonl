@@ -1,3 +1,0 @@
-{"seq": 1, "kind": "http_request", "request_number": 1, "body_file": "request-1.json"}
-{"seq": 2, "kind": "http_response", "request_number": 1, "status_code": 401, "body_file": "response-1.json", "redacted": false}
-{"seq": 3, "kind": "failure", "error_type": "AuthenticationError"}

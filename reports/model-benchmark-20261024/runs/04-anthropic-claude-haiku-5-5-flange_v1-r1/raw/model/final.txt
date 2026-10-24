@@ -1,0 +1,5 @@
+I'm stopping here. Within the allowed single-parameter ranges, no candidate reached a safety factor of 2.0. Thickness 5.0 mm gave the best result, 0.839. The hole and fillet changes did not come close, and the fillet change had no effect. Three trials remain unused.
+
+```json
+{"status":"no_repair_found","initial_sf":0.212,"final_sf":0.839,"changed_parameter":null,"artifact_id":null}
+```

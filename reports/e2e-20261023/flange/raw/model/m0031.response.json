@@ -1,0 +1,58 @@
+{
+  "output": [
+    {
+      "arguments": "{\"name\":\"hole_diameter_mm\",\"value\":7}",
+      "call_id": "call_1QM2M4XADlfkKDV1GdjQdQCa",
+      "name": "set_parameter",
+      "type": "function_call",
+      "id": "__fake_id__",
+      "async_": null,
+      "caller": null,
+      "namespace": null,
+      "status": null,
+      "provider_data": {
+        "model": "openai/gpt-6.1-sol",
+        "response_id": "gen-1792806255-g7WIJITMAzpK5izuMefs"
+      }
+    }
+  ],
+  "usage": {
+    "requests": 1,
+    "input_tokens": 5624,
+    "input_tokens_details": {
+      "cache_write_tokens": 238,
+      "cached_tokens": 5383
+    },
+    "output_tokens": 25,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 5649,
+    "request_usage_entries": []
+  },
+  "response_id": null,
+  "request_id": null,
+  "raw_usage": {
+    "completion_tokens": 25,
+    "prompt_tokens": 5624,
+    "total_tokens": 5649,
+    "completion_tokens_details": {
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cache_write_tokens": 238,
+      "cached_tokens": 5383,
+      "video_tokens": 0
+    },
+    "cost": 0.0013893,
+    "is_byok": false,
+    "cost_details": {
+      "upstream_inference_cost": 0.0013893,
+      "upstream_inference_prompt_cost": 0.0011393,
+      "upstream_inference_completions_cost": 0.00025
+    }
+  }
+}

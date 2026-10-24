@@ -1,0 +1,1 @@
+{"ok":true,"result":{"safety_factor":0.212,"max_stress_MPa":848.53,"converged":true,"iterations":12,"load":{"face_id":"face_mating","force_N":8000,"direction":"-Z"},"solve_cli_id":"x0006","changed_parameter":null},"phase":"solved","state_revision":4,"initial_sf":0.212,"best_sf":0.212,"best_solve_cli_id":"x0006","remaining_trials":6}

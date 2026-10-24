@@ -1,0 +1,52 @@
+{
+  "checks": {
+    "interrupted_capture_is_incomplete": true,
+    "report_determinism_and_order_independence": true,
+    "source_capture_integrity_passes": true,
+    "source_outcomes_are_verified": true,
+    "source_process_compliance_passes": true,
+    "source_reporting_accuracy_passes": true,
+    "stale_capture_integrity_passes": true,
+    "stale_solve_detected": true
+  },
+  "derivatives_are_synthetic": true,
+  "source_results": {
+    "bracket": {
+      "observed_outcome": "repaired",
+      "summary": {
+        "capture_integrity": "pass",
+        "delivery": "pass",
+        "efficiency": "not_applicable",
+        "final_correctness": "pass",
+        "process_compliance": "pass",
+        "repair_achievement": "pass",
+        "reporting_accuracy": "pass"
+      }
+    },
+    "flange": {
+      "observed_outcome": "search_exhausted",
+      "summary": {
+        "capture_integrity": "pass",
+        "delivery": "not_applicable",
+        "efficiency": "not_applicable",
+        "final_correctness": "not_applicable",
+        "process_compliance": "pass",
+        "repair_achievement": "fail",
+        "reporting_accuracy": "pass"
+      }
+    },
+    "guard-flange": {
+      "observed_outcome": "search_exhausted",
+      "summary": {
+        "capture_integrity": "pass",
+        "delivery": "not_applicable",
+        "efficiency": "not_applicable",
+        "final_correctness": "not_applicable",
+        "process_compliance": "pass",
+        "repair_achievement": "fail",
+        "reporting_accuracy": "pass"
+      }
+    }
+  },
+  "status": "passed"
+}

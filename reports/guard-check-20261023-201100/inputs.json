@@ -1,0 +1,9 @@
+{
+  "inputs": [
+    {
+      "case": "flange_v1",
+      "id": "blocked-flange",
+      "path": "trace"
+    }
+  ]
+}

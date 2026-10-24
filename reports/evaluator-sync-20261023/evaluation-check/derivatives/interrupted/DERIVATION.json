@@ -1,0 +1,8 @@
+{
+  "kind": "interrupted",
+  "source_events_sha256": "aa84a5e5a8e664859bea57ed638053db8843f294b2a2cabf4973da9963152207",
+  "source_manifest_sha256": "b403556f03bf79dc0c2c5579cf9679d6390bebb541373e796687eab4b022f899",
+  "source_run_id": "65a79b91-2d85-47d8-acf8-8600bc4d03bb",
+  "source_unchanged": true,
+  "synthetic": true
+}

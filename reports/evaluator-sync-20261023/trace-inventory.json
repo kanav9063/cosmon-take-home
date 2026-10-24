@@ -1,0 +1,45 @@
+{
+  "status": "passed",
+  "runs": [
+    {
+      "trace": "reports/e2e-20261023/bracket",
+      "status": "passed",
+      "files": 70,
+      "events": 101,
+      "counts": {
+        "model_requested": 11,
+        "model_returned": 11,
+        "model_failed": 0,
+        "tool_proposed": 10,
+        "tool_returned": 10,
+        "cli_requested": 14,
+        "cli_started": 14,
+        "cli_finished": 14,
+        "solve_observed": 2,
+        "artifact_saved": 1,
+        "artifact_published": 1
+      },
+      "completion_sha256": "304ea12d39eeca2458d0a2a71eeb0d787533f6212f5010ab747f2a676e2b1848"
+    },
+    {
+      "trace": "reports/e2e-20261023/flange",
+      "status": "passed",
+      "files": 208,
+      "events": 331,
+      "counts": {
+        "model_requested": 35,
+        "model_returned": 35,
+        "model_failed": 0,
+        "tool_proposed": 34,
+        "tool_returned": 34,
+        "cli_requested": 48,
+        "cli_started": 48,
+        "cli_finished": 48,
+        "solve_observed": 7,
+        "artifact_saved": 0,
+        "artifact_published": 0
+      },
+      "completion_sha256": "95fb3490b010a7d5c530cfd6415ecb536c43774eb540829014d77a0f5e94c500"
+    }
+  ]
+}

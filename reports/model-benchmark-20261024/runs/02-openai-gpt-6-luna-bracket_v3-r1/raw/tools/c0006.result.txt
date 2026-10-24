@@ -1,0 +1,1 @@
+{"ok":true,"result":{"downstream_invalidated":true,"name":"thickness_mm","new_value":12,"previous_value":3,"changed_parameter":{"name":"thickness_mm","from":3.0,"to":12}},"phase":"open","state_revision":6,"initial_sf":1.428,"best_sf":1.428,"best_solve_cli_id":"x0006","remaining_trials":5}

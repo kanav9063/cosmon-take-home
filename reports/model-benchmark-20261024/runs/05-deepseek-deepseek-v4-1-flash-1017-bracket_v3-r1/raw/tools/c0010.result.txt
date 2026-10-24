@@ -1,0 +1,1 @@
+{"ok":true,"result":{"path":"outputs/bracket_v3.json","artifact_id":"a0001","changed_parameter":{"name":"thickness_mm","from":3.0,"to":5.0},"safety_factor":3.072,"solve_cli_id":"x0013","sha256":"1c4dc1a15277c897dba11a9e131dabfcaa32ff9c6f9a920a59a5309a82c66c6a"},"phase":"solved","state_revision":8,"initial_sf":1.428,"best_sf":3.072,"best_solve_cli_id":"x0013","remaining_trials":5}

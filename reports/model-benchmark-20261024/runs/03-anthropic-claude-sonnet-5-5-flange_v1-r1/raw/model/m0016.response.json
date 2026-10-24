@@ -1,0 +1,58 @@
+{
+  "output": [
+    {
+      "arguments": "{\"name\": \"hole_diameter_mm\", \"value\": 4}",
+      "call_id": "toolu_014sz6g3AoYGN3xJSV1Bf4Hf",
+      "name": "set_parameter",
+      "type": "function_call",
+      "id": "__fake_id__",
+      "async_": null,
+      "caller": null,
+      "namespace": null,
+      "status": null,
+      "provider_data": {
+        "model": "anthropic/claude-sonnet-5.5",
+        "response_id": "gen-1792806875-F5xME1G3tDRoRB0XLABX"
+      }
+    }
+  ],
+  "usage": {
+    "requests": 1,
+    "input_tokens": 6319,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 78,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 6397,
+    "request_usage_entries": []
+  },
+  "response_id": null,
+  "request_id": null,
+  "raw_usage": {
+    "completion_tokens": 78,
+    "prompt_tokens": 6319,
+    "total_tokens": 6397,
+    "completion_tokens_details": {
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cache_write_tokens": 0,
+      "cached_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost": 0.013418,
+    "is_byok": false,
+    "cost_details": {
+      "upstream_inference_cost": 0.013418,
+      "upstream_inference_prompt_cost": 0.012638,
+      "upstream_inference_completions_cost": 0.00078
+    }
+  }
+}

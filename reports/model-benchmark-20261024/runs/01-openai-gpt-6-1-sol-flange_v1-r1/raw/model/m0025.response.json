@@ -1,0 +1,76 @@
+{
+  "output": [
+    {
+      "id": "__fake_id__",
+      "summary": [],
+      "type": "reasoning",
+      "content": [
+        {
+          "text": "**Exploring fillet and hole**\n\nI\u2019m trying to delve into the intermediate fillet and hole concepts without making assumptions. I want to make sure I'm fully covering the topic and understanding the nuances. It feels important to go through each detail carefully to provide accurate information. I\u2019ll break it down thoroughly to ensure nothing is missed and that the user gets the most helpful insight. There\u2019s a lot to unpack here!",
+          "type": "reasoning_text"
+        }
+      ],
+      "encrypted_content": null,
+      "status": null,
+      "provider_data": {
+        "model": "openai/gpt-6.1-sol",
+        "response_id": "gen-1792806898-CDQbiKquHpsllJVazxUq",
+        "_chat_completions_reasoning_field": "reasoning"
+      }
+    },
+    {
+      "arguments": "{}",
+      "call_id": "call_h9rSRHhvDKUaCsqFpLtOfNZP",
+      "name": "open_part",
+      "type": "function_call",
+      "id": "__fake_id__",
+      "async_": null,
+      "caller": null,
+      "namespace": null,
+      "status": null,
+      "provider_data": {
+        "model": "openai/gpt-6.1-sol",
+        "response_id": "gen-1792806898-CDQbiKquHpsllJVazxUq"
+      }
+    }
+  ],
+  "usage": {
+    "requests": 1,
+    "input_tokens": 4640,
+    "input_tokens_details": {
+      "cache_write_tokens": 144,
+      "cached_tokens": 4493
+    },
+    "output_tokens": 32,
+    "output_tokens_details": {
+      "reasoning_tokens": 16
+    },
+    "total_tokens": 4672,
+    "request_usage_entries": []
+  },
+  "response_id": null,
+  "request_id": null,
+  "raw_usage": {
+    "completion_tokens": 32,
+    "prompt_tokens": 4640,
+    "total_tokens": 4672,
+    "completion_tokens_details": {
+      "audio_tokens": 0,
+      "reasoning_tokens": 16,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cache_write_tokens": 144,
+      "cached_tokens": 4493,
+      "video_tokens": 0
+    },
+    "cost": 0.0011353,
+    "is_byok": false,
+    "cost_details": {
+      "upstream_inference_cost": 0.0011353,
+      "upstream_inference_prompt_cost": 0.0008153,
+      "upstream_inference_completions_cost": 0.00032
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "checks": {
+    "proposal_blocked": true,
+    "no_cli_dispatch": true,
+    "state_bytes_unchanged": true,
+    "engine_parameters_unchanged": true,
+    "state_revision_unchanged": true,
+    "no_accepted_candidate": true,
+    "capture_integrity_passes": true,
+    "process_compliance_passes": true,
+    "reporting_accuracy_passes": true,
+    "blocked_proposal_is_diagnostic": true
+  },
+  "blocked_result": {
+    "ok": false,
+    "error_type": "PolicyError",
+    "reason_code": "manufacturing.constraint",
+    "error": "thickness_mm must satisfy {'max': 5.0}; propose a legal value.",
+    "phase": "open",
+    "state_revision": 5,
+    "initial_sf": 0.212,
+    "best_sf": 0.212,
+    "best_solve_cli_id": "x0006",
+    "remaining_trials": 6
+  },
+  "baseline_sf": 0.212,
+  "state_sha256": "88430a3e518bd633f73a8e41cd514540fe5c2c61f0186c27fc744ede2dc71704",
+  "model_calls": 0,
+  "evidence_kind": "preparation_check",
+  "status": "passed",
+  "observed_outcome": "search_exhausted",
+  "report": "evaluation/report-blocked-flange.json"
+}

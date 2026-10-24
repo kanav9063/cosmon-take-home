@@ -1,0 +1,319 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "PartLab repair agent",
+    "locale": "en",
+    "output": ".archify/architecture-partlab-20261023-185442/architecture.html",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "git@github.com:kanav9063/cosmon-take-home.git",
+      "link_mode": "local-only",
+      "revision": "626799126295f28237a023f7cabf44d94aca664d"
+    }
+  },
+  "components": [
+    {
+      "id": "cli_entry",
+      "type": "external",
+      "label": "CLI invocation",
+      "sublabel": "part + output path",
+      "pos": [
+        40,
+        80
+      ],
+      "size": [
+        150,
+        66
+      ],
+      "sources": [
+        {
+          "path": "cosmon_agent/__main__.py",
+          "line": 19,
+          "end_line": 36
+        }
+      ]
+    },
+    {
+      "id": "sdk",
+      "type": "backend",
+      "label": "Agents SDK loop",
+      "sublabel": "prompt, budgets, tool calls",
+      "pos": [
+        300,
+        80
+      ],
+      "size": [
+        185,
+        66
+      ],
+      "sources": [
+        {
+          "path": "cosmon_agent/agent.py",
+          "line": 415,
+          "end_line": 429
+        }
+      ]
+    },
+    {
+      "id": "model",
+      "type": "cloud",
+      "label": "OpenRouter model",
+      "sublabel": "proposes next action",
+      "pos": [
+        620,
+        80
+      ],
+      "size": [
+        175,
+        66
+      ],
+      "sources": [
+        {
+          "path": "cosmon_agent/agent.py",
+          "line": 410,
+          "end_line": 418
+        }
+      ]
+    },
+    {
+      "id": "guard",
+      "type": "security",
+      "label": "Guarded executor",
+      "sublabel": "7 tools \u00b7 serialized state",
+      "pos": [
+        300,
+        310
+      ],
+      "size": [
+        185,
+        72
+      ],
+      "sources": [
+        {
+          "path": "cosmon_agent/agent.py",
+          "line": 119,
+          "end_line": 148
+        },
+        {
+          "path": "cosmon_agent/engine.py",
+          "line": 248,
+          "end_line": 283
+        },
+        {
+          "path": "cosmon_agent/engine.py",
+          "line": 285,
+          "end_line": 294
+        }
+      ]
+    },
+    {
+      "id": "partlab",
+      "type": "backend",
+      "label": "PartLab CLI",
+      "sublabel": "mesh, load, solve, save",
+      "pos": [
+        620,
+        430
+      ],
+      "size": [
+        175,
+        72
+      ],
+      "sources": [
+        {
+          "path": "cosmon_agent/engine.py",
+          "line": 118,
+          "end_line": 169
+        }
+      ]
+    },
+    {
+      "id": "saved",
+      "type": "database",
+      "label": "Verified part JSON",
+      "sublabel": "fresh SF \u2265 2; exact bytes",
+      "pos": [
+        940,
+        430
+      ],
+      "size": [
+        175,
+        72
+      ],
+      "sources": [
+        {
+          "path": "cosmon_agent/engine.py",
+          "line": 366,
+          "end_line": 411
+        }
+      ]
+    },
+    {
+      "id": "trace",
+      "type": "database",
+      "label": "Trace bundle",
+      "sublabel": "raw evidence + events",
+      "pos": [
+        300,
+        560
+      ],
+      "size": [
+        185,
+        72
+      ],
+      "sources": [
+        {
+          "path": "cosmon_agent/trace.py",
+          "line": 28,
+          "end_line": 68
+        }
+      ]
+    },
+    {
+      "id": "evaluator",
+      "type": "backend",
+      "label": "Offline evaluator",
+      "sublabel": "independent state checks",
+      "pos": [
+        620,
+        560
+      ],
+      "size": [
+        175,
+        72
+      ],
+      "sources": [
+        {
+          "path": "evaluation/evaluate.py",
+          "line": 110,
+          "end_line": 115
+        },
+        {
+          "path": "evaluation/trace_adapter.py",
+          "line": 474,
+          "end_line": 527
+        }
+      ]
+    },
+    {
+      "id": "report",
+      "type": "database",
+      "label": "Evaluation reports",
+      "sublabel": "integrity \u00b7 repair \u00b7 delivery",
+      "pos": [
+        940,
+        560
+      ],
+      "size": [
+        175,
+        72
+      ],
+      "sources": [
+        {
+          "path": "evaluation/evaluate.py",
+          "line": 224,
+          "end_line": 253
+        }
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "start",
+      "from": "cli_entry",
+      "to": "sdk",
+      "label": "start run",
+      "variant": "emphasis"
+    },
+    {
+      "id": "request_model",
+      "from": "sdk",
+      "to": "model",
+      "label": "model request"
+    },
+    {
+      "id": "model_proposes",
+      "from": "model",
+      "to": "sdk",
+      "label": "response + proposals"
+    },
+    {
+      "id": "invoke_tool",
+      "from": "sdk",
+      "to": "guard",
+      "label": "7 tool calls",
+      "variant": "emphasis"
+    },
+    {
+      "id": "compact_return",
+      "from": "guard",
+      "to": "sdk",
+      "label": "compact tool results"
+    },
+    {
+      "id": "run_cli",
+      "from": "guard",
+      "to": "partlab",
+      "label": "validated commands",
+      "variant": "security"
+    },
+    {
+      "id": "raw_result",
+      "from": "partlab",
+      "to": "guard",
+      "label": "raw results"
+    },
+    {
+      "id": "publish",
+      "from": "guard",
+      "to": "saved",
+      "label": "verify + publish",
+      "variant": "emphasis"
+    },
+    {
+      "id": "capture_model",
+      "from": "sdk",
+      "to": "trace",
+      "label": "SDK messages"
+    },
+    {
+      "id": "capture_cli",
+      "from": "guard",
+      "to": "trace",
+      "label": "CLI bytes + tool returns"
+    },
+    {
+      "id": "grade",
+      "from": "trace",
+      "to": "evaluator",
+      "label": "offline evidence",
+      "variant": "dashed"
+    },
+    {
+      "id": "write_report",
+      "from": "evaluator",
+      "to": "report",
+      "label": "structured verdict",
+      "variant": "emphasis"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "amber",
+      "title": "Execution gate",
+      "items": [
+        "Restore original before each candidate",
+        "Save only a fresh, converged single-parameter repair"
+      ]
+    },
+    {
+      "dot": "violet",
+      "title": "Evidence boundary",
+      "items": [
+        "Full CLI logs stay in the trace; the model gets compact results",
+        "Evaluator grades recorded actions independently"
+      ]
+    }
+  ]
+}

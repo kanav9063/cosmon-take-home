@@ -1,0 +1,95 @@
+{
+  "output": [
+    {
+      "id": "__fake_id__",
+      "summary": [],
+      "type": "reasoning",
+      "content": [
+        {
+          "text": "The scale factor of 3.072 meets the threshold, so this value should be saved now.\n\n",
+          "type": "reasoning_text"
+        }
+      ],
+      "encrypted_content": null,
+      "status": null,
+      "provider_data": {
+        "model": "anthropic/claude-haiku-5.5",
+        "response_id": "gen-1792806865-kSc1kfAWz5SckhwYqvsv",
+        "_chat_completions_reasoning_field": "reasoning"
+      }
+    },
+    {
+      "id": "__fake_id__",
+      "content": [
+        {
+          "annotations": [],
+          "text": "Thickness 5 mm gives a converged safety factor of 3.072, which meets the 2.0 target. Saving now.",
+          "type": "output_text",
+          "logprobs": []
+        }
+      ],
+      "role": "assistant",
+      "status": "completed",
+      "type": "message",
+      "phase": null,
+      "provider_data": {
+        "model": "anthropic/claude-haiku-5.5",
+        "response_id": "gen-1792806865-kSc1kfAWz5SckhwYqvsv"
+      }
+    },
+    {
+      "arguments": "{}",
+      "call_id": "toolu_012Rsuesjh5rzs7sdvoUm6UR",
+      "name": "save_part",
+      "type": "function_call",
+      "id": "__fake_id__",
+      "async_": null,
+      "caller": null,
+      "namespace": null,
+      "status": null,
+      "provider_data": {
+        "model": "anthropic/claude-haiku-5.5",
+        "response_id": "gen-1792806865-kSc1kfAWz5SckhwYqvsv"
+      }
+    }
+  ],
+  "usage": {
+    "requests": 1,
+    "input_tokens": 4789,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 85,
+    "output_tokens_details": {
+      "reasoning_tokens": 18
+    },
+    "total_tokens": 4874,
+    "request_usage_entries": []
+  },
+  "response_id": null,
+  "request_id": null,
+  "raw_usage": {
+    "completion_tokens": 85,
+    "prompt_tokens": 4789,
+    "total_tokens": 4874,
+    "completion_tokens_details": {
+      "audio_tokens": 0,
+      "reasoning_tokens": 18,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cache_write_tokens": 0,
+      "cached_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost": 0.0005214,
+    "is_byok": false,
+    "cost_details": {
+      "upstream_inference_cost": 0.0005214,
+      "upstream_inference_prompt_cost": 0.0004789,
+      "upstream_inference_completions_cost": 4.25e-05
+    }
+  }
+}

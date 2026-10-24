@@ -1,0 +1,26 @@
+{
+  "applied_load": {
+    "face_id": "face_mounting",
+    "force_N": 5000,
+    "direction": "-Z"
+  },
+  "name": "bracket_v3",
+  "parameters": {
+    "fillet_radius_mm": 2,
+    "hole_diameter_mm": 8,
+    "thickness_mm": 5
+  },
+  "revision": 3,
+  "solve_result": {
+    "converged": true,
+    "iterations": 12,
+    "load": {
+      "face_id": "face_mounting",
+      "force_N": 5000,
+      "direction": "-Z"
+    },
+    "max_stress_MPa": 81.39,
+    "safety_factor": 3.072,
+    "yield_MPa": 250
+  }
+}

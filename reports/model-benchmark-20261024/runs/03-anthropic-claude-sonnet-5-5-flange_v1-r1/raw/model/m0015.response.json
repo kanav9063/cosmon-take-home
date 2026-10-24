@@ -1,0 +1,77 @@
+{
+  "output": [
+    {
+      "id": "__fake_id__",
+      "content": [
+        {
+          "annotations": [],
+          "text": "Fillet no effect. Try hole diameter 4 (single parameter, thickness stays 2).",
+          "type": "output_text",
+          "logprobs": []
+        }
+      ],
+      "role": "assistant",
+      "status": "completed",
+      "type": "message",
+      "phase": null,
+      "provider_data": {
+        "model": "anthropic/claude-sonnet-5.5",
+        "response_id": "gen-1792806874-ZFzGV9QJtMi5ijew9j7Z"
+      }
+    },
+    {
+      "arguments": "{}",
+      "call_id": "toolu_017xZEshaivbmau5R4qu7Nac",
+      "name": "open_part",
+      "type": "function_call",
+      "id": "__fake_id__",
+      "async_": null,
+      "caller": null,
+      "namespace": null,
+      "status": null,
+      "provider_data": {
+        "model": "anthropic/claude-sonnet-5.5",
+        "response_id": "gen-1792806874-ZFzGV9QJtMi5ijew9j7Z"
+      }
+    }
+  ],
+  "usage": {
+    "requests": 1,
+    "input_tokens": 5906,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 59,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 5965,
+    "request_usage_entries": []
+  },
+  "response_id": null,
+  "request_id": null,
+  "raw_usage": {
+    "completion_tokens": 59,
+    "prompt_tokens": 5906,
+    "total_tokens": 5965,
+    "completion_tokens_details": {
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cache_write_tokens": 0,
+      "cached_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost": 0.012402,
+    "is_byok": false,
+    "cost_details": {
+      "upstream_inference_cost": 0.012402,
+      "upstream_inference_prompt_cost": 0.011812,
+      "upstream_inference_completions_cost": 0.00059
+    }
+  }
+}

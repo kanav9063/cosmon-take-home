@@ -1,0 +1,58 @@
+{
+  "output": [
+    {
+      "arguments": "{}",
+      "call_id": "call_7923e425681a4ed48317ad5b",
+      "name": "solve",
+      "type": "function_call",
+      "id": "__fake_id__",
+      "async_": null,
+      "caller": null,
+      "namespace": null,
+      "status": null,
+      "provider_data": {
+        "model": "deepseek/deepseek-v4.1-flash-1017",
+        "response_id": "gen-1792806860-NvhiqgHEipyz8TeUWwBk"
+      }
+    }
+  ],
+  "usage": {
+    "requests": 1,
+    "input_tokens": 3409,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 3200
+    },
+    "output_tokens": 22,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 3431,
+    "request_usage_entries": []
+  },
+  "response_id": null,
+  "request_id": null,
+  "raw_usage": {
+    "completion_tokens": 22,
+    "prompt_tokens": 3409,
+    "total_tokens": 3431,
+    "completion_tokens_details": {
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cache_write_tokens": 0,
+      "cached_tokens": 3200,
+      "video_tokens": 0
+    },
+    "cost": 8.6025e-05,
+    "is_byok": false,
+    "cost_details": {
+      "upstream_inference_cost": 8.6025e-05,
+      "upstream_inference_prompt_cost": 6.6225e-05,
+      "upstream_inference_completions_cost": 1.98e-05
+    }
+  }
+}

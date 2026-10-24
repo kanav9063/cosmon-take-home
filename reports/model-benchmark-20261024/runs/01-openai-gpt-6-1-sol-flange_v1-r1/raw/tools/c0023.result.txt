@@ -1,0 +1,1 @@
+{"ok":true,"result":{"face_id":"face_mating","force_N":8000,"direction":"-Z"},"phase":"loaded","state_revision":20,"initial_sf":0.212,"best_sf":0.839,"best_solve_cli_id":"x0013","remaining_trials":2}

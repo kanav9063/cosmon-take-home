@@ -1,0 +1,48 @@
+{
+  "dimensions": {
+    "capture_integrity": {
+      "pass": 1
+    },
+    "delivery": {
+      "not_applicable": 1
+    },
+    "efficiency": {
+      "not_applicable": 1
+    },
+    "final_correctness": {
+      "not_applicable": 1
+    },
+    "process_compliance": {
+      "pass": 1
+    },
+    "repair_achievement": {
+      "fail": 1
+    },
+    "reporting_accuracy": {
+      "pass": 1
+    }
+  },
+  "evaluated": 1,
+  "explicitly_rejected": 0,
+  "policy_digest": "2e21978196f43fc8f1c393a2bc802b73ff93479805b2ef63c9b7e1d9c7b43f15",
+  "report_version": "partlab.eval-batch/1",
+  "reports": [
+    {
+      "input_id": "blocked-flange",
+      "report": "report-blocked-flange.json",
+      "status": "evaluated"
+    }
+  ],
+  "requested": 1,
+  "resource_limits": {
+    "max_events": 100000,
+    "max_file_bytes": 16777216,
+    "max_files": 4096,
+    "max_record_bytes": 2097152,
+    "max_total_bytes": 67108864
+  },
+  "status": "complete",
+  "warning_policy": {
+    "warning_budgets": {}
+  }
+}

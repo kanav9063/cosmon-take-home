@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "exit_code": 2,
+  "duplicate_parts_rejected": true,
+  "output_not_created": true,
+  "api_calls": 0
+}

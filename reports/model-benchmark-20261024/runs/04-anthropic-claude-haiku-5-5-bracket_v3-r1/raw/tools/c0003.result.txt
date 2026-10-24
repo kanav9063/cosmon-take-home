@@ -1,0 +1,1 @@
+{"ok":true,"result":{"face_id":"face_mounting","force_N":5000,"direction":"-Z"},"phase":"loaded","state_revision":4,"initial_sf":null,"best_sf":null,"best_solve_cli_id":null,"remaining_trials":6}

@@ -1,0 +1,77 @@
+{
+  "output": [
+    {
+      "id": "__fake_id__",
+      "content": [
+        {
+          "annotations": [],
+          "text": "The baseline safety factor is 1.428. I\u2019ll test increasing thickness from 3 mm to 5 mm under the same load.\n",
+          "type": "output_text",
+          "logprobs": []
+        }
+      ],
+      "role": "assistant",
+      "status": "completed",
+      "type": "message",
+      "phase": null,
+      "provider_data": {
+        "model": "openai/gpt-6.1-sol",
+        "response_id": "gen-1792806861-r7yCJyJxOxzBNc1Eqaol"
+      }
+    },
+    {
+      "arguments": "{}",
+      "call_id": "call_COLrEqEa5f9I718NrQXhXmGL",
+      "name": "open_part",
+      "type": "function_call",
+      "id": "__fake_id__",
+      "async_": null,
+      "caller": null,
+      "namespace": null,
+      "status": null,
+      "provider_data": {
+        "model": "openai/gpt-6.1-sol",
+        "response_id": "gen-1792806861-r7yCJyJxOxzBNc1Eqaol"
+      }
+    }
+  ],
+  "usage": {
+    "requests": 1,
+    "input_tokens": 1804,
+    "input_tokens_details": {
+      "cache_write_tokens": 131,
+      "cached_tokens": 1670
+    },
+    "output_tokens": 73,
+    "output_tokens_details": {
+      "reasoning_tokens": 22
+    },
+    "total_tokens": 1877,
+    "request_usage_entries": []
+  },
+  "response_id": null,
+  "request_id": null,
+  "raw_usage": {
+    "completion_tokens": 73,
+    "prompt_tokens": 1804,
+    "total_tokens": 1877,
+    "completion_tokens_details": {
+      "audio_tokens": 0,
+      "reasoning_tokens": 22,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cache_write_tokens": 131,
+      "cached_tokens": 1670,
+      "video_tokens": 0
+    },
+    "cost": 0.0012305,
+    "is_byok": false,
+    "cost_details": {
+      "upstream_inference_cost": 0.0012305,
+      "upstream_inference_prompt_cost": 0.0005005,
+      "upstream_inference_completions_cost": 0.00073
+    }
+  }
+}

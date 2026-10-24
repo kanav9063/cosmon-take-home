@@ -1,0 +1,1 @@
+{"ok":true,"result":{"downstream_invalidated":true,"name":"fillet_radius_mm","new_value":10,"previous_value":1.5,"changed_parameter":{"name":"fillet_radius_mm","from":1.5,"to":10}},"phase":"open","state_revision":14,"initial_sf":0.212,"best_sf":0.839,"best_solve_cli_id":"x0013","remaining_trials":3}

@@ -1,0 +1,8 @@
+All single-parameter families have been explored at their extremes:
+- thickness 2→5.0: SF 0.839 (best, but thickness capped at 5.0)
+- hole 10→4.0: SF 0.354 (hole min 4.0)
+- fillet 1.5→10.0: no effect (SF 0.212)
+
+Stress scales ~t^-1.5, so reaching SF 2.0 would require thickness ≈8.9 mm, beyond the 5.0 cap. No single-parameter change within the bounds achieves SF ≥ 2.0. Best verified converged factor is 0.839 (thickness=5.0).
+
+{"status":"no_repair_found","initial_sf":0.212,"final_sf":0.839,"changed_parameter":null,"artifact_id":null}

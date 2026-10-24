@@ -1,0 +1,9 @@
+{
+  "ok": true,
+  "result": {
+    "downstream_invalidated": true,
+    "name": "thickness_mm",
+    "new_value": 4,
+    "previous_value": 2
+  }
+}

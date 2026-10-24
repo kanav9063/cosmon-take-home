@@ -1,0 +1,77 @@
+{
+  "output": [
+    {
+      "id": "__fake_id__",
+      "content": [
+        {
+          "annotations": [],
+          "text": "I'll start by opening the original part to get its parameters and default load.\n\n",
+          "type": "output_text",
+          "logprobs": []
+        }
+      ],
+      "role": "assistant",
+      "status": "completed",
+      "type": "message",
+      "phase": null,
+      "provider_data": {
+        "model": "deepseek/deepseek-v4.1-flash-1017",
+        "response_id": "gen-1792806853-JhCu38qCyTv7G7xYnLgY"
+      }
+    },
+    {
+      "arguments": "{}",
+      "call_id": "call_8dd60441f0d84803b958c807c2c93276",
+      "name": "open_part",
+      "type": "function_call",
+      "id": "__fake_id__",
+      "async_": null,
+      "caller": null,
+      "namespace": null,
+      "status": null,
+      "provider_data": {
+        "model": "deepseek/deepseek-v4.1-flash-1017",
+        "response_id": "gen-1792806853-JhCu38qCyTv7G7xYnLgY"
+      }
+    }
+  ],
+  "usage": {
+    "requests": 1,
+    "input_tokens": 1777,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 38,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 1815,
+    "request_usage_entries": []
+  },
+  "response_id": null,
+  "request_id": null,
+  "raw_usage": {
+    "completion_tokens": 38,
+    "prompt_tokens": 1777,
+    "total_tokens": 1815,
+    "completion_tokens_details": {
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cache_write_tokens": 0,
+      "cached_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost": 0.00030332,
+    "is_byok": false,
+    "cost_details": {
+      "upstream_inference_cost": 0.00030332,
+      "upstream_inference_prompt_cost": 0.00028432,
+      "upstream_inference_completions_cost": 1.9e-05
+    }
+  }
+}

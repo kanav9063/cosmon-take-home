@@ -1,0 +1,58 @@
+{
+  "output": [
+    {
+      "arguments": "{\"face_id\": \"face_mating\", \"force_N\": 8000, \"direction\": \"-Z\"}",
+      "call_id": "toolu_011xp2RA7MgAtQHwmoxpN6KP",
+      "name": "apply_load",
+      "type": "function_call",
+      "id": "__fake_id__",
+      "async_": null,
+      "caller": null,
+      "namespace": null,
+      "status": null,
+      "provider_data": {
+        "model": "anthropic/claude-haiku-5.5",
+        "response_id": "gen-1792806856-xiohJaAR401D1rodxHfj"
+      }
+    }
+  ],
+  "usage": {
+    "requests": 1,
+    "input_tokens": 3145,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 101,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 3246,
+    "request_usage_entries": []
+  },
+  "response_id": null,
+  "request_id": null,
+  "raw_usage": {
+    "completion_tokens": 101,
+    "prompt_tokens": 3145,
+    "total_tokens": 3246,
+    "completion_tokens_details": {
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cache_write_tokens": 0,
+      "cached_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost": 0.000365,
+    "is_byok": false,
+    "cost_details": {
+      "upstream_inference_cost": 0.000365,
+      "upstream_inference_prompt_cost": 0.0003145,
+      "upstream_inference_completions_cost": 5.05e-05
+    }
+  }
+}

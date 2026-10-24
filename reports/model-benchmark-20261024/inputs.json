@@ -1,0 +1,65 @@
+{
+  "inputs": [
+    {
+      "id": "01-openai-gpt-6-1-sol-bracket_v3-r1",
+      "path": "/home/ubuntu/work/cosmon-sdk/reports/model-benchmark-20261024/runs/01-openai-gpt-6-1-sol-bracket_v3-r1",
+      "case": "bracket_v3",
+      "model": "openai/gpt-6.1-sol"
+    },
+    {
+      "id": "01-openai-gpt-6-1-sol-flange_v1-r1",
+      "path": "/home/ubuntu/work/cosmon-sdk/reports/model-benchmark-20261024/runs/01-openai-gpt-6-1-sol-flange_v1-r1",
+      "case": "flange_v1",
+      "model": "openai/gpt-6.1-sol"
+    },
+    {
+      "id": "02-openai-gpt-6-luna-bracket_v3-r1",
+      "path": "/home/ubuntu/work/cosmon-sdk/reports/model-benchmark-20261024/runs/02-openai-gpt-6-luna-bracket_v3-r1",
+      "case": "bracket_v3",
+      "model": "openai/gpt-6-luna"
+    },
+    {
+      "id": "02-openai-gpt-6-luna-flange_v1-r1",
+      "path": "/home/ubuntu/work/cosmon-sdk/reports/model-benchmark-20261024/runs/02-openai-gpt-6-luna-flange_v1-r1",
+      "case": "flange_v1",
+      "model": "openai/gpt-6-luna"
+    },
+    {
+      "id": "03-anthropic-claude-sonnet-5-5-bracket_v3-r1",
+      "path": "/home/ubuntu/work/cosmon-sdk/reports/model-benchmark-20261024/runs/03-anthropic-claude-sonnet-5-5-bracket_v3-r1",
+      "case": "bracket_v3",
+      "model": "anthropic/claude-sonnet-5.5"
+    },
+    {
+      "id": "03-anthropic-claude-sonnet-5-5-flange_v1-r1",
+      "path": "/home/ubuntu/work/cosmon-sdk/reports/model-benchmark-20261024/runs/03-anthropic-claude-sonnet-5-5-flange_v1-r1",
+      "case": "flange_v1",
+      "model": "anthropic/claude-sonnet-5.5"
+    },
+    {
+      "id": "04-anthropic-claude-haiku-5-5-bracket_v3-r1",
+      "path": "/home/ubuntu/work/cosmon-sdk/reports/model-benchmark-20261024/runs/04-anthropic-claude-haiku-5-5-bracket_v3-r1",
+      "case": "bracket_v3",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    {
+      "id": "04-anthropic-claude-haiku-5-5-flange_v1-r1",
+      "path": "/home/ubuntu/work/cosmon-sdk/reports/model-benchmark-20261024/runs/04-anthropic-claude-haiku-5-5-flange_v1-r1",
+      "case": "flange_v1",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    {
+      "id": "05-deepseek-deepseek-v4-1-flash-1017-bracket_v3-r1",
+      "path": "/home/ubuntu/work/cosmon-sdk/reports/model-benchmark-20261024/runs/05-deepseek-deepseek-v4-1-flash-1017-bracket_v3-r1",
+      "case": "bracket_v3",
+      "model": "deepseek/deepseek-v4.1-flash-1017"
+    },
+    {
+      "id": "05-deepseek-deepseek-v4-1-flash-1017-flange_v1-r1",
+      "path": "/home/ubuntu/work/cosmon-sdk/reports/model-benchmark-20261024/runs/05-deepseek-deepseek-v4-1-flash-1017-flange_v1-r1",
+      "case": "flange_v1",
+      "model": "deepseek/deepseek-v4.1-flash-1017"
+    }
+  ],
+  "reasoning_effort": "medium"
+}

@@ -1,0 +1,1718 @@
+{
+  "adapter": "partlab",
+  "case_id": "bracket_v3",
+  "checks": [
+    {
+      "action": null,
+      "check_id": "analysis_validity",
+      "code": null,
+      "expected": null,
+      "instance_id": "analysis_validity:baseline:initial",
+      "observed": [],
+      "reason": "Raw solve evidence must establish successful FEA, finite SF, convergence and known inputs.",
+      "refs": [
+        {
+          "bytes": 59479,
+          "event_id": "e000036",
+          "line": 36,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 59479,
+          "event_id": "e000037",
+          "line": 37,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 59479,
+          "event_id": "e000038",
+          "line": 38,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 6346,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0006.stdout",
+          "pointer": null,
+          "sha256": "e648c3fe869e24f5bb83d8a42284e29e7da248c8a51705739afa912efb97e813"
+        },
+        {
+          "bytes": 0,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0006.stderr",
+          "pointer": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "scope": "baseline",
+      "status": "pass",
+      "subject_id": "initial"
+    },
+    {
+      "action": null,
+      "check_id": "analysis_validity",
+      "code": null,
+      "expected": null,
+      "instance_id": "analysis_validity:selected:a0001",
+      "observed": [],
+      "reason": "Raw solve evidence must establish successful FEA, finite SF, convergence and known inputs.",
+      "refs": [
+        {
+          "bytes": 59479,
+          "event_id": "e000080",
+          "line": 80,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 59479,
+          "event_id": "e000081",
+          "line": 81,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 59479,
+          "event_id": "e000082",
+          "line": 82,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 6344,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0013.stdout",
+          "pointer": null,
+          "sha256": "2c7cced2af67fbcd592d7997aec2180abc6708f30ae2924bfe3dc2ee50c9a045"
+        },
+        {
+          "bytes": 0,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0013.stderr",
+          "pointer": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "scope": "selected",
+      "status": "pass",
+      "subject_id": "a0001"
+    },
+    {
+      "action": null,
+      "check_id": "artifact_integrity",
+      "code": null,
+      "expected": null,
+      "instance_id": "artifact_integrity:selected:a0001",
+      "observed": null,
+      "reason": "The selected immutable artifact bytes must match their captured digest and length.",
+      "refs": [
+        {
+          "bytes": 59479,
+          "event_id": "e000092",
+          "line": 92,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 492,
+          "event_id": null,
+          "line": null,
+          "path": "outputs/bracket_v3.json",
+          "pointer": null,
+          "sha256": "1c4dc1a15277c897dba11a9e131dabfcaa32ff9c6f9a920a59a5309a82c66c6a"
+        }
+      ],
+      "scope": "selected",
+      "status": "pass",
+      "subject_id": "a0001"
+    },
+    {
+      "action": null,
+      "check_id": "artifact_provenance",
+      "code": null,
+      "expected": null,
+      "instance_id": "artifact_provenance:selected:a0001",
+      "observed": null,
+      "reason": "The selected immutable snapshot must follow its producing save and consistently cite a preceding solve.",
+      "refs": [
+        {
+          "bytes": 59479,
+          "event_id": "e000092",
+          "line": 92,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 492,
+          "event_id": null,
+          "line": null,
+          "path": "outputs/bracket_v3.json",
+          "pointer": null,
+          "sha256": "1c4dc1a15277c897dba11a9e131dabfcaa32ff9c6f9a920a59a5309a82c66c6a"
+        },
+        {
+          "bytes": 59479,
+          "event_id": "e000089",
+          "line": 89,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 59479,
+          "event_id": "e000090",
+          "line": 90,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 59479,
+          "event_id": "e000091",
+          "line": 91,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 78,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0014.stdout",
+          "pointer": null,
+          "sha256": "cf2b5b3a0a00e97d0eb06e97f35d8b33cddecf2ad94bbab5ae681244de4c8747"
+        },
+        {
+          "bytes": 0,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0014.stderr",
+          "pointer": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 59479,
+          "event_id": "e000080",
+          "line": 80,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 59479,
+          "event_id": "e000081",
+          "line": 81,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 59479,
+          "event_id": "e000082",
+          "line": 82,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 6344,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0013.stdout",
+          "pointer": null,
+          "sha256": "2c7cced2af67fbcd592d7997aec2180abc6708f30ae2924bfe3dc2ee50c9a045"
+        },
+        {
+          "bytes": 0,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0013.stderr",
+          "pointer": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "scope": "selected",
+      "status": "pass",
+      "subject_id": "a0001"
+    },
+    {
+      "action": null,
+      "check_id": "artifact_state",
+      "code": null,
+      "expected": null,
+      "instance_id": "artifact_state:selected:a0001",
+      "observed": {
+        "mismatched_fields": []
+      },
+      "reason": "The supported compact-save projection must agree with save-time state and raw solve.",
+      "refs": [
+        {
+          "bytes": 59479,
+          "event_id": "e000092",
+          "line": 92,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 492,
+          "event_id": null,
+          "line": null,
+          "path": "outputs/bracket_v3.json",
+          "pointer": null,
+          "sha256": "1c4dc1a15277c897dba11a9e131dabfcaa32ff9c6f9a920a59a5309a82c66c6a"
+        },
+        {
+          "bytes": 59479,
+          "event_id": "e000080",
+          "line": 80,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 59479,
+          "event_id": "e000081",
+          "line": 81,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 59479,
+          "event_id": "e000082",
+          "line": 82,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 6344,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0013.stdout",
+          "pointer": null,
+          "sha256": "2c7cced2af67fbcd592d7997aec2180abc6708f30ae2924bfe3dc2ee50c9a045"
+        },
+        {
+          "bytes": 0,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0013.stderr",
+          "pointer": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "scope": "selected",
+      "status": "pass",
+      "subject_id": "a0001"
+    },
+    {
+      "action": null,
+      "check_id": "baseline_workflow",
+      "code": null,
+      "expected": null,
+      "instance_id": "baseline_workflow:baseline:initial",
+      "observed": null,
+      "reason": "A qualifying original/default-load solve must precede the first effective candidate mutation.",
+      "refs": [
+        {
+          "bytes": 59479,
+          "event_id": "e000036",
+          "line": 36,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 59479,
+          "event_id": "e000037",
+          "line": 37,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 59479,
+          "event_id": "e000038",
+          "line": 38,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 6346,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0006.stdout",
+          "pointer": null,
+          "sha256": "e648c3fe869e24f5bb83d8a42284e29e7da248c8a51705739afa912efb97e813"
+        },
+        {
+          "bytes": 0,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0006.stderr",
+          "pointer": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "scope": "baseline",
+      "status": "pass",
+      "subject_id": "initial"
+    },
+    {
+      "action": null,
+      "check_id": "claim_consistency",
+      "code": null,
+      "expected": null,
+      "instance_id": "claim_consistency:claim:structured",
+      "observed": {
+        "errors": [],
+        "unestablished": []
+      },
+      "reason": "Declared outcome and numerical claims agree with the observed evidence.",
+      "refs": [
+        {
+          "bytes": 9425,
+          "event_id": null,
+          "line": null,
+          "path": "completion.json",
+          "pointer": null,
+          "sha256": "77b0abff585b269236b388f3d923165727146c8798e69f7eb5b3dfc3c50dc5ea"
+        },
+        {
+          "bytes": 2808,
+          "event_id": null,
+          "line": null,
+          "path": "manifest.json",
+          "pointer": null,
+          "sha256": "4b4856c9f5c3c8897015d1f2aaba01cfded83a9af90a84dcedc4af47984978ec"
+        },
+        {
+          "bytes": 4650,
+          "event_id": null,
+          "line": null,
+          "path": "outcome.json",
+          "pointer": null,
+          "sha256": "c33162c40d616131b6d53aca993b42251b56f82204fa6e95e80d24c2310e1917"
+        },
+        {
+          "bytes": 143,
+          "event_id": null,
+          "line": null,
+          "path": "raw/model/final.txt",
+          "pointer": null,
+          "sha256": "0adae9cf14b88ae6c9198604915a30fe5ba3a0a9bbc423964776127df7c8d845"
+        }
+      ],
+      "scope": "claim",
+      "status": "pass",
+      "subject_id": "structured"
+    },
+    {
+      "action": null,
+      "check_id": "claim_consistency",
+      "code": null,
+      "expected": null,
+      "instance_id": "claim_consistency:claim:visible",
+      "observed": null,
+      "reason": "All supported visible claims agree with the structured outcome.",
+      "refs": [
+        {
+          "bytes": 9425,
+          "event_id": null,
+          "line": null,
+          "path": "completion.json",
+          "pointer": null,
+          "sha256": "77b0abff585b269236b388f3d923165727146c8798e69f7eb5b3dfc3c50dc5ea"
+        },
+        {
+          "bytes": 2808,
+          "event_id": null,
+          "line": null,
+          "path": "manifest.json",
+          "pointer": null,
+          "sha256": "4b4856c9f5c3c8897015d1f2aaba01cfded83a9af90a84dcedc4af47984978ec"
+        },
+        {
+          "bytes": 4650,
+          "event_id": null,
+          "line": null,
+          "path": "outcome.json",
+          "pointer": null,
+          "sha256": "c33162c40d616131b6d53aca993b42251b56f82204fa6e95e80d24c2310e1917"
+        },
+        {
+          "bytes": 143,
+          "event_id": null,
+          "line": null,
+          "path": "raw/model/final.txt",
+          "pointer": null,
+          "sha256": "0adae9cf14b88ae6c9198604915a30fe5ba3a0a9bbc423964776127df7c8d845"
+        }
+      ],
+      "scope": "claim",
+      "status": "pass",
+      "subject_id": "visible"
+    },
+    {
+      "action": null,
+      "check_id": "default_load",
+      "code": null,
+      "expected": {
+        "direction": "-Z",
+        "face_id": "face_mounting",
+        "force_N": "5000.0"
+      },
+      "instance_id": "default_load:baseline:initial",
+      "observed": {
+        "direction": "-Z",
+        "face_id": "face_mounting",
+        "force_N": "5000"
+      },
+      "reason": "All effective load components must equal the original default.",
+      "refs": [
+        {
+          "bytes": 59479,
+          "event_id": "e000036",
+          "line": 36,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 59479,
+          "event_id": "e000037",
+          "line": 37,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 59479,
+          "event_id": "e000038",
+          "line": 38,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 6346,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0006.stdout",
+          "pointer": null,
+          "sha256": "e648c3fe869e24f5bb83d8a42284e29e7da248c8a51705739afa912efb97e813"
+        },
+        {
+          "bytes": 0,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0006.stderr",
+          "pointer": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "scope": "baseline",
+      "status": "pass",
+      "subject_id": "initial"
+    },
+    {
+      "action": null,
+      "check_id": "default_load",
+      "code": null,
+      "expected": {
+        "direction": "-Z",
+        "face_id": "face_mounting",
+        "force_N": "5000.0"
+      },
+      "instance_id": "default_load:selected:a0001",
+      "observed": {
+        "direction": "-Z",
+        "face_id": "face_mounting",
+        "force_N": "5000"
+      },
+      "reason": "All effective load components must equal the original default.",
+      "refs": [
+        {
+          "bytes": 59479,
+          "event_id": "e000080",
+          "line": 80,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 59479,
+          "event_id": "e000081",
+          "line": 81,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 59479,
+          "event_id": "e000082",
+          "line": 82,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 6344,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0013.stdout",
+          "pointer": null,
+          "sha256": "2c7cced2af67fbcd592d7997aec2180abc6708f30ae2924bfe3dc2ee50c9a045"
+        },
+        {
+          "bytes": 0,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0013.stderr",
+          "pointer": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "scope": "selected",
+      "status": "pass",
+      "subject_id": "a0001"
+    },
+    {
+      "action": "Capture and verify the missing or inconsistent evidence.",
+      "check_id": "evidence_integrity",
+      "code": "CAPTURE_COMPLETE",
+      "expected": null,
+      "instance_id": "evidence_integrity:run:CAPTURE_COMPLETE",
+      "observed": null,
+      "reason": "Supported capture and execution ledger are complete.",
+      "refs": [
+        {
+          "bytes": 9425,
+          "event_id": null,
+          "line": null,
+          "path": "completion.json",
+          "pointer": null,
+          "sha256": "77b0abff585b269236b388f3d923165727146c8798e69f7eb5b3dfc3c50dc5ea"
+        },
+        {
+          "bytes": 2808,
+          "event_id": null,
+          "line": null,
+          "path": "manifest.json",
+          "pointer": null,
+          "sha256": "4b4856c9f5c3c8897015d1f2aaba01cfded83a9af90a84dcedc4af47984978ec"
+        },
+        {
+          "bytes": 4650,
+          "event_id": null,
+          "line": null,
+          "path": "outcome.json",
+          "pointer": null,
+          "sha256": "c33162c40d616131b6d53aca993b42251b56f82204fa6e95e80d24c2310e1917"
+        },
+        {
+          "bytes": 143,
+          "event_id": null,
+          "line": null,
+          "path": "raw/model/final.txt",
+          "pointer": null,
+          "sha256": "0adae9cf14b88ae6c9198604915a30fe5ba3a0a9bbc423964776127df7c8d845"
+        }
+      ],
+      "scope": "run",
+      "status": "pass",
+      "subject_id": "CAPTURE_COMPLETE"
+    },
+    {
+      "action": null,
+      "check_id": "executed_constraints",
+      "code": null,
+      "expected": {},
+      "instance_id": "executed_constraints:candidate:x0009:thickness_mm:0",
+      "observed": {},
+      "reason": "An established effective mutation must satisfy every applicable manufacturing bound.",
+      "refs": [
+        {
+          "bytes": 59479,
+          "event_id": "e000057",
+          "line": 57,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 59479,
+          "event_id": "e000058",
+          "line": 58,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 59479,
+          "event_id": "e000059",
+          "line": 59,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 144,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0009.stdout",
+          "pointer": null,
+          "sha256": "d9ad0315833346dad47c14b833c290b16a4f2936e0d0ffb2ffc94836fa537c6d"
+        },
+        {
+          "bytes": 0,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0009.stderr",
+          "pointer": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "scope": "candidate",
+      "status": "pass",
+      "subject_id": "x0009:thickness_mm:0"
+    },
+    {
+      "action": null,
+      "check_id": "executed_constraints",
+      "code": null,
+      "expected": null,
+      "instance_id": "executed_constraints:run:coverage",
+      "observed": null,
+      "reason": "Whole-run mutation compliance requires complete execution and effect coverage.",
+      "refs": [
+        {
+          "bytes": 9425,
+          "event_id": null,
+          "line": null,
+          "path": "completion.json",
+          "pointer": null,
+          "sha256": "77b0abff585b269236b388f3d923165727146c8798e69f7eb5b3dfc3c50dc5ea"
+        },
+        {
+          "bytes": 2808,
+          "event_id": null,
+          "line": null,
+          "path": "manifest.json",
+          "pointer": null,
+          "sha256": "4b4856c9f5c3c8897015d1f2aaba01cfded83a9af90a84dcedc4af47984978ec"
+        },
+        {
+          "bytes": 4650,
+          "event_id": null,
+          "line": null,
+          "path": "outcome.json",
+          "pointer": null,
+          "sha256": "c33162c40d616131b6d53aca993b42251b56f82204fa6e95e80d24c2310e1917"
+        },
+        {
+          "bytes": 143,
+          "event_id": null,
+          "line": null,
+          "path": "raw/model/final.txt",
+          "pointer": null,
+          "sha256": "0adae9cf14b88ae6c9198604915a30fe5ba3a0a9bbc423964776127df7c8d845"
+        }
+      ],
+      "scope": "run",
+      "status": "pass",
+      "subject_id": "coverage"
+    },
+    {
+      "action": null,
+      "check_id": "final_constraints",
+      "code": null,
+      "expected": {},
+      "instance_id": "final_constraints:selected:a0001",
+      "observed": {},
+      "reason": "The selected geometry must satisfy the trusted case bounds.",
+      "refs": [
+        {
+          "bytes": 59479,
+          "event_id": "e000089",
+          "line": 89,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 59479,
+          "event_id": "e000090",
+          "line": 90,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 59479,
+          "event_id": "e000091",
+          "line": 91,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 78,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0014.stdout",
+          "pointer": null,
+          "sha256": "cf2b5b3a0a00e97d0eb06e97f35d8b33cddecf2ad94bbab5ae681244de4c8747"
+        },
+        {
+          "bytes": 0,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0014.stderr",
+          "pointer": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "scope": "selected",
+      "status": "pass",
+      "subject_id": "a0001"
+    },
+    {
+      "action": null,
+      "check_id": "fresh_final_solve",
+      "code": null,
+      "expected": null,
+      "instance_id": "fresh_final_solve:selected:a0001",
+      "observed": null,
+      "reason": "The selected save-time inputs and live solve must match the cited solve certificate.",
+      "refs": [
+        {
+          "bytes": 59479,
+          "event_id": "e000080",
+          "line": 80,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 59479,
+          "event_id": "e000081",
+          "line": 81,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 59479,
+          "event_id": "e000082",
+          "line": 82,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 6344,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0013.stdout",
+          "pointer": null,
+          "sha256": "2c7cced2af67fbcd592d7997aec2180abc6708f30ae2924bfe3dc2ee50c9a045"
+        },
+        {
+          "bytes": 0,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0013.stderr",
+          "pointer": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 59479,
+          "event_id": "e000089",
+          "line": 89,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 59479,
+          "event_id": "e000090",
+          "line": 90,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 59479,
+          "event_id": "e000091",
+          "line": 91,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 78,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0014.stdout",
+          "pointer": null,
+          "sha256": "cf2b5b3a0a00e97d0eb06e97f35d8b33cddecf2ad94bbab5ae681244de4c8747"
+        },
+        {
+          "bytes": 0,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0014.stderr",
+          "pointer": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "scope": "selected",
+      "status": "pass",
+      "subject_id": "a0001"
+    },
+    {
+      "action": null,
+      "check_id": "guard_execution_consistency",
+      "code": null,
+      "expected": null,
+      "instance_id": "guard_execution_consistency:run:coverage",
+      "observed": null,
+      "reason": "Absence of dispatch can be established only with complete execution coverage.",
+      "refs": [
+        {
+          "bytes": 9425,
+          "event_id": null,
+          "line": null,
+          "path": "completion.json",
+          "pointer": null,
+          "sha256": "77b0abff585b269236b388f3d923165727146c8798e69f7eb5b3dfc3c50dc5ea"
+        },
+        {
+          "bytes": 2808,
+          "event_id": null,
+          "line": null,
+          "path": "manifest.json",
+          "pointer": null,
+          "sha256": "4b4856c9f5c3c8897015d1f2aaba01cfded83a9af90a84dcedc4af47984978ec"
+        },
+        {
+          "bytes": 4650,
+          "event_id": null,
+          "line": null,
+          "path": "outcome.json",
+          "pointer": null,
+          "sha256": "c33162c40d616131b6d53aca993b42251b56f82204fa6e95e80d24c2310e1917"
+        },
+        {
+          "bytes": 143,
+          "event_id": null,
+          "line": null,
+          "path": "raw/model/final.txt",
+          "pointer": null,
+          "sha256": "0adae9cf14b88ae6c9198604915a30fe5ba3a0a9bbc423964776127df7c8d845"
+        }
+      ],
+      "scope": "run",
+      "status": "pass",
+      "subject_id": "coverage"
+    },
+    {
+      "action": null,
+      "check_id": "original_identity",
+      "code": null,
+      "expected": {
+        "name": "bracket_v3",
+        "revision": 3
+      },
+      "instance_id": "original_identity:baseline:initial",
+      "observed": {
+        "name": "bracket_v3",
+        "revision": 3
+      },
+      "reason": "The supporting state must originate from the requested trusted part.",
+      "refs": [
+        {
+          "bytes": 59479,
+          "event_id": "e000036",
+          "line": 36,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 59479,
+          "event_id": "e000037",
+          "line": 37,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 59479,
+          "event_id": "e000038",
+          "line": 38,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 6346,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0006.stdout",
+          "pointer": null,
+          "sha256": "e648c3fe869e24f5bb83d8a42284e29e7da248c8a51705739afa912efb97e813"
+        },
+        {
+          "bytes": 0,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0006.stderr",
+          "pointer": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "scope": "baseline",
+      "status": "pass",
+      "subject_id": "initial"
+    },
+    {
+      "action": null,
+      "check_id": "original_identity",
+      "code": null,
+      "expected": "9756780586e273177a75155a9e814d514bae9cd21dcc4ee64dc6c32626fdadc8",
+      "instance_id": "original_identity:run:original",
+      "observed": true,
+      "reason": "Captured original is compared with the independently selected trusted case.",
+      "refs": [
+        {
+          "bytes": 9425,
+          "event_id": null,
+          "line": null,
+          "path": "completion.json",
+          "pointer": null,
+          "sha256": "77b0abff585b269236b388f3d923165727146c8798e69f7eb5b3dfc3c50dc5ea"
+        },
+        {
+          "bytes": 2808,
+          "event_id": null,
+          "line": null,
+          "path": "manifest.json",
+          "pointer": null,
+          "sha256": "4b4856c9f5c3c8897015d1f2aaba01cfded83a9af90a84dcedc4af47984978ec"
+        },
+        {
+          "bytes": 4650,
+          "event_id": null,
+          "line": null,
+          "path": "outcome.json",
+          "pointer": null,
+          "sha256": "c33162c40d616131b6d53aca993b42251b56f82204fa6e95e80d24c2310e1917"
+        },
+        {
+          "bytes": 143,
+          "event_id": null,
+          "line": null,
+          "path": "raw/model/final.txt",
+          "pointer": null,
+          "sha256": "0adae9cf14b88ae6c9198604915a30fe5ba3a0a9bbc423964776127df7c8d845"
+        }
+      ],
+      "scope": "run",
+      "status": "pass",
+      "subject_id": "original"
+    },
+    {
+      "action": null,
+      "check_id": "original_identity",
+      "code": null,
+      "expected": {
+        "name": "bracket_v3",
+        "revision": 3
+      },
+      "instance_id": "original_identity:selected:a0001",
+      "observed": {
+        "name": "bracket_v3",
+        "revision": 3
+      },
+      "reason": "The supporting state must originate from the requested trusted part.",
+      "refs": [
+        {
+          "bytes": 59479,
+          "event_id": "e000080",
+          "line": 80,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 59479,
+          "event_id": "e000081",
+          "line": 81,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 59479,
+          "event_id": "e000082",
+          "line": 82,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 6344,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0013.stdout",
+          "pointer": null,
+          "sha256": "2c7cced2af67fbcd592d7997aec2180abc6708f30ae2924bfe3dc2ee50c9a045"
+        },
+        {
+          "bytes": 0,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0013.stderr",
+          "pointer": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "scope": "selected",
+      "status": "pass",
+      "subject_id": "a0001"
+    },
+    {
+      "action": null,
+      "check_id": "original_identity",
+      "code": null,
+      "expected": {
+        "name": "bracket_v3",
+        "revision": 3
+      },
+      "instance_id": "original_identity:selected_state:a0001",
+      "observed": {
+        "name": "bracket_v3",
+        "revision": 3
+      },
+      "reason": "The supporting state must originate from the requested trusted part.",
+      "refs": [
+        {
+          "bytes": 59479,
+          "event_id": "e000089",
+          "line": 89,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 59479,
+          "event_id": "e000090",
+          "line": 90,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 59479,
+          "event_id": "e000091",
+          "line": 91,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 78,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0014.stdout",
+          "pointer": null,
+          "sha256": "cf2b5b3a0a00e97d0eb06e97f35d8b33cddecf2ad94bbab5ae681244de4c8747"
+        },
+        {
+          "bytes": 0,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0014.stderr",
+          "pointer": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "scope": "selected_state",
+      "status": "pass",
+      "subject_id": "a0001"
+    },
+    {
+      "action": null,
+      "check_id": "output_delivery",
+      "code": null,
+      "expected": {
+        "path": "outputs/bracket_v3.json",
+        "sha256": "1c4dc1a15277c897dba11a9e131dabfcaa32ff9c6f9a920a59a5309a82c66c6a"
+      },
+      "instance_id": "output_delivery:publication:a0001",
+      "observed": {
+        "_sha256": "1c4dc1a15277c897dba11a9e131dabfcaa32ff9c6f9a920a59a5309a82c66c6a",
+        "_verified": true,
+        "artifact_id": "a0001",
+        "destination": "/home/ubuntu/work/cosmon-sdk/reports/model-benchmark-20261024/artifacts/04-anthropic-claude-haiku-5-5-bracket_v3-r1/bracket_v3.json",
+        "path": "outputs/bracket_v3.json",
+        "published_ref": {
+          "bytes": 492,
+          "path": "published/bracket_v3.json",
+          "sha256": "1c4dc1a15277c897dba11a9e131dabfcaa32ff9c6f9a920a59a5309a82c66c6a"
+        },
+        "status": "ok"
+      },
+      "reason": "The last observed required destination must contain the selected bytes, with complete final coverage.",
+      "refs": [
+        {
+          "bytes": 59479,
+          "event_id": "e000093",
+          "line": 93,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 492,
+          "event_id": null,
+          "line": null,
+          "path": "published/bracket_v3.json",
+          "pointer": null,
+          "sha256": "1c4dc1a15277c897dba11a9e131dabfcaa32ff9c6f9a920a59a5309a82c66c6a"
+        }
+      ],
+      "scope": "publication",
+      "status": "pass",
+      "subject_id": "a0001"
+    },
+    {
+      "action": null,
+      "check_id": "save_execution",
+      "code": null,
+      "expected": null,
+      "instance_id": "save_execution:selected:a0001",
+      "observed": null,
+      "reason": "A repaired deliverable must have an identified successful producing save.",
+      "refs": [
+        {
+          "bytes": 59479,
+          "event_id": "e000089",
+          "line": 89,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 59479,
+          "event_id": "e000090",
+          "line": 90,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 59479,
+          "event_id": "e000091",
+          "line": 91,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 78,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0014.stdout",
+          "pointer": null,
+          "sha256": "cf2b5b3a0a00e97d0eb06e97f35d8b33cddecf2ad94bbab5ae681244de4c8747"
+        },
+        {
+          "bytes": 0,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0014.stderr",
+          "pointer": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "scope": "selected",
+      "status": "pass",
+      "subject_id": "a0001"
+    },
+    {
+      "action": null,
+      "check_id": "session_reset",
+      "code": null,
+      "expected": null,
+      "instance_id": "session_reset:baseline:initial",
+      "observed": null,
+      "reason": "A successful reset must establish a clean session before opening the run's original.",
+      "refs": [
+        {
+          "bytes": 59479,
+          "event_id": "e000001",
+          "line": 1,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 59479,
+          "event_id": "e000002",
+          "line": 2,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 59479,
+          "event_id": "e000003",
+          "line": 3,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 104,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0001.stdout",
+          "pointer": null,
+          "sha256": "8fbe69c9473f9dce22570b0a308697db0048c6acd45822127c7d655a7c418b41"
+        },
+        {
+          "bytes": 0,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0001.stderr",
+          "pointer": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "scope": "baseline",
+      "status": "pass",
+      "subject_id": "initial"
+    },
+    {
+      "action": null,
+      "check_id": "single_parameter",
+      "code": null,
+      "expected": {
+        "changed_parameter_count": 1
+      },
+      "instance_id": "single_parameter:selected:a0001",
+      "observed": {
+        "thickness_mm": {
+          "from": "3.0",
+          "to": "5"
+        }
+      },
+      "reason": "Exactly one final parameter value must differ from the immutable original.",
+      "refs": [
+        {
+          "bytes": 59479,
+          "event_id": "e000089",
+          "line": 89,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 59479,
+          "event_id": "e000090",
+          "line": 90,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 59479,
+          "event_id": "e000091",
+          "line": 91,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 78,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0014.stdout",
+          "pointer": null,
+          "sha256": "cf2b5b3a0a00e97d0eb06e97f35d8b33cddecf2ad94bbab5ae681244de4c8747"
+        },
+        {
+          "bytes": 0,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0014.stderr",
+          "pointer": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "scope": "selected",
+      "status": "pass",
+      "subject_id": "a0001"
+    },
+    {
+      "action": null,
+      "check_id": "target_sf",
+      "code": null,
+      "expected": "2.0",
+      "instance_id": "target_sf:selected:a0001",
+      "observed": "3.072",
+      "reason": "Compare the unrounded finite FEA safety factor to the exact target.",
+      "refs": [
+        {
+          "bytes": 59479,
+          "event_id": "e000080",
+          "line": 80,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 59479,
+          "event_id": "e000081",
+          "line": 81,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 59479,
+          "event_id": "e000082",
+          "line": 82,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 6344,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0013.stdout",
+          "pointer": null,
+          "sha256": "2c7cced2af67fbcd592d7997aec2180abc6708f30ae2924bfe3dc2ee50c9a045"
+        },
+        {
+          "bytes": 0,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0013.stderr",
+          "pointer": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "scope": "selected",
+      "status": "pass",
+      "subject_id": "a0001"
+    },
+    {
+      "action": null,
+      "check_id": "trial_restoration",
+      "code": null,
+      "expected": null,
+      "instance_id": "trial_restoration:run:coverage",
+      "observed": null,
+      "reason": "Whole-run trial compliance requires complete execution coverage.",
+      "refs": [
+        {
+          "bytes": 9425,
+          "event_id": null,
+          "line": null,
+          "path": "completion.json",
+          "pointer": null,
+          "sha256": "77b0abff585b269236b388f3d923165727146c8798e69f7eb5b3dfc3c50dc5ea"
+        },
+        {
+          "bytes": 2808,
+          "event_id": null,
+          "line": null,
+          "path": "manifest.json",
+          "pointer": null,
+          "sha256": "4b4856c9f5c3c8897015d1f2aaba01cfded83a9af90a84dcedc4af47984978ec"
+        },
+        {
+          "bytes": 4650,
+          "event_id": null,
+          "line": null,
+          "path": "outcome.json",
+          "pointer": null,
+          "sha256": "c33162c40d616131b6d53aca993b42251b56f82204fa6e95e80d24c2310e1917"
+        },
+        {
+          "bytes": 143,
+          "event_id": null,
+          "line": null,
+          "path": "raw/model/final.txt",
+          "pointer": null,
+          "sha256": "0adae9cf14b88ae6c9198604915a30fe5ba3a0a9bbc423964776127df7c8d845"
+        }
+      ],
+      "scope": "run",
+      "status": "pass",
+      "subject_id": "coverage"
+    },
+    {
+      "action": null,
+      "check_id": "trial_restoration",
+      "code": null,
+      "expected": null,
+      "instance_id": "trial_restoration:trial:x0009:thickness_mm:0",
+      "observed": null,
+      "reason": "A new trial or parameter family must start from an observed original restoration.",
+      "refs": [
+        {
+          "bytes": 59479,
+          "event_id": "e000057",
+          "line": 57,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 59479,
+          "event_id": "e000058",
+          "line": 58,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 59479,
+          "event_id": "e000059",
+          "line": 59,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "6ee50d29fec9878d6b9342bafa003334c20edb697b9adc0af197c631b13310a6"
+        },
+        {
+          "bytes": 144,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0009.stdout",
+          "pointer": null,
+          "sha256": "d9ad0315833346dad47c14b833c290b16a4f2936e0d0ffb2ffc94836fa537c6d"
+        },
+        {
+          "bytes": 0,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0009.stderr",
+          "pointer": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "scope": "trial",
+      "status": "pass",
+      "subject_id": "x0009:thickness_mm:0"
+    }
+  ],
+  "configuration_digest": "602e60b7edda30cd6746d39a2fc13575cf2899fd0a66a7ea2f58e76d0957e195",
+  "coverage": {
+    "capture_complete": true,
+    "execution_complete": true,
+    "profile_supported": true
+  },
+  "declared_outcome": "repaired",
+  "details": {
+    "declared_outcome": "repaired",
+    "feasibility": "unknown",
+    "metrics": {
+      "cli_attempts": 14,
+      "events": 97,
+      "failed_cli_attempts": 0,
+      "model_calls": 9,
+      "model_request_bytes": 120214,
+      "model_response_bytes": 16982,
+      "model_tokens": null,
+      "model_visible_tool_bytes": 3413,
+      "raw_bytes": 240456,
+      "raw_files": 66,
+      "repeated_read_calls": 0,
+      "solve_attempts": 2,
+      "warning_thresholds": "disabled"
+    },
+    "safe_candidate_ids": [
+      "x0013"
+    ],
+    "selected_artifact_id": "a0001",
+    "selected_solve_cli_id": "x0013"
+  },
+  "diagnostics": [],
+  "effective_case_policy": {
+    "binary_sha256": "9b202e1ba07861f52f12005108e81815ef14d92f2db3ba322fc51422746ab183",
+    "case_id": "bracket_v3",
+    "limits": {},
+    "original_sha256": "9756780586e273177a75155a9e814d514bae9cd21dcc4ee64dc6c32626fdadc8",
+    "output_path": "outputs/bracket_v3.json",
+    "profile": "partlab-cli/9b202e1b",
+    "target_sf": "2.0"
+  },
+  "evaluation_status": "evaluated",
+  "evaluator": {
+    "python": "3.12.3",
+    "sha256": "574e16b3ee1b386b2ddb1eb3f5e5f95b49672f33ff593515b57a83b50121bc85",
+    "sources": {
+      "eval_checks.py": "c6900b6d885e0cf1bdf59e487bf6be550fb254f638cf0e2f95609109742d8f1b",
+      "eval_state.py": "7ea4d66cae608df73d7ebc8069150e28aaf9c42b6bcc764a443d7316ac81b8a9",
+      "eval_types.py": "b03ec65d0b6a08fa473826fd168bdd9dcabb2f90bf9e1c983cc37bde24fd63e0",
+      "evaluate.py": "e20006538ee80bc17f30d162c618d7bb7c7e3a6dfcec6319c8d411836fb89f2e",
+      "trace_adapter.py": "7911652c4bf8b41a8e09a97c7b1db52950ade009aff905ee7f67ac9c1153ad53"
+    },
+    "version": "1.1.0"
+  },
+  "evaluator_version": "1.1.0",
+  "findings": [],
+  "input_digest": "df3c6b83e07f2a94f7339479c01f0b31d2d23821b11d2d6b9f38912e94050412",
+  "input_id": "04-anthropic-claude-haiku-5-5-bracket_v3-r1",
+  "limitations": [
+    "Recorded consistency under capture-authenticity assumptions; no SDK replay or model call performed."
+  ],
+  "metrics": {
+    "cli_attempts": 14,
+    "events": 97,
+    "failed_cli_attempts": 0,
+    "model_calls": 9,
+    "model_request_bytes": 120214,
+    "model_response_bytes": 16982,
+    "model_tokens": null,
+    "model_visible_tool_bytes": 3413,
+    "raw_bytes": 240456,
+    "raw_files": 66,
+    "repeated_read_calls": 0,
+    "solve_attempts": 2,
+    "warning_thresholds": "disabled"
+  },
+  "observed_outcome": "repaired",
+  "policy_digest": "2e21978196f43fc8f1c393a2bc802b73ff93479805b2ef63c9b7e1d9c7b43f15",
+  "profile": "partlab-cli/9b202e1b",
+  "report_version": "partlab.eval/1",
+  "resource_limits": {
+    "max_events": 100000,
+    "max_file_bytes": 16777216,
+    "max_files": 4096,
+    "max_record_bytes": 2097152,
+    "max_total_bytes": 67108864
+  },
+  "run_id": "e86399b4-c3b0-40c1-9df6-5033bf755b25",
+  "source_kind": "live_agent",
+  "summary": {
+    "capture_integrity": {
+      "members": [
+        "evidence_integrity:run:CAPTURE_COMPLETE"
+      ],
+      "reason": "Capture and supported evidence coverage.",
+      "status": "pass"
+    },
+    "delivery": {
+      "members": [
+        "save_execution:selected:a0001",
+        "artifact_provenance:selected:a0001",
+        "artifact_integrity:selected:a0001",
+        "output_delivery:publication:a0001"
+      ],
+      "reason": "Producing save, immutable bytes and observed final destination.",
+      "status": "pass"
+    },
+    "efficiency": {
+      "members": [],
+      "reason": "Measurements and diagnostic budgets do not change correctness.",
+      "status": "not_applicable"
+    },
+    "final_correctness": {
+      "members": [
+        "original_identity:selected:a0001",
+        "default_load:selected:a0001",
+        "analysis_validity:selected:a0001",
+        "original_identity:selected_state:a0001",
+        "final_constraints:selected:a0001",
+        "fresh_final_solve:selected:a0001",
+        "target_sf:selected:a0001",
+        "single_parameter:selected:a0001",
+        "artifact_provenance:selected:a0001",
+        "artifact_integrity:selected:a0001",
+        "artifact_state:selected:a0001"
+      ],
+      "reason": "Only the explicitly selected engineering result; historical incidents stay separate.",
+      "status": "pass"
+    },
+    "process_compliance": {
+      "members": [
+        "original_identity:run:original",
+        "session_reset:baseline:initial",
+        "baseline_workflow:baseline:initial",
+        "original_identity:baseline:initial",
+        "default_load:baseline:initial",
+        "analysis_validity:baseline:initial",
+        "executed_constraints:candidate:x0009:thickness_mm:0",
+        "trial_restoration:trial:x0009:thickness_mm:0",
+        "executed_constraints:run:coverage",
+        "trial_restoration:run:coverage",
+        "guard_execution_consistency:run:coverage"
+      ],
+      "reason": "Initial workflow, original, every mutation, trials and guarded dispatch.",
+      "status": "pass"
+    },
+    "repair_achievement": {
+      "members": [
+        "session_reset:baseline:initial",
+        "baseline_workflow:baseline:initial",
+        "original_identity:baseline:initial",
+        "default_load:baseline:initial",
+        "analysis_validity:baseline:initial",
+        "original_identity:selected:a0001",
+        "default_load:selected:a0001",
+        "analysis_validity:selected:a0001",
+        "original_identity:selected_state:a0001",
+        "final_constraints:selected:a0001",
+        "fresh_final_solve:selected:a0001",
+        "target_sf:selected:a0001",
+        "single_parameter:selected:a0001",
+        "artifact_provenance:selected:a0001",
+        "artifact_integrity:selected:a0001",
+        "artifact_state:selected:a0001",
+        "save_execution:selected:a0001",
+        "artifact_provenance:selected:a0001",
+        "artifact_integrity:selected:a0001",
+        "output_delivery:publication:a0001"
+      ],
+      "reason": "A correct one-parameter repair was saved and delivered.",
+      "status": "pass"
+    },
+    "reporting_accuracy": {
+      "members": [
+        "claim_consistency:claim:structured",
+        "claim_consistency:claim:visible"
+      ],
+      "reason": "Structured and visible claims are checked independently.",
+      "status": "pass"
+    }
+  },
+  "trusted_original_sha256": "9756780586e273177a75155a9e814d514bae9cd21dcc4ee64dc6c32626fdadc8",
+  "warning_policy": {
+    "warning_budgets": {}
+  }
+}

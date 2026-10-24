@@ -1,0 +1,107 @@
+{
+  "schema_version": "partlab.trace/0.1-proposal",
+  "capture_profile": "cosmon-eval/1",
+  "run_id": "e86399b4-c3b0-40c1-9df6-5033bf755b25",
+  "evidence_kind": "live_agent",
+  "created_at": "2026-10-24T01:54:13.149712+00:00",
+  "producer": {
+    "name": "cosmon_agent",
+    "version": "1",
+    "python": "3.12.3",
+    "binary_sha256": "9b202e1ba07861f52f12005108e81815ef14d92f2db3ba322fc51422746ab183"
+  },
+  "case": {
+    "part_name": "bracket_v3",
+    "target_sf": 2.0,
+    "output_path": "outputs/bracket_v3.json"
+  },
+  "original": {
+    "part_ref": {
+      "path": "inputs/part.json",
+      "sha256": "9756780586e273177a75155a9e814d514bae9cd21dcc4ee64dc6c32626fdadc8",
+      "bytes": 866
+    },
+    "parameters": {
+      "thickness_mm": 3.0,
+      "hole_diameter_mm": 8.0,
+      "fillet_radius_mm": 2.0
+    },
+    "default_load": {
+      "face_id": "face_mounting",
+      "force_N": 5000.0,
+      "direction": "-Z"
+    },
+    "revision": 3
+  },
+  "task_ref": {
+    "path": "inputs/task.md",
+    "sha256": "66c7a27bdfeae291aa42ecaa3681c2d53341d613369eaeb38b0bc5c78d805ebe",
+    "bytes": 5738
+  },
+  "policy_ref": {
+    "path": "inputs/policy.json",
+    "sha256": "839976f6ae9c877759b22cc3267fb8d0d34470d0615f5e47ded5c070e362786d",
+    "bytes": 1329
+  },
+  "config": {
+    "max_trials": 6,
+    "max_model_turns": 48,
+    "max_tool_calls": 64,
+    "run_timeout_seconds": 300,
+    "model_timeout_seconds": 40,
+    "cli_timeout_seconds": 15,
+    "max_output_tokens": 2048,
+    "exploration_ranges": {
+      "bracket_v3": {
+        "thickness_mm": [
+          3.0,
+          12.0
+        ],
+        "hole_diameter_mm": [
+          2.0,
+          8.0
+        ],
+        "fillet_radius_mm": [
+          2.0,
+          10.0
+        ]
+      },
+      "flange_v1": {
+        "thickness_mm": [
+          2.0,
+          5.0
+        ],
+        "hole_diameter_mm": [
+          4.0,
+          10.0
+        ],
+        "fillet_radius_mm": [
+          1.5,
+          10.0
+        ]
+      }
+    },
+    "range_provenance": "Configurable exploration bounds; not an exhaustive feasible domain",
+    "objective": "first_verified_single_parameter_fix",
+    "routine_result_bytes": 2048,
+    "error_excerpt_chars": 512,
+    "_model_config": {
+      "provider": "openrouter",
+      "model": "anthropic/claude-haiku-5.5",
+      "reasoning_effort": "medium",
+      "max_output_tokens": 2048,
+      "client_retries": 0,
+      "sdk_retries": 0,
+      "hosted_tracing": false,
+      "model_timeout_seconds": 40,
+      "max_model_turns": 48,
+      "prompt_sha256": "95ef78bdd9158ae080ebdec594f9491e080a9614574861cbed61c30f7f661068",
+      "tool_schema_sha256": "99b8b1f284aaa7af217f67cbab4d8edf2f25f8994cf8ccef7c6d74bd0a2528b8"
+    }
+  },
+  "capture": {
+    "model": "sdk_objects",
+    "cli": "bytes",
+    "hosted_tracing": false
+  }
+}

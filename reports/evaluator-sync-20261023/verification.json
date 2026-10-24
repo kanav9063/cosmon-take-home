@@ -1,0 +1,40 @@
+{
+  "status": "passed",
+  "created_at": "2026-10-24T01:53:53.707361+00:00",
+  "evaluator_version": "1.1.0",
+  "evaluator_source_commit": "b60473ca172a2fad33c377e96c212f2adb6aa84f",
+  "agent_tests": 21,
+  "evaluator_tests": 154,
+  "replay_inputs": 5,
+  "live_capture_inventory_files": 278,
+  "live_capture_events": 432,
+  "raw_live_captures_modified": false,
+  "new_model_calls_for_this_replay": 0,
+  "task_capture_integration": "Prefer original TASK.md after documentation rename, with legacy README.md fallback; verified by existing engine test.",
+  "evidence": {
+    "capture-audit.json": {
+      "sha256": "64c7da977c8350cea4ad8cf8bd90c19fb12c352f359d66352ff9235ea5622c77",
+      "bytes": 1856
+    },
+    "trace-inventory.json": {
+      "sha256": "13d64bcd7ced5da40da6f5c37c4987ca2fe7beebf0815e9306426044b8558384",
+      "bytes": 1175
+    },
+    "sync-receipt.json": {
+      "sha256": "739bd6951ee15dc087b1ff73b586f297455ee207ab66be32c18acb57a90a0225",
+      "bytes": 1121
+    },
+    "evaluation-check/verification.json": {
+      "sha256": "b7c95ba2f68afec20661024674882ad8bac3d9124ed282c9d999ea61ce90ce6d",
+      "bytes": 1557
+    },
+    "agent-tests.log": {
+      "sha256": "3c0a2ec715f469112bd333ecd236e1034c6871e5ceabd11c2345816845d22c78",
+      "bytes": 3838
+    },
+    "evaluator-tests.log": {
+      "sha256": "7c98635a29b6f63eec3e0db7c9dac5ac2e7d79682aa7a5b829003b20e2edb062",
+      "bytes": 23644
+    }
+  }
+}

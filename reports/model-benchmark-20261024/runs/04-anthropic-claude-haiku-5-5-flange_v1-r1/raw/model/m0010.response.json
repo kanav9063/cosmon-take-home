@@ -1,0 +1,95 @@
+{
+  "output": [
+    {
+      "id": "__fake_id__",
+      "summary": [],
+      "type": "reasoning",
+      "content": [
+        {
+          "text": "Thickness 5 only gets me to a safety factor of 0.839, still short of the target of 2.0, and thickness alone can't close that gap. Since I can only vary one parameter from the original design, I need to go back to the original thickness of 2mm and instead test changing the hole diameter.\n\n",
+          "type": "reasoning_text"
+        }
+      ],
+      "encrypted_content": null,
+      "status": null,
+      "provider_data": {
+        "model": "anthropic/claude-haiku-5.5",
+        "response_id": "gen-1792806866-fgAtghdbAEo2Jv2WvAU3",
+        "_chat_completions_reasoning_field": "reasoning"
+      }
+    },
+    {
+      "id": "__fake_id__",
+      "content": [
+        {
+          "annotations": [],
+          "text": "Thickness 5.0 mm raises the safety factor only to 0.839, still below 2.0. Each candidate must change one parameter from the original, so I'll restore the original and try a larger fillet radius at 2.0 mm thickness.",
+          "type": "output_text",
+          "logprobs": []
+        }
+      ],
+      "role": "assistant",
+      "status": "completed",
+      "type": "message",
+      "phase": null,
+      "provider_data": {
+        "model": "anthropic/claude-haiku-5.5",
+        "response_id": "gen-1792806866-fgAtghdbAEo2Jv2WvAU3"
+      }
+    },
+    {
+      "arguments": "{}",
+      "call_id": "toolu_0178M58R7DwwvukRQq2CzWEm",
+      "name": "open_part",
+      "type": "function_call",
+      "id": "__fake_id__",
+      "async_": null,
+      "caller": null,
+      "namespace": null,
+      "status": null,
+      "provider_data": {
+        "model": "anthropic/claude-haiku-5.5",
+        "response_id": "gen-1792806866-fgAtghdbAEo2Jv2WvAU3"
+      }
+    }
+  ],
+  "usage": {
+    "requests": 1,
+    "input_tokens": 4770,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 290,
+    "output_tokens_details": {
+      "reasoning_tokens": 186
+    },
+    "total_tokens": 5060,
+    "request_usage_entries": []
+  },
+  "response_id": null,
+  "request_id": null,
+  "raw_usage": {
+    "completion_tokens": 290,
+    "prompt_tokens": 4770,
+    "total_tokens": 5060,
+    "completion_tokens_details": {
+      "audio_tokens": 0,
+      "reasoning_tokens": 186,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cache_write_tokens": 0,
+      "cached_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost": 0.000622,
+    "is_byok": false,
+    "cost_details": {
+      "upstream_inference_cost": 0.000622,
+      "upstream_inference_prompt_cost": 0.000477,
+      "upstream_inference_completions_cost": 0.000145
+    }
+  }
+}

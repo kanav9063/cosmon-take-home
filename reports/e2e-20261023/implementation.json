@@ -1,0 +1,33 @@
+{
+  "files": {
+    "cosmon_agent/__init__.py": {
+      "sha256": "53d038e1d6a9617eeeb0b4ef0fba0c99861a3b531f5c397418c40938ea1991a0",
+      "bytes": 71
+    },
+    "cosmon_agent/__main__.py": {
+      "sha256": "18f99761d7af52d9361bc76b2fee6d25554cd32c77e14d0d015ac946caea86a3",
+      "bytes": 1765
+    },
+    "cosmon_agent/agent.py": {
+      "sha256": "1032cbed19dd66e89cdcb353deb5971e6a395487ec2352e7e6da396e6fef2c1e",
+      "bytes": 22237
+    },
+    "cosmon_agent/engine.py": {
+      "sha256": "b75568834ff43b51ef5ec47df6187f9f21d4fb249e9bd10cd0e7a3576f8ca1ca",
+      "bytes": 27391
+    },
+    "cosmon_agent/trace.py": {
+      "sha256": "20adfe4ccae3417a0d2ad73bde593f1ef54122b5fb75f94cf137ea7b031c87a4",
+      "bytes": 2795
+    },
+    "cosmon_agent/config.json": {
+      "sha256": "2ebe68a745bcfc9b8d6563424c1e2929ba71b0868099290a2b5c4e37913b1e36",
+      "bytes": 703
+    },
+    "requirements.lock": {
+      "sha256": "5f894aff8724ed594c2efcff1b47ee7935155c468157eaff3b26730d14db5fa8",
+      "bytes": 698
+    }
+  },
+  "note": "Agent implementation bytes at launch of the live bracket/flange runs. Credentials are excluded."
+}

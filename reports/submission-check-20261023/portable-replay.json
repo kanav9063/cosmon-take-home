@@ -1,0 +1,24 @@
+{
+  "capture_audit": {
+    "exit_code": 0,
+    "stdout": "{\"status\": \"passed\", \"runs\": 2, \"report\": \"replay/capture.json\"}\n",
+    "stderr": ""
+  },
+  "evaluation_derivatives": {
+    "exit_code": 0,
+    "stdout": "{\n  \"status\": \"passed\",\n  \"checks\": {\n    \"report_determinism_and_order_independence\": true,\n    \"stale_solve_detected\": true,\n    \"stale_capture_integrity_passes\": true,\n    \"interrupted_capture_is_incomplete\": true,\n    \"source_capture_integrity_passes\": true,\n    \"source_process_compliance_passes\": true,\n    \"source_reporting_accuracy_passes\": true,\n    \"source_outcomes_are_verified\": true\n  },\n  \"source_results\": {\n    \"bracket\": {\n      \"observed_outcome\": \"repaired\",\n      \"summary\": {\n        \"capture_integrity\": \"pass\",\n        \"delivery\": \"pass\",\n        \"efficiency\": \"not_applicable\",\n        \"final_correctness\": \"pass\",\n        \"process_compliance\": \"pass\",\n        \"repair_achievement\": \"pass\",\n        \"reporting_accuracy\": \"pass\"\n      }\n    },\n    \"flange\": {\n      \"observed_outcome\": \"search_exhausted\",\n      \"summary\": {\n        \"capture_integrity\": \"pass\",\n        \"delivery\": \"not_applicable\",\n        \"efficiency\": \"not_applicable\",\n        \"final_correctness\": \"not_applicable\",\n        \"process_compliance\": \"pass\",\n        \"repair_achievement\": \"fail\",\n        \"reporting_accuracy\": \"pass\"\n      }\n    },\n    \"guard-flange\": {\n      \"observed_outcome\": \"search_exhausted\",\n      \"summary\": {\n        \"capture_integrity\": \"pass\",\n        \"delivery\": \"not_applicable\",\n        \"efficiency\": \"not_applicable\",\n        \"final_correctness\": \"not_applicable\",\n        \"process_compliance\": \"pass\",\n        \"repair_achievement\": \"fail\",\n        \"reporting_accuracy\": \"pass\"\n      }\n    }\n  },\n  \"derivatives_are_synthetic\": true\n}\n",
+    "stderr": ""
+  },
+  "evaluation_checks": {
+    "interrupted_capture_is_incomplete": true,
+    "report_determinism_and_order_independence": true,
+    "source_capture_integrity_passes": true,
+    "source_outcomes_are_verified": true,
+    "source_process_compliance_passes": true,
+    "source_reporting_accuracy_passes": true,
+    "stale_capture_integrity_passes": true,
+    "stale_solve_detected": true
+  },
+  "status": "passed",
+  "source_commit": "626799126295f28237a023f7cabf44d94aca664d"
+}

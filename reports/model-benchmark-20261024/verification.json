@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "planned_runs": 10,
+  "completed_runs": 10,
+  "models": 5,
+  "verified_repairs": 5,
+  "verified_bounded_no_repair_reports": 3,
+  "final_json_reporting_failures": 2,
+  "trace_audits_passed": 10,
+  "no_credentials_in_saved_evidence": true,
+  "scanned_files": 1154,
+  "observed_cost_usd": 0.371235631,
+  "wall_seconds": 66.62123175431043,
+  "all_returned_model_responses_include_cost": true,
+  "evaluation_directory": "evaluation-20261024T015525Z-7c9a80",
+  "evidence": {
+    "inputs.json": "dccb57b2d87fdb2be82a8e9c36e99a49b69bed80927188b6cbc1c4d261479a63",
+    "manifest.json": "10d1480d068a2907b153a933a50266add61b5946e4865cd0cbfa342b15d9b99e",
+    "results.json": "7647e1c664b0d1b29badc5fe73320853caa1be0d6f345054288c0b5c3e398042",
+    "comparison.json": "6fcf13b8a0d36edba6ae5331ea0781acc0dfa026c945dec4f82fab78c5ed86d6",
+    "capture-audit.json": "0b28a7c9f2173138b08fb0aa6352a10e96ef3506d2b215bbb2df3720cb646edc"
+  },
+  "limits": [
+    "One run per model and part; no reliability ranking.",
+    "Two final-format failures remain unverified by the evaluator despite complete raw evidence.",
+    "No successful flange repair found; no infeasibility proof."
+  ]
+}

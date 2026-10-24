@@ -1,0 +1,1 @@
+{"ok":true,"result":{"safety_factor":11.421,"max_stress_MPa":21.89,"converged":true,"iterations":12,"load":{"face_id":"face_mounting","force_N":5000,"direction":"-Z"},"solve_cli_id":"x0013","changed_parameter":{"name":"thickness_mm","from":3.0,"to":12}},"phase":"solved","state_revision":8,"initial_sf":1.428,"best_sf":11.421,"best_solve_cli_id":"x0013","remaining_trials":5}

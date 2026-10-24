@@ -1,0 +1,9 @@
+{
+  "ok": true,
+  "result": {
+    "downstream_invalidated": true,
+    "name": "hole_diameter_mm",
+    "new_value": 7,
+    "previous_value": 10
+  }
+}

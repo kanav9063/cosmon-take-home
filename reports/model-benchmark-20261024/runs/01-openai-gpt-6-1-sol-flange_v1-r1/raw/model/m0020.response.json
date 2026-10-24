@@ -1,0 +1,76 @@
+{
+  "output": [
+    {
+      "id": "__fake_id__",
+      "summary": [],
+      "type": "reasoning",
+      "content": [
+        {
+          "text": "**Exploring dimensions and features**\n\nI need to explore the interior thickness, fillet, and hole options for my project. It looks like I'm using a total of 15 calls and 35 turns, which is under 48. I think I'll select a thickness of 4, a fillet of 5, and a hole size of 7. Now, I just have to make sure those selections will work well together and fit the overall design! Let\u2019s see how this goes!",
+          "type": "reasoning_text"
+        }
+      ],
+      "encrypted_content": null,
+      "status": null,
+      "provider_data": {
+        "model": "openai/gpt-6.1-sol",
+        "response_id": "gen-1792806887-1uTl90iWZLaojdmngWFg",
+        "_chat_completions_reasoning_field": "reasoning"
+      }
+    },
+    {
+      "arguments": "{}",
+      "call_id": "call_nfHiRBYN60V9sEvQMKVMYXFj",
+      "name": "open_part",
+      "type": "function_call",
+      "id": "__fake_id__",
+      "async_": null,
+      "caller": null,
+      "namespace": null,
+      "status": null,
+      "provider_data": {
+        "model": "openai/gpt-6.1-sol",
+        "response_id": "gen-1792806887-1uTl90iWZLaojdmngWFg"
+      }
+    }
+  ],
+  "usage": {
+    "requests": 1,
+    "input_tokens": 3940,
+    "input_tokens_details": {
+      "cache_write_tokens": 147,
+      "cached_tokens": 3790
+    },
+    "output_tokens": 52,
+    "output_tokens_details": {
+      "reasoning_tokens": 36
+    },
+    "total_tokens": 3992,
+    "request_usage_entries": []
+  },
+  "response_id": null,
+  "request_id": null,
+  "raw_usage": {
+    "completion_tokens": 52,
+    "prompt_tokens": 3940,
+    "total_tokens": 3992,
+    "completion_tokens_details": {
+      "audio_tokens": 0,
+      "reasoning_tokens": 36,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cache_write_tokens": 147,
+      "cached_tokens": 3790,
+      "video_tokens": 0
+    },
+    "cost": 0.0012725,
+    "is_byok": false,
+    "cost_details": {
+      "upstream_inference_cost": 0.0012725,
+      "upstream_inference_prompt_cost": 0.0007525,
+      "upstream_inference_completions_cost": 0.00052
+    }
+  }
+}

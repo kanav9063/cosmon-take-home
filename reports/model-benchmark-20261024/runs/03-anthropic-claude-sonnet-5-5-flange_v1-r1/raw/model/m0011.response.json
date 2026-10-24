@@ -1,0 +1,76 @@
+{
+  "output": [
+    {
+      "id": "__fake_id__",
+      "summary": [],
+      "type": "reasoning",
+      "content": [
+        {
+          "text": "Since thickness alone isn't enough, I should isolate variables - test hole size 4 by itself, or fillet 10 by itself. Let me try fillet 10 alone.\n\n",
+          "type": "reasoning_text"
+        }
+      ],
+      "encrypted_content": null,
+      "status": null,
+      "provider_data": {
+        "model": "anthropic/claude-sonnet-5.5",
+        "response_id": "gen-1792806867-IWlg1Tlnta9T1q119w7v",
+        "_chat_completions_reasoning_field": "reasoning"
+      }
+    },
+    {
+      "arguments": "{\"name\": \"fillet_radius_mm\", \"value\": 10}",
+      "call_id": "toolu_015VeRqT4QvLBUDdx9TLzZBR",
+      "name": "set_parameter",
+      "type": "function_call",
+      "id": "__fake_id__",
+      "async_": null,
+      "caller": null,
+      "namespace": null,
+      "status": null,
+      "provider_data": {
+        "model": "anthropic/claude-sonnet-5.5",
+        "response_id": "gen-1792806867-IWlg1Tlnta9T1q119w7v"
+      }
+    }
+  ],
+  "usage": {
+    "requests": 1,
+    "input_tokens": 5117,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 129,
+    "output_tokens_details": {
+      "reasoning_tokens": 50
+    },
+    "total_tokens": 5246,
+    "request_usage_entries": []
+  },
+  "response_id": null,
+  "request_id": null,
+  "raw_usage": {
+    "completion_tokens": 129,
+    "prompt_tokens": 5117,
+    "total_tokens": 5246,
+    "completion_tokens_details": {
+      "audio_tokens": 0,
+      "reasoning_tokens": 50,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cache_write_tokens": 0,
+      "cached_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost": 0.011524,
+    "is_byok": false,
+    "cost_details": {
+      "upstream_inference_cost": 0.011524,
+      "upstream_inference_prompt_cost": 0.010234,
+      "upstream_inference_completions_cost": 0.00129
+    }
+  }
+}

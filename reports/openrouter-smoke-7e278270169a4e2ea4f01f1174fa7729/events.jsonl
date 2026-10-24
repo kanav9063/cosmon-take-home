@@ -1,7 +1,0 @@
-{"seq": 1, "kind": "http_request", "request_number": 1, "body_file": "request-1.json"}
-{"seq": 2, "kind": "http_response", "request_number": 1, "status_code": 200, "body_file": "response-1.json", "redacted": false}
-{"seq": 3, "kind": "tool_called", "name": "get_probe_value", "call_id": "call_CQt3AGqZkYbwuMaY17t7h1mx", "arguments": "{}"}
-{"seq": 4, "kind": "tool_returned", "call_id": "call_CQt3AGqZkYbwuMaY17t7h1mx", "result": "bba3ede7aa3d44c385a2e835caeb836a"}
-{"seq": 5, "kind": "http_request", "request_number": 2, "body_file": "request-2.json"}
-{"seq": 6, "kind": "http_response", "request_number": 2, "status_code": 200, "body_file": "response-2.json", "redacted": false}
-{"seq": 7, "kind": "final_output", "text": "OPENROUTER_SMOKE_OK bba3ede7aa3d44c385a2e835caeb836a"}

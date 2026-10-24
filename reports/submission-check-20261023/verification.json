@@ -1,0 +1,80 @@
+{
+  "status": "passed",
+  "code_commit": "626799126295f28237a023f7cabf44d94aca664d",
+  "agent_tests": {
+    "count": 21,
+    "status": "passed",
+    "log": "agent-tests.log"
+  },
+  "evaluator_tests": {
+    "count": 154,
+    "status": "passed",
+    "version": "1.1.0",
+    "log": "evaluator-tests.log"
+  },
+  "capture_audit": "capture-audit.json",
+  "guard_recheck": {
+    "status": "passed",
+    "log": "guard-check.log",
+    "raw_bundle": "Retained locally; submitted independent original remains reports/guard-check-20261023-201100/trace"
+  },
+  "relocated_checkout_replay": {
+    "status": "passed",
+    "report": "portable-replay.json"
+  },
+  "syntax_check": "python -m compileall -q cosmon_agent scripts evaluation: passed",
+  "dependency_check": "python -m pip check: passed",
+  "lint_and_typecheck": "No project lint or typecheck is configured",
+  "simplification_review": {
+    "perspectives": [
+      "reuse",
+      "quality",
+      "efficiency"
+    ],
+    "applied": {
+      "reuse": 0,
+      "quality": 2,
+      "efficiency": 0
+    },
+    "changes": [
+      "Remove duplicate tool-result dictionary in capture audit",
+      "Remove unused engine start timestamp"
+    ],
+    "skipped_findings": 6,
+    "skipped_reason": "Minor evaluator refactors deferred to preserve the verified verbatim 1.1.0 source snapshot"
+  },
+  "preservation": "All runtime code, tests, source parts, verification scripts and primary raw captures retained; superseded plans and duplicate diagnostics archived outside repository",
+  "source_sha256": {
+    "cosmon_agent/__init__.py": "53d038e1d6a9617eeeb0b4ef0fba0c99861a3b531f5c397418c40938ea1991a0",
+    "cosmon_agent/__main__.py": "9cff80b99f6491131359f3167c1ab21ca93065b5c0f54136170ba9d31d13fff8",
+    "cosmon_agent/agent.py": "2bc8c0d0640508ed28c40de7a377629c3e0a95520c31145c30fa316b0f0ab15e",
+    "cosmon_agent/engine.py": "f9221319218a93f761ee3bce30a52ca616455e12e8fe3fc70aed5f6ce62131a5",
+    "cosmon_agent/trace.py": "20adfe4ccae3417a0d2ad73bde593f1ef54122b5fb75f94cf137ea7b031c87a4",
+    "scripts/check_agent_guard.py": "18a064c52892f5ad40492d89469848c3098516decfce917dabad53840c155be5",
+    "scripts/check_e2e_evaluation.py": "c95cf3123273ad1ea1c129de747a2407a44fd91304f6c212815a79092c1f08f6",
+    "scripts/check_openrouter.py": "e0ec3afd8df7a3922517e558085cdbe378c349f66c26f86240466854ef0d5df1",
+    "scripts/check_setup.py": "22f11cba4fa84940872c80a20def4b136c2fa4684db6e96901173f5db7a91a2a",
+    "scripts/inspect_partlab_io.py": "770d83f700b33965dd0b29a81be81f15c3915de7a6d7249a4324822d50b950f7",
+    "scripts/test_check_openrouter.py": "488a6f5dd54e5dd37c400a6339d6f1cf5e7badcd69b4baaeca14bca1cd30b626",
+    "scripts/verify_live_capture.py": "43b7468eecc6ebcd91f14120a6b79374a01cd818f81fe34f2493ff573789f13e",
+    "tests/test_agent_engine.py": "a3f679b8dcdce25753d35ff80d759a0ffe284852f775a2ef207a9ca49229c2e6",
+    "tests/test_agent_sdk.py": "8d1b77910c8eec280aee07a7d4c0b463f158bc1ca1e63daf83ff696e545b79a4"
+  },
+  "benchmark_cli_check": "benchmark-cli-check.json",
+  "benchmark_review": "Completed 10-run evidence retained; duplicate --parts values rejected before launch. No model requests made by submission cleanup.",
+  "relocated_benchmark_replay": {
+    "status": "passed",
+    "report": "portable-benchmark.json",
+    "reports": 10
+  },
+  "submission_audit": "submission-audit.json",
+  "architecture": {
+    "automated_validation": "passed",
+    "visual_review": "passed",
+    "code_revision": "626799126295f28237a023f7cabf44d94aca664d",
+    "files": {
+      "docs/assets/architecture.png": "8982cce9e15834ea2137b208f8c18d58007031c24663dd4b1b3ebe185f80d78a",
+      "docs/assets/architecture.json": "858c387784426d44024cbefe27e0709f83f18aa72a5b11b6204ad7f1df4bdabc"
+    }
+  }
+}

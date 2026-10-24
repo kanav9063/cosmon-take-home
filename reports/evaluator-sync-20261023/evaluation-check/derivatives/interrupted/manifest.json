@@ -1,0 +1,107 @@
+{
+  "capture": {
+    "description": "Synthetic derivative of a persisted capture; edited events are not live execution.",
+    "mutation": "interrupted",
+    "source_run_id": "65a79b91-2d85-47d8-acf8-8600bc4d03bb"
+  },
+  "capture_profile": "cosmon-eval/1",
+  "case": {
+    "output_path": "outputs/bracket_v3.json",
+    "part_name": "bracket_v3",
+    "target_sf": 2.0
+  },
+  "config": {
+    "_model_config": {
+      "client_retries": 0,
+      "hosted_tracing": false,
+      "max_model_turns": 48,
+      "max_output_tokens": 2048,
+      "model": "openai/gpt-6.1-sol",
+      "model_timeout_seconds": 40,
+      "prompt_sha256": "95ef78bdd9158ae080ebdec594f9491e080a9614574861cbed61c30f7f661068",
+      "provider": "openrouter",
+      "reasoning_effort": "medium",
+      "sdk_retries": 0,
+      "tool_schema_sha256": "2da1061b19ed2ae3eef2d96670218723a949ec2cfe0d02f8a64bbaa32325d3cf"
+    },
+    "cli_timeout_seconds": 15,
+    "error_excerpt_chars": 512,
+    "exploration_ranges": {
+      "bracket_v3": {
+        "fillet_radius_mm": [
+          2.0,
+          10.0
+        ],
+        "hole_diameter_mm": [
+          2.0,
+          8.0
+        ],
+        "thickness_mm": [
+          3.0,
+          12.0
+        ]
+      },
+      "flange_v1": {
+        "fillet_radius_mm": [
+          1.5,
+          10.0
+        ],
+        "hole_diameter_mm": [
+          4.0,
+          10.0
+        ],
+        "thickness_mm": [
+          2.0,
+          5.0
+        ]
+      }
+    },
+    "max_model_turns": 48,
+    "max_output_tokens": 2048,
+    "max_tool_calls": 64,
+    "max_trials": 6,
+    "model_timeout_seconds": 40,
+    "objective": "first_verified_single_parameter_fix",
+    "range_provenance": "Configurable exploration bounds; not an exhaustive feasible domain",
+    "routine_result_bytes": 2048,
+    "run_timeout_seconds": 300
+  },
+  "created_at": "2026-10-24T01:43:24.898556+00:00",
+  "evidence_kind": "synthetic_fixture",
+  "original": {
+    "default_load": {
+      "direction": "-Z",
+      "face_id": "face_mounting",
+      "force_N": 5000.0
+    },
+    "parameters": {
+      "fillet_radius_mm": 2.0,
+      "hole_diameter_mm": 8.0,
+      "thickness_mm": 3.0
+    },
+    "part_ref": {
+      "bytes": 866,
+      "path": "inputs/part.json",
+      "sha256": "9756780586e273177a75155a9e814d514bae9cd21dcc4ee64dc6c32626fdadc8"
+    },
+    "revision": 3
+  },
+  "policy_ref": {
+    "bytes": 1321,
+    "path": "inputs/policy.json",
+    "sha256": "fa0284c18e7b79075367f46ef6df31cd532d769f9e5f244296982fa3778a7f10"
+  },
+  "producer": {
+    "binary_sha256": "9b202e1ba07861f52f12005108e81815ef14d92f2db3ba322fc51422746ab183",
+    "name": "cosmon_agent",
+    "python": "3.12.3",
+    "version": "1"
+  },
+  "run_id": "synthetic-interrupted-65a79b91-2d85-47d8-acf8-8600bc4d03bb",
+  "schema_version": "partlab.trace/0.1-proposal",
+  "task_ref": {
+    "bytes": 5738,
+    "path": "inputs/task.md",
+    "sha256": "66c7a27bdfeae291aa42ecaa3681c2d53341d613369eaeb38b0bc5c78d805ebe"
+  }
+}

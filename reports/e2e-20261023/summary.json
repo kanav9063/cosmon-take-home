@@ -1,0 +1,100 @@
+{
+  "status": "completed",
+  "model": "openai/gpt-6.1-sol",
+  "reasoning_effort": "medium",
+  "runs": {
+    "bracket": {
+      "run_id": "65a79b91-2d85-47d8-acf8-8600bc4d03bb",
+      "status": "repaired",
+      "reason_code": "first_verified_fix_saved",
+      "initial_sf": 1.428,
+      "final_sf": 3.072,
+      "changed_parameter": {
+        "name": "thickness_mm",
+        "from": 3.0,
+        "to": 5
+      },
+      "artifact_id": "a0001",
+      "model_calls": 11,
+      "trials": [
+        {
+          "trial_id": "t0001",
+          "name": "thickness_mm",
+          "value": 5,
+          "solve_cli_id": "x0013",
+          "safety_factor": 3.072
+        }
+      ]
+    },
+    "flange": {
+      "run_id": "b5b3dc81-e2cc-4f35-8bec-17d715abdac2",
+      "status": "no_repair_found",
+      "reason_code": "trial_limit",
+      "initial_sf": 0.212,
+      "final_sf": 0.839,
+      "changed_parameter": null,
+      "artifact_id": null,
+      "model_calls": 35,
+      "trials": [
+        {
+          "trial_id": "t0001",
+          "name": "thickness_mm",
+          "value": 5,
+          "solve_cli_id": "x0013",
+          "safety_factor": 0.839
+        },
+        {
+          "trial_id": "t0002",
+          "name": "fillet_radius_mm",
+          "value": 10,
+          "solve_cli_id": "x0020",
+          "safety_factor": 0.212
+        },
+        {
+          "trial_id": "t0003",
+          "name": "hole_diameter_mm",
+          "value": 4,
+          "solve_cli_id": "x0027",
+          "safety_factor": 0.354
+        },
+        {
+          "trial_id": "t0004",
+          "name": "thickness_mm",
+          "value": 3.5,
+          "solve_cli_id": "x0034",
+          "safety_factor": 0.491
+        },
+        {
+          "trial_id": "t0005",
+          "name": "fillet_radius_mm",
+          "value": 5.75,
+          "solve_cli_id": "x0041",
+          "safety_factor": 0.212
+        },
+        {
+          "trial_id": "t0006",
+          "name": "hole_diameter_mm",
+          "value": 7,
+          "solve_cli_id": "x0048",
+          "safety_factor": 0.265
+        }
+      ]
+    }
+  },
+  "integration_checks": {
+    "interrupted_capture_is_incomplete": true,
+    "report_determinism_and_order_independence": true,
+    "source_capture_integrity_passes": true,
+    "source_outcomes_are_verified": true,
+    "source_process_compliance_passes": true,
+    "source_reporting_accuracy_passes": true,
+    "stale_capture_integrity_passes": true,
+    "stale_solve_detected": true
+  },
+  "capture_audit_passed": true,
+  "agent_tests": 21,
+  "evaluator_tests": 131,
+  "recording_provided": false,
+  "provider_reported_cost_usd": 0.0469329,
+  "evaluation_note": "Original evaluation used 1.0.0; current 1.1.0 results and 154 regression tests are in reports/evaluator-sync-20261023. Raw captures are unchanged."
+}

@@ -1,0 +1,363 @@
+{
+  "status": "passed",
+  "runs": [
+    {
+      "status": "passed",
+      "run_id": "0504eab4-9627-41a2-97fc-455f36b1da30",
+      "outcome": "repaired",
+      "model_calls": 11,
+      "tool_calls": 10,
+      "max_tool_result_bytes": 615,
+      "raw_solve_bytes": [
+        6346,
+        6344
+      ],
+      "compact_solve_bytes": [
+        336,
+        372
+      ],
+      "provider_reported_cost_usd": 0.0116115,
+      "checks": [
+        "raw_proposals_match_model_responses",
+        "tool_results_match_exact_sdk_inputs",
+        "no_duplicate_or_missing_tool_results",
+        "no_verbose_logs_in_model_context",
+        "full_logs_preserved_locally",
+        "no_duplicate_sf_stress_log_fetch",
+        "final_text_matches_raw_model_response",
+        "original_part_unchanged",
+        "published_bytes_match_snapshot",
+        "compact_result_budget"
+      ],
+      "id": "01-openai-gpt-6-1-sol-bracket_v3-r1",
+      "inventory_files": 70,
+      "inventory_and_sequence_verified": true
+    },
+    {
+      "status": "passed",
+      "run_id": "2f2a20d2-1a6e-4f3b-af8b-aa906ea54e2e",
+      "outcome": "no_repair_found",
+      "model_calls": 35,
+      "tool_calls": 34,
+      "max_tool_result_bytes": 674,
+      "raw_solve_bytes": [
+        6343,
+        6343,
+        6343,
+        6343,
+        6338,
+        6343,
+        6343
+      ],
+      "compact_solve_bytes": [
+        334,
+        371,
+        377,
+        377,
+        367,
+        378,
+        377
+      ],
+      "provider_reported_cost_usd": 0.035138,
+      "checks": [
+        "raw_proposals_match_model_responses",
+        "tool_results_match_exact_sdk_inputs",
+        "no_duplicate_or_missing_tool_results",
+        "no_verbose_logs_in_model_context",
+        "full_logs_preserved_locally",
+        "no_duplicate_sf_stress_log_fetch",
+        "final_text_matches_raw_model_response",
+        "original_part_unchanged",
+        "published_bytes_match_snapshot",
+        "compact_result_budget"
+      ],
+      "id": "01-openai-gpt-6-1-sol-flange_v1-r1",
+      "inventory_files": 208,
+      "inventory_and_sequence_verified": true
+    },
+    {
+      "status": "passed",
+      "run_id": "a0155a19-220f-4096-9d86-61c772c3f908",
+      "outcome": "repaired",
+      "model_calls": 11,
+      "tool_calls": 10,
+      "max_tool_result_bytes": 615,
+      "raw_solve_bytes": [
+        6346,
+        6345
+      ],
+      "compact_solve_bytes": [
+        336,
+        375
+      ],
+      "provider_reported_cost_usd": 0.00067465,
+      "checks": [
+        "raw_proposals_match_model_responses",
+        "tool_results_match_exact_sdk_inputs",
+        "no_duplicate_or_missing_tool_results",
+        "no_verbose_logs_in_model_context",
+        "full_logs_preserved_locally",
+        "no_duplicate_sf_stress_log_fetch",
+        "final_text_matches_raw_model_response",
+        "original_part_unchanged",
+        "published_bytes_match_snapshot",
+        "compact_result_budget"
+      ],
+      "id": "02-openai-gpt-6-luna-bracket_v3-r1",
+      "inventory_files": 70,
+      "inventory_and_sequence_verified": true
+    },
+    {
+      "status": "passed",
+      "run_id": "12752e93-c6dc-4132-83fc-00b068ee0a3a",
+      "outcome": "no_repair_found",
+      "model_calls": 35,
+      "tool_calls": 34,
+      "max_tool_result_bytes": 674,
+      "raw_solve_bytes": [
+        6343,
+        6343,
+        6343,
+        6343,
+        6338,
+        6342,
+        6343
+      ],
+      "compact_solve_bytes": [
+        334,
+        371,
+        377,
+        377,
+        367,
+        371,
+        377
+      ],
+      "provider_reported_cost_usd": 0.0025517700000000005,
+      "checks": [
+        "raw_proposals_match_model_responses",
+        "tool_results_match_exact_sdk_inputs",
+        "no_duplicate_or_missing_tool_results",
+        "no_verbose_logs_in_model_context",
+        "full_logs_preserved_locally",
+        "no_duplicate_sf_stress_log_fetch",
+        "final_text_matches_raw_model_response",
+        "original_part_unchanged",
+        "published_bytes_match_snapshot",
+        "compact_result_budget"
+      ],
+      "id": "02-openai-gpt-6-luna-flange_v1-r1",
+      "inventory_files": 208,
+      "inventory_and_sequence_verified": true
+    },
+    {
+      "status": "passed",
+      "run_id": "573cec10-56dc-425f-858e-7d53a2ace43c",
+      "outcome": "repaired",
+      "model_calls": 11,
+      "tool_calls": 10,
+      "max_tool_result_bytes": 615,
+      "raw_solve_bytes": [
+        6346,
+        6344
+      ],
+      "compact_solve_bytes": [
+        336,
+        372
+      ],
+      "provider_reported_cost_usd": 0.08925999999999999,
+      "checks": [
+        "raw_proposals_match_model_responses",
+        "tool_results_match_exact_sdk_inputs",
+        "no_duplicate_or_missing_tool_results",
+        "no_verbose_logs_in_model_context",
+        "full_logs_preserved_locally",
+        "no_duplicate_sf_stress_log_fetch",
+        "final_text_matches_raw_model_response",
+        "original_part_unchanged",
+        "published_bytes_match_snapshot",
+        "compact_result_budget"
+      ],
+      "id": "03-anthropic-claude-sonnet-5-5-bracket_v3-r1",
+      "inventory_files": 70,
+      "inventory_and_sequence_verified": true
+    },
+    {
+      "status": "passed",
+      "run_id": "15794af1-c747-4660-b666-d1d126cc2d27",
+      "outcome": "no_repair_found",
+      "model_calls": 20,
+      "tool_calls": 19,
+      "max_tool_result_bytes": 674,
+      "raw_solve_bytes": [
+        6343,
+        6343,
+        6343,
+        6343
+      ],
+      "compact_solve_bytes": [
+        334,
+        371,
+        377,
+        377
+      ],
+      "provider_reported_cost_usd": 0.21013199999999999,
+      "checks": [
+        "raw_proposals_match_model_responses",
+        "tool_results_match_exact_sdk_inputs",
+        "no_duplicate_or_missing_tool_results",
+        "no_verbose_logs_in_model_context",
+        "full_logs_preserved_locally",
+        "no_duplicate_sf_stress_log_fetch",
+        "final_text_matches_raw_model_response",
+        "original_part_unchanged",
+        "published_bytes_match_snapshot",
+        "compact_result_budget"
+      ],
+      "id": "03-anthropic-claude-sonnet-5-5-flange_v1-r1",
+      "inventory_files": 121,
+      "inventory_and_sequence_verified": true
+    },
+    {
+      "status": "passed",
+      "run_id": "e86399b4-c3b0-40c1-9df6-5033bf755b25",
+      "outcome": "repaired",
+      "model_calls": 9,
+      "tool_calls": 10,
+      "max_tool_result_bytes": 615,
+      "raw_solve_bytes": [
+        6346,
+        6344
+      ],
+      "compact_solve_bytes": [
+        336,
+        372
+      ],
+      "provider_reported_cost_usd": 0.0038779,
+      "checks": [
+        "raw_proposals_match_model_responses",
+        "tool_results_match_exact_sdk_inputs",
+        "no_duplicate_or_missing_tool_results",
+        "no_verbose_logs_in_model_context",
+        "full_logs_preserved_locally",
+        "no_duplicate_sf_stress_log_fetch",
+        "final_text_matches_raw_model_response",
+        "original_part_unchanged",
+        "published_bytes_match_snapshot",
+        "compact_result_budget"
+      ],
+      "id": "04-anthropic-claude-haiku-5-5-bracket_v3-r1",
+      "inventory_files": 66,
+      "inventory_and_sequence_verified": true
+    },
+    {
+      "status": "passed",
+      "run_id": "5502f498-c4ac-4b18-91ef-dd29a23b8045",
+      "outcome": "execution_failure",
+      "model_calls": 21,
+      "tool_calls": 20,
+      "max_tool_result_bytes": 674,
+      "raw_solve_bytes": [
+        6343,
+        6343,
+        6343,
+        6343
+      ],
+      "compact_solve_bytes": [
+        334,
+        373,
+        377,
+        377
+      ],
+      "provider_reported_cost_usd": 0.0121483,
+      "checks": [
+        "raw_proposals_match_model_responses",
+        "tool_results_match_exact_sdk_inputs",
+        "no_duplicate_or_missing_tool_results",
+        "no_verbose_logs_in_model_context",
+        "full_logs_preserved_locally",
+        "no_duplicate_sf_stress_log_fetch",
+        "final_text_matches_raw_model_response",
+        "original_part_unchanged",
+        "published_bytes_match_snapshot",
+        "compact_result_budget"
+      ],
+      "id": "04-anthropic-claude-haiku-5-5-flange_v1-r1",
+      "inventory_files": 128,
+      "inventory_and_sequence_verified": true
+    },
+    {
+      "status": "passed",
+      "run_id": "79383a30-2c62-449b-b515-31029393e2a6",
+      "outcome": "repaired",
+      "model_calls": 11,
+      "tool_calls": 10,
+      "max_tool_result_bytes": 615,
+      "raw_solve_bytes": [
+        6346,
+        6344
+      ],
+      "compact_solve_bytes": [
+        336,
+        374
+      ],
+      "provider_reported_cost_usd": 0.0019375589999999997,
+      "checks": [
+        "raw_proposals_match_model_responses",
+        "tool_results_match_exact_sdk_inputs",
+        "no_duplicate_or_missing_tool_results",
+        "no_verbose_logs_in_model_context",
+        "full_logs_preserved_locally",
+        "no_duplicate_sf_stress_log_fetch",
+        "final_text_matches_raw_model_response",
+        "original_part_unchanged",
+        "published_bytes_match_snapshot",
+        "compact_result_budget"
+      ],
+      "id": "05-deepseek-deepseek-v4-1-flash-1017-bracket_v3-r1",
+      "inventory_files": 70,
+      "inventory_and_sequence_verified": true
+    },
+    {
+      "status": "passed",
+      "run_id": "020fbcca-d374-4306-83be-aaec62399419",
+      "outcome": "execution_failure",
+      "model_calls": 20,
+      "tool_calls": 19,
+      "max_tool_result_bytes": 674,
+      "raw_solve_bytes": [
+        6343,
+        6343,
+        6343,
+        6343
+      ],
+      "compact_solve_bytes": [
+        334,
+        373,
+        379,
+        379
+      ],
+      "provider_reported_cost_usd": 0.0039039519999999996,
+      "checks": [
+        "raw_proposals_match_model_responses",
+        "tool_results_match_exact_sdk_inputs",
+        "no_duplicate_or_missing_tool_results",
+        "no_verbose_logs_in_model_context",
+        "full_logs_preserved_locally",
+        "no_duplicate_sf_stress_log_fetch",
+        "final_text_matches_raw_model_response",
+        "original_part_unchanged",
+        "published_bytes_match_snapshot",
+        "compact_result_budget"
+      ],
+      "id": "05-deepseek-deepseek-v4-1-flash-1017-flange_v1-r1",
+      "inventory_files": 121,
+      "inventory_and_sequence_verified": true
+    }
+  ],
+  "same_prompt_per_part": true,
+  "same_tool_schema": true,
+  "same_policy": true,
+  "same_reasoning_setting": "medium",
+  "harness_source_unchanged_during_benchmark": true,
+  "note": "Trace integrity can pass even when final reporting fails; consult independent evaluation for task success."
+}

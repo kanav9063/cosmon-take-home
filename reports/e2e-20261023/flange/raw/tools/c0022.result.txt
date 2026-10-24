@@ -1,0 +1,1 @@
+{"ok":true,"result":{"element_size_mm":1,"elements":2350,"min_quality":0.4557142857142857},"phase":"meshed","state_revision":19,"initial_sf":0.212,"best_sf":0.839,"best_solve_cli_id":"x0013","remaining_trials":2}

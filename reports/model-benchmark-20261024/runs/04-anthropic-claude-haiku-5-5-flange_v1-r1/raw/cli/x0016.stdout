@@ -1,0 +1,9 @@
+{
+  "ok": true,
+  "result": {
+    "downstream_invalidated": true,
+    "name": "fillet_radius_mm",
+    "new_value": 10,
+    "previous_value": 1.5
+  }
+}

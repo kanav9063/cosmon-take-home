@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "tracked_files_scanned": 1696,
+  "included_trace_bundles": 15,
+  "hashed_trace_files_verified": 1562,
+  "credentials_absent": true,
+  "all_inventory_files_staged": true,
+  "env_ignored": true,
+  "prior_history_blobs_scanned": 82,
+  "prior_history_credentials_absent": true,
+  "document_links_checked": [
+    "README.md",
+    "RUN.md",
+    "REPORT.md",
+    "docs/ARCHITECTURE.md",
+    "reports/model-benchmark-20261024/INDEX.md",
+    "reports/model-benchmark-20261024/comparison.md"
+  ],
+  "document_links_valid": true
+}

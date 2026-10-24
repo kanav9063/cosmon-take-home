@@ -1,0 +1,56 @@
+{
+  "max_trials": 6,
+  "max_model_turns": 48,
+  "max_tool_calls": 64,
+  "run_timeout_seconds": 300,
+  "model_timeout_seconds": 40,
+  "cli_timeout_seconds": 15,
+  "max_output_tokens": 2048,
+  "exploration_ranges": {
+    "bracket_v3": {
+      "thickness_mm": [
+        3.0,
+        12.0
+      ],
+      "hole_diameter_mm": [
+        2.0,
+        8.0
+      ],
+      "fillet_radius_mm": [
+        2.0,
+        10.0
+      ]
+    },
+    "flange_v1": {
+      "thickness_mm": [
+        2.0,
+        5.0
+      ],
+      "hole_diameter_mm": [
+        4.0,
+        10.0
+      ],
+      "fillet_radius_mm": [
+        1.5,
+        10.0
+      ]
+    }
+  },
+  "range_provenance": "Configurable exploration bounds; not an exhaustive feasible domain",
+  "objective": "first_verified_single_parameter_fix",
+  "routine_result_bytes": 2048,
+  "error_excerpt_chars": 512,
+  "_model_config": {
+    "provider": "openrouter",
+    "model": "openai/gpt-6-luna",
+    "reasoning_effort": "medium",
+    "max_output_tokens": 2048,
+    "client_retries": 0,
+    "sdk_retries": 0,
+    "hosted_tracing": false,
+    "model_timeout_seconds": 40,
+    "max_model_turns": 48,
+    "prompt_sha256": "ef576f0a8a64ed96eb8204fdc8b52ca50c5d08385120d1d8611b1efc1c6b5654",
+    "tool_schema_sha256": "99b8b1f284aaa7af217f67cbab4d8edf2f25f8994cf8ccef7c6d74bd0a2528b8"
+  }
+}

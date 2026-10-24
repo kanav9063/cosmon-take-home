@@ -1,0 +1,95 @@
+{
+  "output": [
+    {
+      "id": "__fake_id__",
+      "summary": [],
+      "type": "reasoning",
+      "content": [
+        {
+          "text": "Since the fillet adjustment didn't help, I'm shifting to reducing the hole diameter from 10 to 4.0 mm, reasoning that a smaller hole increases net cross-sectional area and should lower stress at that section. I'll try this smaller hole at thickness 2 next.\n\n",
+          "type": "reasoning_text"
+        }
+      ],
+      "encrypted_content": null,
+      "status": null,
+      "provider_data": {
+        "model": "anthropic/claude-haiku-5.5",
+        "response_id": "gen-1792806874-ZlYLPW5Fm29UrsvNF4f1",
+        "_chat_completions_reasoning_field": "reasoning"
+      }
+    },
+    {
+      "id": "__fake_id__",
+      "content": [
+        {
+          "annotations": [],
+          "text": "The fillet change had no effect (still 0.212). Restoring the original and trying a smaller hole, 4.0 mm, which should increase the net section around the hole.",
+          "type": "output_text",
+          "logprobs": []
+        }
+      ],
+      "role": "assistant",
+      "status": "completed",
+      "type": "message",
+      "phase": null,
+      "provider_data": {
+        "model": "anthropic/claude-haiku-5.5",
+        "response_id": "gen-1792806874-ZlYLPW5Fm29UrsvNF4f1"
+      }
+    },
+    {
+      "arguments": "{}",
+      "call_id": "toolu_01SeViBFfAfYtu1BYJnBC3Wz",
+      "name": "open_part",
+      "type": "function_call",
+      "id": "__fake_id__",
+      "async_": null,
+      "caller": null,
+      "namespace": null,
+      "status": null,
+      "provider_data": {
+        "model": "anthropic/claude-haiku-5.5",
+        "response_id": "gen-1792806874-ZlYLPW5Fm29UrsvNF4f1"
+      }
+    }
+  ],
+  "usage": {
+    "requests": 1,
+    "input_tokens": 6017,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 203,
+    "output_tokens_details": {
+      "reasoning_tokens": 124
+    },
+    "total_tokens": 6220,
+    "request_usage_entries": []
+  },
+  "response_id": null,
+  "request_id": null,
+  "raw_usage": {
+    "completion_tokens": 203,
+    "prompt_tokens": 6017,
+    "total_tokens": 6220,
+    "completion_tokens_details": {
+      "audio_tokens": 0,
+      "reasoning_tokens": 124,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cache_write_tokens": 0,
+      "cached_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost": 0.0007032,
+    "is_byok": false,
+    "cost_details": {
+      "upstream_inference_cost": 0.0007032,
+      "upstream_inference_prompt_cost": 0.0006017,
+      "upstream_inference_completions_cost": 0.0001015
+    }
+  }
+}
