@@ -1,0 +1,125 @@
+{
+  "source_directory": "/home/ubuntu/work/cosmon-eval",
+  "source_git_head": "e338e7bb3e86c2f2f45779d2fd9637da29b74ddb",
+  "source_state": "Evaluator modules were uncommitted in source working tree at import; file hashes pin actual imported bytes.",
+  "imported_files": [
+    {
+      "path": "evaluate.py",
+      "sha256": "2806678f0495aecd727cc52792d4d7a7a37ad32710396e38767f14cf579a172c",
+      "bytes": 14654
+    },
+    {
+      "path": "eval_types.py",
+      "sha256": "5cf710b622569714bebb16baba37ecc7d45d65f8c29c539ce4bd51b13c5ef460",
+      "bytes": 6913
+    },
+    {
+      "path": "eval_state.py",
+      "sha256": "7ea4d66cae608df73d7ebc8069150e28aaf9c42b6bcc764a443d7316ac81b8a9",
+      "bytes": 29291
+    },
+    {
+      "path": "eval_checks.py",
+      "sha256": "6d377889fbd2922d0b8bf340ee21ed4cb7904a0f445c2293ff871631ab9a1928",
+      "bytes": 47447
+    },
+    {
+      "path": "trace_adapter.py",
+      "sha256": "84bf113631f075e7b77a2f07ae7332666deaa48540561113b87970d4c6594ae7",
+      "bytes": 30808
+    },
+    {
+      "path": "eval_cases.json",
+      "sha256": "2e21978196f43fc8f1c393a2bc802b73ff93479805b2ef63c9b7e1d9c7b43f15",
+      "bytes": 1861
+    },
+    {
+      "path": "docs/EVAL_IMPLEMENTATION_CONTRACT.md",
+      "sha256": "f060969ea21133d7aa941006809593873fd2017efa6ba2ea0afcc5ee3d8f8854",
+      "bytes": 5490
+    },
+    {
+      "path": "docs/API_INTEGRATION.md",
+      "sha256": "d63bd95114083dde3bee14c571ca6fbe17358611204507554ca3891f1dd82088",
+      "bytes": 6425
+    },
+    {
+      "path": "tests/bundle_factory.py",
+      "sha256": "c3ec6e86af5fe0f000dda0e485860f76d65078f467dd00b920d406974a0788cc",
+      "bytes": 17998
+    },
+    {
+      "path": "tests/test_adapter_review.py",
+      "sha256": "27f770b1bca73676520185b0934b6ce023f88109c9f31d523ccb4a4f1583977b",
+      "bytes": 12921
+    },
+    {
+      "path": "tests/test_capture_links.py",
+      "sha256": "2b6729af71820adef1e9c39a1311c9bdf51acdf42ffc5862e249281c6ed2e610",
+      "bytes": 3881
+    },
+    {
+      "path": "tests/test_checks.py",
+      "sha256": "d844e1aac21149aee0f3a04dafed8a1ed452646faa268996e5fff620286f1fae",
+      "bytes": 24151
+    },
+    {
+      "path": "tests/test_pipeline.py",
+      "sha256": "7d5f2e53c356d2235d1d99dfc82105776e3482c8deea3c0810ec21114e9d3e24",
+      "bytes": 10785
+    },
+    {
+      "path": "tests/test_state.py",
+      "sha256": "3a0399a4c4c7ea7c518e39688a70ae151e83b27ddfe9d15b9cc357a97890ee48",
+      "bytes": 13473
+    },
+    {
+      "path": "tests/test_state_review.py",
+      "sha256": "a274eae443cad6fc8639c5b235375d2b2ca398680ddc427b4136a15c6fc9f33f",
+      "bytes": 9024
+    },
+    {
+      "path": "tests/test_wire_coverage.py",
+      "sha256": "f609d95f59782eb47fd9f3480406cef0a2fac1b3414b247417564415add3856f",
+      "bytes": 10965
+    },
+    {
+      "path": "parts/bracket_v1.json",
+      "sha256": "75d4fad2ed12a6f1ce16c02fcbcb3626ad07b627434299d91400eefb3e7ccfe4",
+      "bytes": 766
+    },
+    {
+      "path": "parts/bracket_v2.json",
+      "sha256": "990107daa0bcd5c48c5cd5ba84a8c8d132833660f8e9fe5ad0bcd4c28e7258a4",
+      "bytes": 790
+    },
+    {
+      "path": "parts/bracket_v3.json",
+      "sha256": "9756780586e273177a75155a9e814d514bae9cd21dcc4ee64dc6c32626fdadc8",
+      "bytes": 866
+    },
+    {
+      "path": "parts/bracket_v3_thick.json",
+      "sha256": "f4a09ed6b27c9bdb9bbc2053640278837bc8918b65935b9d70dd216fa2e4b394",
+      "bytes": 846
+    },
+    {
+      "path": "parts/flange_v1.json",
+      "sha256": "0e6535b551bb5a441e207fd4d057774c14de0e40c55f7ada83c17fdbd8b7ab7f",
+      "bytes": 901
+    },
+    {
+      "path": "parts/housing_v1.json",
+      "sha256": "3875c6a153eb20313141c79a24a541d0c97bb74430a39bb5cc6fd4e976a55d56",
+      "bytes": 1035
+    }
+  ],
+  "integration": "Independent evaluator copied verbatim; no producer module imports, no model/CLI calls during evaluation.",
+  "local_modifications": [
+    {
+      "path": "tests/test_pipeline.py",
+      "sha256": "4a16ceb28010a14910f6a2078cf9d96a3d8e32dff6d3e9cdfdc053bc56bfe224",
+      "reason": "Test-only fixture fix: load raw JSON for malformed trusted-case input instead of serializing internal Decimal objects. Production evaluator modules unchanged."
+    }
+  ]
+}

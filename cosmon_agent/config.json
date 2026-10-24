@@ -1,0 +1,25 @@
+{
+  "max_trials": 6,
+  "max_model_turns": 48,
+  "max_tool_calls": 64,
+  "run_timeout_seconds": 300,
+  "model_timeout_seconds": 40,
+  "cli_timeout_seconds": 15,
+  "max_output_tokens": 2048,
+  "exploration_ranges": {
+    "bracket_v3": {
+      "thickness_mm": [3.0, 12.0],
+      "hole_diameter_mm": [2.0, 8.0],
+      "fillet_radius_mm": [2.0, 10.0]
+    },
+    "flange_v1": {
+      "thickness_mm": [2.0, 5.0],
+      "hole_diameter_mm": [4.0, 10.0],
+      "fillet_radius_mm": [1.5, 10.0]
+    }
+  },
+  "range_provenance": "Configurable exploration bounds; not an exhaustive feasible domain",
+  "objective": "first_verified_single_parameter_fix",
+  "routine_result_bytes": 2048,
+  "error_excerpt_chars": 512
+}

@@ -14,6 +14,8 @@ __pycache__/
 .pytest_cache/
 .ruff_cache/
 node_modules/
+.archify/
+runs/
 
 # Recordings should be submitted through a shared link, not committed to Git.
 recordings/

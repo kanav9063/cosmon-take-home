@@ -1,7 +1,7 @@
 [project]
 name = "cosmon-take-home"
 version = "0.0.0"
-description = "PartLab take-home preparation; agent and evaluation implementation pending"
+description = "Bounded PartLab repair agent with raw traces and independent offline evaluation"
 requires-python = ">=3.12,<3.13"
 dependencies = [
     "openai-agents==0.24.0",

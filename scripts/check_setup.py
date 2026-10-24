@@ -90,7 +90,7 @@ def check_sdk() -> dict:
 def check_cli() -> dict:
     require(platform.system() == "Linux" and platform.machine() in {"x86_64", "AMD64"},
             "The supplied binary requires Linux AMD64")
-    starter = [ROOT / "README.md", ROOT / "partlab", *sorted((ROOT / "parts").glob("*.json"))]
+    starter = [ROOT / "TASK.md", ROOT / "partlab", *sorted((ROOT / "parts").glob("*.json"))]
     before = {str(p.relative_to(ROOT)): digest(p) for p in starter}
     session_existed = (ROOT / ".partlab").exists()
     session_before = file_snapshot(ROOT / ".partlab")
