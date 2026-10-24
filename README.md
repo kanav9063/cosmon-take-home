@@ -7,6 +7,8 @@ an independent offline evaluator checks the recorded evidence.
 
 Start with the [reviewer walkthrough](docs/REVIEWER_GUIDE.md) for a reading order,
 the important files, and a step-by-step path from a result to its evidence.
+The [requirement-by-requirement evidence map](REPORT.md#acceptance-criteria)
+explains how we addressed each task, agent, evaluation and handoff requirement.
 
 ![PartLab agent architecture](docs/assets/architecture.png)
 

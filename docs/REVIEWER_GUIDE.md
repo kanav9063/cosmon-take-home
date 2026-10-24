@@ -9,7 +9,9 @@ reproduction; you do not need to read every raw payload to review the design.
 1. [TASK.md](../TASK.md) is the original assignment, unchanged. It defines the
    required load, SF target, single-parameter repair and flange constraints.
 2. [REPORT.md](../REPORT.md) records what worked, what failed, the verification
-   performed and the remaining limitations.
+   performed and the remaining limitations. Its [acceptance map](../REPORT.md#acceptance-criteria)
+   connects every assignment requirement to behavior and evidence, including
+   the two real SDK harnesses.
 3. [DECISIONS.md](../DECISIONS.md) explains 19 implementation choices and their
    tradeoffs. [ARCHITECTURE.md](ARCHITECTURE.md) shows how the pieces fit together.
 4. Follow the bracket trace below to inspect a delivered repair; then inspect

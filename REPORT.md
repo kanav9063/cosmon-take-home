@@ -2,10 +2,12 @@
 
 The agent completed live runs for both required parts using OpenRouter
 `openai/gpt-6.1-sol` with medium reasoning. PartLab supplied every reported
-safety factor. Independent evaluator **1.1.0**, pinned to source commit
-`b60473ca172a2fad33c377e96c212f2adb6aa84f`, replayed the saved evidence and
-verified the execution and reporting. That offline reevaluation made no
-additional model calls and preserved the original captures and earlier reports.
+safety factor. Independent evaluator **1.1.0** replayed the saved evidence and
+verified the execution and reporting. The consolidated evaluator comes from
+`cadf11e`, retaining the `b60473c` grading core with documented path relocations
+and additional tests. [Provenance](evaluation/PROVENANCE.json) records those
+changes. Offline reevaluation made no additional model calls and preserved the
+original captures and earlier reports.
 
 ## Original two-part run
 
@@ -68,20 +70,74 @@ the adapter changes and how it preserves native arguments and exact tool
 returns. This demonstrates a real harness substitution. It does not establish
 arbitrary-harness compatibility or a controlled performance advantage.
 
+Model choice and harness choice are separate. The five-model comparison kept
+OpenAI Agents SDK fixed, including for Anthropic model IDs. The two additional
+runs actually use Anthropic Python SDK ToolRunner. Both harnesses execute the
+same seven tools, guarded executor and task, and emit evidence accepted by the
+same evaluator. The native adapter preserves HTTP bodies; the original runner
+preserves SDK-exposed objects. This is the live demonstration of the assignment's
+requirement to support a different harness without rewriting the grader.
+
 ## Acceptance criteria
 
-| Assignment criterion | Implemented behavior and evidence |
-| --- | --- |
-| Clean agent loop and sensible tools | Agents SDK loop, explicit system instructions, seven narrow named tools; model chooses candidates and executor enforces rules |
-| Correct SDK use and recovery | Guards enforce ordering and exact default load; each trial restores the original; malformed proposals can be corrected; ambiguous execution failures stop |
-| Avoid over-fetching | Actual SDK inputs contain the exact compact tool returns and no verbose solver log or private physics fields; no redundant SF/stress/log calls |
-| Separate decisions, CLI and traces | Agent, execution engine and trace writer have separate responsibilities; evaluator reconstructs evidence independently; additional part names/configurations work without rewriting the workflow |
-| Repeatable unhappy path | A real flange baseline followed by a 5.5 mm thickness proposal: rejected before CLI dispatch, with state bytes, parameters and revision unchanged |
-| Explain design choices | [Decision record](DECISIONS.md) explains the choices, reasons and tradeoffs; [architecture](docs/ARCHITECTURE.md) describes the workflow |
+The tables map the [original assignment](TASK.md) to implemented behavior and
+inspectable evidence. A demonstrated check is not a claim that every search
+succeeds or every possible failure mode is handled.
+
+### Required task and captures
+
+| Requirement | How it is addressed | Evidence |
+| --- | --- | --- |
+| Run both required parts and persist messages, calls and results | Original live runs cover `bracket_v3` and `flange_v1`; bundles retain model messages, tool proposals/returns and raw CLI output. | [Bracket trace](reports/e2e-20261023/bracket/), [flange trace](reports/e2e-20261023/flange/), [capture audit](reports/main-integration-20261024/capture-audit.json) |
+| Reset between runs; apply the default load and run the FEA workflow | Each run uses an isolated session and records reset. The executor requires open → mesh → explicit original face/force/direction → solve. | [Executor](cosmon_agent/engine.py), [bracket events](reports/e2e-20261023/bracket/events.jsonl) |
+| Verify one changed parameter and save a passing repair | Bracket thickness changed 3 → 5 mm, then a fresh converged solve reached SF 3.072. Saved and published bytes were verified. | [Saved part](outputs/bracket_v3.json), [independent bracket report](reports/main-integration-20261024/agent-evaluation/reports/report-bracket.json) |
+| Respect flange manufacturing constraints and report unsuccessful search honestly | Every executed trial is guarded by thickness ≤ 5 mm and hole diameter ≥ 4 mm. Best observed SF was 0.839; no unsafe artifact was saved. The bounded search does not prove that no legal fix exists. | [Independent flange report](reports/main-integration-20261024/agent-evaluation/reports/report-flange.json), [search policy and rationale](DECISIONS.md#5-model-proposed-candidates-within-configurable-exploration-bounds) |
+
+### Part 1: agent requirements
+
+| Requirement | How it is addressed | Evidence |
+| --- | --- | --- |
+| Clean agent loop, sensible prompt and tool surface | One model-driven loop, explicit task/order/recovery/final-format instructions and seven narrow tools. The model proposes; Python enforces. | [Agent implementation](cosmon_agent/agent.py), [tool-boundary decisions](DECISIONS.md#agent-and-tool-boundary) |
+| Correct SDK use: preconditions, ordering and error recovery | Serialized guards enforce state and exact default load. Each trial restores the original. Correctable proposals return errors; known mesh failures permit restoration; ambiguous execution failures stop. | [Executor](cosmon_agent/engine.py), [engine regressions](tests/test_agent_engine.py), [SDK regressions](tests/test_agent_sdk.py) |
+| Avoid over-fetching and large context blobs | Selected solve fields and necessary parameter readbacks supply observations. Full logs remain in local evidence; no redundant SF/stress/log fetches follow a solve. | [Context and continuity audit](reports/main-integration-20261024/capture-audit.json), [context decision](DECISIONS.md#10-compact-model-observations-complete-local-evidence) |
+| Separate CLI interaction, decisions and capture; use the solver, not hard-coded answers | `agent.py`, `engine.py` and `trace.py` have distinct responsibilities. SF comes from PartLab. Configured new names reuse the workflow; new manufacturing rules still require explicit guards and case policy. | [Architecture code map](docs/ARCHITECTURE.md#code-map), [extension limits](DECISIONS.md#17-extend-through-explicit-contracts-with-limits-stated), [configuration and new-part tests](tests/test_agent_sdk.py) |
+| One small, repeatable non-happy-path check, with its meaning explained | After a real flange baseline, a 5.5 mm thickness proposal is rejected before CLI dispatch. Ten assertions verify no forbidden mutation or state change; this proves guard behavior for that case. | [Runnable guard check](scripts/check_agent_guard.py), [verification](reports/main-integration-20261024/guard/verification.json) |
+| Explain the design choices | Central decision record explains choices, reasons, alternatives and limits, with deeper component records linked. | [DECISIONS.md](DECISIONS.md), [architecture](docs/ARCHITECTURE.md) |
 
 Model-facing solve observations were **334–379 bytes**, versus roughly 6.3 KiB
 of full stdout retained for each solve. The largest tool response was 674
 bytes. These are observed byte counts, not claims about total token savings.
+
+### Part 2: evaluation requirements
+
+| Requirement | How it is addressed | Evidence |
+| --- | --- | --- |
+| Generalize to another case or harness | Two real SDK loops emit the same contract and use unchanged grading logic: OpenAI Agents SDK and Anthropic Python SDK ToolRunner. Separate synthetic tests cover an unseen parameter/load/constraint case and a differently structured capture adapter. | [Live two-harness proof](docs/HARNESS_PORTABILITY.md), [unchanged-source receipt](reports/anthropic-harness-20261024/verification.json), [unseen-case and adapter tests](evaluation/tests/test_rubric.py) |
+| Principled, tunable heuristics | Trusted cases define targets and manufacturing bounds; configurable warning budgets cover efficiency, while read limits bound parsing. Reports retain effective policy and its digest. Efficiency settings cannot weaken correctness. | [Case policy](evaluation/eval_cases.json), [configuration runbook](evaluation/EVAL_RUN.md), [detailed rubric](evaluation/docs/EVAL_RUBRIC.md) |
+| Structured reports an engineer can read and act on | Each report separates outcome dimensions and provides check IDs, reasons, raw evidence references and corrective actions. A readable index summarizes runs; Scout optionally displays the same findings. | [Current report index](reports/main-integration-20261024/evaluator/REPORTS.md), [specific findings](reports/main-integration-20261024/agent-evaluation/reports/report-synthetic-stale.json), [Scout guide](evaluation/scout_setup/README.md) |
+| Defensible scoring | Capture, compliance, correctness, delivery, reporting and repair achievement remain separate. Missing evidence is unknown; observed violations fail; recovered errors remain diagnostic. An honest failed search does not earn a successful-repair verdict. | [Scoring decisions](evaluation/docs/EVAL_CHECK_DECISIONS.md), [flange verdict](reports/main-integration-20261024/agent-evaluation/reports/report-flange.json) |
+| Deliberately flawed trace that triggers the specific expected finding | A labeled synthetic derivative invalidates a cited solve before save while preserving valid hashes. Evaluation flags `STALE_SOLVE`; a separate interrupted derivative remains incomplete. | [Reproducible check](scripts/check_e2e_evaluation.py), [stale-solve report](reports/main-integration-20261024/agent-evaluation/reports/report-synthetic-stale.json), [verification](reports/main-integration-20261024/agent-evaluation/verification.json) |
+
+The evaluator processes batches with bounded input reads and independent case
+state. The current check covers 19 expected example outcomes and verifies
+order-independent reports; it is not a measured throughput benchmark over
+hundreds of production traces. Two-harness compatibility is demonstrated for
+the included adapters, not promised for an arbitrary SDK with no adapter.
+
+### Engineering process and handoff
+
+[RUN.md](RUN.md) supplies setup, pinned dependencies, isolated-reset agent runs,
+checks and offline evaluation commands. Source, tests, at least two live traces,
+evaluation output and the saved bracket are committed; the
+[reviewer walkthrough](docs/REVIEWER_GUIDE.md) identifies the important files.
+[Combined verification](reports/main-integration-20261024/README.md) records
+22 agent tests, 156 evaluator tests and 19 expected cases, including an offline
+Docker run. Additional model tests retain their failures and limitations.
+
+The recording is still outstanding. The repository demonstrates implementation
+and verification, but does not establish the required recorded narration or
+compliance with a one-hour session. No global flange infeasibility proof is
+claimed, and the remaining failure-handling limits are documented below.
 
 ## Verification and evidence
 
