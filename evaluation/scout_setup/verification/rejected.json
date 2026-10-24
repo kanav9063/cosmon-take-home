@@ -1,0 +1,153 @@
+{
+  "dimension_results": 21,
+  "evaluated": 1,
+  "explicitly_rejected": 2,
+  "input_batch_sha256": "00ac34a3e2a89be061bc904f95423842cae7090be4c0aed0eec84d07b8d381d0",
+  "inputs": [
+    {
+      "input_id": "duplicate_a",
+      "report_sha256": "e281a34e236b3c990312134f83f76ff80688d31f5c34e5c21bf824b0fdf25e6e",
+      "transcript_id": "f2a5577405d8d24f552becf3fb990cf99a1b517da372cb8f47aa8328469fb4d2"
+    },
+    {
+      "input_id": "duplicate_b",
+      "report_sha256": "0d087f5e8f5e35d69882a92c20392e2c333a4a119e00388320abf7943dc8325a",
+      "transcript_id": "083a4051c2d696243bf18c306c30ba5828ffb209b8aa8516b8d12141ddbd669d"
+    },
+    {
+      "input_id": "healthy_guard",
+      "report_sha256": "f97f31ee3df32334cab1647696e07c0486719445aea053a9bdfaf914a584e31e",
+      "transcript_id": "6d72206f2a87d059e0799fef6f096bc5d71edff743eab5bb4cf8a9cf24920250"
+    }
+  ],
+  "inspect_ai": "0.3.283",
+  "inspect_scout": "0.6.1",
+  "integration_sha256": {
+    "bridge.py": "412b6248d3c838208f32e085ede59b0430252df9e82b855ed05ac010f02049bd",
+    "requirements.lock": "8891c35f751ff76bcb3b7d8000eafa4831d53823126962a91ed30c67887f38b4",
+    "scanners.py": "ee41c0ab0b0ba95c382d0e35ddf3e06cad2a9549baccd80ee6659674b927e3cf"
+  },
+  "model_calls": 0,
+  "network_attempts": 0,
+  "network_audit_hook": true,
+  "projection_kind": "derived_evaluator_report_not_agent_conversation",
+  "projection_version": "cosmon.scout-projection/1",
+  "raw_reference_occurrences_verified": 273,
+  "requested": 3,
+  "rows": [
+    {
+      "dimension": "capture_integrity",
+      "transcript_id": "083a4051c2d696243bf18c306c30ba5828ffb209b8aa8516b8d12141ddbd669d",
+      "value": "unknown"
+    },
+    {
+      "dimension": "delivery",
+      "transcript_id": "083a4051c2d696243bf18c306c30ba5828ffb209b8aa8516b8d12141ddbd669d",
+      "value": "unknown"
+    },
+    {
+      "dimension": "efficiency",
+      "transcript_id": "083a4051c2d696243bf18c306c30ba5828ffb209b8aa8516b8d12141ddbd669d",
+      "value": "unknown"
+    },
+    {
+      "dimension": "final_correctness",
+      "transcript_id": "083a4051c2d696243bf18c306c30ba5828ffb209b8aa8516b8d12141ddbd669d",
+      "value": "unknown"
+    },
+    {
+      "dimension": "process_compliance",
+      "transcript_id": "083a4051c2d696243bf18c306c30ba5828ffb209b8aa8516b8d12141ddbd669d",
+      "value": "unknown"
+    },
+    {
+      "dimension": "repair_achievement",
+      "transcript_id": "083a4051c2d696243bf18c306c30ba5828ffb209b8aa8516b8d12141ddbd669d",
+      "value": "unknown"
+    },
+    {
+      "dimension": "reporting_accuracy",
+      "transcript_id": "083a4051c2d696243bf18c306c30ba5828ffb209b8aa8516b8d12141ddbd669d",
+      "value": "unknown"
+    },
+    {
+      "dimension": "capture_integrity",
+      "transcript_id": "6d72206f2a87d059e0799fef6f096bc5d71edff743eab5bb4cf8a9cf24920250",
+      "value": "pass"
+    },
+    {
+      "dimension": "delivery",
+      "transcript_id": "6d72206f2a87d059e0799fef6f096bc5d71edff743eab5bb4cf8a9cf24920250",
+      "value": "pass"
+    },
+    {
+      "dimension": "efficiency",
+      "transcript_id": "6d72206f2a87d059e0799fef6f096bc5d71edff743eab5bb4cf8a9cf24920250",
+      "value": "not_applicable"
+    },
+    {
+      "dimension": "final_correctness",
+      "transcript_id": "6d72206f2a87d059e0799fef6f096bc5d71edff743eab5bb4cf8a9cf24920250",
+      "value": "pass"
+    },
+    {
+      "dimension": "process_compliance",
+      "transcript_id": "6d72206f2a87d059e0799fef6f096bc5d71edff743eab5bb4cf8a9cf24920250",
+      "value": "pass"
+    },
+    {
+      "dimension": "repair_achievement",
+      "transcript_id": "6d72206f2a87d059e0799fef6f096bc5d71edff743eab5bb4cf8a9cf24920250",
+      "value": "pass"
+    },
+    {
+      "dimension": "reporting_accuracy",
+      "transcript_id": "6d72206f2a87d059e0799fef6f096bc5d71edff743eab5bb4cf8a9cf24920250",
+      "value": "pass"
+    },
+    {
+      "dimension": "capture_integrity",
+      "transcript_id": "f2a5577405d8d24f552becf3fb990cf99a1b517da372cb8f47aa8328469fb4d2",
+      "value": "unknown"
+    },
+    {
+      "dimension": "delivery",
+      "transcript_id": "f2a5577405d8d24f552becf3fb990cf99a1b517da372cb8f47aa8328469fb4d2",
+      "value": "unknown"
+    },
+    {
+      "dimension": "efficiency",
+      "transcript_id": "f2a5577405d8d24f552becf3fb990cf99a1b517da372cb8f47aa8328469fb4d2",
+      "value": "unknown"
+    },
+    {
+      "dimension": "final_correctness",
+      "transcript_id": "f2a5577405d8d24f552becf3fb990cf99a1b517da372cb8f47aa8328469fb4d2",
+      "value": "unknown"
+    },
+    {
+      "dimension": "process_compliance",
+      "transcript_id": "f2a5577405d8d24f552becf3fb990cf99a1b517da372cb8f47aa8328469fb4d2",
+      "value": "unknown"
+    },
+    {
+      "dimension": "repair_achievement",
+      "transcript_id": "f2a5577405d8d24f552becf3fb990cf99a1b517da372cb8f47aa8328469fb4d2",
+      "value": "unknown"
+    },
+    {
+      "dimension": "reporting_accuracy",
+      "transcript_id": "f2a5577405d8d24f552becf3fb990cf99a1b517da372cb8f47aa8328469fb4d2",
+      "value": "unknown"
+    }
+  ],
+  "scan_complete": true,
+  "scan_errors": 0,
+  "scan_location": "/home/ubuntu/work/cosmon-eval/scout_setup/results/rejected-scan/scans/scan_id=QK4Ledn7TBSwm2PhC9SmBK",
+  "source_kinds": [
+    "synthetic_fixture",
+    "unknown"
+  ],
+  "status": "pass",
+  "transcripts": 3
+}

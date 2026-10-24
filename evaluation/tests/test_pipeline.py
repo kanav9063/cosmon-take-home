@@ -32,7 +32,7 @@ class PipelineTests(unittest.TestCase):
             self.assertEqual(report["summary"][name]["status"], "pass", (name, report["findings"]))
 
     def test_custom_case_rejects_missing_identity_fields_before_grading(self):
-        original = json.loads((Path(__file__).resolve().parents[1] / "parts/bracket_v3.json").read_bytes())
+        original = json.loads((Path(__file__).resolve().parents[2] / "parts/bracket_v3.json").read_bytes())
         for field in ("revision", "material"):
             damaged = {k: v for k, v in original.items() if k != field}
             raw = encoded(damaged)

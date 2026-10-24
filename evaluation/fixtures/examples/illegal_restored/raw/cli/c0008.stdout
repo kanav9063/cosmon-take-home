@@ -1,0 +1,17 @@
+{
+  "ok": true,
+  "result": {
+    "default_load": {
+      "direction": "-Z",
+      "face_id": "face_mating",
+      "force_N": 8000.0
+    },
+    "is_latest_revision": true,
+    "material": {
+      "name": "Aluminum 6061-T6",
+      "yield_MPa": 180.0
+    },
+    "name": "flange_v1",
+    "revision": 1
+  }
+}

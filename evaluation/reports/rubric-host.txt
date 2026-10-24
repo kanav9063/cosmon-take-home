@@ -1,0 +1,13 @@
+test_foreign_harness_layout_preserves_grading_and_stale_solve_detection (test_rubric.RubricPortabilityTests.test_foreign_harness_layout_preserves_grading_and_stale_solve_detection) ... ok
+test_unseen_case_uses_trusted_data_for_load_target_and_parameter_bounds (test_rubric.RubricPortabilityTests.test_unseen_case_uses_trusted_data_for_load_target_and_parameter_bounds) ... ok
+test_added_case_uses_data_including_non_mounting_default (test_pipeline.PipelineTests.test_added_case_uses_data_including_non_mounting_default) ... ok
+test_explicit_api_adapter_seam_preserves_grade (test_pipeline.PipelineTests.test_explicit_api_adapter_seam_preserves_grade) ... ok
+test_warning_budgets_are_explicit_and_do_not_change_correctness (test_pipeline.PipelineTests.test_warning_budgets_are_explicit_and_do_not_change_correctness) ... ok
+test_semantic_stale_detected_with_raw_evidence (test_pipeline.PipelineTests.test_semantic_stale_detected_with_raw_evidence) ... ok
+test_guard_and_recovery_are_diagnostics (test_pipeline.PipelineTests.test_guard_and_recovery_are_diagnostics) ... ok
+test_exhaustion_reporting_separate_from_achievement (test_pipeline.PipelineTests.test_exhaustion_reporting_separate_from_achievement) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 2.867s
+
+OK

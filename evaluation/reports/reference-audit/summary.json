@@ -1,0 +1,164 @@
+{
+  "dimensions": {
+    "capture_integrity": {
+      "pass": 16,
+      "unknown": 3
+    },
+    "delivery": {
+      "fail": 1,
+      "not_applicable": 4,
+      "pass": 11,
+      "unknown": 3
+    },
+    "efficiency": {
+      "not_applicable": 19
+    },
+    "final_correctness": {
+      "fail": 3,
+      "not_applicable": 4,
+      "pass": 11,
+      "unknown": 1
+    },
+    "process_compliance": {
+      "fail": 2,
+      "pass": 14,
+      "unknown": 3
+    },
+    "repair_achievement": {
+      "fail": 8,
+      "not_applicable": 1,
+      "pass": 7,
+      "unknown": 3
+    },
+    "reporting_accuracy": {
+      "fail": 4,
+      "pass": 12,
+      "unknown": 3
+    }
+  },
+  "evaluated": 19,
+  "evaluator": {
+    "python": "3.12.3",
+    "sha256": "574e16b3ee1b386b2ddb1eb3f5e5f95b49672f33ff593515b57a83b50121bc85",
+    "sources": {
+      "eval_checks.py": "c6900b6d885e0cf1bdf59e487bf6be550fb254f638cf0e2f95609109742d8f1b",
+      "eval_state.py": "7ea4d66cae608df73d7ebc8069150e28aaf9c42b6bcc764a443d7316ac81b8a9",
+      "eval_types.py": "b03ec65d0b6a08fa473826fd168bdd9dcabb2f90bf9e1c983cc37bde24fd63e0",
+      "evaluate.py": "e20006538ee80bc17f30d162c618d7bb7c7e3a6dfcec6319c8d411836fb89f2e",
+      "trace_adapter.py": "7911652c4bf8b41a8e09a97c7b1db52950ade009aff905ee7f67ac9c1153ad53"
+    },
+    "version": "1.1.0"
+  },
+  "explicitly_rejected": 0,
+  "policy_digest": "2e21978196f43fc8f1c393a2bc802b73ff93479805b2ef63c9b7e1d9c7b43f15",
+  "report_version": "partlab.eval-batch/1",
+  "reports": [
+    {
+      "input_id": "already_safe",
+      "report": "report-already_safe.json",
+      "status": "evaluated"
+    },
+    {
+      "input_id": "guard_blocked",
+      "report": "report-guard_blocked.json",
+      "status": "evaluated"
+    },
+    {
+      "input_id": "historical_artifact",
+      "report": "report-historical_artifact.json",
+      "status": "evaluated"
+    },
+    {
+      "input_id": "honest_exhaustion",
+      "report": "report-honest_exhaustion.json",
+      "status": "evaluated"
+    },
+    {
+      "input_id": "illegal_restored",
+      "report": "report-illegal_restored.json",
+      "status": "evaluated"
+    },
+    {
+      "input_id": "live_bracket_v3",
+      "report": "report-live_bracket_v3.json",
+      "status": "evaluated"
+    },
+    {
+      "input_id": "live_flange_v1",
+      "report": "report-live_flange_v1.json",
+      "status": "evaluated"
+    },
+    {
+      "input_id": "missing_artifact",
+      "report": "report-missing_artifact.json",
+      "status": "evaluated"
+    },
+    {
+      "input_id": "missing_result",
+      "report": "report-missing_result.json",
+      "status": "evaluated"
+    },
+    {
+      "input_id": "multi_parameter",
+      "report": "report-multi_parameter.json",
+      "status": "evaluated"
+    },
+    {
+      "input_id": "overwritten_publication",
+      "report": "report-overwritten_publication.json",
+      "status": "evaluated"
+    },
+    {
+      "input_id": "partial_tail",
+      "report": "report-partial_tail.json",
+      "status": "evaluated"
+    },
+    {
+      "input_id": "producer_guard",
+      "report": "report-producer_guard.json",
+      "status": "evaluated"
+    },
+    {
+      "input_id": "recovered_cli",
+      "report": "report-recovered_cli.json",
+      "status": "evaluated"
+    },
+    {
+      "input_id": "repaired",
+      "report": "report-repaired.json",
+      "status": "evaluated"
+    },
+    {
+      "input_id": "scripted_bracket_v3",
+      "report": "report-scripted_bracket_v3.json",
+      "status": "evaluated"
+    },
+    {
+      "input_id": "scripted_flange_v1",
+      "report": "report-scripted_flange_v1.json",
+      "status": "evaluated"
+    },
+    {
+      "input_id": "stale_solve",
+      "report": "report-stale_solve.json",
+      "status": "evaluated"
+    },
+    {
+      "input_id": "wrong_load",
+      "report": "report-wrong_load.json",
+      "status": "evaluated"
+    }
+  ],
+  "requested": 19,
+  "resource_limits": {
+    "max_events": 100000,
+    "max_file_bytes": 16777216,
+    "max_files": 4096,
+    "max_record_bytes": 2097152,
+    "max_total_bytes": 67108864
+  },
+  "status": "complete",
+  "warning_policy": {
+    "warning_budgets": {}
+  }
+}

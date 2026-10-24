@@ -1,0 +1,132 @@
+{
+  "run_id": "19b5d833-afd1-413c-a2be-89f9c27948a4",
+  "status": "completed",
+  "event_count": 45,
+  "last_seq": 45,
+  "files": {
+    "checks/state-after.json": {
+      "sha256": "88430a3e518bd633f73a8e41cd514540fe5c2c61f0186c27fc744ede2dc71704",
+      "bytes": 128
+    },
+    "checks/state-before.json": {
+      "sha256": "88430a3e518bd633f73a8e41cd514540fe5c2c61f0186c27fc744ede2dc71704",
+      "bytes": 128
+    },
+    "events.jsonl": {
+      "sha256": "3ed11f677f7742be772adc0dbc43f9b86a97efe5e2ee2204d7b07d418b2317ee",
+      "bytes": 21387
+    },
+    "inputs/part.json": {
+      "sha256": "0e6535b551bb5a441e207fd4d057774c14de0e40c55f7ada83c17fdbd8b7ab7f",
+      "bytes": 901
+    },
+    "inputs/policy.json": {
+      "sha256": "f996919f8b31732fbdf11e4d17a2c07b2f22bb243d49b675eb2584e89bd9fffd",
+      "bytes": 887
+    },
+    "inputs/task.md": {
+      "sha256": "66c7a27bdfeae291aa42ecaa3681c2d53341d613369eaeb38b0bc5c78d805ebe",
+      "bytes": 5738
+    },
+    "manifest.json": {
+      "sha256": "9d9c03db5c65efab215f2a5db4c7c3e3143058c3b61c09c2bf593fe166330b71",
+      "bytes": 2345
+    },
+    "outcome.json": {
+      "sha256": "2d504b655a97b791972d83939b52e50b6b1684ba91d6a60ed5cdea691939c81f",
+      "bytes": 1022
+    },
+    "raw/cli/x0001.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "raw/cli/x0001.stdout": {
+      "sha256": "a8ff418780f61c73ddda1f438b64df8a1bb234506eddfdcc094a5b34ce35737b",
+      "bytes": 104
+    },
+    "raw/cli/x0002.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "raw/cli/x0002.stdout": {
+      "sha256": "1f65ade9fe0f84b741051bd41e34d3c963488d77ddc6eb7a6ea32cef7e49bc5f",
+      "bytes": 301
+    },
+    "raw/cli/x0003.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "raw/cli/x0003.stdout": {
+      "sha256": "d741aaee4c01e44c60c2a59365218df0e240d147232602667756bd14d9ff2f07",
+      "bytes": 115
+    },
+    "raw/cli/x0004.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "raw/cli/x0004.stdout": {
+      "sha256": "0fbb15c4083a8d96b8b0fa74c8a3518f29fa042a8b9f35397556c1fab0bbda78",
+      "bytes": 109
+    },
+    "raw/cli/x0005.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "raw/cli/x0005.stdout": {
+      "sha256": "ed668c62f1d4d6c7fc5a8a8fd28873539f973a75989164f30853999d2a58941f",
+      "bytes": 109
+    },
+    "raw/cli/x0006.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "raw/cli/x0006.stdout": {
+      "sha256": "df46330934525a655741f846dd031429e9ba6d7305cfe806cfed1701f05aa4ed",
+      "bytes": 6343
+    },
+    "raw/cli/x0007.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "raw/cli/x0007.stdout": {
+      "sha256": "1f65ade9fe0f84b741051bd41e34d3c963488d77ddc6eb7a6ea32cef7e49bc5f",
+      "bytes": 301
+    },
+    "raw/cli/x0008.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "raw/cli/x0008.stdout": {
+      "sha256": "d741aaee4c01e44c60c2a59365218df0e240d147232602667756bd14d9ff2f07",
+      "bytes": 115
+    },
+    "raw/messages/final.json": {
+      "sha256": "968e205f9c71eeaca6fc7c03fa26c06571f8e531cfb6cf666244b54ee369c67e",
+      "bytes": 130
+    },
+    "raw/tools/c0001.result.txt": {
+      "sha256": "3007b1fdd1eee2d151d2571a6b83d62eff3a2ded9fa54dbca5d157fd509be3d0",
+      "bytes": 668
+    },
+    "raw/tools/c0002.result.txt": {
+      "sha256": "4096ea81e00557bc951e06288ac88035551b79c5ee14fe868e253f0c46de12b6",
+      "bytes": 193
+    },
+    "raw/tools/c0003.result.txt": {
+      "sha256": "a91e84ebded1d42d79f4f0e994c76ac10e6ea36ce932aa3fabefb8f7bfa1d9a9",
+      "bytes": 193
+    },
+    "raw/tools/c0004.result.txt": {
+      "sha256": "7a1c7d18717e094e5239cc2aab7d3ed97ec253c6fbf61651fe82b2f8057261a5",
+      "bytes": 334
+    },
+    "raw/tools/c0005.result.txt": {
+      "sha256": "214ff184a7c34143c183dc33f73add2c05db03cf83b72514fec8b61868697cfc",
+      "bytes": 673
+    },
+    "raw/tools/c0006.result.txt": {
+      "sha256": "cbcaa8ec48dac6797970c5ea6b7b4e9f7b1eaab31783e22d44cfe7bf907d86ee",
+      "bytes": 271
+    }
+  }
+}

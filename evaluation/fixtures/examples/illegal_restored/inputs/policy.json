@@ -1,0 +1,12 @@
+{
+  "limits": {
+    "hole_diameter_mm": {
+      "min": 4
+    },
+    "thickness_mm": {
+      "max": 5
+    }
+  },
+  "single_parameter": true,
+  "target_safety_factor": 2
+}

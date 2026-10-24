@@ -22,7 +22,7 @@ class StateReviewTests(unittest.TestCase):
         return Builder(self.directory / "run", "independent-state-review", part)
 
     def read(self, builder):
-        raw = (Path(__file__).resolve().parents[1] / "parts" /
+        raw = (Path(__file__).resolve().parents[2] / "parts" /
                (builder.part_name + ".json")).read_bytes()
         case = Case(builder.part_name, strict_json(raw), digest(raw),
                     limits=({"thickness_mm": {"max": Decimal("5")},

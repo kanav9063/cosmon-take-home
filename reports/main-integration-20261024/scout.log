@@ -1,0 +1,13 @@
+
+
+╭─ scan: cosmon-main (19 transcripts) ─────────────────────────────────────────╮
+│ max_transcripts: 1, max_processes: 1                                         │
+│                                                                              │
+│ scanner    resultserrorstokens/sc…tokens                                     │
+│ evaluation…    133     -         -     -                                     │
+│                                                                              │
+│ scan complete:                                                               │
+│ evaluation/scout_setup/results/main-integration-20261024/scans/scan_id=MCtR… │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+{"status": "pass", "requested": 19, "transcripts": 19, "dimension_results": 133}

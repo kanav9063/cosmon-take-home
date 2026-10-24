@@ -1,0 +1,37 @@
+{
+  "capture": {
+    "cli_bytes": true,
+    "description": "Invented synthetic solver values; no PartLab or model execution.",
+    "model_calls": false
+  },
+  "capture_profile": "cosmon-eval/1",
+  "case": {
+    "part_name": "bracket_v3"
+  },
+  "evidence_kind": "synthetic_fixture",
+  "original": {
+    "part_ref": {
+      "bytes": 866,
+      "path": "inputs/part.json",
+      "sha256": "9756780586e273177a75155a9e814d514bae9cd21dcc4ee64dc6c32626fdadc8"
+    }
+  },
+  "policy_ref": {
+    "bytes": 76,
+    "path": "inputs/policy.json",
+    "sha256": "dd2dc68511e3f6916d6abfe3a692870a35f39bca547db9426c89790f65574a60"
+  },
+  "producer": {
+    "binary_profile": "partlab-cli/9b202e1b",
+    "binary_sha256": "9b202e1ba07861f52f12005108e81815ef14d92f2db3ba322fc51422746ab183",
+    "name": "cosmon-eval-example-builder",
+    "version": "1"
+  },
+  "run_id": "synthetic_fixture-bracket_v3-missing_artifact",
+  "schema_version": "partlab.trace/0.1-proposal",
+  "task_ref": {
+    "bytes": 224,
+    "path": "inputs/task.md",
+    "sha256": "1ee69f98da149d27937b8a8ebb1b1717e739028cf8854bca06b38b97bbdee10f"
+  }
+}

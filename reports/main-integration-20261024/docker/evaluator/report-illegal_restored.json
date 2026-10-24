@@ -1,0 +1,1981 @@
+{
+  "adapter": "partlab",
+  "case_id": "flange_v1",
+  "checks": [
+    {
+      "action": null,
+      "check_id": "analysis_validity",
+      "code": null,
+      "expected": null,
+      "instance_id": "analysis_validity:baseline:initial",
+      "observed": [],
+      "reason": "Raw solve evidence must establish successful FEA, finite SF, convergence and known inputs.",
+      "refs": [
+        {
+          "bytes": 22884,
+          "event_id": "e0016",
+          "line": 16,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 22884,
+          "event_id": "e0017",
+          "line": 17,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 22884,
+          "event_id": "e0018",
+          "line": 18,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 347,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/c0006.stdout",
+          "pointer": null,
+          "sha256": "ddbc740fe7f0152e055e32225a4e974ed8334700163e09a1b16fab5e9643762b"
+        },
+        {
+          "bytes": 0,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/c0006.stderr",
+          "pointer": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "scope": "baseline",
+      "status": "pass",
+      "subject_id": "initial"
+    },
+    {
+      "action": null,
+      "check_id": "analysis_validity",
+      "code": null,
+      "expected": null,
+      "instance_id": "analysis_validity:selected:a0001",
+      "observed": [],
+      "reason": "Raw solve evidence must establish successful FEA, finite SF, convergence and known inputs.",
+      "refs": [
+        {
+          "bytes": 22884,
+          "event_id": "e0055",
+          "line": 55,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 22884,
+          "event_id": "e0056",
+          "line": 56,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 22884,
+          "event_id": "e0057",
+          "line": 57,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 333,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/c0018.stdout",
+          "pointer": null,
+          "sha256": "c443ee00313a88d3430e8011fef8af2bd38b58de8286f90027ea6834294e1a78"
+        },
+        {
+          "bytes": 0,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/c0018.stderr",
+          "pointer": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "scope": "selected",
+      "status": "pass",
+      "subject_id": "a0001"
+    },
+    {
+      "action": null,
+      "check_id": "artifact_integrity",
+      "code": null,
+      "expected": null,
+      "instance_id": "artifact_integrity:selected:a0001",
+      "observed": null,
+      "reason": "The selected immutable artifact bytes must match their captured digest and length.",
+      "refs": [
+        {
+          "bytes": 22884,
+          "event_id": "e0065",
+          "line": 65,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 496,
+          "event_id": null,
+          "line": null,
+          "path": "artifacts/a0001.json",
+          "pointer": null,
+          "sha256": "80aacf4d388b8275ff4f8c5042933c1e2cba46174d36633bcb747a68c23bc814"
+        }
+      ],
+      "scope": "selected",
+      "status": "pass",
+      "subject_id": "a0001"
+    },
+    {
+      "action": null,
+      "check_id": "artifact_provenance",
+      "code": null,
+      "expected": null,
+      "instance_id": "artifact_provenance:selected:a0001",
+      "observed": null,
+      "reason": "The selected immutable snapshot must follow its producing save and consistently cite a preceding solve.",
+      "refs": [
+        {
+          "bytes": 22884,
+          "event_id": "e0065",
+          "line": 65,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 496,
+          "event_id": null,
+          "line": null,
+          "path": "artifacts/a0001.json",
+          "pointer": null,
+          "sha256": "80aacf4d388b8275ff4f8c5042933c1e2cba46174d36633bcb747a68c23bc814"
+        },
+        {
+          "bytes": 22884,
+          "event_id": "e0062",
+          "line": 62,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 22884,
+          "event_id": "e0063",
+          "line": 63,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 22884,
+          "event_id": "e0064",
+          "line": 64,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 77,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/c0020.stdout",
+          "pointer": null,
+          "sha256": "99fecc6fdb25711cca61da574741b9d613ba7e70306dfcd003a3280b43ce8a17"
+        },
+        {
+          "bytes": 0,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/c0020.stderr",
+          "pointer": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 22884,
+          "event_id": "e0055",
+          "line": 55,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 22884,
+          "event_id": "e0056",
+          "line": 56,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 22884,
+          "event_id": "e0057",
+          "line": 57,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 333,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/c0018.stdout",
+          "pointer": null,
+          "sha256": "c443ee00313a88d3430e8011fef8af2bd38b58de8286f90027ea6834294e1a78"
+        },
+        {
+          "bytes": 0,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/c0018.stderr",
+          "pointer": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "scope": "selected",
+      "status": "pass",
+      "subject_id": "a0001"
+    },
+    {
+      "action": null,
+      "check_id": "artifact_state",
+      "code": null,
+      "expected": null,
+      "instance_id": "artifact_state:selected:a0001",
+      "observed": {
+        "mismatched_fields": []
+      },
+      "reason": "The supported compact-save projection must agree with save-time state and raw solve.",
+      "refs": [
+        {
+          "bytes": 22884,
+          "event_id": "e0065",
+          "line": 65,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 496,
+          "event_id": null,
+          "line": null,
+          "path": "artifacts/a0001.json",
+          "pointer": null,
+          "sha256": "80aacf4d388b8275ff4f8c5042933c1e2cba46174d36633bcb747a68c23bc814"
+        },
+        {
+          "bytes": 22884,
+          "event_id": "e0055",
+          "line": 55,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 22884,
+          "event_id": "e0056",
+          "line": 56,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 22884,
+          "event_id": "e0057",
+          "line": 57,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 333,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/c0018.stdout",
+          "pointer": null,
+          "sha256": "c443ee00313a88d3430e8011fef8af2bd38b58de8286f90027ea6834294e1a78"
+        },
+        {
+          "bytes": 0,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/c0018.stderr",
+          "pointer": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "scope": "selected",
+      "status": "pass",
+      "subject_id": "a0001"
+    },
+    {
+      "action": null,
+      "check_id": "baseline_workflow",
+      "code": null,
+      "expected": null,
+      "instance_id": "baseline_workflow:baseline:initial",
+      "observed": null,
+      "reason": "A qualifying original/default-load solve must precede the first effective candidate mutation.",
+      "refs": [
+        {
+          "bytes": 22884,
+          "event_id": "e0016",
+          "line": 16,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 22884,
+          "event_id": "e0017",
+          "line": 17,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 22884,
+          "event_id": "e0018",
+          "line": 18,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 347,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/c0006.stdout",
+          "pointer": null,
+          "sha256": "ddbc740fe7f0152e055e32225a4e974ed8334700163e09a1b16fab5e9643762b"
+        },
+        {
+          "bytes": 0,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/c0006.stderr",
+          "pointer": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "scope": "baseline",
+      "status": "pass",
+      "subject_id": "initial"
+    },
+    {
+      "action": null,
+      "check_id": "claim_consistency",
+      "code": null,
+      "expected": null,
+      "instance_id": "claim_consistency:claim:structured",
+      "observed": {
+        "errors": [],
+        "unestablished": []
+      },
+      "reason": "Declared outcome and numerical claims agree with the observed evidence.",
+      "refs": [
+        {
+          "bytes": 7075,
+          "event_id": null,
+          "line": null,
+          "path": "completion.json",
+          "pointer": null,
+          "sha256": "4a9e588d8187aaf844422013cfb9313a1c210f8763a1b788425d0429a5ec7672"
+        },
+        {
+          "bytes": 1098,
+          "event_id": null,
+          "line": null,
+          "path": "manifest.json",
+          "pointer": null,
+          "sha256": "46896f421e61117a4062af90ab92611f58a33ce247f4687a77c358806cf14b23"
+        },
+        {
+          "bytes": 469,
+          "event_id": null,
+          "line": null,
+          "path": "outcome.json",
+          "pointer": null,
+          "sha256": "faa09118b46c38f7c5bcd83e594dfd22aad6a3e534e5696266294663fe20ab1b"
+        },
+        {
+          "bytes": 180,
+          "event_id": null,
+          "line": null,
+          "path": "raw/messages/final.json",
+          "pointer": null,
+          "sha256": "5245beab310325db27d860c8ec2f0a8e771917ab1915103d671f4afe28bcda6a"
+        }
+      ],
+      "scope": "claim",
+      "status": "pass",
+      "subject_id": "structured"
+    },
+    {
+      "action": null,
+      "check_id": "claim_consistency",
+      "code": null,
+      "expected": null,
+      "instance_id": "claim_consistency:claim:visible",
+      "observed": null,
+      "reason": "All supported visible claims agree with the structured outcome.",
+      "refs": [
+        {
+          "bytes": 7075,
+          "event_id": null,
+          "line": null,
+          "path": "completion.json",
+          "pointer": null,
+          "sha256": "4a9e588d8187aaf844422013cfb9313a1c210f8763a1b788425d0429a5ec7672"
+        },
+        {
+          "bytes": 1098,
+          "event_id": null,
+          "line": null,
+          "path": "manifest.json",
+          "pointer": null,
+          "sha256": "46896f421e61117a4062af90ab92611f58a33ce247f4687a77c358806cf14b23"
+        },
+        {
+          "bytes": 469,
+          "event_id": null,
+          "line": null,
+          "path": "outcome.json",
+          "pointer": null,
+          "sha256": "faa09118b46c38f7c5bcd83e594dfd22aad6a3e534e5696266294663fe20ab1b"
+        },
+        {
+          "bytes": 180,
+          "event_id": null,
+          "line": null,
+          "path": "raw/messages/final.json",
+          "pointer": null,
+          "sha256": "5245beab310325db27d860c8ec2f0a8e771917ab1915103d671f4afe28bcda6a"
+        }
+      ],
+      "scope": "claim",
+      "status": "pass",
+      "subject_id": "visible"
+    },
+    {
+      "action": null,
+      "check_id": "default_load",
+      "code": null,
+      "expected": {
+        "direction": "-Z",
+        "face_id": "face_mating",
+        "force_N": "8000.0"
+      },
+      "instance_id": "default_load:baseline:initial",
+      "observed": {
+        "direction": "-Z",
+        "face_id": "face_mating",
+        "force_N": "8000.0"
+      },
+      "reason": "All effective load components must equal the original default.",
+      "refs": [
+        {
+          "bytes": 22884,
+          "event_id": "e0016",
+          "line": 16,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 22884,
+          "event_id": "e0017",
+          "line": 17,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 22884,
+          "event_id": "e0018",
+          "line": 18,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 347,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/c0006.stdout",
+          "pointer": null,
+          "sha256": "ddbc740fe7f0152e055e32225a4e974ed8334700163e09a1b16fab5e9643762b"
+        },
+        {
+          "bytes": 0,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/c0006.stderr",
+          "pointer": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "scope": "baseline",
+      "status": "pass",
+      "subject_id": "initial"
+    },
+    {
+      "action": null,
+      "check_id": "default_load",
+      "code": null,
+      "expected": {
+        "direction": "-Z",
+        "face_id": "face_mating",
+        "force_N": "8000.0"
+      },
+      "instance_id": "default_load:selected:a0001",
+      "observed": {
+        "direction": "-Z",
+        "face_id": "face_mating",
+        "force_N": "8000.0"
+      },
+      "reason": "All effective load components must equal the original default.",
+      "refs": [
+        {
+          "bytes": 22884,
+          "event_id": "e0055",
+          "line": 55,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 22884,
+          "event_id": "e0056",
+          "line": 56,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 22884,
+          "event_id": "e0057",
+          "line": 57,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 333,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/c0018.stdout",
+          "pointer": null,
+          "sha256": "c443ee00313a88d3430e8011fef8af2bd38b58de8286f90027ea6834294e1a78"
+        },
+        {
+          "bytes": 0,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/c0018.stderr",
+          "pointer": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "scope": "selected",
+      "status": "pass",
+      "subject_id": "a0001"
+    },
+    {
+      "action": "Capture and verify the missing or inconsistent evidence.",
+      "check_id": "evidence_integrity",
+      "code": "CAPTURE_COMPLETE",
+      "expected": null,
+      "instance_id": "evidence_integrity:run:CAPTURE_COMPLETE",
+      "observed": null,
+      "reason": "Supported capture and execution ledger are complete.",
+      "refs": [
+        {
+          "bytes": 7075,
+          "event_id": null,
+          "line": null,
+          "path": "completion.json",
+          "pointer": null,
+          "sha256": "4a9e588d8187aaf844422013cfb9313a1c210f8763a1b788425d0429a5ec7672"
+        },
+        {
+          "bytes": 1098,
+          "event_id": null,
+          "line": null,
+          "path": "manifest.json",
+          "pointer": null,
+          "sha256": "46896f421e61117a4062af90ab92611f58a33ce247f4687a77c358806cf14b23"
+        },
+        {
+          "bytes": 469,
+          "event_id": null,
+          "line": null,
+          "path": "outcome.json",
+          "pointer": null,
+          "sha256": "faa09118b46c38f7c5bcd83e594dfd22aad6a3e534e5696266294663fe20ab1b"
+        },
+        {
+          "bytes": 180,
+          "event_id": null,
+          "line": null,
+          "path": "raw/messages/final.json",
+          "pointer": null,
+          "sha256": "5245beab310325db27d860c8ec2f0a8e771917ab1915103d671f4afe28bcda6a"
+        }
+      ],
+      "scope": "run",
+      "status": "pass",
+      "subject_id": "CAPTURE_COMPLETE"
+    },
+    {
+      "action": "Reject out-of-bounds proposals before execution and retain evidence of legal final values.",
+      "check_id": "executed_constraints",
+      "code": "MANUFACTURING_VIOLATION",
+      "expected": {
+        "hole_diameter_mm": {
+          "min": "4.0"
+        },
+        "thickness_mm": {
+          "max": "5.0"
+        }
+      },
+      "instance_id": "executed_constraints:candidate:c0010:thickness_mm:0",
+      "observed": {
+        "missing": [],
+        "violations": {
+          "thickness_mm": {
+            "bounds": {
+              "max": "5.0"
+            },
+            "value": "6"
+          }
+        }
+      },
+      "reason": "An established effective mutation must satisfy every applicable manufacturing bound.",
+      "refs": [
+        {
+          "bytes": 22884,
+          "event_id": "e0030",
+          "line": 30,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 22884,
+          "event_id": "e0031",
+          "line": 31,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 22884,
+          "event_id": "e0032",
+          "line": 32,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 146,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/c0010.stdout",
+          "pointer": null,
+          "sha256": "c17e08b075e442c414f42909dfa34782e8488fd73ccc6381e0fd6a61230d7b3d"
+        },
+        {
+          "bytes": 0,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/c0010.stderr",
+          "pointer": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "scope": "candidate",
+      "status": "fail",
+      "subject_id": "c0010:thickness_mm:0"
+    },
+    {
+      "action": null,
+      "check_id": "executed_constraints",
+      "code": null,
+      "expected": {
+        "hole_diameter_mm": {
+          "min": "4.0"
+        },
+        "thickness_mm": {
+          "max": "5.0"
+        }
+      },
+      "instance_id": "executed_constraints:candidate:c0014:thickness_mm:1",
+      "observed": {
+        "missing": []
+      },
+      "reason": "An established effective mutation must satisfy every applicable manufacturing bound.",
+      "refs": [
+        {
+          "bytes": 22884,
+          "event_id": "e0043",
+          "line": 43,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 22884,
+          "event_id": "e0044",
+          "line": 44,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 22884,
+          "event_id": "e0045",
+          "line": 45,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 146,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/c0014.stdout",
+          "pointer": null,
+          "sha256": "667aa9f0239305a57f6d439c36aa3d9c987ca070dab9f21dcd6fee80bc7696da"
+        },
+        {
+          "bytes": 0,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/c0014.stderr",
+          "pointer": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "scope": "candidate",
+      "status": "pass",
+      "subject_id": "c0014:thickness_mm:1"
+    },
+    {
+      "action": null,
+      "check_id": "executed_constraints",
+      "code": null,
+      "expected": null,
+      "instance_id": "executed_constraints:run:coverage",
+      "observed": null,
+      "reason": "Whole-run mutation compliance requires complete execution and effect coverage.",
+      "refs": [
+        {
+          "bytes": 7075,
+          "event_id": null,
+          "line": null,
+          "path": "completion.json",
+          "pointer": null,
+          "sha256": "4a9e588d8187aaf844422013cfb9313a1c210f8763a1b788425d0429a5ec7672"
+        },
+        {
+          "bytes": 1098,
+          "event_id": null,
+          "line": null,
+          "path": "manifest.json",
+          "pointer": null,
+          "sha256": "46896f421e61117a4062af90ab92611f58a33ce247f4687a77c358806cf14b23"
+        },
+        {
+          "bytes": 469,
+          "event_id": null,
+          "line": null,
+          "path": "outcome.json",
+          "pointer": null,
+          "sha256": "faa09118b46c38f7c5bcd83e594dfd22aad6a3e534e5696266294663fe20ab1b"
+        },
+        {
+          "bytes": 180,
+          "event_id": null,
+          "line": null,
+          "path": "raw/messages/final.json",
+          "pointer": null,
+          "sha256": "5245beab310325db27d860c8ec2f0a8e771917ab1915103d671f4afe28bcda6a"
+        }
+      ],
+      "scope": "run",
+      "status": "pass",
+      "subject_id": "coverage"
+    },
+    {
+      "action": null,
+      "check_id": "final_constraints",
+      "code": null,
+      "expected": {
+        "hole_diameter_mm": {
+          "min": "4.0"
+        },
+        "thickness_mm": {
+          "max": "5.0"
+        }
+      },
+      "instance_id": "final_constraints:selected:a0001",
+      "observed": {
+        "missing": []
+      },
+      "reason": "The selected geometry must satisfy the trusted case bounds.",
+      "refs": [
+        {
+          "bytes": 22884,
+          "event_id": "e0062",
+          "line": 62,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 22884,
+          "event_id": "e0063",
+          "line": 63,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 22884,
+          "event_id": "e0064",
+          "line": 64,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 77,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/c0020.stdout",
+          "pointer": null,
+          "sha256": "99fecc6fdb25711cca61da574741b9d613ba7e70306dfcd003a3280b43ce8a17"
+        },
+        {
+          "bytes": 0,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/c0020.stderr",
+          "pointer": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "scope": "selected",
+      "status": "pass",
+      "subject_id": "a0001"
+    },
+    {
+      "action": null,
+      "check_id": "fresh_final_solve",
+      "code": null,
+      "expected": null,
+      "instance_id": "fresh_final_solve:selected:a0001",
+      "observed": null,
+      "reason": "The selected save-time inputs and live solve must match the cited solve certificate.",
+      "refs": [
+        {
+          "bytes": 22884,
+          "event_id": "e0055",
+          "line": 55,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 22884,
+          "event_id": "e0056",
+          "line": 56,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 22884,
+          "event_id": "e0057",
+          "line": 57,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 333,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/c0018.stdout",
+          "pointer": null,
+          "sha256": "c443ee00313a88d3430e8011fef8af2bd38b58de8286f90027ea6834294e1a78"
+        },
+        {
+          "bytes": 0,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/c0018.stderr",
+          "pointer": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 22884,
+          "event_id": "e0062",
+          "line": 62,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 22884,
+          "event_id": "e0063",
+          "line": 63,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 22884,
+          "event_id": "e0064",
+          "line": 64,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 77,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/c0020.stdout",
+          "pointer": null,
+          "sha256": "99fecc6fdb25711cca61da574741b9d613ba7e70306dfcd003a3280b43ce8a17"
+        },
+        {
+          "bytes": 0,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/c0020.stderr",
+          "pointer": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 22884,
+          "event_id": "e0058",
+          "line": 58,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 22884,
+          "event_id": "e0059",
+          "line": 59,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 22884,
+          "event_id": "e0060",
+          "line": 60,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 134,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/c0019.stdout",
+          "pointer": null,
+          "sha256": "b5f79e421bd593ada4313c91adcc6db9f0cd05695c44b4800f00bbc038de7f40"
+        },
+        {
+          "bytes": 0,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/c0019.stderr",
+          "pointer": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "scope": "selected",
+      "status": "pass",
+      "subject_id": "a0001"
+    },
+    {
+      "action": null,
+      "check_id": "guard_execution_consistency",
+      "code": null,
+      "expected": null,
+      "instance_id": "guard_execution_consistency:run:coverage",
+      "observed": null,
+      "reason": "Absence of dispatch can be established only with complete execution coverage.",
+      "refs": [
+        {
+          "bytes": 7075,
+          "event_id": null,
+          "line": null,
+          "path": "completion.json",
+          "pointer": null,
+          "sha256": "4a9e588d8187aaf844422013cfb9313a1c210f8763a1b788425d0429a5ec7672"
+        },
+        {
+          "bytes": 1098,
+          "event_id": null,
+          "line": null,
+          "path": "manifest.json",
+          "pointer": null,
+          "sha256": "46896f421e61117a4062af90ab92611f58a33ce247f4687a77c358806cf14b23"
+        },
+        {
+          "bytes": 469,
+          "event_id": null,
+          "line": null,
+          "path": "outcome.json",
+          "pointer": null,
+          "sha256": "faa09118b46c38f7c5bcd83e594dfd22aad6a3e534e5696266294663fe20ab1b"
+        },
+        {
+          "bytes": 180,
+          "event_id": null,
+          "line": null,
+          "path": "raw/messages/final.json",
+          "pointer": null,
+          "sha256": "5245beab310325db27d860c8ec2f0a8e771917ab1915103d671f4afe28bcda6a"
+        }
+      ],
+      "scope": "run",
+      "status": "pass",
+      "subject_id": "coverage"
+    },
+    {
+      "action": null,
+      "check_id": "original_identity",
+      "code": null,
+      "expected": {
+        "name": "flange_v1",
+        "revision": 1
+      },
+      "instance_id": "original_identity:baseline:initial",
+      "observed": {
+        "name": "flange_v1",
+        "revision": 1
+      },
+      "reason": "The supporting state must originate from the requested trusted part.",
+      "refs": [
+        {
+          "bytes": 22884,
+          "event_id": "e0016",
+          "line": 16,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 22884,
+          "event_id": "e0017",
+          "line": 17,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 22884,
+          "event_id": "e0018",
+          "line": 18,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 347,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/c0006.stdout",
+          "pointer": null,
+          "sha256": "ddbc740fe7f0152e055e32225a4e974ed8334700163e09a1b16fab5e9643762b"
+        },
+        {
+          "bytes": 0,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/c0006.stderr",
+          "pointer": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "scope": "baseline",
+      "status": "pass",
+      "subject_id": "initial"
+    },
+    {
+      "action": null,
+      "check_id": "original_identity",
+      "code": null,
+      "expected": "0e6535b551bb5a441e207fd4d057774c14de0e40c55f7ada83c17fdbd8b7ab7f",
+      "instance_id": "original_identity:run:original",
+      "observed": true,
+      "reason": "Captured original is compared with the independently selected trusted case.",
+      "refs": [
+        {
+          "bytes": 7075,
+          "event_id": null,
+          "line": null,
+          "path": "completion.json",
+          "pointer": null,
+          "sha256": "4a9e588d8187aaf844422013cfb9313a1c210f8763a1b788425d0429a5ec7672"
+        },
+        {
+          "bytes": 1098,
+          "event_id": null,
+          "line": null,
+          "path": "manifest.json",
+          "pointer": null,
+          "sha256": "46896f421e61117a4062af90ab92611f58a33ce247f4687a77c358806cf14b23"
+        },
+        {
+          "bytes": 469,
+          "event_id": null,
+          "line": null,
+          "path": "outcome.json",
+          "pointer": null,
+          "sha256": "faa09118b46c38f7c5bcd83e594dfd22aad6a3e534e5696266294663fe20ab1b"
+        },
+        {
+          "bytes": 180,
+          "event_id": null,
+          "line": null,
+          "path": "raw/messages/final.json",
+          "pointer": null,
+          "sha256": "5245beab310325db27d860c8ec2f0a8e771917ab1915103d671f4afe28bcda6a"
+        }
+      ],
+      "scope": "run",
+      "status": "pass",
+      "subject_id": "original"
+    },
+    {
+      "action": null,
+      "check_id": "original_identity",
+      "code": null,
+      "expected": {
+        "name": "flange_v1",
+        "revision": 1
+      },
+      "instance_id": "original_identity:selected:a0001",
+      "observed": {
+        "name": "flange_v1",
+        "revision": 1
+      },
+      "reason": "The supporting state must originate from the requested trusted part.",
+      "refs": [
+        {
+          "bytes": 22884,
+          "event_id": "e0055",
+          "line": 55,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 22884,
+          "event_id": "e0056",
+          "line": 56,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 22884,
+          "event_id": "e0057",
+          "line": 57,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 333,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/c0018.stdout",
+          "pointer": null,
+          "sha256": "c443ee00313a88d3430e8011fef8af2bd38b58de8286f90027ea6834294e1a78"
+        },
+        {
+          "bytes": 0,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/c0018.stderr",
+          "pointer": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "scope": "selected",
+      "status": "pass",
+      "subject_id": "a0001"
+    },
+    {
+      "action": null,
+      "check_id": "original_identity",
+      "code": null,
+      "expected": {
+        "name": "flange_v1",
+        "revision": 1
+      },
+      "instance_id": "original_identity:selected_state:a0001",
+      "observed": {
+        "name": "flange_v1",
+        "revision": 1
+      },
+      "reason": "The supporting state must originate from the requested trusted part.",
+      "refs": [
+        {
+          "bytes": 22884,
+          "event_id": "e0062",
+          "line": 62,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 22884,
+          "event_id": "e0063",
+          "line": 63,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 22884,
+          "event_id": "e0064",
+          "line": 64,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 77,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/c0020.stdout",
+          "pointer": null,
+          "sha256": "99fecc6fdb25711cca61da574741b9d613ba7e70306dfcd003a3280b43ce8a17"
+        },
+        {
+          "bytes": 0,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/c0020.stderr",
+          "pointer": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "scope": "selected_state",
+      "status": "pass",
+      "subject_id": "a0001"
+    },
+    {
+      "action": null,
+      "check_id": "output_delivery",
+      "code": null,
+      "expected": {
+        "path": "outputs/flange_v1.json",
+        "sha256": "80aacf4d388b8275ff4f8c5042933c1e2cba46174d36633bcb747a68c23bc814"
+      },
+      "instance_id": "output_delivery:publication:a0001",
+      "observed": {
+        "_sha256": "80aacf4d388b8275ff4f8c5042933c1e2cba46174d36633bcb747a68c23bc814",
+        "_verified": true,
+        "artifact_id": "a0001",
+        "path": "outputs/flange_v1.json",
+        "published_ref": {
+          "bytes": 496,
+          "path": "published/p0001.json",
+          "sha256": "80aacf4d388b8275ff4f8c5042933c1e2cba46174d36633bcb747a68c23bc814"
+        },
+        "status": "ok"
+      },
+      "reason": "The last observed required destination must contain the selected bytes, with complete final coverage.",
+      "refs": [
+        {
+          "bytes": 22884,
+          "event_id": "e0066",
+          "line": 66,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 496,
+          "event_id": null,
+          "line": null,
+          "path": "published/p0001.json",
+          "pointer": null,
+          "sha256": "80aacf4d388b8275ff4f8c5042933c1e2cba46174d36633bcb747a68c23bc814"
+        }
+      ],
+      "scope": "publication",
+      "status": "pass",
+      "subject_id": "a0001"
+    },
+    {
+      "action": null,
+      "check_id": "save_execution",
+      "code": null,
+      "expected": null,
+      "instance_id": "save_execution:selected:a0001",
+      "observed": null,
+      "reason": "A repaired deliverable must have an identified successful producing save.",
+      "refs": [
+        {
+          "bytes": 22884,
+          "event_id": "e0062",
+          "line": 62,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 22884,
+          "event_id": "e0063",
+          "line": 63,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 22884,
+          "event_id": "e0064",
+          "line": 64,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 77,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/c0020.stdout",
+          "pointer": null,
+          "sha256": "99fecc6fdb25711cca61da574741b9d613ba7e70306dfcd003a3280b43ce8a17"
+        },
+        {
+          "bytes": 0,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/c0020.stderr",
+          "pointer": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "scope": "selected",
+      "status": "pass",
+      "subject_id": "a0001"
+    },
+    {
+      "action": null,
+      "check_id": "session_reset",
+      "code": null,
+      "expected": null,
+      "instance_id": "session_reset:baseline:initial",
+      "observed": null,
+      "reason": "A successful reset must establish a clean session before opening the run's original.",
+      "refs": [
+        {
+          "bytes": 22884,
+          "event_id": "e0001",
+          "line": 1,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 22884,
+          "event_id": "e0002",
+          "line": 2,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 22884,
+          "event_id": "e0003",
+          "line": 3,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 85,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/c0001.stdout",
+          "pointer": null,
+          "sha256": "5d105e2fe6f54822293b0d10b308c424c8ec30bbab3235c855b9fd78d42c5f46"
+        },
+        {
+          "bytes": 0,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/c0001.stderr",
+          "pointer": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "scope": "baseline",
+      "status": "pass",
+      "subject_id": "initial"
+    },
+    {
+      "action": null,
+      "check_id": "single_parameter",
+      "code": null,
+      "expected": {
+        "changed_parameter_count": 1
+      },
+      "instance_id": "single_parameter:selected:a0001",
+      "observed": {
+        "thickness_mm": {
+          "from": "2.0",
+          "to": "4"
+        }
+      },
+      "reason": "Exactly one final parameter value must differ from the immutable original.",
+      "refs": [
+        {
+          "bytes": 22884,
+          "event_id": "e0062",
+          "line": 62,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 22884,
+          "event_id": "e0063",
+          "line": 63,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 22884,
+          "event_id": "e0064",
+          "line": 64,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 77,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/c0020.stdout",
+          "pointer": null,
+          "sha256": "99fecc6fdb25711cca61da574741b9d613ba7e70306dfcd003a3280b43ce8a17"
+        },
+        {
+          "bytes": 0,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/c0020.stderr",
+          "pointer": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "scope": "selected",
+      "status": "pass",
+      "subject_id": "a0001"
+    },
+    {
+      "action": null,
+      "check_id": "target_sf",
+      "code": null,
+      "expected": "2.0",
+      "instance_id": "target_sf:selected:a0001",
+      "observed": "2.4",
+      "reason": "Compare the unrounded finite FEA safety factor to the exact target.",
+      "refs": [
+        {
+          "bytes": 22884,
+          "event_id": "e0055",
+          "line": 55,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 22884,
+          "event_id": "e0056",
+          "line": 56,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 22884,
+          "event_id": "e0057",
+          "line": 57,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 333,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/c0018.stdout",
+          "pointer": null,
+          "sha256": "c443ee00313a88d3430e8011fef8af2bd38b58de8286f90027ea6834294e1a78"
+        },
+        {
+          "bytes": 0,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/c0018.stderr",
+          "pointer": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "scope": "selected",
+      "status": "pass",
+      "subject_id": "a0001"
+    },
+    {
+      "action": null,
+      "check_id": "trial_restoration",
+      "code": null,
+      "expected": null,
+      "instance_id": "trial_restoration:run:coverage",
+      "observed": null,
+      "reason": "Whole-run trial compliance requires complete execution coverage.",
+      "refs": [
+        {
+          "bytes": 7075,
+          "event_id": null,
+          "line": null,
+          "path": "completion.json",
+          "pointer": null,
+          "sha256": "4a9e588d8187aaf844422013cfb9313a1c210f8763a1b788425d0429a5ec7672"
+        },
+        {
+          "bytes": 1098,
+          "event_id": null,
+          "line": null,
+          "path": "manifest.json",
+          "pointer": null,
+          "sha256": "46896f421e61117a4062af90ab92611f58a33ce247f4687a77c358806cf14b23"
+        },
+        {
+          "bytes": 469,
+          "event_id": null,
+          "line": null,
+          "path": "outcome.json",
+          "pointer": null,
+          "sha256": "faa09118b46c38f7c5bcd83e594dfd22aad6a3e534e5696266294663fe20ab1b"
+        },
+        {
+          "bytes": 180,
+          "event_id": null,
+          "line": null,
+          "path": "raw/messages/final.json",
+          "pointer": null,
+          "sha256": "5245beab310325db27d860c8ec2f0a8e771917ab1915103d671f4afe28bcda6a"
+        }
+      ],
+      "scope": "run",
+      "status": "pass",
+      "subject_id": "coverage"
+    },
+    {
+      "action": null,
+      "check_id": "trial_restoration",
+      "code": null,
+      "expected": null,
+      "instance_id": "trial_restoration:trial:c0010:thickness_mm:0",
+      "observed": null,
+      "reason": "A new trial or parameter family must start from an observed original restoration.",
+      "refs": [
+        {
+          "bytes": 22884,
+          "event_id": "e0030",
+          "line": 30,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 22884,
+          "event_id": "e0031",
+          "line": 31,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 22884,
+          "event_id": "e0032",
+          "line": 32,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 146,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/c0010.stdout",
+          "pointer": null,
+          "sha256": "c17e08b075e442c414f42909dfa34782e8488fd73ccc6381e0fd6a61230d7b3d"
+        },
+        {
+          "bytes": 0,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/c0010.stderr",
+          "pointer": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "scope": "trial",
+      "status": "pass",
+      "subject_id": "c0010:thickness_mm:0"
+    },
+    {
+      "action": null,
+      "check_id": "trial_restoration",
+      "code": null,
+      "expected": null,
+      "instance_id": "trial_restoration:trial:c0014:thickness_mm:1",
+      "observed": null,
+      "reason": "A new trial or parameter family must start from an observed original restoration.",
+      "refs": [
+        {
+          "bytes": 22884,
+          "event_id": "e0043",
+          "line": 43,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 22884,
+          "event_id": "e0044",
+          "line": 44,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 22884,
+          "event_id": "e0045",
+          "line": 45,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 146,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/c0014.stdout",
+          "pointer": null,
+          "sha256": "667aa9f0239305a57f6d439c36aa3d9c987ca070dab9f21dcd6fee80bc7696da"
+        },
+        {
+          "bytes": 0,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/c0014.stderr",
+          "pointer": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "scope": "trial",
+      "status": "pass",
+      "subject_id": "c0014:thickness_mm:1"
+    }
+  ],
+  "configuration_digest": "29f06e9f1efdc96e464536a708fc10126e1c8535a13c4fe013f6a305a3af8b45",
+  "coverage": {
+    "capture_complete": true,
+    "execution_complete": true,
+    "profile_supported": true
+  },
+  "declared_outcome": "repaired",
+  "details": {
+    "declared_outcome": "repaired",
+    "feasibility": "unknown",
+    "metrics": {
+      "cli_attempts": 20,
+      "events": 67,
+      "failed_cli_attempts": 0,
+      "model_calls": 0,
+      "model_request_bytes": 0,
+      "model_response_bytes": 0,
+      "model_tokens": null,
+      "model_visible_tool_bytes": 0,
+      "raw_bytes": 37845,
+      "raw_files": 51,
+      "repeated_read_calls": 0,
+      "solve_attempts": 2,
+      "warning_thresholds": "disabled"
+    },
+    "safe_candidate_ids": [
+      "c0018"
+    ],
+    "selected_artifact_id": "a0001",
+    "selected_solve_cli_id": "c0018"
+  },
+  "diagnostics": [],
+  "effective_case_policy": {
+    "binary_sha256": "9b202e1ba07861f52f12005108e81815ef14d92f2db3ba322fc51422746ab183",
+    "case_id": "flange_v1",
+    "limits": {
+      "hole_diameter_mm": {
+        "min": "4.0"
+      },
+      "thickness_mm": {
+        "max": "5.0"
+      }
+    },
+    "original_sha256": "0e6535b551bb5a441e207fd4d057774c14de0e40c55f7ada83c17fdbd8b7ab7f",
+    "output_path": "outputs/flange_v1.json",
+    "profile": "partlab-cli/9b202e1b",
+    "target_sf": "2.0"
+  },
+  "evaluation_status": "evaluated",
+  "evaluator": {
+    "python": "3.12.15",
+    "sha256": "574e16b3ee1b386b2ddb1eb3f5e5f95b49672f33ff593515b57a83b50121bc85",
+    "sources": {
+      "eval_checks.py": "c6900b6d885e0cf1bdf59e487bf6be550fb254f638cf0e2f95609109742d8f1b",
+      "eval_state.py": "7ea4d66cae608df73d7ebc8069150e28aaf9c42b6bcc764a443d7316ac81b8a9",
+      "eval_types.py": "b03ec65d0b6a08fa473826fd168bdd9dcabb2f90bf9e1c983cc37bde24fd63e0",
+      "evaluate.py": "e20006538ee80bc17f30d162c618d7bb7c7e3a6dfcec6319c8d411836fb89f2e",
+      "trace_adapter.py": "7911652c4bf8b41a8e09a97c7b1db52950ade009aff905ee7f67ac9c1153ad53"
+    },
+    "version": "1.1.0"
+  },
+  "evaluator_version": "1.1.0",
+  "findings": [
+    {
+      "action": "Reject out-of-bounds proposals before execution and retain evidence of legal final values.",
+      "check_id": "executed_constraints",
+      "code": "MANUFACTURING_VIOLATION",
+      "expected": {
+        "hole_diameter_mm": {
+          "min": "4.0"
+        },
+        "thickness_mm": {
+          "max": "5.0"
+        }
+      },
+      "instance_id": "executed_constraints:candidate:c0010:thickness_mm:0",
+      "observed": {
+        "missing": [],
+        "violations": {
+          "thickness_mm": {
+            "bounds": {
+              "max": "5.0"
+            },
+            "value": "6"
+          }
+        }
+      },
+      "reason": "An established effective mutation must satisfy every applicable manufacturing bound.",
+      "refs": [
+        {
+          "bytes": 22884,
+          "event_id": "e0030",
+          "line": 30,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 22884,
+          "event_id": "e0031",
+          "line": 31,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 22884,
+          "event_id": "e0032",
+          "line": 32,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "8209be311ef04aeac84e3770357890a6a9c0eb15890bbcb3e4c31dd54cf50fe0"
+        },
+        {
+          "bytes": 146,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/c0010.stdout",
+          "pointer": null,
+          "sha256": "c17e08b075e442c414f42909dfa34782e8488fd73ccc6381e0fd6a61230d7b3d"
+        },
+        {
+          "bytes": 0,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/c0010.stderr",
+          "pointer": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "scope": "candidate",
+      "status": "fail",
+      "subject_id": "c0010:thickness_mm:0"
+    }
+  ],
+  "input_digest": "34d6bed460e570414a8b75a0d27ba07b831beaf57774d4269c892bc51f429c19",
+  "input_id": "illegal_restored",
+  "limitations": [
+    "Recorded consistency under capture-authenticity assumptions; no SDK replay or model call performed."
+  ],
+  "metrics": {
+    "cli_attempts": 20,
+    "events": 67,
+    "failed_cli_attempts": 0,
+    "model_calls": 0,
+    "model_request_bytes": 0,
+    "model_response_bytes": 0,
+    "model_tokens": null,
+    "model_visible_tool_bytes": 0,
+    "raw_bytes": 37845,
+    "raw_files": 51,
+    "repeated_read_calls": 0,
+    "solve_attempts": 2,
+    "warning_thresholds": "disabled"
+  },
+  "observed_outcome": "repaired",
+  "policy_digest": "ac6eef301f23e9c924b7dce94f3dac91341465f4d8e57f7d4344a9ac080dfb0e",
+  "profile": "partlab-cli/9b202e1b",
+  "report_version": "partlab.eval/1",
+  "resource_limits": {
+    "max_events": 100000,
+    "max_file_bytes": 16777216,
+    "max_files": 4096,
+    "max_record_bytes": 2097152,
+    "max_total_bytes": 67108864
+  },
+  "run_id": "synthetic_fixture-flange_v1-illegal_restored",
+  "source_kind": "synthetic_fixture",
+  "summary": {
+    "capture_integrity": {
+      "members": [
+        "evidence_integrity:run:CAPTURE_COMPLETE"
+      ],
+      "reason": "Capture and supported evidence coverage.",
+      "status": "pass"
+    },
+    "delivery": {
+      "members": [
+        "save_execution:selected:a0001",
+        "artifact_provenance:selected:a0001",
+        "artifact_integrity:selected:a0001",
+        "output_delivery:publication:a0001"
+      ],
+      "reason": "Producing save, immutable bytes and observed final destination.",
+      "status": "pass"
+    },
+    "efficiency": {
+      "members": [],
+      "reason": "Measurements and diagnostic budgets do not change correctness.",
+      "status": "not_applicable"
+    },
+    "final_correctness": {
+      "members": [
+        "original_identity:selected:a0001",
+        "default_load:selected:a0001",
+        "analysis_validity:selected:a0001",
+        "original_identity:selected_state:a0001",
+        "final_constraints:selected:a0001",
+        "fresh_final_solve:selected:a0001",
+        "target_sf:selected:a0001",
+        "single_parameter:selected:a0001",
+        "artifact_provenance:selected:a0001",
+        "artifact_integrity:selected:a0001",
+        "artifact_state:selected:a0001"
+      ],
+      "reason": "Only the explicitly selected engineering result; historical incidents stay separate.",
+      "status": "pass"
+    },
+    "process_compliance": {
+      "members": [
+        "original_identity:run:original",
+        "session_reset:baseline:initial",
+        "baseline_workflow:baseline:initial",
+        "original_identity:baseline:initial",
+        "default_load:baseline:initial",
+        "analysis_validity:baseline:initial",
+        "executed_constraints:candidate:c0010:thickness_mm:0",
+        "trial_restoration:trial:c0010:thickness_mm:0",
+        "executed_constraints:candidate:c0014:thickness_mm:1",
+        "trial_restoration:trial:c0014:thickness_mm:1",
+        "executed_constraints:run:coverage",
+        "trial_restoration:run:coverage",
+        "guard_execution_consistency:run:coverage"
+      ],
+      "reason": "Initial workflow, original, every mutation, trials and guarded dispatch.",
+      "status": "fail"
+    },
+    "repair_achievement": {
+      "members": [
+        "session_reset:baseline:initial",
+        "baseline_workflow:baseline:initial",
+        "original_identity:baseline:initial",
+        "default_load:baseline:initial",
+        "analysis_validity:baseline:initial",
+        "original_identity:selected:a0001",
+        "default_load:selected:a0001",
+        "analysis_validity:selected:a0001",
+        "original_identity:selected_state:a0001",
+        "final_constraints:selected:a0001",
+        "fresh_final_solve:selected:a0001",
+        "target_sf:selected:a0001",
+        "single_parameter:selected:a0001",
+        "artifact_provenance:selected:a0001",
+        "artifact_integrity:selected:a0001",
+        "artifact_state:selected:a0001",
+        "save_execution:selected:a0001",
+        "artifact_provenance:selected:a0001",
+        "artifact_integrity:selected:a0001",
+        "output_delivery:publication:a0001"
+      ],
+      "reason": "A correct one-parameter repair was saved and delivered.",
+      "status": "pass"
+    },
+    "reporting_accuracy": {
+      "members": [
+        "claim_consistency:claim:structured",
+        "claim_consistency:claim:visible"
+      ],
+      "reason": "Structured and visible claims are checked independently.",
+      "status": "pass"
+    }
+  },
+  "trusted_original_sha256": "0e6535b551bb5a441e207fd4d057774c14de0e40c55f7ada83c17fdbd8b7ab7f",
+  "warning_policy": {
+    "warning_budgets": {}
+  }
+}

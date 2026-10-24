@@ -1,0 +1,16 @@
+{
+  "crash_count": 0,
+  "method": "single-field-deterministic-type-substitution/1",
+  "status": "pass",
+  "suites": {
+    "envelopes": {
+      "crashes": [],
+      "trials": 513
+    },
+    "metadata": {
+      "crashes": [],
+      "trials": 1197
+    }
+  },
+  "trials": 1710
+}

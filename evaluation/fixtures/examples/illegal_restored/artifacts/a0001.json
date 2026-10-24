@@ -1,0 +1,26 @@
+{
+  "applied_load": {
+    "direction": "-Z",
+    "face_id": "face_mating",
+    "force_N": 8000.0
+  },
+  "name": "flange_v1",
+  "parameters": {
+    "fillet_radius_mm": 1.5,
+    "hole_diameter_mm": 10.0,
+    "thickness_mm": 4
+  },
+  "revision": 1,
+  "solve_result": {
+    "converged": true,
+    "iterations": 12,
+    "load": {
+      "direction": "-Z",
+      "face_id": "face_mating",
+      "force_N": 8000.0
+    },
+    "max_stress_MPa": 75.0,
+    "safety_factor": 2.4,
+    "yield_MPa": 180.0
+  }
+}

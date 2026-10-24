@@ -1,0 +1,33 @@
+{
+  "bundles": [
+    {
+      "completion_sha256": "304ea12d39eeca2458d0a2a71eeb0d787533f6212f5010ab747f2a676e2b1848",
+      "evidence_kind": "live_agent",
+      "files_copied": 70,
+      "id": "live_bracket_v3",
+      "run_id": "65a79b91-2d85-47d8-acf8-8600bc4d03bb",
+      "source_directory": "/home/ubuntu/work/cosmon-sdk/reports/e2e-20261023/bracket",
+      "transformation": "none; raw inventory-verified bytes copied unchanged"
+    },
+    {
+      "completion_sha256": "95fb3490b010a7d5c530cfd6415ecb536c43774eb540829014d77a0f5e94c500",
+      "evidence_kind": "live_agent",
+      "files_copied": 208,
+      "id": "live_flange_v1",
+      "run_id": "b5b3dc81-e2cc-4f35-8bec-17d715abdac2",
+      "source_directory": "/home/ubuntu/work/cosmon-sdk/reports/e2e-20261023/flange",
+      "transformation": "none; raw inventory-verified bytes copied unchanged"
+    },
+    {
+      "completion_sha256": "e3345c425688819ca7eb1fef2328e98d088f41ed817186ea90923c2556853b4a",
+      "evidence_kind": "preparation_check",
+      "files_copied": 32,
+      "id": "producer_guard",
+      "run_id": "19b5d833-afd1-413c-a2be-89f9c27948a4",
+      "source_directory": "/home/ubuntu/work/cosmon-sdk/reports/guard-check-20261023-201100/trace",
+      "transformation": "none; raw inventory-verified bytes copied unchanged"
+    }
+  ],
+  "note": "Read-only snapshot of existing completed producer captures; no new model calls were made here. File and completion digests identify actual working-tree evidence independently of git HEAD.",
+  "source_git_head": "d02caff775efad5c03a8c2ef0edf71947b363a37"
+}

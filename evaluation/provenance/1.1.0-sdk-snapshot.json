@@ -1,0 +1,160 @@
+{
+  "evaluator_version": "1.1.0",
+  "source_directory": "/home/ubuntu/work/cosmon-eval",
+  "source_git_commit": "b60473ca172a2fad33c377e96c212f2adb6aa84f",
+  "source_git_head": "b60473ca172a2fad33c377e96c212f2adb6aa84f",
+  "source_state": "Committed snapshot; every imported file was read from this commit and verified against its working tree and destination. Unrelated in-progress documentation was not imported.",
+  "source_worktree_status_at_import": [
+    " M EVAL_RUN.md",
+    "?? docs/EVAL_RUBRIC.md"
+  ],
+  "imported_files": [
+    {
+      "path": "docs/API_INTEGRATION.md",
+      "git_blob_oid": "126b53f6f777f48df2e633f679fd575f21545681",
+      "sha256": "0b2a74db70276685d82710e4ce075cb68da82d90fcccccc873c9b73d08be945a",
+      "bytes": 6965
+    },
+    {
+      "path": "docs/EVAL_IMPLEMENTATION_CONTRACT.md",
+      "git_blob_oid": "e29959cafae15c2bdab4817faf1b8fe78eb9e146",
+      "sha256": "b5cd6f7c12ccd8c5f85f51844d3ed17b860af1b1e3bad14a3160597e680fce0e",
+      "bytes": 6821
+    },
+    {
+      "path": "eval_cases.json",
+      "git_blob_oid": "9d52674d76f76a1cc5a68e43d6ec1b80e30cc323",
+      "sha256": "2e21978196f43fc8f1c393a2bc802b73ff93479805b2ef63c9b7e1d9c7b43f15",
+      "bytes": 1861
+    },
+    {
+      "path": "eval_checks.py",
+      "git_blob_oid": "b4cc3e1034588cf111ae6040f143844024d32008",
+      "sha256": "c6900b6d885e0cf1bdf59e487bf6be550fb254f638cf0e2f95609109742d8f1b",
+      "bytes": 54476
+    },
+    {
+      "path": "eval_state.py",
+      "git_blob_oid": "141df0adb15a6a1675257df7c412ed5003d8664a",
+      "sha256": "7ea4d66cae608df73d7ebc8069150e28aaf9c42b6bcc764a443d7316ac81b8a9",
+      "bytes": 29291
+    },
+    {
+      "path": "eval_types.py",
+      "git_blob_oid": "9b0429388eabb6ca5fd4e5846fbaaf9dd190c7d5",
+      "sha256": "b03ec65d0b6a08fa473826fd168bdd9dcabb2f90bf9e1c983cc37bde24fd63e0",
+      "bytes": 6913
+    },
+    {
+      "path": "evaluate.py",
+      "git_blob_oid": "3052132b24e18d38e50ed1b7b6a4006f24e133bc",
+      "sha256": "e20006538ee80bc17f30d162c618d7bb7c7e3a6dfcec6319c8d411836fb89f2e",
+      "bytes": 16324
+    },
+    {
+      "path": "parts/bracket_v1.json",
+      "git_blob_oid": "28306471b8deb1cf3b9bf68d968578e4344e0c4b",
+      "sha256": "75d4fad2ed12a6f1ce16c02fcbcb3626ad07b627434299d91400eefb3e7ccfe4",
+      "bytes": 766
+    },
+    {
+      "path": "parts/bracket_v2.json",
+      "git_blob_oid": "97d311cae066a9caa8469b8860f482f328304295",
+      "sha256": "990107daa0bcd5c48c5cd5ba84a8c8d132833660f8e9fe5ad0bcd4c28e7258a4",
+      "bytes": 790
+    },
+    {
+      "path": "parts/bracket_v3.json",
+      "git_blob_oid": "b2fe328f005fe376ec6cd8f5fda2821af143277c",
+      "sha256": "9756780586e273177a75155a9e814d514bae9cd21dcc4ee64dc6c32626fdadc8",
+      "bytes": 866
+    },
+    {
+      "path": "parts/bracket_v3_thick.json",
+      "git_blob_oid": "3bb6bb1b0220bbd0f52344962b5146c511e66271",
+      "sha256": "f4a09ed6b27c9bdb9bbc2053640278837bc8918b65935b9d70dd216fa2e4b394",
+      "bytes": 846
+    },
+    {
+      "path": "parts/flange_v1.json",
+      "git_blob_oid": "b8a73a329f625274b7a8ae35e73bbf32662f6d86",
+      "sha256": "0e6535b551bb5a441e207fd4d057774c14de0e40c55f7ada83c17fdbd8b7ab7f",
+      "bytes": 901
+    },
+    {
+      "path": "parts/housing_v1.json",
+      "git_blob_oid": "8bb6265b58d707ce641a8cc1d18881a438577021",
+      "sha256": "3875c6a153eb20313141c79a24a541d0c97bb74430a39bb5cc6fd4e976a55d56",
+      "bytes": 1035
+    },
+    {
+      "path": "tests/bundle_factory.py",
+      "git_blob_oid": "e9db9cf56414cf0e5bfaa29df718f72d068796e0",
+      "sha256": "c3ec6e86af5fe0f000dda0e485860f76d65078f467dd00b920d406974a0788cc",
+      "bytes": 17998
+    },
+    {
+      "path": "tests/test_adapter_review.py",
+      "git_blob_oid": "027875a7b71dc1083f482f5fbbfb56412a82a12b",
+      "sha256": "27f770b1bca73676520185b0934b6ce023f88109c9f31d523ccb4a4f1583977b",
+      "bytes": 12921
+    },
+    {
+      "path": "tests/test_capture_links.py",
+      "git_blob_oid": "c2b85be3908ae70857d2aed4ca4548d7d9231983",
+      "sha256": "2b6729af71820adef1e9c39a1311c9bdf51acdf42ffc5862e249281c6ed2e610",
+      "bytes": 3881
+    },
+    {
+      "path": "tests/test_checks.py",
+      "git_blob_oid": "27280b75a8a341ba08aa32f8fbceb5928bf44d11",
+      "sha256": "d844e1aac21149aee0f3a04dafed8a1ed452646faa268996e5fff620286f1fae",
+      "bytes": 24151
+    },
+    {
+      "path": "tests/test_pipeline.py",
+      "git_blob_oid": "1e3f90d389bc70d2254eb7666929c337b4d1258c",
+      "sha256": "5c07d7d0346096ff98c7aefdc666002e989ebc0145646e09bcf71bd3f9ce6e33",
+      "bytes": 11659
+    },
+    {
+      "path": "tests/test_readiness_review.py",
+      "git_blob_oid": "585e42aedaa42a716234a0a1f7d5b256285e5af2",
+      "sha256": "e526e455ae7ce3f2c98ab40917cd4e6f8f6a771d2a40cd10bce4559c4fba82c9",
+      "bytes": 12413
+    },
+    {
+      "path": "tests/test_state.py",
+      "git_blob_oid": "15c27f4224f620cbb6594f739b8ccde516cbdcee",
+      "sha256": "3a0399a4c4c7ea7c518e39688a70ae151e83b27ddfe9d15b9cc357a97890ee48",
+      "bytes": 13473
+    },
+    {
+      "path": "tests/test_state_review.py",
+      "git_blob_oid": "aa312d6e393aa7b4564a6191b12f5b95d46ffd03",
+      "sha256": "a274eae443cad6fc8639c5b235375d2b2ca398680ddc427b4136a15c6fc9f33f",
+      "bytes": 9024
+    },
+    {
+      "path": "tests/test_tau2_review.py",
+      "git_blob_oid": "38ae30bb9717c791d8afeeebae6c4573413afa8d",
+      "sha256": "406f04e0029bcea3a2411dc357f35a0e3d1af5754abdb0633ec5ec93cc6a1e6f",
+      "bytes": 4207
+    },
+    {
+      "path": "tests/test_wire_coverage.py",
+      "git_blob_oid": "9087e13645a95eba99e27c9608089140a2053b5f",
+      "sha256": "f609d95f59782eb47fd9f3480406cef0a2fac1b3414b247417564415add3856f",
+      "bytes": 10965
+    },
+    {
+      "path": "trace_adapter.py",
+      "git_blob_oid": "05535e6afaedb96f8b1f44bc3c4c7936a9f0ed1a",
+      "sha256": "7911652c4bf8b41a8e09a97c7b1db52950ade009aff905ee7f67ac9c1153ad53",
+      "bytes": 33810
+    }
+  ],
+  "integration": "Independent standard-library evaluator copied verbatim; no producer module imports or optional Scout/Harbor environments.",
+  "local_modifications": [],
+  "previous_provenance": "provenance/1.0.0.json"
+}

@@ -1,0 +1,43 @@
+Usage: scout view [OPTIONS] [PROJECT_DIR]
+
+  View scan results.
+
+Options:
+  -T, --transcripts TEXT          Location of transcripts to view.
+  --scans TEXT                    Location of scan results to view.
+  --trust-content / --no-trust-content
+                                  Whether model output may be rendered richly
+                                  (markdown, syntax highlighting, ANSI colors,
+                                  media, links). --no-trust-content shows all
+                                  model output as plain text, whatever the
+                                  project or each transcript's own setting.
+                                  --trust-content, like leaving the option
+                                  unset, defers to them; it never shows
+                                  untrusted content richly.
+  --mode [default|scans]          View display mode.
+  --host TEXT                     TCP/IP bind host. Non-loopback binds require
+                                  authorization or an explicit unsafe
+                                  acknowledgement.
+  --port INTEGER                  Port to use for the view server.
+  --browser / --no-browser        Open in web browser.
+  --root-path TEXT                ASGI root_path for serving behind a reverse
+                                  proxy.
+  --trusted-origin TEXT           Exact browser origin (scheme://host[:port])
+                                  allowed to use the viewer, such as a reverse
+                                  proxy's public URL or a forwarded port's
+                                  local address. Repeat for multiple origins.
+  --trusted-host TEXT             Additional exact Host header (host[:port])
+                                  to accept, such as the Host a reverse proxy
+                                  sends or a health check's address. Does not
+                                  authorize a browser origin.
+  --unsafe-allow-unauthenticated  Acknowledge unauthenticated access when
+                                  binding beyond loopback.
+  --display [rich|plain|log|none]
+                                  Set the display type (defaults to 'rich')
+  --log-level [debug|trace|http|info|warning|error|critical|notset]
+                                  Set the log level (defaults to 'warning')
+  --debug                         Wait to attach debugger
+  --debug-port INTEGER            Port number for debugger
+  --fail-on-error                 Re-raise exceptions instead of capturing
+                                  them in results
+  --help                          Show this message and exit.

@@ -1,0 +1,11 @@
+{
+  "artifact_id": "a0001",
+  "changed_parameter": {
+    "from": 3.0,
+    "name": "thickness_mm",
+    "to": 5
+  },
+  "final_sf": 3.072,
+  "initial_sf": 1.428,
+  "status": "repaired"
+}

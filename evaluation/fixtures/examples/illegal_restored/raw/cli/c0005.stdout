@@ -1,0 +1,8 @@
+{
+  "ok": true,
+  "result": {
+    "direction": "-Z",
+    "face_id": "face_mating",
+    "force_N": 8000.0
+  }
+}

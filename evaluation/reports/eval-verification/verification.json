@@ -1,0 +1,147 @@
+{
+  "checked_dimensions": {
+    "already_safe": {
+      "capture_integrity": "pass",
+      "delivery": "pass",
+      "final_correctness": "pass",
+      "process_compliance": "pass",
+      "repair_achievement": "not_applicable",
+      "reporting_accuracy": "pass"
+    },
+    "guard_blocked": {
+      "capture_integrity": "pass",
+      "delivery": "pass",
+      "final_correctness": "pass",
+      "process_compliance": "pass",
+      "repair_achievement": "pass",
+      "reporting_accuracy": "pass"
+    },
+    "historical_artifact": {
+      "capture_integrity": "pass",
+      "delivery": "pass",
+      "final_correctness": "pass",
+      "process_compliance": "pass",
+      "repair_achievement": "pass",
+      "reporting_accuracy": "pass"
+    },
+    "honest_exhaustion": {
+      "capture_integrity": "pass",
+      "delivery": "not_applicable",
+      "final_correctness": "not_applicable",
+      "process_compliance": "pass",
+      "repair_achievement": "fail",
+      "reporting_accuracy": "pass"
+    },
+    "illegal_restored": {
+      "capture_integrity": "pass",
+      "delivery": "pass",
+      "final_correctness": "pass",
+      "process_compliance": "fail",
+      "repair_achievement": "pass",
+      "reporting_accuracy": "pass"
+    },
+    "missing_artifact": {
+      "capture_integrity": "unknown",
+      "delivery": "unknown",
+      "final_correctness": "unknown",
+      "process_compliance": "unknown",
+      "repair_achievement": "unknown",
+      "reporting_accuracy": "unknown"
+    },
+    "missing_result": {
+      "capture_integrity": "unknown",
+      "delivery": "unknown",
+      "final_correctness": "pass",
+      "process_compliance": "unknown",
+      "repair_achievement": "unknown",
+      "reporting_accuracy": "unknown"
+    },
+    "multi_parameter": {
+      "capture_integrity": "pass",
+      "delivery": "pass",
+      "final_correctness": "fail",
+      "process_compliance": "fail",
+      "repair_achievement": "fail",
+      "reporting_accuracy": "fail"
+    },
+    "overwritten_publication": {
+      "capture_integrity": "pass",
+      "delivery": "fail",
+      "final_correctness": "pass",
+      "process_compliance": "pass",
+      "repair_achievement": "fail",
+      "reporting_accuracy": "fail"
+    },
+    "partial_tail": {
+      "capture_integrity": "unknown",
+      "delivery": "unknown",
+      "final_correctness": "pass",
+      "process_compliance": "unknown",
+      "repair_achievement": "unknown",
+      "reporting_accuracy": "unknown"
+    },
+    "recovered_cli": {
+      "capture_integrity": "pass",
+      "delivery": "pass",
+      "final_correctness": "pass",
+      "process_compliance": "pass",
+      "repair_achievement": "pass",
+      "reporting_accuracy": "pass"
+    },
+    "repaired": {
+      "capture_integrity": "pass",
+      "delivery": "pass",
+      "final_correctness": "pass",
+      "process_compliance": "pass",
+      "repair_achievement": "pass",
+      "reporting_accuracy": "pass"
+    },
+    "scripted_bracket_v3": {
+      "capture_integrity": "pass",
+      "delivery": "pass",
+      "final_correctness": "pass",
+      "process_compliance": "pass",
+      "repair_achievement": "pass",
+      "reporting_accuracy": "pass"
+    },
+    "scripted_flange_v1": {
+      "capture_integrity": "pass",
+      "delivery": "not_applicable",
+      "final_correctness": "not_applicable",
+      "process_compliance": "pass",
+      "repair_achievement": "fail",
+      "reporting_accuracy": "pass"
+    },
+    "stale_solve": {
+      "capture_integrity": "pass",
+      "delivery": "pass",
+      "final_correctness": "fail",
+      "process_compliance": "pass",
+      "repair_achievement": "fail",
+      "reporting_accuracy": "fail"
+    },
+    "wrong_load": {
+      "capture_integrity": "pass",
+      "delivery": "pass",
+      "final_correctness": "fail",
+      "process_compliance": "pass",
+      "repair_achievement": "fail",
+      "reporting_accuracy": "fail"
+    }
+  },
+  "errors": 0,
+  "example_bundles": 16,
+  "failures": 0,
+  "live_model_runs": 0,
+  "python": "3.12.3",
+  "source_sha256": {
+    "eval_cases.json": "2e21978196f43fc8f1c393a2bc802b73ff93479805b2ef63c9b7e1d9c7b43f15",
+    "eval_checks.py": "6d377889fbd2922d0b8bf340ee21ed4cb7904a0f445c2293ff871631ab9a1928",
+    "eval_state.py": "7ea4d66cae608df73d7ebc8069150e28aaf9c42b6bcc764a443d7316ac81b8a9",
+    "eval_types.py": "5cf710b622569714bebb16baba37ecc7d45d65f8c29c539ce4bd51b13c5ef460",
+    "evaluate.py": "2806678f0495aecd727cc52792d4d7a7a37ad32710396e38767f14cf579a172c",
+    "trace_adapter.py": "84bf113631f075e7b77a2f07ae7332666deaa48540561113b87970d4c6594ae7"
+  },
+  "status": "pass",
+  "tests_run": 131
+}

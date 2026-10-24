@@ -1,0 +1,11 @@
+{
+  "command": [
+    "sg",
+    "docker",
+    "-c",
+    "docker run --rm --pull=never --network none --read-only --tmpfs /tmp -e PYTHONDONTWRITEBYTECODE=1 -v /home/ubuntu/work/cosmon-main:/app:ro -v /home/ubuntu/work/cosmon-main/reports/main-integration-20261024/docker:/proof -w /app/evaluation python:3.12-slim-bookworm@sha256:6a0e06f5ba0b373d051aabd3fffb9b873f27f9a2a3a14bcbe37dee6f0e3bbc70 python3 scripts/verify.py --output-dir /proof/evaluator"
+  ],
+  "exit_code": 0,
+  "network": "none",
+  "source": "read-only"
+}

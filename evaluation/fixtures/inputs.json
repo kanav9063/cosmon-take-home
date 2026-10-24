@@ -1,0 +1,84 @@
+{
+  "inputs": [
+    {
+      "id": "already_safe",
+      "path": "examples/already_safe",
+      "case": "bracket_v3"
+    },
+    {
+      "id": "guard_blocked",
+      "path": "examples/guard_blocked",
+      "case": "flange_v1"
+    },
+    {
+      "id": "historical_artifact",
+      "path": "examples/historical_artifact",
+      "case": "bracket_v3"
+    },
+    {
+      "id": "honest_exhaustion",
+      "path": "examples/honest_exhaustion",
+      "case": "bracket_v3"
+    },
+    {
+      "id": "illegal_restored",
+      "path": "examples/illegal_restored",
+      "case": "flange_v1"
+    },
+    {
+      "id": "missing_artifact",
+      "path": "examples/missing_artifact",
+      "case": "bracket_v3"
+    },
+    {
+      "id": "missing_result",
+      "path": "examples/missing_result",
+      "case": "bracket_v3"
+    },
+    {
+      "id": "multi_parameter",
+      "path": "examples/multi_parameter",
+      "case": "bracket_v3"
+    },
+    {
+      "id": "overwritten_publication",
+      "path": "examples/overwritten_publication",
+      "case": "bracket_v3"
+    },
+    {
+      "id": "partial_tail",
+      "path": "examples/partial_tail",
+      "case": "bracket_v3"
+    },
+    {
+      "id": "recovered_cli",
+      "path": "examples/recovered_cli",
+      "case": "bracket_v3"
+    },
+    {
+      "id": "repaired",
+      "path": "examples/repaired",
+      "case": "bracket_v3"
+    },
+    {
+      "id": "scripted_bracket_v3",
+      "path": "examples/scripted_bracket_v3",
+      "case": "bracket_v3"
+    },
+    {
+      "id": "scripted_flange_v1",
+      "path": "examples/scripted_flange_v1",
+      "case": "flange_v1"
+    },
+    {
+      "id": "stale_solve",
+      "path": "examples/stale_solve",
+      "case": "bracket_v3"
+    },
+    {
+      "id": "wrong_load",
+      "path": "examples/wrong_load",
+      "case": "bracket_v3"
+    }
+  ]
+}

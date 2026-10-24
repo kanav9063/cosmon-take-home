@@ -14,7 +14,7 @@ from pathlib import Path
 import subprocess
 from typing import Any
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 BINARY_SHA256 = "9b202e1ba07861f52f12005108e81815ef14d92f2db3ba322fc51422746ab183"
 SCENARIOS = (
     "repaired", "already_safe", "guard_blocked", "illegal_restored",

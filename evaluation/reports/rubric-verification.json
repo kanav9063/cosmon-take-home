@@ -1,0 +1,88 @@
+{
+  "docker_command": [
+    "docker",
+    "run",
+    "--rm",
+    "--pull=never",
+    "--network",
+    "none",
+    "--read-only",
+    "--tmpfs",
+    "/tmp",
+    "-e",
+    "PYTHONDONTWRITEBYTECODE=1",
+    "-e",
+    "PYTHONPATH=tests",
+    "-v",
+    "/home/ubuntu/work/cosmon-eval:/app:ro",
+    "-w",
+    "/app",
+    "python:3.12-slim-bookworm@sha256:6a0e06f5ba0b373d051aabd3fffb9b873f27f9a2a3a14bcbe37dee6f0e3bbc70",
+    "python3",
+    "-m",
+    "unittest",
+    "-v",
+    "test_rubric",
+    "test_pipeline.PipelineTests.test_added_case_uses_data_including_non_mounting_default",
+    "test_pipeline.PipelineTests.test_explicit_api_adapter_seam_preserves_grade",
+    "test_pipeline.PipelineTests.test_warning_budgets_are_explicit_and_do_not_change_correctness",
+    "test_pipeline.PipelineTests.test_semantic_stale_detected_with_raw_evidence",
+    "test_pipeline.PipelineTests.test_guard_and_recovery_are_diagnostics",
+    "test_pipeline.PipelineTests.test_exhaustion_reporting_separate_from_achievement"
+  ],
+  "docker_group_wrapper": [
+    "sg",
+    "docker",
+    "-c"
+  ],
+  "environments": [
+    "host",
+    "docker-network-none-source-read-only"
+  ],
+  "fixture_origin": "synthetic",
+  "flawed_trace_check": {
+    "capture_integrity": "pass",
+    "code": "STALE_SOLVE",
+    "evidence_refs": 25,
+    "excluded_confounding_codes": [
+      "MANUFACTURING_VIOLATION",
+      "SINGLE_PARAMETER_VIOLATION"
+    ],
+    "status": "fail"
+  },
+  "focused_tests_per_environment": 8,
+  "grading_source_sha256": {
+    "eval_cases.json": "2e21978196f43fc8f1c393a2bc802b73ff93479805b2ef63c9b7e1d9c7b43f15",
+    "eval_checks.py": "c6900b6d885e0cf1bdf59e487bf6be550fb254f638cf0e2f95609109742d8f1b",
+    "eval_state.py": "7ea4d66cae608df73d7ebc8069150e28aaf9c42b6bcc764a443d7316ac81b8a9",
+    "eval_types.py": "b03ec65d0b6a08fa473826fd168bdd9dcabb2f90bf9e1c983cc37bde24fd63e0",
+    "evaluate.py": "e20006538ee80bc17f30d162c618d7bb7c7e3a6dfcec6319c8d411836fb89f2e",
+    "trace_adapter.py": "7911652c4bf8b41a8e09a97c7b1db52950ade009aff905ee7f67ac9c1153ad53"
+  },
+  "grading_source_unchanged_from": "reports/reference-audit-acceptance.json",
+  "host_command": [
+    "python3",
+    "-m",
+    "unittest",
+    "-v",
+    "test_rubric",
+    "test_pipeline.PipelineTests.test_added_case_uses_data_including_non_mounting_default",
+    "test_pipeline.PipelineTests.test_explicit_api_adapter_seam_preserves_grade",
+    "test_pipeline.PipelineTests.test_warning_budgets_are_explicit_and_do_not_change_correctness",
+    "test_pipeline.PipelineTests.test_semantic_stale_detected_with_raw_evidence",
+    "test_pipeline.PipelineTests.test_guard_and_recovery_are_diagnostics",
+    "test_pipeline.PipelineTests.test_exhaustion_reporting_separate_from_achievement"
+  ],
+  "host_environment": {
+    "PYTHONPATH": "tests"
+  },
+  "model_calls": 0,
+  "new_portability_tests": 2,
+  "status": "pass",
+  "test_and_log_sha256": {
+    "reports/rubric-docker.txt": "2436643e3b231b1ce9c8c5ab124e03262bed12e87487e5606278d3a6edb3d929",
+    "reports/rubric-host.txt": "2117a46d89745bf0f96a8aa990acedf70c6a35e13c83a8403cffd42a1fedbe16",
+    "tests/test_pipeline.py": "5c07d7d0346096ff98c7aefdc666002e989ebc0145646e09bcf71bd3f9ce6e33",
+    "tests/test_rubric.py": "6649586d6e36e8540c1795a554c9147b4f3ca1e717430d283a2660bfd9545414"
+  }
+}

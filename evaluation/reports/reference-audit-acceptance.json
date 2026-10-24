@@ -1,0 +1,98 @@
+{
+  "bundles": 19,
+  "checked_at_utc": "2026-10-24T01:51:20.953750+00:00",
+  "core_tests": 154,
+  "evaluator_version": "1.1.0",
+  "existing_live_captures": 2,
+  "git_diff_check": "pass",
+  "harbor_rewards": [
+    1,
+    1,
+    0
+  ],
+  "integration_handoff": [
+    "Select evaluator 1.1.0 in any SDK deployment that vendors an older snapshot.",
+    "For a new provider, capture the supported raw evidence or register its trusted adapter and run the existing conformance command."
+  ],
+  "local_document_links": "pass",
+  "malformed_crashes": 0,
+  "malformed_trials": 1710,
+  "model_calls_during_acceptance": 0,
+  "open_evaluator_implementation_items": [],
+  "original_sha256": {
+    "README.md": "66c7a27bdfeae291aa42ecaa3681c2d53341d613369eaeb38b0bc5c78d805ebe",
+    "RUN.md": "70ec3b4e299a9eaf4ac7c1d585a8941984a7eb620dbecadb116695ec2db41e5a",
+    "docs/REQUIREMENTS.md": "80a126aa53d10d4740cc995a45665ab640ae351bfe6efcb1a6848d7f66e508c1",
+    "docs/SETUP.md": "627c8baa1298fbb7cb41e245bb4569a420a40021bcb01ff88368df71be67891c",
+    "partlab": "9b202e1ba07861f52f12005108e81815ef14d92f2db3ba322fc51422746ab183",
+    "parts/bracket_v1.json": "75d4fad2ed12a6f1ce16c02fcbcb3626ad07b627434299d91400eefb3e7ccfe4",
+    "parts/bracket_v2.json": "990107daa0bcd5c48c5cd5ba84a8c8d132833660f8e9fe5ad0bcd4c28e7258a4",
+    "parts/bracket_v3.json": "9756780586e273177a75155a9e814d514bae9cd21dcc4ee64dc6c32626fdadc8",
+    "parts/bracket_v3_thick.json": "f4a09ed6b27c9bdb9bbc2053640278837bc8918b65935b9d70dd216fa2e4b394",
+    "parts/flange_v1.json": "0e6535b551bb5a441e207fd4d057774c14de0e40c55f7ada83c17fdbd8b7ab7f",
+    "parts/housing_v1.json": "3875c6a153eb20313141c79a24a541d0c97bb74430a39bb5cc6fd4e976a55d56"
+  },
+  "originals_match_commit": "20b46cd",
+  "producer_copy_verification": [
+    {
+      "completion_sha256": "304ea12d39eeca2458d0a2a71eeb0d787533f6212f5010ab747f2a676e2b1848",
+      "id": "live_bracket_v3",
+      "verified_identical_files": 70
+    },
+    {
+      "completion_sha256": "95fb3490b010a7d5c530cfd6415ecb536c43774eb540829014d77a0f5e94c500",
+      "id": "live_flange_v1",
+      "verified_identical_files": 208
+    },
+    {
+      "completion_sha256": "e3345c425688819ca7eb1fef2328e98d088f41ed817186ea90923c2556853b4a",
+      "id": "producer_guard",
+      "verified_identical_files": 32
+    }
+  ],
+  "proof_sha256": {
+    "fixtures/producer-provenance.json": "3cfd40c493c65a634374e79b713edde978ec4372178ffd19b0ccdd94c7b3e911",
+    "harbor_setup/verification-post-audit.json": "fb1502d921ab0ccd1d9cba538cbaf6003e04cab69da20da502fd6d3acf3ee3e1",
+    "reports/reference-audit-docker.json": "da5f917c9d0da7ef4d6d5f9a5080610e14a277c673987ea467c8591318d7bc2c",
+    "reports/reference-audit-docker.log": "8c7fb82918cc7ebef3c1cd48629e6f48ed538b61696b825410f7d679d9cb6011",
+    "reports/reference-audit-host.log": "f5a5beea6e257b68c07e9a65e84f4343aac69774d17d92b4211d6ceab2825000",
+    "reports/reference-audit-malformed.json": "3021f35bcd388d58efb9ea5f6fbbb77b005c9a2eed4240090e3003b3a483c22b",
+    "reports/reference-audit/summary.json": "df23da2bfb08b03ae7391cdb49cdf89ba69cd2b82bd4e851bc032e19a1a8609c",
+    "reports/reference-audit/verification.json": "e8c50be6caefed09a7b3f67787146d26b902c54d12d40b5fb518ea6ca201be30",
+    "scout_setup/verification/README.md": "c23c16b76db1aec47a6a1229d17631ede58475da435d0b280e497f7df2faa66c",
+    "scout_setup/verification/acceptance.json": "f2ccc351f7a2190dd56cf6cab3b7317f0d1e92028e7fc695f60b351bfc155cb9",
+    "scout_setup/verification/database-validation.txt": "39fa42d69c2a64f5bcf5aa05ce4bb7f24baa0e8a897890aaf4a868eb373b179a",
+    "scout_setup/verification/docker.json": "25b3ae2de109ebb330ef9d33f63b8b7e1fa9d20362b93984d4981f742077ec00",
+    "scout_setup/verification/installation.json": "92465783a9c913554d9786bd8b6e255a911ce98a60c2a85343d53d927e0e0d06",
+    "scout_setup/verification/rejected-inputs.json": "aaf15475994e5f9f6cd2de3c5f4f8e55f027c771ff0242e262d92e967260fe96",
+    "scout_setup/verification/rejected.json": "72237087356e3ecff2f3f447297d3f01f9f4364f04cbe2c86e9e59c33b17cf4b",
+    "scout_setup/verification/repeat.json": "41df3e8a3c0bf61d2d8f1d204c597910363a9b9977a02b14936121c6fb269dc2",
+    "scout_setup/verification/repeatability.json": "6eb3b64d4522ad20f49f122a31232c963b536053ff7a010c954d6806f4e298af",
+    "scout_setup/verification/tests.txt": "2cf17fc7c7b1b3ec727e09d8c135bd23a5267926b3d76b605a4346e4c8dca41a",
+    "scout_setup/verification/view-help.txt": "7dc69c28f4c4e11df50def0c999f6516cee85140643696b2d51b4724418c8f06"
+  },
+  "python_syntax": "pass",
+  "scope": "offline PartLab evaluator and optional local Scout/Harbor integration",
+  "scout_contract_tests": 17,
+  "scout_dimension_results": 133,
+  "scout_integration_sha256": {
+    "bridge.py": "412b6248d3c838208f32e085ede59b0430252df9e82b855ed05ac010f02049bd",
+    "requirements.lock": "8891c35f751ff76bcb3b7d8000eafa4831d53823126962a91ed30c67887f38b4",
+    "scanners.py": "ee41c0ab0b0ba95c382d0e35ddf3e06cad2a9549baccd80ee6659674b927e3cf"
+  },
+  "scout_raw_reference_occurrences": 4507,
+  "scout_repeat_and_offline_docker_equal": true,
+  "scout_transcripts": 19,
+  "separate_human_exercise_requirements": [
+    "Recorded time-boxed demonstration and combined agent/eval submission."
+  ],
+  "source_sha256": {
+    "eval_cases.json": "2e21978196f43fc8f1c393a2bc802b73ff93479805b2ef63c9b7e1d9c7b43f15",
+    "eval_checks.py": "c6900b6d885e0cf1bdf59e487bf6be550fb254f638cf0e2f95609109742d8f1b",
+    "eval_state.py": "7ea4d66cae608df73d7ebc8069150e28aaf9c42b6bcc764a443d7316ac81b8a9",
+    "eval_types.py": "b03ec65d0b6a08fa473826fd168bdd9dcabb2f90bf9e1c983cc37bde24fd63e0",
+    "evaluate.py": "e20006538ee80bc17f30d162c618d7bb7c7e3a6dfcec6319c8d411836fb89f2e",
+    "trace_adapter.py": "7911652c4bf8b41a8e09a97c7b1db52950ade009aff905ee7f67ac9c1153ad53"
+  },
+  "status": "pass"
+}

@@ -3,7 +3,7 @@
   "cases": [
     {
       "case_id": "bracket_v1",
-      "original_path": "parts/bracket_v1.json",
+      "original_path": "../parts/bracket_v1.json",
       "original_sha256": "75d4fad2ed12a6f1ce16c02fcbcb3626ad07b627434299d91400eefb3e7ccfe4",
       "target_sf": 2.0,
       "output_path": "outputs/bracket_v1.json",
@@ -11,7 +11,7 @@
     },
     {
       "case_id": "bracket_v2",
-      "original_path": "parts/bracket_v2.json",
+      "original_path": "../parts/bracket_v2.json",
       "original_sha256": "990107daa0bcd5c48c5cd5ba84a8c8d132833660f8e9fe5ad0bcd4c28e7258a4",
       "target_sf": 2.0,
       "output_path": "outputs/bracket_v2.json",
@@ -19,7 +19,7 @@
     },
     {
       "case_id": "bracket_v3",
-      "original_path": "parts/bracket_v3.json",
+      "original_path": "../parts/bracket_v3.json",
       "original_sha256": "9756780586e273177a75155a9e814d514bae9cd21dcc4ee64dc6c32626fdadc8",
       "target_sf": 2.0,
       "output_path": "outputs/bracket_v3.json",
@@ -27,7 +27,7 @@
     },
     {
       "case_id": "bracket_v3_thick",
-      "original_path": "parts/bracket_v3_thick.json",
+      "original_path": "../parts/bracket_v3_thick.json",
       "original_sha256": "f4a09ed6b27c9bdb9bbc2053640278837bc8918b65935b9d70dd216fa2e4b394",
       "target_sf": 2.0,
       "output_path": "outputs/bracket_v3_thick.json",
@@ -35,7 +35,7 @@
     },
     {
       "case_id": "flange_v1",
-      "original_path": "parts/flange_v1.json",
+      "original_path": "../parts/flange_v1.json",
       "original_sha256": "0e6535b551bb5a441e207fd4d057774c14de0e40c55f7ada83c17fdbd8b7ab7f",
       "target_sf": 2.0,
       "output_path": "outputs/flange_v1.json",
@@ -50,7 +50,7 @@
     },
     {
       "case_id": "housing_v1",
-      "original_path": "parts/housing_v1.json",
+      "original_path": "../parts/housing_v1.json",
       "original_sha256": "3875c6a153eb20313141c79a24a541d0c97bb74430a39bb5cc6fd4e976a55d56",
       "target_sf": 2.0,
       "output_path": "outputs/housing_v1.json",

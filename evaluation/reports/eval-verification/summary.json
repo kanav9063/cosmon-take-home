@@ -1,0 +1,137 @@
+{
+  "dimensions": {
+    "capture_integrity": {
+      "pass": 13,
+      "unknown": 3
+    },
+    "delivery": {
+      "fail": 1,
+      "not_applicable": 2,
+      "pass": 10,
+      "unknown": 3
+    },
+    "efficiency": {
+      "not_applicable": 16
+    },
+    "final_correctness": {
+      "fail": 3,
+      "not_applicable": 2,
+      "pass": 10,
+      "unknown": 1
+    },
+    "process_compliance": {
+      "fail": 2,
+      "pass": 11,
+      "unknown": 3
+    },
+    "repair_achievement": {
+      "fail": 6,
+      "not_applicable": 1,
+      "pass": 6,
+      "unknown": 3
+    },
+    "reporting_accuracy": {
+      "fail": 4,
+      "pass": 9,
+      "unknown": 3
+    }
+  },
+  "evaluated": 16,
+  "explicitly_rejected": 0,
+  "policy_digest": "2e21978196f43fc8f1c393a2bc802b73ff93479805b2ef63c9b7e1d9c7b43f15",
+  "report_version": "partlab.eval-batch/1",
+  "reports": [
+    {
+      "input_id": "already_safe",
+      "report": "report-already_safe.json",
+      "status": "evaluated"
+    },
+    {
+      "input_id": "guard_blocked",
+      "report": "report-guard_blocked.json",
+      "status": "evaluated"
+    },
+    {
+      "input_id": "historical_artifact",
+      "report": "report-historical_artifact.json",
+      "status": "evaluated"
+    },
+    {
+      "input_id": "honest_exhaustion",
+      "report": "report-honest_exhaustion.json",
+      "status": "evaluated"
+    },
+    {
+      "input_id": "illegal_restored",
+      "report": "report-illegal_restored.json",
+      "status": "evaluated"
+    },
+    {
+      "input_id": "missing_artifact",
+      "report": "report-missing_artifact.json",
+      "status": "evaluated"
+    },
+    {
+      "input_id": "missing_result",
+      "report": "report-missing_result.json",
+      "status": "evaluated"
+    },
+    {
+      "input_id": "multi_parameter",
+      "report": "report-multi_parameter.json",
+      "status": "evaluated"
+    },
+    {
+      "input_id": "overwritten_publication",
+      "report": "report-overwritten_publication.json",
+      "status": "evaluated"
+    },
+    {
+      "input_id": "partial_tail",
+      "report": "report-partial_tail.json",
+      "status": "evaluated"
+    },
+    {
+      "input_id": "recovered_cli",
+      "report": "report-recovered_cli.json",
+      "status": "evaluated"
+    },
+    {
+      "input_id": "repaired",
+      "report": "report-repaired.json",
+      "status": "evaluated"
+    },
+    {
+      "input_id": "scripted_bracket_v3",
+      "report": "report-scripted_bracket_v3.json",
+      "status": "evaluated"
+    },
+    {
+      "input_id": "scripted_flange_v1",
+      "report": "report-scripted_flange_v1.json",
+      "status": "evaluated"
+    },
+    {
+      "input_id": "stale_solve",
+      "report": "report-stale_solve.json",
+      "status": "evaluated"
+    },
+    {
+      "input_id": "wrong_load",
+      "report": "report-wrong_load.json",
+      "status": "evaluated"
+    }
+  ],
+  "requested": 16,
+  "resource_limits": {
+    "max_events": 100000,
+    "max_file_bytes": 16777216,
+    "max_files": 4096,
+    "max_record_bytes": 2097152,
+    "max_total_bytes": 67108864
+  },
+  "status": "complete",
+  "warning_policy": {
+    "warning_budgets": {}
+  }
+}

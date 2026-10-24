@@ -1,0 +1,45 @@
+{
+  "run_id": "19b5d833-afd1-413c-a2be-89f9c27948a4",
+  "status": "no_repair_found",
+  "reason_code": "agent_stopped",
+  "initial_sf": 0.212,
+  "final_sf": 0.212,
+  "initial_solve_cli_id": "x0006",
+  "solve_cli_id": "x0006",
+  "changed_parameter": null,
+  "artifact_id": null,
+  "artifact_ref": null,
+  "final_message_ref": {
+    "path": "raw/messages/final.json",
+    "sha256": "968e205f9c71eeaca6fc7c03fa26c06571f8e531cfb6cf666244b54ee369c67e",
+    "bytes": 130
+  },
+  "final_message_format": "json/1",
+  "search": {
+    "scope": "bounded_exploration_not_infeasibility_proof",
+    "ranges": {
+      "thickness_mm": [
+        2.0,
+        5.0
+      ],
+      "hole_diameter_mm": [
+        4.0,
+        10.0
+      ],
+      "fillet_radius_mm": [
+        1.5,
+        10.0
+      ]
+    },
+    "budget": {
+      "max_trials": 6,
+      "max_tool_calls": 64,
+      "max_model_turns": 48,
+      "run_timeout_seconds": 300
+    },
+    "trials": [],
+    "max_trials": 6,
+    "tool_calls": 6,
+    "termination": "agent_stopped"
+  }
+}

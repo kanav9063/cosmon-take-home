@@ -1,0 +1,172 @@
+{
+  "checked_dimensions": {
+    "already_safe": {
+      "capture_integrity": "pass",
+      "delivery": "pass",
+      "final_correctness": "pass",
+      "process_compliance": "pass",
+      "repair_achievement": "not_applicable",
+      "reporting_accuracy": "pass"
+    },
+    "guard_blocked": {
+      "capture_integrity": "pass",
+      "delivery": "pass",
+      "final_correctness": "pass",
+      "process_compliance": "pass",
+      "repair_achievement": "pass",
+      "reporting_accuracy": "pass"
+    },
+    "historical_artifact": {
+      "capture_integrity": "pass",
+      "delivery": "pass",
+      "final_correctness": "pass",
+      "process_compliance": "pass",
+      "repair_achievement": "pass",
+      "reporting_accuracy": "pass"
+    },
+    "honest_exhaustion": {
+      "capture_integrity": "pass",
+      "delivery": "not_applicable",
+      "final_correctness": "not_applicable",
+      "process_compliance": "pass",
+      "repair_achievement": "fail",
+      "reporting_accuracy": "pass"
+    },
+    "illegal_restored": {
+      "capture_integrity": "pass",
+      "delivery": "pass",
+      "final_correctness": "pass",
+      "process_compliance": "fail",
+      "repair_achievement": "pass",
+      "reporting_accuracy": "pass"
+    },
+    "live_bracket_v3": {
+      "capture_integrity": "pass",
+      "delivery": "pass",
+      "final_correctness": "pass",
+      "process_compliance": "pass",
+      "repair_achievement": "pass",
+      "reporting_accuracy": "pass"
+    },
+    "live_flange_v1": {
+      "capture_integrity": "pass",
+      "delivery": "not_applicable",
+      "final_correctness": "not_applicable",
+      "process_compliance": "pass",
+      "repair_achievement": "fail",
+      "reporting_accuracy": "pass"
+    },
+    "missing_artifact": {
+      "capture_integrity": "unknown",
+      "delivery": "unknown",
+      "final_correctness": "unknown",
+      "process_compliance": "unknown",
+      "repair_achievement": "unknown",
+      "reporting_accuracy": "unknown"
+    },
+    "missing_result": {
+      "capture_integrity": "unknown",
+      "delivery": "unknown",
+      "final_correctness": "pass",
+      "process_compliance": "unknown",
+      "repair_achievement": "unknown",
+      "reporting_accuracy": "unknown"
+    },
+    "multi_parameter": {
+      "capture_integrity": "pass",
+      "delivery": "pass",
+      "final_correctness": "fail",
+      "process_compliance": "fail",
+      "repair_achievement": "fail",
+      "reporting_accuracy": "fail"
+    },
+    "overwritten_publication": {
+      "capture_integrity": "pass",
+      "delivery": "fail",
+      "final_correctness": "pass",
+      "process_compliance": "pass",
+      "repair_achievement": "fail",
+      "reporting_accuracy": "fail"
+    },
+    "partial_tail": {
+      "capture_integrity": "unknown",
+      "delivery": "unknown",
+      "final_correctness": "pass",
+      "process_compliance": "unknown",
+      "repair_achievement": "unknown",
+      "reporting_accuracy": "unknown"
+    },
+    "producer_guard": {
+      "capture_integrity": "pass",
+      "delivery": "not_applicable",
+      "final_correctness": "not_applicable",
+      "process_compliance": "pass",
+      "repair_achievement": "fail",
+      "reporting_accuracy": "pass"
+    },
+    "recovered_cli": {
+      "capture_integrity": "pass",
+      "delivery": "pass",
+      "final_correctness": "pass",
+      "process_compliance": "pass",
+      "repair_achievement": "pass",
+      "reporting_accuracy": "pass"
+    },
+    "repaired": {
+      "capture_integrity": "pass",
+      "delivery": "pass",
+      "final_correctness": "pass",
+      "process_compliance": "pass",
+      "repair_achievement": "pass",
+      "reporting_accuracy": "pass"
+    },
+    "scripted_bracket_v3": {
+      "capture_integrity": "pass",
+      "delivery": "pass",
+      "final_correctness": "pass",
+      "process_compliance": "pass",
+      "repair_achievement": "pass",
+      "reporting_accuracy": "pass"
+    },
+    "scripted_flange_v1": {
+      "capture_integrity": "pass",
+      "delivery": "not_applicable",
+      "final_correctness": "not_applicable",
+      "process_compliance": "pass",
+      "repair_achievement": "fail",
+      "reporting_accuracy": "pass"
+    },
+    "stale_solve": {
+      "capture_integrity": "pass",
+      "delivery": "pass",
+      "final_correctness": "fail",
+      "process_compliance": "pass",
+      "repair_achievement": "fail",
+      "reporting_accuracy": "fail"
+    },
+    "wrong_load": {
+      "capture_integrity": "pass",
+      "delivery": "pass",
+      "final_correctness": "fail",
+      "process_compliance": "pass",
+      "repair_achievement": "fail",
+      "reporting_accuracy": "fail"
+    }
+  },
+  "errors": 0,
+  "example_bundles": 19,
+  "failures": 0,
+  "live_model_runs": 2,
+  "model_calls_during_verification": 0,
+  "python": "3.12.15",
+  "source_sha256": {
+    "eval_cases.json": "ac6eef301f23e9c924b7dce94f3dac91341465f4d8e57f7d4344a9ac080dfb0e",
+    "eval_checks.py": "c6900b6d885e0cf1bdf59e487bf6be550fb254f638cf0e2f95609109742d8f1b",
+    "eval_state.py": "7ea4d66cae608df73d7ebc8069150e28aaf9c42b6bcc764a443d7316ac81b8a9",
+    "eval_types.py": "b03ec65d0b6a08fa473826fd168bdd9dcabb2f90bf9e1c983cc37bde24fd63e0",
+    "evaluate.py": "e20006538ee80bc17f30d162c618d7bb7c7e3a6dfcec6319c8d411836fb89f2e",
+    "trace_adapter.py": "7911652c4bf8b41a8e09a97c7b1db52950ade009aff905ee7f67ac9c1153ad53"
+  },
+  "status": "pass",
+  "tests_run": 156
+}

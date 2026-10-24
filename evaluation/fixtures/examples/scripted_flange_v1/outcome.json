@@ -1,0 +1,23 @@
+{
+  "artifact_id": null,
+  "changed_parameter": null,
+  "final_message_format": "json/1",
+  "final_message_ref": {
+    "bytes": 130,
+    "path": "raw/messages/final.json",
+    "sha256": "3f387c7ec159196baf25b5bad05cb88defd0b6be864b4f0f670b12a2785062a3"
+  },
+  "final_sf": 0.839,
+  "initial_sf": 0.212,
+  "initial_solve_cli_id": "c0006",
+  "reason_code": "SEARCH_BUDGET_EXHAUSTED",
+  "search": {
+    "budget": {
+      "trials": 1
+    },
+    "scope": "one explicitly enumerated candidate",
+    "termination": "budget_exhausted"
+  },
+  "solve_cli_id": "c0014",
+  "status": "no_repair_found"
+}

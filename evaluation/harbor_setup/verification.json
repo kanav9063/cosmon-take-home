@@ -1,0 +1,83 @@
+{
+  "purpose": "infrastructure-preparation-only",
+  "model_calls": 0,
+  "versions": {
+    "harbor": "0.24.0",
+    "python": "3.12.3",
+    "docker_server": "29.1.3",
+    "compose": "2.40.3+ds1-0ubuntu1~24.04.1"
+  },
+  "dependency_lock_sha256": "dab3455969e10475fecf8ff1cbbe2820790fb6fb518d519fe80f998127f39840",
+  "suite": ".harbor-jobs/20261024T011934.963436Z",
+  "original_sha256": {
+    "README.md": "66c7a27bdfeae291aa42ecaa3681c2d53341d613369eaeb38b0bc5c78d805ebe",
+    "partlab": "9b202e1ba07861f52f12005108e81815ef14d92f2db3ba322fc51422746ab183",
+    "parts/bracket_v1.json": "75d4fad2ed12a6f1ce16c02fcbcb3626ad07b627434299d91400eefb3e7ccfe4",
+    "parts/bracket_v2.json": "990107daa0bcd5c48c5cd5ba84a8c8d132833660f8e9fe5ad0bcd4c28e7258a4",
+    "parts/bracket_v3.json": "9756780586e273177a75155a9e814d514bae9cd21dcc4ee64dc6c32626fdadc8",
+    "parts/bracket_v3_thick.json": "f4a09ed6b27c9bdb9bbc2053640278837bc8918b65935b9d70dd216fa2e4b394",
+    "parts/flange_v1.json": "0e6535b551bb5a441e207fd4d057774c14de0e40c55f7ada83c17fdbd8b7ab7f",
+    "parts/housing_v1.json": "3875c6a153eb20313141c79a24a541d0c97bb74430a39bb5cc6fd4e976a55d56"
+  },
+  "verifier_environment_mode": "separate",
+  "artifact_sources": [
+    "/logs/artifacts"
+  ],
+  "network_policy": {
+    "agent": "no-network",
+    "verifier": "no-network"
+  },
+  "checks": [
+    {
+      "agent": "oracle",
+      "reward": 1.0,
+      "trial_result": ".harbor-jobs/20261024T011934.963436Z/oracle/task__VSJt8N7/result.json",
+      "trial_result_sha256": "35a637a7a491f8dfb84585594f725b144c31a7dea1adf2cddf7e8dd46ded2fd8",
+      "verifier_report": ".harbor-jobs/20261024T011934.963436Z/oracle/task__VSJt8N7/verifier/report.json",
+      "verifier_report_sha256": "2b6ac60e7c8c916ff10794f8151b860d2e3f7021981112c5b9ce08594446b65f",
+      "exception": null,
+      "agent_exit": "success",
+      "verifier_environment_mode": "separate",
+      "verifier_isolation": "pass",
+      "explicit_evidence_transfer": "pass",
+      "safety_factor": 1.428,
+      "artifact_dir": ".harbor-jobs/20261024T011934.963436Z/oracle/task__VSJt8N7/artifacts/logs/artifacts",
+      "command_count": 7,
+      "artifact_capture": "pass"
+    },
+    {
+      "agent": "oracle",
+      "reward": 1.0,
+      "trial_result": ".harbor-jobs/20261024T011934.963436Z/oracle/task__q9wDwbG/result.json",
+      "trial_result_sha256": "ce6cc606a0423ef74fbd8a6d97a69b17cc7398462c63f5a479166702942e9c92",
+      "verifier_report": ".harbor-jobs/20261024T011934.963436Z/oracle/task__q9wDwbG/verifier/report.json",
+      "verifier_report_sha256": "2b6ac60e7c8c916ff10794f8151b860d2e3f7021981112c5b9ce08594446b65f",
+      "exception": null,
+      "agent_exit": "success",
+      "verifier_environment_mode": "separate",
+      "verifier_isolation": "pass",
+      "explicit_evidence_transfer": "pass",
+      "safety_factor": 1.428,
+      "artifact_dir": ".harbor-jobs/20261024T011934.963436Z/oracle/task__q9wDwbG/artifacts/logs/artifacts",
+      "command_count": 7,
+      "artifact_capture": "pass"
+    },
+    {
+      "agent": "nop",
+      "reward": 0.0,
+      "trial_result": ".harbor-jobs/20261024T011934.963436Z/nop/task__hVLsWnz/result.json",
+      "trial_result_sha256": "5ed840182ce1db48f20f045c3c31fc7d42883c77cfefdd3e8081dd8a9ed07533",
+      "verifier_report": ".harbor-jobs/20261024T011934.963436Z/nop/task__hVLsWnz/verifier/report.json",
+      "verifier_report_sha256": "46413c63328314ff73d5437e9c642fb0485e36ccda6c0aa29c0a3cdb23cdf83f",
+      "exception": null,
+      "agent_exit": "success",
+      "verifier_environment_mode": "separate",
+      "verifier_isolation": "pass",
+      "explicit_evidence_transfer": "pass",
+      "fresh_environment": "pass",
+      "expected_missing_output": "pass"
+    }
+  ],
+  "starter_unchanged": true,
+  "status": "pass"
+}

@@ -10,7 +10,7 @@ from eval_types import Action, Case, Event, EvidenceRun, digest, strict_json
 
 class StateTests(unittest.TestCase):
     def setUp(self):
-        raw = (Path(__file__).resolve().parents[1] / "parts" / "bracket_v3.json").read_bytes()
+        raw = (Path(__file__).resolve().parents[2] / "parts" / "bracket_v3.json").read_bytes()
         self.case = Case("bracket_v3", strict_json(raw), digest(raw))
         self.run = EvidenceRun(Path("unused"), profile_supported=True, original_matches=True,
                                complete=True, execution_complete=True)

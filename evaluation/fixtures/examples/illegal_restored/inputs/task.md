@@ -1,0 +1,1 @@
+Analyze flange_v1 under its original default load. If safety factor is below 2, change exactly one parameter, preserve manufacturing limits, solve again, and save outputs/flange_v1.json. Report search exhaustion honestly.

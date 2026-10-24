@@ -1,0 +1,99 @@
+{
+  "inputs": [
+    {
+      "case": "bracket_v3",
+      "id": "already_safe",
+      "path": "examples/already_safe"
+    },
+    {
+      "case": "flange_v1",
+      "id": "guard_blocked",
+      "path": "examples/guard_blocked"
+    },
+    {
+      "case": "bracket_v3",
+      "id": "historical_artifact",
+      "path": "examples/historical_artifact"
+    },
+    {
+      "case": "bracket_v3",
+      "id": "honest_exhaustion",
+      "path": "examples/honest_exhaustion"
+    },
+    {
+      "case": "flange_v1",
+      "id": "illegal_restored",
+      "path": "examples/illegal_restored"
+    },
+    {
+      "case": "bracket_v3",
+      "id": "missing_artifact",
+      "path": "examples/missing_artifact"
+    },
+    {
+      "case": "bracket_v3",
+      "id": "missing_result",
+      "path": "examples/missing_result"
+    },
+    {
+      "case": "bracket_v3",
+      "id": "multi_parameter",
+      "path": "examples/multi_parameter"
+    },
+    {
+      "case": "bracket_v3",
+      "id": "overwritten_publication",
+      "path": "examples/overwritten_publication"
+    },
+    {
+      "case": "bracket_v3",
+      "id": "partial_tail",
+      "path": "examples/partial_tail"
+    },
+    {
+      "case": "bracket_v3",
+      "id": "recovered_cli",
+      "path": "examples/recovered_cli"
+    },
+    {
+      "case": "bracket_v3",
+      "id": "repaired",
+      "path": "examples/repaired"
+    },
+    {
+      "case": "bracket_v3",
+      "id": "scripted_bracket_v3",
+      "path": "examples/scripted_bracket_v3"
+    },
+    {
+      "case": "flange_v1",
+      "id": "scripted_flange_v1",
+      "path": "examples/scripted_flange_v1"
+    },
+    {
+      "case": "bracket_v3",
+      "id": "stale_solve",
+      "path": "examples/stale_solve"
+    },
+    {
+      "case": "bracket_v3",
+      "id": "wrong_load",
+      "path": "examples/wrong_load"
+    },
+    {
+      "case": "bracket_v3",
+      "id": "live_bracket_v3",
+      "path": "producer/live_bracket_v3"
+    },
+    {
+      "case": "flange_v1",
+      "id": "live_flange_v1",
+      "path": "producer/live_flange_v1"
+    },
+    {
+      "case": "flange_v1",
+      "id": "producer_guard",
+      "path": "producer/producer_guard"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+test_duplicate_json_keys_fail (evaluation.scout_setup.test_bridge.ProjectionTests.test_duplicate_json_keys_fail) ... ok
+test_duplicate_report_fails (evaluation.scout_setup.test_bridge.ProjectionTests.test_duplicate_report_fails) ... ok
+test_incomplete_batch_fails (evaluation.scout_setup.test_bridge.ProjectionTests.test_incomplete_batch_fails) ... ok
+test_manifest_count_mismatch_fails (evaluation.scout_setup.test_bridge.ProjectionTests.test_manifest_count_mismatch_fails) ... ok
+test_missing_dimension_fails (evaluation.scout_setup.test_bridge.ProjectionTests.test_missing_dimension_fails) ... ok
+test_missing_report_fails (evaluation.scout_setup.test_bridge.ProjectionTests.test_missing_report_fails) ... ok
+test_nonfinite_json_fails (evaluation.scout_setup.test_bridge.ProjectionTests.test_nonfinite_json_fails) ... ok
+test_projection_keeps_dimensions_origin_and_no_boolean_success (evaluation.scout_setup.test_bridge.ProjectionTests.test_projection_keeps_dimensions_origin_and_no_boolean_success) ... ok
+test_rejected_count_mismatch_fails (evaluation.scout_setup.test_bridge.ProjectionTests.test_rejected_count_mismatch_fails) ... ok
+test_rejected_input_remains_present (evaluation.scout_setup.test_bridge.ProjectionTests.test_rejected_input_remains_present) ... ok
+test_scanner_keeps_raw_refs_and_each_dimension (evaluation.scout_setup.test_bridge.ProjectionTests.test_scanner_keeps_raw_refs_and_each_dimension) ... ok
+test_symlink_report_fails (evaluation.scout_setup.test_bridge.ProjectionTests.test_symlink_report_fails) ... ok
+test_transcript_identity_changes_with_report_or_batch (evaluation.scout_setup.test_bridge.ProjectionTests.test_transcript_identity_changes_with_report_or_batch) ... ok
+test_unknown_status_fails (evaluation.scout_setup.test_bridge.ProjectionTests.test_unknown_status_fails) ... ok
+test_unresolved_check_fails (evaluation.scout_setup.test_bridge.ProjectionTests.test_unresolved_check_fails) ... ok
+test_unsafe_paths_fail (evaluation.scout_setup.test_bridge.ProjectionTests.test_unsafe_paths_fail) ... ok
+test_valid_keeps_exact_report_bytes (evaluation.scout_setup.test_bridge.ProjectionTests.test_valid_keeps_exact_report_bytes) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 17.614s
+
+OK
