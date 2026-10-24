@@ -3,7 +3,6 @@
 
 import argparse
 import asyncio
-from dataclasses import asdict
 from datetime import datetime, timezone
 import json
 import os
@@ -16,12 +15,18 @@ os.environ["OPENAI_AGENTS_DISABLE_TRACING"] = "1"
 import httpx2
 from openai import AsyncOpenAI
 from openai.types.shared import Reasoning
+from pydantic import TypeAdapter
 from agents import Agent, ModelSettings, OpenAIChatCompletionsModel, RunConfig, Runner, function_tool
 from agents.retry import ModelRetrySettings
 from agents.tool_context import ToolContext
 
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG_NAMES = ("OPENROUTER_API_KEY", "OPENROUTER_MODEL", "OPENROUTER_REASONING_EFFORT")
+
+
+def serialize_usage(usage):
+    """SDK usage nests Pydantic models inside a dataclass."""
+    return TypeAdapter(type(usage)).dump_python(usage, mode="json")
 
 
 def load_config(path):
@@ -134,7 +139,7 @@ async def check(config, output):
                 event("final_output", text=final)
                 if tool_calls != 1 or requests != 2 or final != f"OPENROUTER_SMOKE_OK {token}":
                     raise RuntimeError("Tool round-trip verification failed")
-                report.update(status="passed", usage=asdict(result.context_wrapper.usage))
+                report.update(status="passed", usage=serialize_usage(result.context_wrapper.usage))
     except Exception as error:
         # Do not emit exception reprs, request headers, client objects or credentials.
         report.update(status="failed", error_type=type(error).__name__)

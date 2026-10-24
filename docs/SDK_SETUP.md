@@ -6,7 +6,8 @@ commit is `20b46cd2ceb65f3b24a55ca1f9298cf066782968`.
 
 This is **setup and planning only**. The agent, its guarded PartLab tools,
 trace producer, offline evaluator and recorded demonstrations are not yet
-implemented. No paid model request was made. [RUN.md](../RUN.md) remains the
+implemented. The offline setup checks and a separate live provider smoke test
+have passed. [RUN.md](../RUN.md) remains the
 exercise handoff template; fill it with actual results during the recording.
 
 ## Reproduce the environment
@@ -88,7 +89,7 @@ agent must load it and set
 configuration loader are not implemented yet; the separate provider smoke script
 described below now loads `.env` for its own check. The model exists in OpenRouter's public catalog
 with tool calling and reasoning support; the installed SDK accepts medium
-reasoning. No paid request or credential validation was performed.
+reasoning. Live access and tool calling were subsequently verified below.
 The catalog does not advertise `temperature` or `parallel_tool_calls` for this
 model; omit optional unsupported settings until compatibility is established,
 and retain runner-side serialization regardless of provider options.
@@ -126,8 +127,32 @@ A separate read-only `/api/v1/auth/key` request received the same 401. An
 offline transport interception confirmed that the OpenAI client constructs
 the expected Bearer header from the loaded value. A missing-key test confirmed
 exit 2 with a local diagnostic before any request. The key in `.env` was left
-unchanged. Check or replace `OPENROUTER_API_KEY`, then repeat the command; live
-tool calling and final-response handling remain unverified.
+unchanged.
+
+The requested retry authenticated and completed the tool exchange, but exposed
+a local report-writing bug: `dataclasses.asdict` left nested SDK token-detail
+models that `json.dumps` could not serialize. That attempt's original
+[report](../reports/openrouter-smoke-7e278270169a4e2ea4f01f1174fa7729/report.json)
+remains `running` because finalization crashed; its two HTTP 200 responses and
+final-output event are preserved. This is incomplete report finalization, not
+an authentication failure.
+
+The serializer now uses Pydantic's JSON mode, with an offline regression test
+covering aggregate and per-request token details:
+
+```bash
+.venv/bin/python -m unittest discover -s scripts -p 'test_check_openrouter.py'
+```
+
+The subsequent clean rerun **passed** with `openai/gpt-6.1-sol` and medium
+reasoning: two HTTP 200 responses, exactly one `get_probe_value` invocation,
+and a final reply matching the returned random value. It used 215 input and
+43 output tokens (258 total); the provider reported zero reasoning tokens for
+this simple probe. See the completed
+[report](../reports/openrouter-smoke-64ba6facbc914c29b186e0c68744773d/report.json)
+and [events](../reports/openrouter-smoke-64ba6facbc914c29b186e0c68744773d/events.jsonl).
+This verifies authentication, SDK/provider compatibility, tool-result handling,
+and report persistence. It does not test PartLab agent behavior.
 
 [reports/sdk-lock-replay.json](../reports/sdk-lock-replay.json) records a second
 check in a newly created temporary venv: installation from `requirements.lock`,
@@ -166,7 +191,8 @@ Setup caught and corrected two integration assumptions: postponed annotations
 cannot resolve a locally imported `ToolContext` when the SDK inspects a nested
 function; and `reset` deletes the state file, while a later `get-active-part`
 recreates closed state. The check now uses evaluated annotations and the public
-state query. None of this verifies a live model or complete trace capture.
+state query. Those offline checks do not verify a live model or complete trace
+capture; the separate provider probe above covers the basic live exchange.
 
 ## Next checkpoint
 
@@ -178,7 +204,7 @@ chat. The two chats have not messaged each other.
 
 Accepted here: stop at the first valid verified fix, and use configurable
 exploration ranges without claiming completeness. Still resolve the exact
-live model access, numerical ranges and candidate order, budgets/retries/timeouts,
+numerical ranges and candidate order, agent budgets/retries/timeouts,
 mesh and numeric policy, and the shared schema before live implementation.
 The exercise must still produce both real agent traces, required checks,
 saved repairs where found, offline eval and flawed-trace detection, the

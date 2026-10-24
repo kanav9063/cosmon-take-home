@@ -1,0 +1,51 @@
+{
+  "model": "openai/gpt-6.1-sol",
+  "messages": [
+    {
+      "content": "Call get_probe_value exactly once. Then reply with only OPENROUTER_SMOKE_OK followed by a space and the exact returned value. Do not call tools again.",
+      "role": "system"
+    },
+    {
+      "role": "user",
+      "content": "Run the provider smoke test."
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_CQt3AGqZkYbwuMaY17t7h1mx",
+          "type": "function",
+          "function": {
+            "name": "get_probe_value",
+            "arguments": "{}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_CQt3AGqZkYbwuMaY17t7h1mx",
+      "content": "bba3ede7aa3d44c385a2e835caeb836a"
+    }
+  ],
+  "max_tokens": 2048,
+  "reasoning_effort": "medium",
+  "tools": [
+    {
+      "type": "function",
+      "function": {
+        "name": "get_probe_value",
+        "description": "Return a random verification value for this provider smoke test.",
+        "parameters": {
+          "properties": {},
+          "title": "get_probe_value_args",
+          "type": "object",
+          "additionalProperties": false,
+          "required": []
+        },
+        "strict": true
+      }
+    }
+  ]
+}

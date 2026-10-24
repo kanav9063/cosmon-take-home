@@ -1,0 +1,13 @@
+{
+  "kind": "live_provider_smoke",
+  "is_partlab_agent_run": false,
+  "started_at": "2026-10-24T01:22:02.155209+00:00",
+  "model": "openai/gpt-6.1-sol",
+  "reasoning_effort": "medium",
+  "max_model_turns": 2,
+  "max_tokens_per_response": 2048,
+  "client_retries": 0,
+  "sdk_retries": 0,
+  "hosted_tracing": false,
+  "status": "running"
+}
