@@ -1,0 +1,29 @@
+# Local PartLab session (outputs and traces are deliverables; keep them tracked).
+.partlab/
+
+# Credentials and local configuration.
+.env
+.env.*
+!.env.example
+
+# Language environments and caches, if used during the exercise.
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+node_modules/
+
+# Recordings should be submitted through a shared link, not committed to Git.
+recordings/
+*.mp4
+*.mov
+*.mkv
+*.webm
+
+# Editor and OS files.
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
