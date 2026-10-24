@@ -5,6 +5,9 @@ for a legal single-parameter repair, verifies it with PartLab, and saves it.
 The model proposes changes; Python enforces the workflow and constraints;
 an independent offline evaluator checks the recorded evidence.
 
+Start with the [reviewer walkthrough](docs/REVIEWER_GUIDE.md) for a reading order,
+the important files, and a step-by-step path from a result to its evidence.
+
 ![PartLab agent architecture](docs/assets/architecture.png)
 
 ## Results
@@ -90,7 +93,8 @@ The Dockerfiles and task source are tracked; local images and environments are n
   returns, CLI stdout/stderr, and saved bytes are retained. The evaluator
   reconstructs state independently of the agent's success claim.
 
-[Architecture and design choices](docs/ARCHITECTURE.md) ·
+[Decision record: choices, reasons and tradeoffs](DECISIONS.md) ·
+[Architecture and workflow](docs/ARCHITECTURE.md) ·
 [Original assignment, unchanged](TASK.md) ·
 [Trace format](evaluation/docs/EVAL_IMPLEMENTATION_CONTRACT.md)
 

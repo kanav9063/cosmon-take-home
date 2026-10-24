@@ -77,7 +77,7 @@ arbitrary-harness compatibility or a controlled performance advantage.
 | Avoid over-fetching | Actual SDK inputs contain the exact compact tool returns and no verbose solver log or private physics fields; no redundant SF/stress/log calls |
 | Separate decisions, CLI and traces | Agent, execution engine and trace writer have separate responsibilities; evaluator reconstructs evidence independently; additional part names/configurations work without rewriting the workflow |
 | Repeatable unhappy path | A real flange baseline followed by a 5.5 mm thickness proposal: rejected before CLI dispatch, with state bytes, parameters and revision unchanged |
-| Explain design choices | [Architecture](docs/ARCHITECTURE.md) explains first-fix stopping, isolated trials, serialized guards, compact observations and independent evaluation |
+| Explain design choices | [Decision record](DECISIONS.md) explains the choices, reasons and tradeoffs; [architecture](docs/ARCHITECTURE.md) describes the workflow |
 
 Model-facing solve observations were **334–379 bytes**, versus roughly 6.3 KiB
 of full stdout retained for each solve. The largest tool response was 674

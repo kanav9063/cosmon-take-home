@@ -1,5 +1,7 @@
 # Architecture
 
+For the consolidated rationale and tradeoffs, see [DECISIONS.md](../DECISIONS.md).
+
 ![PartLab agent architecture](assets/architecture.png)
 
 [Editable diagram source](assets/architecture.json), with code references pinned
