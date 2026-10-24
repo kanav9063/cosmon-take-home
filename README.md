@@ -1,105 +1,112 @@
 # PartLab repair agent
 
-An agent that measures a part's safety factor under its default load, searches
-for a legal single-parameter repair, verifies it with PartLab, and saves it.
-The model proposes changes; Python enforces the workflow and constraints;
-an independent offline evaluator checks the recorded evidence.
+Measure a part's safety factor, find a legal single-parameter repair, verify it
+with PartLab and save the result. The model proposes changes, Python enforces
+the rules, and an independent evaluator checks the recorded evidence.
 
-Start with the [reviewer walkthrough](docs/REVIEWER_GUIDE.md) for a reading order,
-the important files, and a step-by-step path from a result to its evidence.
-The [requirement-by-requirement evidence map](REPORT.md#acceptance-criteria)
-explains how we addressed each task, agent, evaluation and handoff requirement.
-
-![PartLab agent architecture](docs/assets/architecture.png)
+[Run it](RUN.md) · [Full report](REPORT.md) · [Design decisions](DECISIONS.md) · [Code walkthrough](docs/REVIEWER_GUIDE.md) · [Original task](TASK.md)
 
 ## Results
 
-Live runs used **OpenRouter / `openai/gpt-6.1-sol`, medium reasoning**.
+Original live runs: OpenAI Agents SDK through OpenRouter, `openai/gpt-6.1-sol`,
+medium reasoning.
 
-| Part | Baseline SF | Outcome |
+| Part | Baseline SF | Verified outcome |
 | --- | --- | --- |
-| `bracket_v3` | 1.428 | Thickness 3 → 5 mm; fresh SF **3.072**; [verified saved part](outputs/bracket_v3.json) |
-| `flange_v1` | 0.212 | Six legal trials; best SF **0.839**; no repair found within the configured search |
+| `bracket_v3` | 1.428 | Thickness 3 → 5 mm; **SF 3.072**; [saved repair](outputs/bracket_v3.json) |
+| `flange_v1` | 0.212 | Six legal trials; best **SF 0.839**; no repair found |
 
-The flange result is bounded search exhaustion, not proof of infeasibility.
-No unsafe flange artifact was saved. See the [submission report](REPORT.md)
-for evidence, acceptance criteria and limitations.
+No unsafe flange artifact was saved. The search was bounded; it does not prove
+that a legal repair is impossible.
 
-The [five-model benchmark](reports/model-benchmark-20261024/INDEX.md) contains
-all ten runs, raw traces and independent reports. All five models repaired the
-bracket; three returned valid bounded flange reports and two failed the final
-JSON format. Read the [findings](reports/model-benchmark-20261024/FINDINGS.md)
-for cost, speed and interpretation limits.
+Two separate experiments extend these runs:
 
-## One trace contract, two harnesses
+- **Five models, one harness:** all five repaired the bracket; three reported
+  the bounded flange search correctly, and two failed the final JSON format.
+  [Results and all ten traces](reports/model-benchmark-20261024/INDEX.md).
+- **Two SDK harnesses:** OpenAI Agents SDK and Anthropic Python SDK ToolRunner
+  use the same tools, executor, trace contract and evaluator. Two additional
+  native Anthropic runs demonstrate the swap. [Proof and limits](docs/HARNESS_PORTABILITY.md).
 
-![Harness portability](docs/assets/harness-portability.png)
+<details>
+<summary>See the five-model results and costs</summary>
 
-OpenAI Agents SDK and Anthropic Python SDK ToolRunner both execute the same
-guarded PartLab workflow and emit the same trace contract. Two additional live
-Anthropic runs were evaluated without changing the grading engine.
-[Portability evidence and design decisions](docs/HARNESS_PORTABILITY.md)
-explain the native-message mapping, checks and remaining limits.
+Each model ran both required parts once through the same OpenAI Agents SDK
+harness, prompt, tools and policy, with medium reasoning requested.
 
-## Run
+| Model | Bracket | Flange | Cost, both runs |
+| --- | --- | --- | ---: |
+| OpenAI GPT-6.1 Sol | Repaired | Valid bounded no-repair report | $0.0467495 |
+| OpenAI GPT-6 Luna | Repaired | Valid bounded no-repair report | $0.00322642 |
+| Anthropic Claude Sonnet 5.5 | Repaired | Valid bounded no-repair report | $0.299392 |
+| Anthropic Claude Haiku 5.5 | Repaired | Final JSON failure | $0.0160262 |
+| DeepSeek V4.1 Flash 1017 | Repaired | Final JSON failure | $0.005841511 |
 
-Requires Python 3.12 and the supplied Linux AMD64 `partlab` executable.
+The concurrent batch took about 66.6 seconds and cost $0.371235631 in
+provider-reported usage. One run per model and part does not establish a
+reliability ranking. [Findings and interpretation](reports/model-benchmark-20261024/FINDINGS.md).
+
+</details>
+
+## How we addressed the requirements
+
+| Requirement | What we built | Evidence |
+| --- | --- | --- |
+| Clean agent loop and correct SDK use | Seven narrow tools; serialized execution; explicit state, load and recovery checks. | [Agent and executor](docs/ARCHITECTURE.md#workflow-and-tool-contracts) |
+| Avoid over-fetching | Compact solve observations: 334–379 bytes. Full solver logs stay in the trace, outside model context. | [Capture audit](reports/main-integration-20261024/capture-audit.json) |
+| Separate decisions, CLI and traces | Distinct agent, executor and trace modules. Every reported SF comes from PartLab. | [Code map](docs/ARCHITECTURE.md#code-map) |
+| Generalize across cases and harnesses | Two real SDK loops; additional synthetic unseen-case and capture-adapter checks. | [Harness proof](docs/HARNESS_PORTABILITY.md), [case tests](evaluation/docs/EVAL_RUBRIC.md) |
+| Principled, tunable evaluation | Trusted case constraints, configurable diagnostic budgets and bounded evidence loading. | [Evaluation policy](evaluation/EVAL_RUN.md) |
+| Readable reports and defensible scoring | Separate correctness, compliance, delivery, reporting, capture and repair verdicts, with evidence and corrective actions. | [Report examples](reports/main-integration-20261024/evaluator/REPORTS.md), [scoring rationale](evaluation/docs/EVAL_CHECK_DECISIONS.md) |
+| Demonstrate failure handling | Reject flange thickness 5.5 mm before mutation; detect `STALE_SOLVE` in a deliberately flawed trace; keep interrupted results unverified. | [Repeatable checks](reports/main-integration-20261024/README.md) |
+| Explain choices and make runs reproducible | Documented tradeoffs, pinned dependencies, commands, raw traces and saved outputs. | [Decisions](DECISIONS.md), [run guide](RUN.md) |
+
+The [complete acceptance map](REPORT.md#acceptance-criteria) covers each task,
+agent, evaluator and handoff requirement individually, including the limits.
+
+## Architecture
+
+![PartLab agent architecture](docs/assets/architecture.png)
+
+Each candidate starts from the original part: **restore → change one parameter
+→ mesh → apply default load → solve → save if SF ≥ 2**. The agent stops at the
+first verified repair. [Workflow and search policy](docs/ARCHITECTURE.md).
+
+<details>
+<summary>See how the two SDK harnesses share the same workflow and evaluator</summary>
+
+![OpenAI Agents SDK and Anthropic ToolRunner share the executor and trace contract](docs/assets/harness-portability.png)
+
+Each adapter retains its native messages and emits the common trace contract.
+Changing the model within one SDK and replacing the SDK are separate checks.
+The native Anthropic runs repaired the bracket at SF 3.072 and correctly
+reported no flange repair, with best SF 0.839. They demonstrate portability,
+not a measured performance advantage. [Implementation and live evidence](docs/HARNESS_PORTABILITY.md).
+
+</details>
+
+## Verify or run
+
+**22 agent tests, 156 evaluator tests and 19 expected example outcomes passed.**
+The evaluator tests and examples also passed in Docker with networking disabled.
+[Verification receipts](reports/main-integration-20261024/README.md).
+
+To verify the included evaluation evidence without an API key, from the repo
+root with Python 3.12, choose a fresh output directory:
 
 ```sh
-python3.12 -m venv .venv
-.venv/bin/python -m pip install -r requirements.lock
-test -f .env || cp .env.example .env
-chmod 600 .env
+python3.12 evaluation/scripts/verify.py --output-dir /tmp/partlab-eval-check-001
 ```
 
-Set `OPENROUTER_API_KEY` in the ignored `.env`, then run:
+To run the agent, follow [RUN.md](RUN.md) for the pinned environment and ignored
+local `.env`. Live runs require an OpenRouter API key and the supplied Linux
+AMD64 PartLab binary. Every run starts in an isolated, reset session.
 
-```sh
-.venv/bin/python -m cosmon_agent --part bracket_v3 --output runs/bracket-001
-.venv/bin/python -m cosmon_agent --part flange_v1 --output runs/flange-001
-.venv/bin/python -m unittest discover -s tests -v
-```
+Optional integrations are also included: [Scout](evaluation/scout_setup/README.md)
+displays the existing verdicts; [Harbor](evaluation/docs/HARBOR_SETUP.md) checks
+the execution environment with oracle and no-op controls. Neither is required
+to grade the traces or acts as another engineering judge.
 
-Each run uses a new private PartLab session and records its reset. Use a new
-trace directory for each run. A different existing output is never overwritten;
-use `--publish-dir runs/replay-001/outputs` to isolate replay artifacts.
-
-[RUN.md](RUN.md) contains the complete agent, negative-check and evaluation
-commands. Evaluation and offline tests require no API key.
-
-## Evaluation and reproducible checks
-
-The [evaluator](evaluation/README.md), [five-requirement rubric](evaluation/docs/EVAL_RUBRIC.md),
-raw examples and detailed scoring decisions are included in this repository.
-The combined checkout passes **22 agent tests and 156 evaluator tests**; the
-156 evaluator tests and all 19 expected report cases also pass in Docker with
-networking disabled. See the [consolidated verification](reports/main-integration-20261024/README.md).
-
-[Scout](evaluation/scout_setup/README.md) displays the evaluator’s findings;
-[Harbor](evaluation/docs/HARBOR_SETUP.md) checks the separate Docker execution
-and verification environments. Both are optional and have pinned dependencies.
-The Dockerfiles and task source are tracked; local images and environments are not.
-
-## Design
-
-- **Seven tools:** open, inspect parameters, set one parameter, mesh, apply the
-  exact default load, solve, and save. One serialized executor enforces their
-  preconditions and captures every CLI command.
-- **Independent trials:** restore the original before each candidate; stop at
-  the first fresh, converged solve with SF ≥ 2. Manufacturing limits remain
-  mandatory even when exploration ranges change.
-- **Compact observations:** model-facing solve results were 334–379 bytes;
-  full solver logs remain in the raw trace bundle. The agent does not fetch
-  safety factor, stress or logs again after a solve.
-- **Inspectable evidence:** actual SDK messages, raw arguments, exact tool
-  returns, CLI stdout/stderr, and saved bytes are retained. The evaluator
-  reconstructs state independently of the agent's success claim.
-
-[Decision record: choices, reasons and tradeoffs](DECISIONS.md) ·
-[Architecture and workflow](docs/ARCHITECTURE.md) ·
-[Original assignment, unchanged](TASK.md) ·
-[Trace format](evaluation/docs/EVAL_IMPLEMENTATION_CONTRACT.md)
-
-The human recording link is the remaining submission item. This repository
-contains the implementation and evidence; it does not claim a recorded
-one-hour session.
+**Remaining handoff item:** the human recording link. The repository does not
+establish a recorded one-hour session. Search, portability and benchmark limits
+are documented in the [report](REPORT.md#limits-and-reviewer-checks).
