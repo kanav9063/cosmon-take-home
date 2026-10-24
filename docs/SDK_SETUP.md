@@ -83,9 +83,10 @@ Subsequent configuration: Kanav selected OpenRouter model
 `openai/gpt-6.1-sol` with medium reasoning. `.env` is ignored and owner-readable/
 writable only; [.env.example](../.env.example) records the nonsecret settings.
 `OPENROUTER_REASONING_EFFORT` is our application's configuration name: the
-future agent must load it and set
-`ModelSettings(reasoning=Reasoning(effort="medium"))`. File loading and the live
-agent are not implemented yet. The model exists in OpenRouter's public catalog
+agent must load it and set
+`ModelSettings(reasoning=Reasoning(effort="medium"))`. The PartLab agent and its
+configuration loader are not implemented yet; the separate provider smoke script
+described below now loads `.env` for its own check. The model exists in OpenRouter's public catalog
 with tool calling and reasoning support; the installed SDK accepts medium
 reasoning. No paid request or credential validation was performed.
 The catalog does not advertise `temperature` or `parallel_tool_calls` for this
@@ -93,6 +94,40 @@ model; omit optional unsupported settings until compatibility is established,
 and retain runner-side serialization regardless of provider options.
 Sources: [model](https://openrouter.ai/openai/gpt-6.1-sol),
 [reasoning settings](https://openrouter.ai/docs/guides/best-practices/reasoning-tokens).
+
+## Initial live provider test
+
+The user requested initial testing after adding credentials and choosing the
+model. The repeatable command is:
+
+```bash
+.venv/bin/python scripts/check_openrouter.py
+```
+
+This is a **paid-request smoke test**, separate from the offline setup check.
+It allows at most two model turns, each capped at 2048 output tokens, with
+medium reasoning, 40-second request timeout, 85-second overall timeout and
+both client/SDK retries disabled. A harmless tool returns a random value that
+the model must reproduce exactly in its final reply. No PartLab command runs.
+It loads literal `.env` assignments without executing shell code; process
+environment variables take precedence. Each attempt creates a new report
+directory with request/response bodies and tool events. Authentication headers
+are never saved, and occurrences of the configured key are redacted.
+
+The first live attempt on October 23, 2026 **failed authentication before any
+tool call**. OpenRouter returned HTTP 401, `Missing Authentication header`.
+The request body correctly contained `openai/gpt-6.1-sol`, medium reasoning,
+and the named probe tool. See the
+[report](../reports/openrouter-smoke-b23ae4f685704a919f20fbb8cc039c40/report.json)
+and [response](../reports/openrouter-smoke-b23ae4f685704a919f20fbb8cc039c40/response-1.json).
+This is a real failed provider request, not a successful model demonstration.
+
+A separate read-only `/api/v1/auth/key` request received the same 401. An
+offline transport interception confirmed that the OpenAI client constructs
+the expected Bearer header from the loaded value. A missing-key test confirmed
+exit 2 with a local diagnostic before any request. The key in `.env` was left
+unchanged. Check or replace `OPENROUTER_API_KEY`, then repeat the command; live
+tool calling and final-response handling remain unverified.
 
 [reports/sdk-lock-replay.json](../reports/sdk-lock-replay.json) records a second
 check in a newly created temporary venv: installation from `requirements.lock`,
