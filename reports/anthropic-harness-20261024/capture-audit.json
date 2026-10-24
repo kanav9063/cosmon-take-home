@@ -1,0 +1,77 @@
+{
+  "status": "passed",
+  "runs": [
+    {
+      "bundle": "reports/anthropic-harness-20261024/bracket_v3",
+      "status": "passed",
+      "run_id": "fbb70ddb-286c-4050-9b44-ff21c98b96b8",
+      "outcome": "repaired",
+      "model_requests": 11,
+      "model_responses": 11,
+      "tool_calls": 10,
+      "published_artifacts": 1,
+      "max_tool_result_bytes": 615,
+      "raw_solve_bytes": [
+        6346,
+        6344
+      ],
+      "compact_solve_bytes": [
+        336,
+        372
+      ],
+      "final_text_present": true,
+      "unconsumed_returns_on_failure": [],
+      "checks": [
+        "completion_inventory_hashes",
+        "event_sequence_and_identity",
+        "native_proposals_match_normalized_arguments",
+        "tool_results_match_exact_native_messages",
+        "no_duplicate_or_missing_tool_results",
+        "no_private_model_context",
+        "full_logs_retained",
+        "final_text_matches_native_response_without_json_requirement",
+        "original_unchanged",
+        "published_bytes_match",
+        "compact_result_budget"
+      ]
+    },
+    {
+      "bundle": "reports/anthropic-harness-20261024/flange_v1",
+      "status": "passed",
+      "run_id": "80093943-222f-4a74-8df0-350781c6134a",
+      "outcome": "no_repair_found",
+      "model_requests": 20,
+      "model_responses": 20,
+      "tool_calls": 19,
+      "published_artifacts": 0,
+      "max_tool_result_bytes": 674,
+      "raw_solve_bytes": [
+        6343,
+        6343,
+        6343,
+        6343
+      ],
+      "compact_solve_bytes": [
+        334,
+        371,
+        377,
+        377
+      ],
+      "final_text_present": true,
+      "unconsumed_returns_on_failure": [],
+      "checks": [
+        "completion_inventory_hashes",
+        "event_sequence_and_identity",
+        "native_proposals_match_normalized_arguments",
+        "tool_results_match_exact_native_messages",
+        "no_duplicate_or_missing_tool_results",
+        "no_private_model_context",
+        "full_logs_retained",
+        "final_text_matches_native_response_without_json_requirement",
+        "original_unchanged",
+        "published_bytes_match",
+        "compact_result_budget"
+      ]
+    }
+  ]
+}

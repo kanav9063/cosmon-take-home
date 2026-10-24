@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "live_runs": 2,
+  "harness": "anthropic.beta.messages.tool_runner",
+  "sdk_version": "2.3.0",
+  "unchanged_shared_sources": {
+    "cosmon_agent/agent.py": true,
+    "cosmon_agent/engine.py": true,
+    "cosmon_agent/trace.py": true,
+    "evaluation/trace_adapter.py": true,
+    "evaluation/eval_state.py": true,
+    "evaluation/eval_checks.py": true,
+    "evaluation/eval_types.py": true,
+    "evaluation/evaluate.py": true
+  },
+  "unchanged_evaluator_version": "1.1.0",
+  "unchanged_evaluator_commit": "b60473ca172a2fad33c377e96c212f2adb6aa84f",
+  "agent_tests": 22,
+  "evaluator_tests_previously_verified_on_identical_sources": 154,
+  "native_capture_audit": "capture-audit.json",
+  "live_comparison": "comparison.json",
+  "offline_guard_regression": "offline-tests.log",
+  "all_agent_tests": "all-agent-tests.log",
+  "cost_usd": 0.29867
+}

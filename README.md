@@ -20,6 +20,22 @@ The flange result is bounded search exhaustion, not proof of infeasibility.
 No unsafe flange artifact was saved. See the [submission report](REPORT.md)
 for evidence, acceptance criteria and limitations.
 
+The [five-model benchmark](reports/model-benchmark-20261024/INDEX.md) contains
+all ten runs, raw traces and independent reports. All five models repaired the
+bracket; three returned valid bounded flange reports and two failed the final
+JSON format. Read the [findings](reports/model-benchmark-20261024/FINDINGS.md)
+for cost, speed and interpretation limits.
+
+## One trace contract, two harnesses
+
+![Harness portability](docs/assets/harness-portability.png)
+
+OpenAI Agents SDK and Anthropic Python SDK ToolRunner both execute the same
+guarded PartLab workflow and emit the same trace contract. Two additional live
+Anthropic runs were evaluated without changing the grading engine.
+[Portability evidence and design decisions](docs/HARNESS_PORTABILITY.md)
+explain the native-message mapping, checks and remaining limits.
+
 ## Run
 
 Requires Python 3.12 and the supplied Linux AMD64 `partlab` executable.

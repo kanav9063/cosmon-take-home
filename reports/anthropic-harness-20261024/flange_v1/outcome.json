@@ -1,0 +1,74 @@
+{
+  "run_id": "80093943-222f-4a74-8df0-350781c6134a",
+  "status": "no_repair_found",
+  "reason_code": "agent_stopped",
+  "initial_sf": 0.212,
+  "final_sf": 0.839,
+  "initial_solve_cli_id": "x0006",
+  "solve_cli_id": "x0013",
+  "changed_parameter": null,
+  "artifact_id": null,
+  "artifact_ref": null,
+  "final_message_ref": {
+    "path": "raw/model/final.txt",
+    "sha256": "1ae15b6e027fe41315661185a790e9ecc7bb270a45e2b52e324e9e16ec4a26ae",
+    "bytes": 108
+  },
+  "final_message_format": "json/1",
+  "search": {
+    "scope": "bounded_exploration_not_infeasibility_proof",
+    "ranges": {
+      "thickness_mm": [
+        2.0,
+        5.0
+      ],
+      "hole_diameter_mm": [
+        4.0,
+        10.0
+      ],
+      "fillet_radius_mm": [
+        1.5,
+        10.0
+      ]
+    },
+    "budget": {
+      "max_trials": 6,
+      "max_tool_calls": 64,
+      "max_model_turns": 48,
+      "run_timeout_seconds": 300
+    },
+    "trials": [
+      {
+        "trial_id": "t0001",
+        "name": "thickness_mm",
+        "value": 5,
+        "solve_cli_id": "x0013",
+        "safety_factor": 0.839
+      },
+      {
+        "trial_id": "t0002",
+        "name": "fillet_radius_mm",
+        "value": 10,
+        "solve_cli_id": "x0020",
+        "safety_factor": 0.212
+      },
+      {
+        "trial_id": "t0003",
+        "name": "hole_diameter_mm",
+        "value": 4,
+        "solve_cli_id": "x0027",
+        "safety_factor": 0.354
+      }
+    ],
+    "max_trials": 6,
+    "tool_calls": 19,
+    "termination": "agent_stopped"
+  },
+  "final_claim_check": {
+    "valid": true,
+    "reason_code": "verified"
+  },
+  "model_calls": 20,
+  "harness": "anthropic.beta.messages.tool_runner",
+  "unexecuted_tool_call_ids": []
+}

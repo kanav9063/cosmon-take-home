@@ -43,11 +43,11 @@ bracket run. With one run per model and part, neither observation establishes
 a reliability ranking or a general winner.
 
 These ten runs varied the model and provider while retaining the OpenAI Agents
-SDK harness. They do **not** demonstrate replacing that harness with OpenCode,
-or adding a new fourth case. A separate harness demonstration must preserve its
-own real model/tool messages, emit the supported trace contract, and pass the
-unchanged offline evaluator. OpenCode evidence belongs to that separate test,
-not to this benchmark's conclusions.
+SDK harness. A separate [Anthropic ToolRunner demonstration](../../docs/HARNESS_PORTABILITY.md)
+now supplies two additional live runs with native HTTP messages, the same trace
+contract, and the unchanged evaluator. That establishes a second harness;
+its results are kept separate from this five-model comparison. The earlier
+extra-part checks used renamed synthetic fixtures, not new CAD geometry.
 
 Evidence: [artifact index](INDEX.md), [full comparison](comparison.md),
 [machine-readable comparison](comparison.json), [verification](verification.json),
