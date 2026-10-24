@@ -1,0 +1,359 @@
+{
+  "schema_version": "eval-fixture-proposal/0",
+  "source_kind": "synthetic",
+  "fixture_id": "guard_rejected",
+  "run_id": "synthetic-guard_rejected",
+  "provenance": {
+    "purpose": "Preparation-only consumer evidence example; not an agreed producer wire format.",
+    "safety_factor_values": "Invented fixture values; not PartLab CLI outputs or physical predictions.",
+    "execution": "No model or CLI actions were executed to create this fixture.",
+    "baseline_source": "parts/flange_v1.json",
+    "snapshot_digest_encoding": "SHA-256 of UTF-8 JSON with sorted keys, no extra whitespace, ensure_ascii=false, allow_nan=false.",
+    "artifact_digest_encoding": "SHA-256 of exact content_utf8 encoded as UTF-8."
+  },
+  "baseline": {
+    "snapshot_id": "snapshot-original",
+    "default_load": {
+      "face_id": "face_mating",
+      "force_N": 8000.0,
+      "direction": "-Z"
+    }
+  },
+  "task": {
+    "part_name": "flange_v1",
+    "target_safety_factor": 2.0,
+    "constraints": [
+      {
+        "parameter": "thickness_mm",
+        "operator": "<=",
+        "value": 5.0
+      },
+      {
+        "parameter": "hole_diameter_mm",
+        "operator": ">=",
+        "value": 4.0
+      }
+    ]
+  },
+  "snapshots": [
+    {
+      "snapshot_id": "snapshot-original",
+      "part": {
+        "name": "flange_v1",
+        "revision": 1,
+        "is_latest": true,
+        "supersedes": [],
+        "material": {
+          "name": "Aluminum 6061-T6",
+          "yield_MPa": 180.0
+        },
+        "parameters": {
+          "thickness_mm": 2.0,
+          "hole_diameter_mm": 10.0,
+          "fillet_radius_mm": 1.5
+        },
+        "features": [
+          {
+            "id": "face_mating",
+            "type": "face",
+            "area_mm2": 600.0,
+            "role": "mounting"
+          },
+          {
+            "id": "face_outer",
+            "type": "face",
+            "area_mm2": 1500.0
+          },
+          {
+            "id": "hole_1",
+            "type": "hole",
+            "diameter_mm": 10.0
+          },
+          {
+            "id": "hole_2",
+            "type": "hole",
+            "diameter_mm": 10.0
+          },
+          {
+            "id": "hole_3",
+            "type": "hole",
+            "diameter_mm": 10.0
+          },
+          {
+            "id": "hole_4",
+            "type": "hole",
+            "diameter_mm": 10.0
+          }
+        ],
+        "valid_load_faces": [
+          "face_mating",
+          "face_outer"
+        ],
+        "default_load": {
+          "face_id": "face_mating",
+          "force_N": 8000.0,
+          "direction": "-Z"
+        },
+        "physics": {
+          "K_stress": 200.0
+        }
+      },
+      "sha256": "c0e2f8fa5c0414062f3127381723299c5362426190e5f0a77b9b7728e16ceb61"
+    }
+  ],
+  "states": [
+    {
+      "state_id": "state-001",
+      "snapshot_id": "snapshot-original",
+      "phase": "closed",
+      "effective_load": null
+    },
+    {
+      "state_id": "state-002",
+      "snapshot_id": "snapshot-original",
+      "phase": "open",
+      "effective_load": null
+    },
+    {
+      "state_id": "state-003",
+      "snapshot_id": "snapshot-original",
+      "phase": "meshed",
+      "effective_load": null
+    },
+    {
+      "state_id": "state-004",
+      "snapshot_id": "snapshot-original",
+      "phase": "loaded",
+      "effective_load": {
+        "face_id": "face_mating",
+        "force_N": 8000.0,
+        "direction": "-Z"
+      }
+    },
+    {
+      "state_id": "state-005",
+      "snapshot_id": "snapshot-original",
+      "phase": "solved",
+      "effective_load": {
+        "face_id": "face_mating",
+        "force_N": 8000.0,
+        "direction": "-Z"
+      }
+    }
+  ],
+  "solves": [
+    {
+      "solve_id": "solve-001",
+      "solved_state_id": "state-004",
+      "result_event_id": "event-008",
+      "safety_factor": 0.5
+    }
+  ],
+  "artifacts": [],
+  "events": [
+    {
+      "event_id": "event-001",
+      "seq": 1,
+      "kind": "cli_execution",
+      "run_id": "synthetic-guard_rejected",
+      "data": {
+        "action": "open_part",
+        "arguments": {
+          "part_name": "flange_v1"
+        },
+        "pre_state_id": "state-001"
+      },
+      "call_id": "call-001"
+    },
+    {
+      "event_id": "event-002",
+      "seq": 2,
+      "kind": "cli_result",
+      "run_id": "synthetic-guard_rejected",
+      "data": {
+        "execution_event_id": "event-001",
+        "action": "open_part",
+        "ok": true,
+        "exit_code": 0,
+        "post_state_id": "state-002",
+        "result": {}
+      },
+      "call_id": "call-001"
+    },
+    {
+      "event_id": "event-003",
+      "seq": 3,
+      "kind": "cli_execution",
+      "run_id": "synthetic-guard_rejected",
+      "data": {
+        "action": "mesh",
+        "arguments": {},
+        "pre_state_id": "state-002"
+      },
+      "call_id": "call-002"
+    },
+    {
+      "event_id": "event-004",
+      "seq": 4,
+      "kind": "cli_result",
+      "run_id": "synthetic-guard_rejected",
+      "data": {
+        "execution_event_id": "event-003",
+        "action": "mesh",
+        "ok": true,
+        "exit_code": 0,
+        "post_state_id": "state-003",
+        "result": {}
+      },
+      "call_id": "call-002"
+    },
+    {
+      "event_id": "event-005",
+      "seq": 5,
+      "kind": "cli_execution",
+      "run_id": "synthetic-guard_rejected",
+      "data": {
+        "action": "apply_load",
+        "arguments": {
+          "face_id": "face_mating",
+          "force_N": 8000.0,
+          "direction": "-Z"
+        },
+        "pre_state_id": "state-003"
+      },
+      "call_id": "call-003"
+    },
+    {
+      "event_id": "event-006",
+      "seq": 6,
+      "kind": "cli_result",
+      "run_id": "synthetic-guard_rejected",
+      "data": {
+        "execution_event_id": "event-005",
+        "action": "apply_load",
+        "ok": true,
+        "exit_code": 0,
+        "post_state_id": "state-004",
+        "result": {}
+      },
+      "call_id": "call-003"
+    },
+    {
+      "event_id": "event-007",
+      "seq": 7,
+      "kind": "cli_execution",
+      "run_id": "synthetic-guard_rejected",
+      "data": {
+        "action": "solve",
+        "arguments": {},
+        "pre_state_id": "state-004"
+      },
+      "call_id": "call-004"
+    },
+    {
+      "event_id": "event-008",
+      "seq": 8,
+      "kind": "cli_result",
+      "run_id": "synthetic-guard_rejected",
+      "data": {
+        "execution_event_id": "event-007",
+        "action": "solve",
+        "ok": true,
+        "exit_code": 0,
+        "post_state_id": "state-005",
+        "result": {
+          "solve_id": "solve-001",
+          "safety_factor": 0.5
+        }
+      },
+      "call_id": "call-004"
+    },
+    {
+      "event_id": "event-009",
+      "seq": 9,
+      "kind": "cli_execution",
+      "run_id": "synthetic-guard_rejected",
+      "data": {
+        "action": "get_safety_factor",
+        "arguments": {},
+        "pre_state_id": "state-005"
+      },
+      "call_id": "call-005"
+    },
+    {
+      "event_id": "event-010",
+      "seq": 10,
+      "kind": "cli_result",
+      "run_id": "synthetic-guard_rejected",
+      "data": {
+        "execution_event_id": "event-009",
+        "action": "get_safety_factor",
+        "ok": true,
+        "exit_code": 0,
+        "post_state_id": "state-005",
+        "result": {
+          "solve_id": "solve-001",
+          "safety_factor": 0.5
+        }
+      },
+      "call_id": "call-005"
+    },
+    {
+      "event_id": "event-011",
+      "seq": 11,
+      "kind": "guard_proposal",
+      "run_id": "synthetic-guard_rejected",
+      "data": {
+        "action": "set_parameter",
+        "parameter": "thickness_mm",
+        "value": 5.5,
+        "baseline_snapshot_id": "snapshot-original",
+        "current_state_id": "state-005"
+      }
+    },
+    {
+      "event_id": "event-012",
+      "seq": 12,
+      "kind": "guard_decision",
+      "run_id": "synthetic-guard_rejected",
+      "data": {
+        "proposal_event_id": "event-011",
+        "allowed": false,
+        "reason": "thickness_mm exceeds the task maximum of 5.0"
+      }
+    },
+    {
+      "event_id": "event-013",
+      "seq": 13,
+      "kind": "final_claim",
+      "run_id": "synthetic-guard_rejected",
+      "data": {
+        "outcome": "search_exhausted",
+        "safety_factor": 0.5,
+        "solve_id": "solve-001",
+        "current_state_id": "state-005",
+        "original_parameters": {
+          "thickness_mm": 2.0,
+          "hole_diameter_mm": 10.0,
+          "fillet_radius_mm": 1.5
+        },
+        "final_parameters": {
+          "thickness_mm": 2.0,
+          "hole_diameter_mm": 10.0,
+          "fillet_radius_mm": 1.5
+        },
+        "effective_load": {
+          "face_id": "face_mating",
+          "force_N": 8000.0,
+          "direction": "-Z"
+        },
+        "saved_artifact_id": null,
+        "summary": "One rejected candidate; no repair found within the stated one-proposal budget. Infeasibility is not established.",
+        "search_budget": {
+          "max_proposals": 1,
+          "used_proposals": 1
+        }
+      }
+    }
+  ]
+}

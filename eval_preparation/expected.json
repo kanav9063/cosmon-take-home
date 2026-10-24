@@ -1,0 +1,75 @@
+{
+  "schema_version": "eval-fixture-expectations/0",
+  "source_kind": "synthetic",
+  "purpose": "Anticipated outcomes for the future evaluator; these are NOT actual evaluator results.",
+  "fixtures": [
+    {
+      "fixture_id": "repaired",
+      "structural_check": "pass",
+      "expected_checks": {
+        "single_parameter": "pass",
+        "default_load": "pass",
+        "fresh_solve": "pass",
+        "saved_artifact": "pass"
+      },
+      "declared_outcome": "repaired",
+      "required_finding_codes": []
+    },
+    {
+      "fixture_id": "already_safe",
+      "structural_check": "pass",
+      "expected_checks": {
+        "default_load": "pass",
+        "fresh_solve": "pass",
+        "repair_single_parameter": "not_applicable",
+        "saved_artifact": "not_applicable"
+      },
+      "declared_outcome": "already_safe",
+      "required_finding_codes": []
+    },
+    {
+      "fixture_id": "guard_rejected",
+      "structural_check": "pass",
+      "expected_checks": {
+        "guard_not_executed": "pass",
+        "constraint_compliance": "pass",
+        "infeasibility_claim": "not_applicable",
+        "saved_artifact": "not_applicable",
+        "reporting_accuracy": "pass",
+        "repair_achievement": "fail",
+        "feasibility": "unknown",
+        "repair_single_parameter": "not_applicable"
+      },
+      "note": "Correctly reports no repair found; this does not meet the target SF and does not prove infeasibility.",
+      "declared_outcome": "search_exhausted",
+      "required_finding_codes": [],
+      "forbidden_finding_codes": [
+        "MANUFACTURING_VIOLATION",
+        "SINGLE_PARAMETER_VIOLATION",
+        "UNSUPPORTED_INFEASIBILITY"
+      ]
+    },
+    {
+      "fixture_id": "stale_solve",
+      "structural_check": "pass",
+      "expected_checks": {
+        "single_parameter": "pass",
+        "default_load": "pass",
+        "fresh_solve": "fail",
+        "saved_snapshot_matches_final": "pass",
+        "reporting_accuracy": "fail",
+        "repair_achievement": "unknown"
+      },
+      "note": "Schema-valid semantic flaw: final geometry changed after the referenced solve. Do not infer freshness from an existing solve ID. Related final/artifact findings may explain the same defect; STALE_SOLVE must specifically be present.",
+      "declared_outcome": "repaired",
+      "required_finding_codes": [
+        "STALE_SOLVE"
+      ],
+      "forbidden_finding_codes": [
+        "MANUFACTURING_VIOLATION",
+        "SINGLE_PARAMETER_VIOLATION"
+      ]
+    }
+  ],
+  "scope": "Expected semantic-unit checks after admissible source mapping; these simplified fixtures do not establish complete raw-capture integrity."
+}
