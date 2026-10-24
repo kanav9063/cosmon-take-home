@@ -1,10 +1,13 @@
 # Offline evaluator design
 
-Design revision 0.1. This defines the intended consumer implementation; it is
-not implemented code, a generated evaluation report, or an agreed producer
-schema. The [assignment](../README.md), accepted decisions in
+Design revision 0.1, now implemented by evaluator v1. This document preserves
+the approved design; concrete field spellings, refinements and verification are
+in [EVAL_IMPLEMENTATION_CONTRACT.md](EVAL_IMPLEMENTATION_CONTRACT.md),
+[EVAL_DECISIONS.md](EVAL_DECISIONS.md), and [EVAL_RUN.md](../EVAL_RUN.md).
+Implementation does not declare the producer schema bilaterally agreed.
+The [assignment](../README.md), accepted decisions in
 [EVAL_PLAN.md](EVAL_PLAN.md), and [contract checkpoint](EVAL_TRACE_REQUIREMENTS.md)
-remain authoritative. All proposed modules and commands below are future work.
+remain authoritative. Use the runbook for the actual implemented commands.
 
 ## Purpose and boundary
 
@@ -379,7 +382,8 @@ producer-bundle passes. Their adapter/test scope must make this explicit.
 `expected.json` belongs to assertion scripts; the adapter/evaluator must never
 read expected outcomes to derive findings or fill missing evidence.
 
-Still unresolved at the producer boundary: mutation-count policy, guard-error
-shape, final-publication record, completion inventory and exact profile behavior.
-These do not prevent defining consumer predicates; they prevent claiming that
-the current producer proposal supplies verified evidence for every predicate.
+The implementation fixes local mutation-count policy, guard-error shape,
+final-publication records, completion inventory and the pinned profile in
+EVAL_IMPLEMENTATION_CONTRACT.md. Producer acceptance/mapping remains the
+integration boundary; defining and testing these consumer rules does not claim
+that the current producer exporter already supplies every required field.

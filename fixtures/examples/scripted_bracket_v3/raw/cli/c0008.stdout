@@ -1,0 +1,17 @@
+{
+  "ok": true,
+  "result": {
+    "default_load": {
+      "face_id": "face_mounting",
+      "force_N": 5000,
+      "direction": "-Z"
+    },
+    "is_latest_revision": true,
+    "material": {
+      "name": "AISI 1045 Steel",
+      "yield_MPa": 250
+    },
+    "name": "bracket_v3",
+    "revision": 3
+  }
+}

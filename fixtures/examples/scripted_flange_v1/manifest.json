@@ -1,0 +1,37 @@
+{
+  "capture": {
+    "cli_bytes": true,
+    "description": "Exact PartLab CLI bytes from scripted commands; no model execution.",
+    "model_calls": false
+  },
+  "capture_profile": "cosmon-eval/1",
+  "case": {
+    "part_name": "flange_v1"
+  },
+  "evidence_kind": "preparation_check",
+  "original": {
+    "part_ref": {
+      "bytes": 901,
+      "path": "inputs/part.json",
+      "sha256": "0e6535b551bb5a441e207fd4d057774c14de0e40c55f7ada83c17fdbd8b7ab7f"
+    }
+  },
+  "policy_ref": {
+    "bytes": 170,
+    "path": "inputs/policy.json",
+    "sha256": "04d3cbc092d6f772a2370e70bd3440cda27803385fcceb6f5d57d0863247c5c0"
+  },
+  "producer": {
+    "binary_profile": "partlab-cli/9b202e1b",
+    "binary_sha256": "9b202e1ba07861f52f12005108e81815ef14d92f2db3ba322fc51422746ab183",
+    "name": "cosmon-eval-example-builder",
+    "version": "1"
+  },
+  "run_id": "preparation_check-flange_v1-scripted-one-candidate",
+  "schema_version": "partlab.trace/0.1-proposal",
+  "task_ref": {
+    "bytes": 222,
+    "path": "inputs/task.md",
+    "sha256": "ff531294a8d286270713ea27bfda546e6749ec0c89031360761611ed5e6ea628"
+  }
+}

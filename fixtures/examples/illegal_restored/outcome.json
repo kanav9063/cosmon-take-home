@@ -1,0 +1,20 @@
+{
+  "artifact_id": "a0001",
+  "changed_parameter": {
+    "from": 2.0,
+    "name": "thickness_mm",
+    "to": 4
+  },
+  "final_message_format": "json/1",
+  "final_message_ref": {
+    "bytes": 180,
+    "path": "raw/messages/final.json",
+    "sha256": "5245beab310325db27d860c8ec2f0a8e771917ab1915103d671f4afe28bcda6a"
+  },
+  "final_sf": 2.4,
+  "initial_sf": 1.4,
+  "initial_solve_cli_id": "c0006",
+  "reason_code": null,
+  "solve_cli_id": "c0018",
+  "status": "repaired"
+}

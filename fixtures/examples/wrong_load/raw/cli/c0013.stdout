@@ -1,0 +1,8 @@
+{
+  "ok": true,
+  "result": {
+    "direction": "-Z",
+    "face_id": "face_mounting",
+    "force_N": 2500.0
+  }
+}

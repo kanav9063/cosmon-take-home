@@ -1,0 +1,9 @@
+{
+  "ok": true,
+  "result": {
+    "max_stress_MPa": 175.13,
+    "region": "all",
+    "safety_factor": 1.428,
+    "yield_MPa": 250
+  }
+}

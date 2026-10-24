@@ -1,0 +1,16 @@
+{
+  "artifact_id": "a0001",
+  "changed_parameter": null,
+  "final_message_format": "json/1",
+  "final_message_ref": {
+    "bytes": 122,
+    "path": "raw/messages/final.json",
+    "sha256": "67545361083c3bbeafda8636d6f8e32a4902d682e6191413409460906d0a6e9e"
+  },
+  "final_sf": 2.4,
+  "initial_sf": 1.4,
+  "initial_solve_cli_id": "c0006",
+  "reason_code": null,
+  "solve_cli_id": "c0016",
+  "status": "repaired"
+}

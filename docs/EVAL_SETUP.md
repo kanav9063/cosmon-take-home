@@ -1,5 +1,10 @@
 # Evaluation preparation record
 
+Historical record of initial preparation. The evaluator was subsequently
+implemented at the user's request. Current commands and results are in
+[EVAL_RUN.md](../EVAL_RUN.md) and [EVAL_DECISIONS.md](EVAL_DECISIONS.md).
+Statements below about unimplemented work describe the initial checkpoint.
+
 Prepared October 23, 2026 (ET), in `/home/ubuntu/work/cosmon-eval` on
 `setup/eval-plan`, starting from `20b46cd`.
 

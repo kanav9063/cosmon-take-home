@@ -1,0 +1,16 @@
+{
+  "ok": true,
+  "result": {
+    "converged": true,
+    "iterations": 12,
+    "load": {
+      "direction": "-Z",
+      "face_id": "face_mounting",
+      "force_N": 2500.0
+    },
+    "log": "SYNTHETIC fixture solver values; no solver was executed.\n",
+    "max_stress_MPa": 104.16666666666667,
+    "safety_factor": 2.4,
+    "yield_MPa": 250.0
+  }
+}

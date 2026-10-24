@@ -1,9 +1,11 @@
 # Producer evidence requirements and contract checkpoint
 
-Status: **consumer requirements, proposal only**. The SDK track owns the initial
-producer contract. These requirements do not assert that the other chat accepted
-this layout. Field names below are semantic names; map them explicitly to the
-SDK proposal before implementation. No cross-chat message has been sent.
+Status: **consumer implemented; producer connection outstanding**. The SDK track
+owns its proposal. The user's subsequent implementation request authorized the
+local profile in [EVAL_IMPLEMENTATION_CONTRACT.md](EVAL_IMPLEMENTATION_CONTRACT.md).
+That profile specifies concrete mappings and tested extensions; it does not
+assert the other chat accepted them. [API_INTEGRATION.md](API_INTEGRATION.md)
+defines the remaining connection. No cross-chat message has been sent.
 
 ## Smallest sufficient evidence bundle
 
@@ -112,7 +114,16 @@ specific detection. Add missing-result and malformed-JSON fixtures separately
 during implementation, so a syntax failure cannot accidentally satisfy the
 semantic defect test.
 
-## Required review before full implementation
+## Original joint-review checkpoint and current disposition
+
+The checklist below records the earlier joint-review gate. Consumer
+implementation proceeded under the user's later explicit authorization.
+Unchecked joint items remain integration checks, not missing local evaluator
+code. Local fixtures now demonstrate blocked, failed, successful, restored,
+stale and partial evidence. Two actual scripted captures establish observed
+CLI/save shapes; undocumented failure effects remain conservatively unknown.
+Aliases, repeated same-parameter trials, final publication and completion
+spellings are implemented and tested in the concrete local profile.
 
 Record producer proposal digest/revision, mapped fields, any exceptions, and
 explicit review status for each track. Do not silently mark this list completed.

@@ -1,11 +1,13 @@
 # Evaluation test and verification matrix
 
-**Preparation only.** This document specifies planned semantic checks and expected
-findings. No semantic evaluator or tests in this matrix have been implemented or
-executed as part of this document. Synthetic fixtures are design examples, not
-captured agent runs. The producer interface remains subject to the shared
-trace-contract checkpoint; these scenarios specify evidence needs without
-declaring a schema agreed with the SDK chat.
+**Implemented evaluation controls with explicit coverage.** The tables below
+retain the original 43 scenario requirements and expected findings. The exact
+executed test mapping, remaining boundaries and implemented code-name differences
+are recorded in [EVAL_COVERAGE.md](EVAL_COVERAGE.md). The evaluator now has raw
+bundle, reconstruction, predicate, batch and integration tests. Synthetic bundles
+remain synthetic; the two scripted CLI captures are preparation evidence, not
+model-agent traces. Implementing the consumer profile does not declare bilateral
+agreement with a separate trace producer.
 
 The unchanged root [README](../README.md) is authoritative. Read this matrix with
 [the evaluation plan](EVAL_PLAN.md) and [producer evidence requirements](EVAL_TRACE_REQUIREMENTS.md).
@@ -59,9 +61,9 @@ should differ in the smallest necessary evidence fragment.
 | I11 | NaN, infinity, boolean-as-number, or invalid units occur in a required numeric result | `INVALID_NUMERIC_EVIDENCE`; relevant engineering check `unknown` | Numeric JSON strings are accepted only if the adapter contract explicitly parses them; finite integer/decimal equivalents are acceptable. |
 | I12 | One malformed trace among a batch of valid traces | One explicit rejected/unknown report; remaining reports produced | Assert `discovered = evaluated + explicitly_rejected`; malformed input must not stop or silently shrink the batch. |
 
-`EVIDENCE_CONTRADICTION`, `UNSUPPORTED_EVIDENCE`,
-`GUARD_EXECUTION_CONTRADICTION`, and `INVALID_NUMERIC_EVIDENCE` are proposed
-additional codes. Their final names must be aligned with the implementation.
+The table retains its design vocabulary. The implemented adapter emits more
+specific unsupported-schema/action codes where appropriate; see the coverage
+mapping for exact test assertions and code-name differences.
 
 ## Workflow, engineering, and saved-artifact correctness
 
@@ -93,10 +95,10 @@ additional codes. Their final names must be aligned with the implementation.
 | C24 | Solver exits successfully with a finite SF but explicitly reports nonconvergence | `ANALYSIS_NOT_CONVERGED`, `fail` for a claimed valid baseline/repair | Exit success alone is insufficient. Missing convergence evidence is `unknown`; an exploratory failed solve does not automatically invalidate a later converged repair. |
 
 `UNSUPPORTED_ANALYSIS_SOURCE`, `ARTIFACT_PATH_MISMATCH`,
-`UNAPPROVED_PART_MUTATION`, and `ANALYSIS_NOT_CONVERGED` are proposed additional
-codes. The artifact parser must
-use an observed/versioned PartLab save format; this plan does not invent that
-format.
+`UNAPPROVED_PART_MUTATION`, and `ANALYSIS_NOT_CONVERGED` are implemented check
+codes. The artifact parser uses the observed compact-save projection for the
+pinned PartLab profile; these tests do not claim support for arbitrary save
+formats.
 
 ## Outcomes, honest reporting, and required flawed trace
 

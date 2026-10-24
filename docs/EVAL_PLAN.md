@@ -1,7 +1,11 @@
 # Offline evaluation plan
 
-Status: **preparation and proposed design**, October 23, 2026 (ET). No evaluator,
-live agent run, or recorded exercise has been completed in this track. The root
+Status: **evaluator implemented**, October 23, 2026. The original plan below is
+retained for decision history; later user authorization superseded its
+preparation-only implementation gate. See [EVAL_RUN.md](../EVAL_RUN.md),
+[EVAL_DECISIONS.md](EVAL_DECISIONS.md), and the
+[executed coverage map](EVAL_COVERAGE.md). No live model run or recorded exercise
+has been created in this eval track. The root
 [README](../README.md) remains authoritative and unchanged. The
 [Notion planning page](https://app.notion.com/p/4026333fbd2f807badd4d8f1d1c6fe6f)
 was read without editing its notes or screenshots. Its later core-first decision
@@ -12,9 +16,9 @@ assignment requirements to evidence and distinguishes working infrastructure
 from the core implementation and demonstration still required.
 
 [EVAL_DESIGN.md](EVAL_DESIGN.md) defines the intended module interfaces, internal
-records, predicate registry, report semantics and implementation slices. It
-refines this plan without declaring the producer contract agreed or the
-evaluator implemented.
+records, predicate registry, report semantics and implementation slices. The
+local implemented profile is explicit; producer interoperability remains the
+connection task and is not implicitly agreed by implementing the consumer.
 
 ## Scope and decision checkpoint
 
@@ -36,11 +40,13 @@ Kanav also accepted both scoring recommendations during this preparation:
 2. Report repair achievement separately from reporting accuracy. An honest
    exhausted search is not a successful repair or proof of infeasibility.
 
-These decisions guide this draft. The shared interface is not yet agreed. Do not
-implement a competing wire schema: the SDK track owns its initial proposal.
+These decisions guided this draft. The shared interface is not yet agreed; the
+SDK track owns its initial proposal. Subsequent implementation uses the
+proposal's layout plus documented local extensions, without editing its source.
 [EVAL_TRACE_REQUIREMENTS.md](EVAL_TRACE_REQUIREMENTS.md) defines required evidence
-and the integration checklist. Full implementation follows an explicit contract
-review by both tracks; reading a proposal alone does not constitute agreement.
+and the integration checklist. The earlier requirement to await joint review
+before implementing was superseded by the user's explicit implementation
+request. Reading a proposal alone still does not constitute joint agreement.
 
 ## Prepared workspace
 
