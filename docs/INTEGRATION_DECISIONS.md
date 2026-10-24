@@ -42,7 +42,9 @@ achievement. None of these outcomes is replaced with one averaged success score.
 
 Only committed source and inspectable evidence are imported. Virtual environments,
 credentials, local PartLab sessions, Scout databases, Harbor job directories,
-recordings and build caches are excluded. The old simplified `eval_preparation/`
+recordings and build caches are excluded. Git stores Docker build and task
+source, not image layers. No project image is published to a registry; fresh
+setup needs downloaded or pre-cached dependencies, while runtime checks are offline. The old simplified `eval_preparation/`
 prototype is preserved in source history rather than added to the submission's
 current runnable surface. Detailed design and decision documents remain available;
 early plans are explicitly labelled as historical.

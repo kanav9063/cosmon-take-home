@@ -1,0 +1,60 @@
+{
+  "dimensions": {
+    "capture_integrity": {
+      "pass": 1
+    },
+    "delivery": {
+      "not_applicable": 1
+    },
+    "efficiency": {
+      "not_applicable": 1
+    },
+    "final_correctness": {
+      "not_applicable": 1
+    },
+    "process_compliance": {
+      "pass": 1
+    },
+    "repair_achievement": {
+      "fail": 1
+    },
+    "reporting_accuracy": {
+      "pass": 1
+    }
+  },
+  "evaluated": 1,
+  "evaluator": {
+    "python": "3.12.3",
+    "sha256": "574e16b3ee1b386b2ddb1eb3f5e5f95b49672f33ff593515b57a83b50121bc85",
+    "sources": {
+      "eval_checks.py": "c6900b6d885e0cf1bdf59e487bf6be550fb254f638cf0e2f95609109742d8f1b",
+      "eval_state.py": "7ea4d66cae608df73d7ebc8069150e28aaf9c42b6bcc764a443d7316ac81b8a9",
+      "eval_types.py": "b03ec65d0b6a08fa473826fd168bdd9dcabb2f90bf9e1c983cc37bde24fd63e0",
+      "evaluate.py": "e20006538ee80bc17f30d162c618d7bb7c7e3a6dfcec6319c8d411836fb89f2e",
+      "trace_adapter.py": "7911652c4bf8b41a8e09a97c7b1db52950ade009aff905ee7f67ac9c1153ad53"
+    },
+    "version": "1.1.0"
+  },
+  "explicitly_rejected": 0,
+  "policy_digest": "ac6eef301f23e9c924b7dce94f3dac91341465f4d8e57f7d4344a9ac080dfb0e",
+  "report_version": "partlab.eval-batch/1",
+  "reports": [
+    {
+      "input_id": "blocked-flange",
+      "report": "report-blocked-flange.json",
+      "status": "evaluated"
+    }
+  ],
+  "requested": 1,
+  "resource_limits": {
+    "max_events": 100000,
+    "max_file_bytes": 16777216,
+    "max_files": 4096,
+    "max_record_bytes": 2097152,
+    "max_total_bytes": 67108864
+  },
+  "status": "complete",
+  "warning_policy": {
+    "warning_budgets": {}
+  }
+}

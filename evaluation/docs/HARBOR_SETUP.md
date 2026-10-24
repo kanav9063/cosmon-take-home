@@ -61,6 +61,21 @@ already belongs to the group but the calling shell has old supplementary groups.
 It does not change permissions or invoke sudo. For direct Harbor commands from
 an old shell, start a fresh login/group session or use `sg docker -c 'COMMAND'`.
 
+## What Git contains
+
+The repository contains both Dockerfiles, the Harbor task configuration, oracle
+script, independent verifier, dependency lock and compact verification receipts.
+`check.py` stages the root PartLab executable and original parts into the two
+build contexts before Harbor builds them. Run the checker instead of building
+an unstaged task directory directly.
+
+Docker image layers, local virtual environments and `.harbor-jobs/` are not Git
+artifacts, and no built project image has been uploaded to a container registry.
+A fresh machine needs the pinned Python base image and dependencies downloaded
+or pre-cached during setup. Both task containers disable runtime networking.
+The standalone evaluator Docker command uses `--pull=never --network none`
+with that already cached base image.
+
 ## What the smoke check proves
 
 [check.py](../harbor_setup/check.py) stages a copy of the

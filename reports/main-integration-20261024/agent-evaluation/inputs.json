@@ -1,0 +1,29 @@
+{
+  "inputs": [
+    {
+      "case": "bracket_v3",
+      "id": "bracket",
+      "path": "/home/ubuntu/work/cosmon-main/reports/e2e-20261023/bracket"
+    },
+    {
+      "case": "flange_v1",
+      "id": "flange",
+      "path": "/home/ubuntu/work/cosmon-main/reports/e2e-20261023/flange"
+    },
+    {
+      "case": "flange_v1",
+      "id": "guard-flange",
+      "path": "/home/ubuntu/work/cosmon-main/reports/guard-check-20261023-201100/trace"
+    },
+    {
+      "case": "bracket_v3",
+      "id": "synthetic-stale",
+      "path": "/home/ubuntu/work/cosmon-main/reports/main-integration-20261024/agent-evaluation/derivatives/stale-solve"
+    },
+    {
+      "case": "bracket_v3",
+      "id": "synthetic-interrupted",
+      "path": "/home/ubuntu/work/cosmon-main/reports/main-integration-20261024/agent-evaluation/derivatives/interrupted"
+    }
+  ]
+}

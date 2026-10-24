@@ -87,11 +87,13 @@ bytes. These are observed byte counts, not claims about total token savings.
 
 - [Bracket raw trace](reports/e2e-20261023/bracket/) and [flange raw trace](reports/e2e-20261023/flange/).
 - [Verified bracket output](outputs/bracket_v3.json).
-- [Current independent evaluation summary](reports/evaluator-sync-20261023/evaluation-check/verification.json).
+- [Current independent evaluation summary](reports/main-integration-20261024/agent-evaluation/verification.json).
+- [Consolidated verification and Docker/Scout/Harbor checks](reports/main-integration-20261024/README.md).
+- [Evaluator rubric and portability proofs](evaluation/docs/EVAL_RUBRIC.md).
 - [Evaluator source and regression receipt](reports/evaluator-sync-20261023/sync-receipt.json).
 - [Model/tool continuity and context audit](reports/evaluator-sync-20261023/capture-audit.json).
 - [Original trace inventory check](reports/evaluator-sync-20261023/trace-inventory.json).
-- [Final verification receipt](reports/submission-check-20261023/verification.json), including tests and replay from a relocated checkout.
+- [Earlier submission verification](reports/submission-check-20261023/verification.json), retained with its original test counts.
 - [Agent test transcript](reports/submission-check-20261023/agent-tests.log) and [evaluator test transcript](reports/submission-check-20261023/evaluator-tests.log).
 - [Real constraint-rejection check](reports/guard-check-20261023-201100/verification.json).
 
@@ -99,8 +101,9 @@ The bracket passes capture, process, correctness, delivery, reporting and repair
 achievement. Flange capture, process and reporting pass; repair achievement
 correctly fails. The evaluator does not turn honest failure into success.
 
-**22 agent tests (including the optional native harness) and 154 evaluator tests
-passed.** The [latest agent test log](reports/anthropic-harness-20261024/all-agent-tests.log)
+**22 agent tests (including the optional native harness) and 156 evaluator tests
+passed in the combined checkout.** The evaluator suite and 19 expected report
+cases also passed in Docker with networking disabled. The [latest agent test log](reports/main-integration-20261024/agent-tests.log)
 includes a real ToolRunner/CLI check with mocked HTTP: flange thickness 5.5 mm
 is rejected without CLI dispatch and native capture remains intact. Tests include state
 invalidation, concurrent proposals, malformed arguments, publication failure,
@@ -114,7 +117,14 @@ saves and solves, detects later writes that make publication evidence stale,
 and distinguishes a fully captured publication failure from missing evidence.
 Reports include the evaluator's source hashes and effective case policy.
 
-See [RUN.md](RUN.md) for reproducible agent, negative-check and evaluation commands.
+The additional evaluator tests demonstrate an unseen case with different parameters,
+load and limits, and an adapter for a different persisted harness layout. Scout
+passes 17 contract tests and displays all 133 dimensions from 19 reports. It is a
+projection of the independent evaluator, not another judge.
+
+See [RUN.md](RUN.md) for reproducible agent, negative-check and evaluation commands,
+and [the integration decisions](docs/INTEGRATION_DECISIONS.md) for source preservation
+and the final repository layout.
 
 ## Limits and reviewer checks
 

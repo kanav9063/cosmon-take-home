@@ -1,1 +1,3 @@
 Running Harbor oracle: 2 trial(s); log .harbor-jobs/20261024T020135.533831Z/oracle.console.log
+Running Harbor nop: 1 trial(s); log .harbor-jobs/20261024T020135.533831Z/nop.console.log
+PASS: two oracle rewards=1, no-op reward=0; report .harbor-jobs/20261024T020135.533831Z/summary.json

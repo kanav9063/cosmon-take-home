@@ -124,8 +124,8 @@
     "destination": "evaluation/docs/HARBOR_SETUP.md",
     "git_blob_oid": "2e8b622cfe738c9e0729691ffed5a8e97dfd3e9e",
     "source_sha256": "43a032820b5e271a3bf72fa99ca30f7c393247ca659048f19d651797f1549d11",
-    "sha256": "d369eaf71cdb5545d7ff7cfcac6184ffabdbc052bad99bbfa4ad4495e56bd633",
-    "bytes": 9582
+    "sha256": "0bef5936383d13e75b33c11ae6ade2979a8408f7b2ef8deae36d0dd628488b3e",
+    "bytes": 10389
   },
   {
     "path": "docs/READINESS_REVIEW.md",

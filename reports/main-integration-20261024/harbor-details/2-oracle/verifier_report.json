@@ -1,0 +1,18 @@
+{
+  "purpose": "infrastructure-preparation-only",
+  "passed": true,
+  "isolation": {
+    "unexported_marker_absent": true,
+    "solution_absent_in_verifier": true,
+    "tests_absent_at_agent_start": true,
+    "solution_absent_at_agent_start": true,
+    "startup_artifact_received": true,
+    "pristine_inputs": "/reference",
+    "reference_sha256": {
+      "partlab": "9b202e1ba07861f52f12005108e81815ef14d92f2db3ba322fc51422746ab183",
+      "parts/bracket_v3.json": "9756780586e273177a75155a9e814d514bae9cd21dcc4ee64dc6c32626fdadc8"
+    }
+  },
+  "safety_factor": 1.428,
+  "command_count": 7
+}

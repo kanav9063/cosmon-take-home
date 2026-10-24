@@ -1,0 +1,33 @@
+{
+  "baseline_sf": 0.212,
+  "blocked_result": {
+    "best_sf": 0.212,
+    "best_solve_cli_id": "x0006",
+    "error": "thickness_mm must satisfy {'max': 5.0}; propose a legal value.",
+    "error_type": "PolicyError",
+    "initial_sf": 0.212,
+    "ok": false,
+    "phase": "open",
+    "reason_code": "manufacturing.constraint",
+    "remaining_trials": 6,
+    "state_revision": 5
+  },
+  "checks": {
+    "blocked_proposal_is_diagnostic": true,
+    "capture_integrity_passes": true,
+    "engine_parameters_unchanged": true,
+    "no_accepted_candidate": true,
+    "no_cli_dispatch": true,
+    "process_compliance_passes": true,
+    "proposal_blocked": true,
+    "reporting_accuracy_passes": true,
+    "state_bytes_unchanged": true,
+    "state_revision_unchanged": true
+  },
+  "evidence_kind": "preparation_check",
+  "model_calls": 0,
+  "observed_outcome": "search_exhausted",
+  "report": "evaluation/report-blocked-flange.json",
+  "state_sha256": "88430a3e518bd633f73a8e41cd514540fe5c2c61f0186c27fc744ede2dc71704",
+  "status": "passed"
+}

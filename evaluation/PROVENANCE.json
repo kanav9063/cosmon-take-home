@@ -4,7 +4,7 @@
   "source_git_head": "cadf11ed697f69cc674cdfd3f3d9328beab85ea0",
   "source_state": "Committed evaluator snapshot consolidated under evaluation; source and destination hashes in the file manifest. Original binary and parts shared at root. Explicit relocation changes recorded.",
   "file_manifest": "provenance/consolidated-files.json",
-  "file_manifest_sha256": "b2f1acfa9c622c77d2d7722678ff9eb31c0d04b0cfeef1d80e7fd7f5dad87774",
+  "file_manifest_sha256": "c98a7857f9f4c4ca7b8070d4e7951c75eab4c297793479579e871488ecd6fbd5",
   "imported_file_count": 1160,
   "local_modifications": [
     "evaluation/EVAL_RUN.md",

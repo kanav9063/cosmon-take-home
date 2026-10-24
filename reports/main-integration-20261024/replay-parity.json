@@ -1,0 +1,17 @@
+{
+  "status": "pass",
+  "comparisons": [
+    {
+      "original": "reports/model-benchmark-20261024/evaluation-20261024T015525Z-7c9a80",
+      "replay": "reports/main-integration-20261024/benchmark-evaluation",
+      "reports": 10,
+      "dimensions_and_findings_unchanged": true
+    },
+    {
+      "original": "reports/anthropic-harness-20261024/evaluation-20261024T015956Z-e5971b",
+      "replay": "reports/main-integration-20261024/native-evaluation",
+      "reports": 2,
+      "dimensions_and_findings_unchanged": true
+    }
+  ]
+}

@@ -3,8 +3,9 @@
 Run commands from the repository root. Python 3.12 is required; the bundled
 PartLab binary targets Linux AMD64. Dependencies are pinned in `requirements.lock`.
 The independent evaluator uses only the Python standard library. The bundled
-version is **1.1.0**, pinned to source commit
-`b60473ca172a2fad33c377e96c212f2adb6aa84f`.
+version is **1.1.0**, consolidated from `cadf11e` with the same grading engine
+as `b60473c`. Trusted input paths now use the shared root `parts/` directory.
+[Provenance](evaluation/PROVENANCE.json) records source hashes and relocation changes.
 
 ## Setup
 
@@ -41,7 +42,7 @@ and 300 seconds per run. The agent stops after its first verified repair.
 
 ```sh
 .venv/bin/python -m unittest discover -s tests -v
-PYTHONPATH=evaluation .venv/bin/python -m unittest discover -s evaluation/tests -v
+.venv/bin/python evaluation/scripts/verify.py --output-dir reports/evaluator-check-001
 .venv/bin/python scripts/check_agent_guard.py --output reports/guard-replay-001
 .venv/bin/python evaluation/evaluate.py --inputs reports/e2e-20261023/inputs.json --output-dir reports/eval-replay-001
 .venv/bin/python scripts/check_e2e_evaluation.py --inputs reports/e2e-20261023/inputs.json --output reports/e2e-replay-001
@@ -69,11 +70,17 @@ For new agent runs, save an input manifest in `runs/replay-001/inputs.json`:
 Pass it with `--inputs` to the evaluator. Paths are relative to the manifest.
 The derivative check needs at least one verified repair as its source.
 
-The current verification recorded **21 passing agent tests and 154 passing
-evaluator tests**. The [synchronization receipt](reports/evaluator-sync-20261023/sync-receipt.json)
-pins the evaluator's source bytes; the
-[latest offline replay](reports/evaluator-sync-20261023/evaluation-check/verification.json)
-checks the original captures and negative cases with version 1.1.0.
+The combined checkout passes **22 agent tests and 156 evaluator tests**, plus
+all 19 expected report cases. Install the optional `requirements-anthropic.txt`
+to run all 22 agent tests; without it, the native-runner test is explicitly skipped.
+The [consolidated verification](reports/main-integration-20261024/README.md)
+records current results, including Docker with networking disabled. Historical
+154-test receipts remain unchanged and describe their original executions.
+
+For the evaluator alone, no package installation is needed. Its
+[runbook](evaluation/EVAL_RUN.md) includes Docker and policy commands. Optional
+[Scout](evaluation/scout_setup/README.md) and [Harbor](evaluation/docs/HARBOR_SETUP.md)
+have separate pinned environments and are not needed to grade saved traces.
 
 ## Model comparison
 

@@ -1,0 +1,32 @@
+[
+  {
+    "original": ".harbor-jobs/20261024T020135.533831Z/oracle/task__gGpvqbc/result.json",
+    "file": "harbor-details/1-oracle/trial_result.json",
+    "sha256": "19dd9c466588e7d5d8de28ec091ccff2d1272b898b61369db9b6a8c982bb98ea"
+  },
+  {
+    "original": ".harbor-jobs/20261024T020135.533831Z/oracle/task__gGpvqbc/verifier/report.json",
+    "file": "harbor-details/1-oracle/verifier_report.json",
+    "sha256": "2b6ac60e7c8c916ff10794f8151b860d2e3f7021981112c5b9ce08594446b65f"
+  },
+  {
+    "original": ".harbor-jobs/20261024T020135.533831Z/oracle/task__mSsZYQk/result.json",
+    "file": "harbor-details/2-oracle/trial_result.json",
+    "sha256": "4ad521aa5f1953a95e469e303b5d44b1dc07c6a0aff0038eafb2e32f44493a7b"
+  },
+  {
+    "original": ".harbor-jobs/20261024T020135.533831Z/oracle/task__mSsZYQk/verifier/report.json",
+    "file": "harbor-details/2-oracle/verifier_report.json",
+    "sha256": "2b6ac60e7c8c916ff10794f8151b860d2e3f7021981112c5b9ce08594446b65f"
+  },
+  {
+    "original": ".harbor-jobs/20261024T020135.533831Z/nop/task__i4L4Aqi/result.json",
+    "file": "harbor-details/3-nop/trial_result.json",
+    "sha256": "60082eab68a6ab9694371ff1eb46d7bb3666dbad8ed8f0067b3f67a1c9c2a562"
+  },
+  {
+    "original": ".harbor-jobs/20261024T020135.533831Z/nop/task__i4L4Aqi/verifier/report.json",
+    "file": "harbor-details/3-nop/verifier_report.json",
+    "sha256": "46413c63328314ff73d5437e9c642fb0485e36ccda6c0aa29c0a3cdb23cdf83f"
+  }
+]

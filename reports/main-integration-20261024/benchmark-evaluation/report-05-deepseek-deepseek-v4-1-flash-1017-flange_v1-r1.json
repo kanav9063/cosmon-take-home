@@ -1,0 +1,1590 @@
+{
+  "adapter": "partlab",
+  "case_id": "flange_v1",
+  "checks": [
+    {
+      "action": null,
+      "check_id": "analysis_validity",
+      "code": null,
+      "expected": null,
+      "instance_id": "analysis_validity:baseline:initial",
+      "observed": [],
+      "reason": "Raw solve evidence must establish successful FEA, finite SF, convergence and known inputs.",
+      "refs": [
+        {
+          "bytes": 118857,
+          "event_id": "e000036",
+          "line": 36,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "89c66a7e2cd10f41429ab7fe91d34c9e084d103baac4a5fcdfc56e88b8ea9141"
+        },
+        {
+          "bytes": 118857,
+          "event_id": "e000037",
+          "line": 37,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "89c66a7e2cd10f41429ab7fe91d34c9e084d103baac4a5fcdfc56e88b8ea9141"
+        },
+        {
+          "bytes": 118857,
+          "event_id": "e000038",
+          "line": 38,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "89c66a7e2cd10f41429ab7fe91d34c9e084d103baac4a5fcdfc56e88b8ea9141"
+        },
+        {
+          "bytes": 6343,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0006.stdout",
+          "pointer": null,
+          "sha256": "df46330934525a655741f846dd031429e9ba6d7305cfe806cfed1701f05aa4ed"
+        },
+        {
+          "bytes": 0,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0006.stderr",
+          "pointer": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "scope": "baseline",
+      "status": "pass",
+      "subject_id": "initial"
+    },
+    {
+      "action": null,
+      "check_id": "analysis_validity",
+      "code": null,
+      "expected": null,
+      "instance_id": "analysis_validity:selected:selected",
+      "observed": null,
+      "reason": "No successful final engineering result is claimed.",
+      "refs": [],
+      "scope": "selected",
+      "status": "not_applicable",
+      "subject_id": "selected"
+    },
+    {
+      "action": null,
+      "check_id": "artifact_integrity",
+      "code": null,
+      "expected": null,
+      "instance_id": "artifact_integrity:selected:selected",
+      "observed": null,
+      "reason": "A repaired deliverable is neither required by an already-safe result nor claimed by this unsuccessful outcome.",
+      "refs": [],
+      "scope": "selected",
+      "status": "not_applicable",
+      "subject_id": "selected"
+    },
+    {
+      "action": null,
+      "check_id": "artifact_provenance",
+      "code": null,
+      "expected": null,
+      "instance_id": "artifact_provenance:selected:selected",
+      "observed": null,
+      "reason": "A repaired deliverable is neither required by an already-safe result nor claimed by this unsuccessful outcome.",
+      "refs": [],
+      "scope": "selected",
+      "status": "not_applicable",
+      "subject_id": "selected"
+    },
+    {
+      "action": null,
+      "check_id": "artifact_state",
+      "code": null,
+      "expected": null,
+      "instance_id": "artifact_state:selected:selected",
+      "observed": null,
+      "reason": "A repaired deliverable is neither required by an already-safe result nor claimed by this unsuccessful outcome.",
+      "refs": [],
+      "scope": "selected",
+      "status": "not_applicable",
+      "subject_id": "selected"
+    },
+    {
+      "action": null,
+      "check_id": "baseline_workflow",
+      "code": null,
+      "expected": null,
+      "instance_id": "baseline_workflow:baseline:initial",
+      "observed": null,
+      "reason": "A qualifying original/default-load solve must precede the first effective candidate mutation.",
+      "refs": [
+        {
+          "bytes": 118857,
+          "event_id": "e000036",
+          "line": 36,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "89c66a7e2cd10f41429ab7fe91d34c9e084d103baac4a5fcdfc56e88b8ea9141"
+        },
+        {
+          "bytes": 118857,
+          "event_id": "e000037",
+          "line": 37,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "89c66a7e2cd10f41429ab7fe91d34c9e084d103baac4a5fcdfc56e88b8ea9141"
+        },
+        {
+          "bytes": 118857,
+          "event_id": "e000038",
+          "line": 38,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "89c66a7e2cd10f41429ab7fe91d34c9e084d103baac4a5fcdfc56e88b8ea9141"
+        },
+        {
+          "bytes": 6343,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0006.stdout",
+          "pointer": null,
+          "sha256": "df46330934525a655741f846dd031429e9ba6d7305cfe806cfed1701f05aa4ed"
+        },
+        {
+          "bytes": 0,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0006.stderr",
+          "pointer": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "scope": "baseline",
+      "status": "pass",
+      "subject_id": "initial"
+    },
+    {
+      "action": null,
+      "check_id": "claim_consistency",
+      "code": null,
+      "expected": null,
+      "instance_id": "claim_consistency:claim:structured",
+      "observed": {
+        "errors": [],
+        "unestablished": []
+      },
+      "reason": "Declared outcome and numerical claims agree with the observed evidence.",
+      "refs": [
+        {
+          "bytes": 17372,
+          "event_id": null,
+          "line": null,
+          "path": "completion.json",
+          "pointer": null,
+          "sha256": "0a146f76613121cbd707f3ee9c48433ccca0e065a76979444b46acd03bc8701f"
+        },
+        {
+          "bytes": 2812,
+          "event_id": null,
+          "line": null,
+          "path": "manifest.json",
+          "pointer": null,
+          "sha256": "ce7b29e17bd017371090d9844ca01dc289518d8c01651ae145c04963f69410fb"
+        },
+        {
+          "bytes": 8100,
+          "event_id": null,
+          "line": null,
+          "path": "outcome.json",
+          "pointer": null,
+          "sha256": "68e4935bb4f4666b1c1c1e1bf8f45700a89b945524931236936b32b9d8c20ddc"
+        },
+        {
+          "bytes": 547,
+          "event_id": null,
+          "line": null,
+          "path": "raw/model/final.txt",
+          "pointer": null,
+          "sha256": "2a942471d23dc6a1732907bb0dc3cdb1d678055e53a30b08a0ff9d19278fea51"
+        }
+      ],
+      "scope": "claim",
+      "status": "pass",
+      "subject_id": "structured"
+    },
+    {
+      "action": "Retain the missing raw evidence and resolve this check's stated dependency.",
+      "check_id": "claim_consistency",
+      "code": "VISIBLE_CLAIM_UNESTABLISHED",
+      "expected": null,
+      "instance_id": "claim_consistency:claim:visible",
+      "observed": null,
+      "reason": "Visible final content has no supported deterministic claim format.",
+      "refs": [
+        {
+          "bytes": 17372,
+          "event_id": null,
+          "line": null,
+          "path": "completion.json",
+          "pointer": null,
+          "sha256": "0a146f76613121cbd707f3ee9c48433ccca0e065a76979444b46acd03bc8701f"
+        },
+        {
+          "bytes": 2812,
+          "event_id": null,
+          "line": null,
+          "path": "manifest.json",
+          "pointer": null,
+          "sha256": "ce7b29e17bd017371090d9844ca01dc289518d8c01651ae145c04963f69410fb"
+        },
+        {
+          "bytes": 8100,
+          "event_id": null,
+          "line": null,
+          "path": "outcome.json",
+          "pointer": null,
+          "sha256": "68e4935bb4f4666b1c1c1e1bf8f45700a89b945524931236936b32b9d8c20ddc"
+        },
+        {
+          "bytes": 547,
+          "event_id": null,
+          "line": null,
+          "path": "raw/model/final.txt",
+          "pointer": null,
+          "sha256": "2a942471d23dc6a1732907bb0dc3cdb1d678055e53a30b08a0ff9d19278fea51"
+        }
+      ],
+      "scope": "claim",
+      "status": "unknown",
+      "subject_id": "visible"
+    },
+    {
+      "action": null,
+      "check_id": "default_load",
+      "code": null,
+      "expected": {
+        "direction": "-Z",
+        "face_id": "face_mating",
+        "force_N": "8000.0"
+      },
+      "instance_id": "default_load:baseline:initial",
+      "observed": {
+        "direction": "-Z",
+        "face_id": "face_mating",
+        "force_N": "8000"
+      },
+      "reason": "All effective load components must equal the original default.",
+      "refs": [
+        {
+          "bytes": 118857,
+          "event_id": "e000036",
+          "line": 36,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "89c66a7e2cd10f41429ab7fe91d34c9e084d103baac4a5fcdfc56e88b8ea9141"
+        },
+        {
+          "bytes": 118857,
+          "event_id": "e000037",
+          "line": 37,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "89c66a7e2cd10f41429ab7fe91d34c9e084d103baac4a5fcdfc56e88b8ea9141"
+        },
+        {
+          "bytes": 118857,
+          "event_id": "e000038",
+          "line": 38,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "89c66a7e2cd10f41429ab7fe91d34c9e084d103baac4a5fcdfc56e88b8ea9141"
+        },
+        {
+          "bytes": 6343,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0006.stdout",
+          "pointer": null,
+          "sha256": "df46330934525a655741f846dd031429e9ba6d7305cfe806cfed1701f05aa4ed"
+        },
+        {
+          "bytes": 0,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0006.stderr",
+          "pointer": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "scope": "baseline",
+      "status": "pass",
+      "subject_id": "initial"
+    },
+    {
+      "action": null,
+      "check_id": "default_load",
+      "code": null,
+      "expected": null,
+      "instance_id": "default_load:selected:selected",
+      "observed": null,
+      "reason": "No successful final engineering result is claimed.",
+      "refs": [],
+      "scope": "selected",
+      "status": "not_applicable",
+      "subject_id": "selected"
+    },
+    {
+      "action": "Capture and verify the missing or inconsistent evidence.",
+      "check_id": "evidence_integrity",
+      "code": "TRACE_INCOMPLETE",
+      "expected": null,
+      "instance_id": "evidence_integrity:run:TRACE_INCOMPLETE",
+      "observed": null,
+      "reason": "A complete supported capture and execution ledger are required.",
+      "refs": [
+        {
+          "bytes": 17372,
+          "event_id": null,
+          "line": null,
+          "path": "completion.json",
+          "pointer": null,
+          "sha256": "0a146f76613121cbd707f3ee9c48433ccca0e065a76979444b46acd03bc8701f"
+        },
+        {
+          "bytes": 2812,
+          "event_id": null,
+          "line": null,
+          "path": "manifest.json",
+          "pointer": null,
+          "sha256": "ce7b29e17bd017371090d9844ca01dc289518d8c01651ae145c04963f69410fb"
+        },
+        {
+          "bytes": 8100,
+          "event_id": null,
+          "line": null,
+          "path": "outcome.json",
+          "pointer": null,
+          "sha256": "68e4935bb4f4666b1c1c1e1bf8f45700a89b945524931236936b32b9d8c20ddc"
+        },
+        {
+          "bytes": 547,
+          "event_id": null,
+          "line": null,
+          "path": "raw/model/final.txt",
+          "pointer": null,
+          "sha256": "2a942471d23dc6a1732907bb0dc3cdb1d678055e53a30b08a0ff9d19278fea51"
+        }
+      ],
+      "scope": "run",
+      "status": "unknown",
+      "subject_id": "TRACE_INCOMPLETE"
+    },
+    {
+      "action": "Capture and verify the missing or inconsistent evidence.",
+      "check_id": "evidence_integrity",
+      "code": "TRACE_PARSE_ERROR",
+      "expected": null,
+      "instance_id": "evidence_integrity:run:input-0",
+      "observed": null,
+      "reason": "Final message: Expecting value: line 1 column 1 (char 0)",
+      "refs": [
+        {
+          "bytes": 547,
+          "event_id": null,
+          "line": null,
+          "path": "raw/model/final.txt",
+          "pointer": null,
+          "sha256": "2a942471d23dc6a1732907bb0dc3cdb1d678055e53a30b08a0ff9d19278fea51"
+        }
+      ],
+      "scope": "run",
+      "status": "unknown",
+      "subject_id": "input-0"
+    },
+    {
+      "action": null,
+      "check_id": "executed_constraints",
+      "code": null,
+      "expected": {
+        "hole_diameter_mm": {
+          "min": "4.0"
+        },
+        "thickness_mm": {
+          "max": "5.0"
+        }
+      },
+      "instance_id": "executed_constraints:candidate:x0009:thickness_mm:0",
+      "observed": {
+        "missing": []
+      },
+      "reason": "An established effective mutation must satisfy every applicable manufacturing bound.",
+      "refs": [
+        {
+          "bytes": 118857,
+          "event_id": "e000057",
+          "line": 57,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "89c66a7e2cd10f41429ab7fe91d34c9e084d103baac4a5fcdfc56e88b8ea9141"
+        },
+        {
+          "bytes": 118857,
+          "event_id": "e000058",
+          "line": 58,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "89c66a7e2cd10f41429ab7fe91d34c9e084d103baac4a5fcdfc56e88b8ea9141"
+        },
+        {
+          "bytes": 118857,
+          "event_id": "e000059",
+          "line": 59,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "89c66a7e2cd10f41429ab7fe91d34c9e084d103baac4a5fcdfc56e88b8ea9141"
+        },
+        {
+          "bytes": 144,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0009.stdout",
+          "pointer": null,
+          "sha256": "904bfcd1f38919a7e8ab02c7e9202bec13fafd3990539751cd35c25a7b5e017a"
+        },
+        {
+          "bytes": 0,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0009.stderr",
+          "pointer": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "scope": "candidate",
+      "status": "pass",
+      "subject_id": "x0009:thickness_mm:0"
+    },
+    {
+      "action": null,
+      "check_id": "executed_constraints",
+      "code": null,
+      "expected": {
+        "hole_diameter_mm": {
+          "min": "4.0"
+        },
+        "thickness_mm": {
+          "max": "5.0"
+        }
+      },
+      "instance_id": "executed_constraints:candidate:x0016:fillet_radius_mm:1",
+      "observed": {
+        "missing": []
+      },
+      "reason": "An established effective mutation must satisfy every applicable manufacturing bound.",
+      "refs": [
+        {
+          "bytes": 118857,
+          "event_id": "e000105",
+          "line": 105,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "89c66a7e2cd10f41429ab7fe91d34c9e084d103baac4a5fcdfc56e88b8ea9141"
+        },
+        {
+          "bytes": 118857,
+          "event_id": "e000106",
+          "line": 106,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "89c66a7e2cd10f41429ab7fe91d34c9e084d103baac4a5fcdfc56e88b8ea9141"
+        },
+        {
+          "bytes": 118857,
+          "event_id": "e000107",
+          "line": 107,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "89c66a7e2cd10f41429ab7fe91d34c9e084d103baac4a5fcdfc56e88b8ea9141"
+        },
+        {
+          "bytes": 151,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0016.stdout",
+          "pointer": null,
+          "sha256": "069b83af9ee9a91cccc8f6cfc2718419a900a78d13d750d0ccb0920e1c279cb9"
+        },
+        {
+          "bytes": 0,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0016.stderr",
+          "pointer": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "scope": "candidate",
+      "status": "pass",
+      "subject_id": "x0016:fillet_radius_mm:1"
+    },
+    {
+      "action": null,
+      "check_id": "executed_constraints",
+      "code": null,
+      "expected": {
+        "hole_diameter_mm": {
+          "min": "4.0"
+        },
+        "thickness_mm": {
+          "max": "5.0"
+        }
+      },
+      "instance_id": "executed_constraints:candidate:x0023:hole_diameter_mm:2",
+      "observed": {
+        "missing": []
+      },
+      "reason": "An established effective mutation must satisfy every applicable manufacturing bound.",
+      "refs": [
+        {
+          "bytes": 118857,
+          "event_id": "e000153",
+          "line": 153,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "89c66a7e2cd10f41429ab7fe91d34c9e084d103baac4a5fcdfc56e88b8ea9141"
+        },
+        {
+          "bytes": 118857,
+          "event_id": "e000154",
+          "line": 154,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "89c66a7e2cd10f41429ab7fe91d34c9e084d103baac4a5fcdfc56e88b8ea9141"
+        },
+        {
+          "bytes": 118857,
+          "event_id": "e000155",
+          "line": 155,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "89c66a7e2cd10f41429ab7fe91d34c9e084d103baac4a5fcdfc56e88b8ea9141"
+        },
+        {
+          "bytes": 149,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0023.stdout",
+          "pointer": null,
+          "sha256": "12046ec545f6fe50f131cbac867b845659246de5fef7d820d58dd83147958e14"
+        },
+        {
+          "bytes": 0,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0023.stderr",
+          "pointer": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "scope": "candidate",
+      "status": "pass",
+      "subject_id": "x0023:hole_diameter_mm:2"
+    },
+    {
+      "action": "Retain the missing raw evidence and resolve this check's stated dependency.",
+      "check_id": "executed_constraints",
+      "code": "MUTATION_EFFECTS_UNESTABLISHED",
+      "expected": null,
+      "instance_id": "executed_constraints:run:coverage",
+      "observed": null,
+      "reason": "Whole-run mutation compliance requires complete execution and effect coverage.",
+      "refs": [
+        {
+          "bytes": 17372,
+          "event_id": null,
+          "line": null,
+          "path": "completion.json",
+          "pointer": null,
+          "sha256": "0a146f76613121cbd707f3ee9c48433ccca0e065a76979444b46acd03bc8701f"
+        },
+        {
+          "bytes": 2812,
+          "event_id": null,
+          "line": null,
+          "path": "manifest.json",
+          "pointer": null,
+          "sha256": "ce7b29e17bd017371090d9844ca01dc289518d8c01651ae145c04963f69410fb"
+        },
+        {
+          "bytes": 8100,
+          "event_id": null,
+          "line": null,
+          "path": "outcome.json",
+          "pointer": null,
+          "sha256": "68e4935bb4f4666b1c1c1e1bf8f45700a89b945524931236936b32b9d8c20ddc"
+        },
+        {
+          "bytes": 547,
+          "event_id": null,
+          "line": null,
+          "path": "raw/model/final.txt",
+          "pointer": null,
+          "sha256": "2a942471d23dc6a1732907bb0dc3cdb1d678055e53a30b08a0ff9d19278fea51"
+        }
+      ],
+      "scope": "run",
+      "status": "unknown",
+      "subject_id": "coverage"
+    },
+    {
+      "action": null,
+      "check_id": "final_constraints",
+      "code": null,
+      "expected": null,
+      "instance_id": "final_constraints:selected:selected",
+      "observed": null,
+      "reason": "No successful final engineering result is claimed.",
+      "refs": [],
+      "scope": "selected",
+      "status": "not_applicable",
+      "subject_id": "selected"
+    },
+    {
+      "action": null,
+      "check_id": "fresh_final_solve",
+      "code": null,
+      "expected": null,
+      "instance_id": "fresh_final_solve:selected:selected",
+      "observed": null,
+      "reason": "No successful final engineering result is claimed.",
+      "refs": [],
+      "scope": "selected",
+      "status": "not_applicable",
+      "subject_id": "selected"
+    },
+    {
+      "action": "Retain the missing raw evidence and resolve this check's stated dependency.",
+      "check_id": "guard_execution_consistency",
+      "code": "TRACE_INCOMPLETE",
+      "expected": null,
+      "instance_id": "guard_execution_consistency:run:coverage",
+      "observed": null,
+      "reason": "Absence of dispatch can be established only with complete execution coverage.",
+      "refs": [
+        {
+          "bytes": 17372,
+          "event_id": null,
+          "line": null,
+          "path": "completion.json",
+          "pointer": null,
+          "sha256": "0a146f76613121cbd707f3ee9c48433ccca0e065a76979444b46acd03bc8701f"
+        },
+        {
+          "bytes": 2812,
+          "event_id": null,
+          "line": null,
+          "path": "manifest.json",
+          "pointer": null,
+          "sha256": "ce7b29e17bd017371090d9844ca01dc289518d8c01651ae145c04963f69410fb"
+        },
+        {
+          "bytes": 8100,
+          "event_id": null,
+          "line": null,
+          "path": "outcome.json",
+          "pointer": null,
+          "sha256": "68e4935bb4f4666b1c1c1e1bf8f45700a89b945524931236936b32b9d8c20ddc"
+        },
+        {
+          "bytes": 547,
+          "event_id": null,
+          "line": null,
+          "path": "raw/model/final.txt",
+          "pointer": null,
+          "sha256": "2a942471d23dc6a1732907bb0dc3cdb1d678055e53a30b08a0ff9d19278fea51"
+        }
+      ],
+      "scope": "run",
+      "status": "unknown",
+      "subject_id": "coverage"
+    },
+    {
+      "action": null,
+      "check_id": "original_identity",
+      "code": null,
+      "expected": {
+        "name": "flange_v1",
+        "revision": 1
+      },
+      "instance_id": "original_identity:baseline:initial",
+      "observed": {
+        "name": "flange_v1",
+        "revision": 1
+      },
+      "reason": "The supporting state must originate from the requested trusted part.",
+      "refs": [
+        {
+          "bytes": 118857,
+          "event_id": "e000036",
+          "line": 36,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "89c66a7e2cd10f41429ab7fe91d34c9e084d103baac4a5fcdfc56e88b8ea9141"
+        },
+        {
+          "bytes": 118857,
+          "event_id": "e000037",
+          "line": 37,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "89c66a7e2cd10f41429ab7fe91d34c9e084d103baac4a5fcdfc56e88b8ea9141"
+        },
+        {
+          "bytes": 118857,
+          "event_id": "e000038",
+          "line": 38,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "89c66a7e2cd10f41429ab7fe91d34c9e084d103baac4a5fcdfc56e88b8ea9141"
+        },
+        {
+          "bytes": 6343,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0006.stdout",
+          "pointer": null,
+          "sha256": "df46330934525a655741f846dd031429e9ba6d7305cfe806cfed1701f05aa4ed"
+        },
+        {
+          "bytes": 0,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0006.stderr",
+          "pointer": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "scope": "baseline",
+      "status": "pass",
+      "subject_id": "initial"
+    },
+    {
+      "action": null,
+      "check_id": "original_identity",
+      "code": null,
+      "expected": "0e6535b551bb5a441e207fd4d057774c14de0e40c55f7ada83c17fdbd8b7ab7f",
+      "instance_id": "original_identity:run:original",
+      "observed": true,
+      "reason": "Captured original is compared with the independently selected trusted case.",
+      "refs": [
+        {
+          "bytes": 17372,
+          "event_id": null,
+          "line": null,
+          "path": "completion.json",
+          "pointer": null,
+          "sha256": "0a146f76613121cbd707f3ee9c48433ccca0e065a76979444b46acd03bc8701f"
+        },
+        {
+          "bytes": 2812,
+          "event_id": null,
+          "line": null,
+          "path": "manifest.json",
+          "pointer": null,
+          "sha256": "ce7b29e17bd017371090d9844ca01dc289518d8c01651ae145c04963f69410fb"
+        },
+        {
+          "bytes": 8100,
+          "event_id": null,
+          "line": null,
+          "path": "outcome.json",
+          "pointer": null,
+          "sha256": "68e4935bb4f4666b1c1c1e1bf8f45700a89b945524931236936b32b9d8c20ddc"
+        },
+        {
+          "bytes": 547,
+          "event_id": null,
+          "line": null,
+          "path": "raw/model/final.txt",
+          "pointer": null,
+          "sha256": "2a942471d23dc6a1732907bb0dc3cdb1d678055e53a30b08a0ff9d19278fea51"
+        }
+      ],
+      "scope": "run",
+      "status": "pass",
+      "subject_id": "original"
+    },
+    {
+      "action": null,
+      "check_id": "original_identity",
+      "code": null,
+      "expected": null,
+      "instance_id": "original_identity:selected:selected",
+      "observed": null,
+      "reason": "No successful final engineering result is claimed.",
+      "refs": [],
+      "scope": "selected",
+      "status": "not_applicable",
+      "subject_id": "selected"
+    },
+    {
+      "action": null,
+      "check_id": "output_delivery",
+      "code": null,
+      "expected": null,
+      "instance_id": "output_delivery:publication:selected",
+      "observed": null,
+      "reason": "A repaired deliverable is neither required by an already-safe result nor claimed by this unsuccessful outcome.",
+      "refs": [],
+      "scope": "publication",
+      "status": "not_applicable",
+      "subject_id": "selected"
+    },
+    {
+      "action": null,
+      "check_id": "save_execution",
+      "code": null,
+      "expected": null,
+      "instance_id": "save_execution:selected:selected",
+      "observed": null,
+      "reason": "A repaired deliverable is neither required by an already-safe result nor claimed by this unsuccessful outcome.",
+      "refs": [],
+      "scope": "selected",
+      "status": "not_applicable",
+      "subject_id": "selected"
+    },
+    {
+      "action": null,
+      "check_id": "session_reset",
+      "code": null,
+      "expected": null,
+      "instance_id": "session_reset:baseline:initial",
+      "observed": null,
+      "reason": "A successful reset must establish a clean session before opening the run's original.",
+      "refs": [
+        {
+          "bytes": 118857,
+          "event_id": "e000001",
+          "line": 1,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "89c66a7e2cd10f41429ab7fe91d34c9e084d103baac4a5fcdfc56e88b8ea9141"
+        },
+        {
+          "bytes": 118857,
+          "event_id": "e000002",
+          "line": 2,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "89c66a7e2cd10f41429ab7fe91d34c9e084d103baac4a5fcdfc56e88b8ea9141"
+        },
+        {
+          "bytes": 118857,
+          "event_id": "e000003",
+          "line": 3,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "89c66a7e2cd10f41429ab7fe91d34c9e084d103baac4a5fcdfc56e88b8ea9141"
+        },
+        {
+          "bytes": 104,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0001.stdout",
+          "pointer": null,
+          "sha256": "3a6bd2d12add02dff54627e0f871b965129509f0df16b421bcb98c025cd234ef"
+        },
+        {
+          "bytes": 0,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0001.stderr",
+          "pointer": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "scope": "baseline",
+      "status": "pass",
+      "subject_id": "initial"
+    },
+    {
+      "action": null,
+      "check_id": "single_parameter",
+      "code": null,
+      "expected": null,
+      "instance_id": "single_parameter:selected:selected",
+      "observed": null,
+      "reason": "A repaired deliverable is neither required by an already-safe result nor claimed by this unsuccessful outcome.",
+      "refs": [],
+      "scope": "selected",
+      "status": "not_applicable",
+      "subject_id": "selected"
+    },
+    {
+      "action": null,
+      "check_id": "target_sf",
+      "code": null,
+      "expected": null,
+      "instance_id": "target_sf:selected:selected",
+      "observed": null,
+      "reason": "No successful final engineering result is claimed.",
+      "refs": [],
+      "scope": "selected",
+      "status": "not_applicable",
+      "subject_id": "selected"
+    },
+    {
+      "action": "Retain the missing raw evidence and resolve this check's stated dependency.",
+      "check_id": "trial_restoration",
+      "code": "MUTATION_EFFECTS_UNESTABLISHED",
+      "expected": null,
+      "instance_id": "trial_restoration:run:coverage",
+      "observed": null,
+      "reason": "Whole-run trial compliance requires complete execution coverage.",
+      "refs": [
+        {
+          "bytes": 17372,
+          "event_id": null,
+          "line": null,
+          "path": "completion.json",
+          "pointer": null,
+          "sha256": "0a146f76613121cbd707f3ee9c48433ccca0e065a76979444b46acd03bc8701f"
+        },
+        {
+          "bytes": 2812,
+          "event_id": null,
+          "line": null,
+          "path": "manifest.json",
+          "pointer": null,
+          "sha256": "ce7b29e17bd017371090d9844ca01dc289518d8c01651ae145c04963f69410fb"
+        },
+        {
+          "bytes": 8100,
+          "event_id": null,
+          "line": null,
+          "path": "outcome.json",
+          "pointer": null,
+          "sha256": "68e4935bb4f4666b1c1c1e1bf8f45700a89b945524931236936b32b9d8c20ddc"
+        },
+        {
+          "bytes": 547,
+          "event_id": null,
+          "line": null,
+          "path": "raw/model/final.txt",
+          "pointer": null,
+          "sha256": "2a942471d23dc6a1732907bb0dc3cdb1d678055e53a30b08a0ff9d19278fea51"
+        }
+      ],
+      "scope": "run",
+      "status": "unknown",
+      "subject_id": "coverage"
+    },
+    {
+      "action": null,
+      "check_id": "trial_restoration",
+      "code": null,
+      "expected": null,
+      "instance_id": "trial_restoration:trial:x0009:thickness_mm:0",
+      "observed": null,
+      "reason": "A new trial or parameter family must start from an observed original restoration.",
+      "refs": [
+        {
+          "bytes": 118857,
+          "event_id": "e000057",
+          "line": 57,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "89c66a7e2cd10f41429ab7fe91d34c9e084d103baac4a5fcdfc56e88b8ea9141"
+        },
+        {
+          "bytes": 118857,
+          "event_id": "e000058",
+          "line": 58,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "89c66a7e2cd10f41429ab7fe91d34c9e084d103baac4a5fcdfc56e88b8ea9141"
+        },
+        {
+          "bytes": 118857,
+          "event_id": "e000059",
+          "line": 59,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "89c66a7e2cd10f41429ab7fe91d34c9e084d103baac4a5fcdfc56e88b8ea9141"
+        },
+        {
+          "bytes": 144,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0009.stdout",
+          "pointer": null,
+          "sha256": "904bfcd1f38919a7e8ab02c7e9202bec13fafd3990539751cd35c25a7b5e017a"
+        },
+        {
+          "bytes": 0,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0009.stderr",
+          "pointer": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "scope": "trial",
+      "status": "pass",
+      "subject_id": "x0009:thickness_mm:0"
+    },
+    {
+      "action": null,
+      "check_id": "trial_restoration",
+      "code": null,
+      "expected": null,
+      "instance_id": "trial_restoration:trial:x0016:fillet_radius_mm:1",
+      "observed": null,
+      "reason": "A new trial or parameter family must start from an observed original restoration.",
+      "refs": [
+        {
+          "bytes": 118857,
+          "event_id": "e000105",
+          "line": 105,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "89c66a7e2cd10f41429ab7fe91d34c9e084d103baac4a5fcdfc56e88b8ea9141"
+        },
+        {
+          "bytes": 118857,
+          "event_id": "e000106",
+          "line": 106,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "89c66a7e2cd10f41429ab7fe91d34c9e084d103baac4a5fcdfc56e88b8ea9141"
+        },
+        {
+          "bytes": 118857,
+          "event_id": "e000107",
+          "line": 107,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "89c66a7e2cd10f41429ab7fe91d34c9e084d103baac4a5fcdfc56e88b8ea9141"
+        },
+        {
+          "bytes": 151,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0016.stdout",
+          "pointer": null,
+          "sha256": "069b83af9ee9a91cccc8f6cfc2718419a900a78d13d750d0ccb0920e1c279cb9"
+        },
+        {
+          "bytes": 0,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0016.stderr",
+          "pointer": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "scope": "trial",
+      "status": "pass",
+      "subject_id": "x0016:fillet_radius_mm:1"
+    },
+    {
+      "action": null,
+      "check_id": "trial_restoration",
+      "code": null,
+      "expected": null,
+      "instance_id": "trial_restoration:trial:x0023:hole_diameter_mm:2",
+      "observed": null,
+      "reason": "A new trial or parameter family must start from an observed original restoration.",
+      "refs": [
+        {
+          "bytes": 118857,
+          "event_id": "e000153",
+          "line": 153,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "89c66a7e2cd10f41429ab7fe91d34c9e084d103baac4a5fcdfc56e88b8ea9141"
+        },
+        {
+          "bytes": 118857,
+          "event_id": "e000154",
+          "line": 154,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "89c66a7e2cd10f41429ab7fe91d34c9e084d103baac4a5fcdfc56e88b8ea9141"
+        },
+        {
+          "bytes": 118857,
+          "event_id": "e000155",
+          "line": 155,
+          "path": "events.jsonl",
+          "pointer": null,
+          "sha256": "89c66a7e2cd10f41429ab7fe91d34c9e084d103baac4a5fcdfc56e88b8ea9141"
+        },
+        {
+          "bytes": 149,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0023.stdout",
+          "pointer": null,
+          "sha256": "12046ec545f6fe50f131cbac867b845659246de5fef7d820d58dd83147958e14"
+        },
+        {
+          "bytes": 0,
+          "event_id": null,
+          "line": null,
+          "path": "raw/cli/x0023.stderr",
+          "pointer": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "scope": "trial",
+      "status": "pass",
+      "subject_id": "x0023:hole_diameter_mm:2"
+    }
+  ],
+  "configuration_digest": "29f06e9f1efdc96e464536a708fc10126e1c8535a13c4fe013f6a305a3af8b45",
+  "coverage": {
+    "capture_complete": true,
+    "execution_complete": false,
+    "profile_supported": true
+  },
+  "declared_outcome": "execution_failure",
+  "details": {
+    "declared_outcome": "execution_failure",
+    "feasibility": "unknown",
+    "metrics": {
+      "cli_attempts": 27,
+      "events": 187,
+      "failed_cli_attempts": 0,
+      "model_calls": 20,
+      "model_request_bytes": 520294,
+      "model_response_bytes": 52753,
+      "model_tokens": null,
+      "model_visible_tool_bytes": 6636,
+      "raw_bytes": 764159,
+      "raw_files": 121,
+      "repeated_read_calls": 0,
+      "solve_attempts": 4,
+      "warning_thresholds": "disabled"
+    },
+    "safe_candidate_ids": [],
+    "selected_artifact_id": null,
+    "selected_solve_cli_id": "x0013"
+  },
+  "diagnostics": [],
+  "effective_case_policy": {
+    "binary_sha256": "9b202e1ba07861f52f12005108e81815ef14d92f2db3ba322fc51422746ab183",
+    "case_id": "flange_v1",
+    "limits": {
+      "hole_diameter_mm": {
+        "min": "4.0"
+      },
+      "thickness_mm": {
+        "max": "5.0"
+      }
+    },
+    "original_sha256": "0e6535b551bb5a441e207fd4d057774c14de0e40c55f7ada83c17fdbd8b7ab7f",
+    "output_path": "outputs/flange_v1.json",
+    "profile": "partlab-cli/9b202e1b",
+    "target_sf": "2.0"
+  },
+  "evaluation_status": "evaluated",
+  "evaluator": {
+    "python": "3.12.3",
+    "sha256": "574e16b3ee1b386b2ddb1eb3f5e5f95b49672f33ff593515b57a83b50121bc85",
+    "sources": {
+      "eval_checks.py": "c6900b6d885e0cf1bdf59e487bf6be550fb254f638cf0e2f95609109742d8f1b",
+      "eval_state.py": "7ea4d66cae608df73d7ebc8069150e28aaf9c42b6bcc764a443d7316ac81b8a9",
+      "eval_types.py": "b03ec65d0b6a08fa473826fd168bdd9dcabb2f90bf9e1c983cc37bde24fd63e0",
+      "evaluate.py": "e20006538ee80bc17f30d162c618d7bb7c7e3a6dfcec6319c8d411836fb89f2e",
+      "trace_adapter.py": "7911652c4bf8b41a8e09a97c7b1db52950ade009aff905ee7f67ac9c1153ad53"
+    },
+    "version": "1.1.0"
+  },
+  "evaluator_version": "1.1.0",
+  "findings": [
+    {
+      "action": "Retain the missing raw evidence and resolve this check's stated dependency.",
+      "check_id": "claim_consistency",
+      "code": "VISIBLE_CLAIM_UNESTABLISHED",
+      "expected": null,
+      "instance_id": "claim_consistency:claim:visible",
+      "observed": null,
+      "reason": "Visible final content has no supported deterministic claim format.",
+      "refs": [
+        {
+          "bytes": 17372,
+          "event_id": null,
+          "line": null,
+          "path": "completion.json",
+          "pointer": null,
+          "sha256": "0a146f76613121cbd707f3ee9c48433ccca0e065a76979444b46acd03bc8701f"
+        },
+        {
+          "bytes": 2812,
+          "event_id": null,
+          "line": null,
+          "path": "manifest.json",
+          "pointer": null,
+          "sha256": "ce7b29e17bd017371090d9844ca01dc289518d8c01651ae145c04963f69410fb"
+        },
+        {
+          "bytes": 8100,
+          "event_id": null,
+          "line": null,
+          "path": "outcome.json",
+          "pointer": null,
+          "sha256": "68e4935bb4f4666b1c1c1e1bf8f45700a89b945524931236936b32b9d8c20ddc"
+        },
+        {
+          "bytes": 547,
+          "event_id": null,
+          "line": null,
+          "path": "raw/model/final.txt",
+          "pointer": null,
+          "sha256": "2a942471d23dc6a1732907bb0dc3cdb1d678055e53a30b08a0ff9d19278fea51"
+        }
+      ],
+      "scope": "claim",
+      "status": "unknown",
+      "subject_id": "visible"
+    },
+    {
+      "action": "Capture and verify the missing or inconsistent evidence.",
+      "check_id": "evidence_integrity",
+      "code": "TRACE_INCOMPLETE",
+      "expected": null,
+      "instance_id": "evidence_integrity:run:TRACE_INCOMPLETE",
+      "observed": null,
+      "reason": "A complete supported capture and execution ledger are required.",
+      "refs": [
+        {
+          "bytes": 17372,
+          "event_id": null,
+          "line": null,
+          "path": "completion.json",
+          "pointer": null,
+          "sha256": "0a146f76613121cbd707f3ee9c48433ccca0e065a76979444b46acd03bc8701f"
+        },
+        {
+          "bytes": 2812,
+          "event_id": null,
+          "line": null,
+          "path": "manifest.json",
+          "pointer": null,
+          "sha256": "ce7b29e17bd017371090d9844ca01dc289518d8c01651ae145c04963f69410fb"
+        },
+        {
+          "bytes": 8100,
+          "event_id": null,
+          "line": null,
+          "path": "outcome.json",
+          "pointer": null,
+          "sha256": "68e4935bb4f4666b1c1c1e1bf8f45700a89b945524931236936b32b9d8c20ddc"
+        },
+        {
+          "bytes": 547,
+          "event_id": null,
+          "line": null,
+          "path": "raw/model/final.txt",
+          "pointer": null,
+          "sha256": "2a942471d23dc6a1732907bb0dc3cdb1d678055e53a30b08a0ff9d19278fea51"
+        }
+      ],
+      "scope": "run",
+      "status": "unknown",
+      "subject_id": "TRACE_INCOMPLETE"
+    },
+    {
+      "action": "Capture and verify the missing or inconsistent evidence.",
+      "check_id": "evidence_integrity",
+      "code": "TRACE_PARSE_ERROR",
+      "expected": null,
+      "instance_id": "evidence_integrity:run:input-0",
+      "observed": null,
+      "reason": "Final message: Expecting value: line 1 column 1 (char 0)",
+      "refs": [
+        {
+          "bytes": 547,
+          "event_id": null,
+          "line": null,
+          "path": "raw/model/final.txt",
+          "pointer": null,
+          "sha256": "2a942471d23dc6a1732907bb0dc3cdb1d678055e53a30b08a0ff9d19278fea51"
+        }
+      ],
+      "scope": "run",
+      "status": "unknown",
+      "subject_id": "input-0"
+    },
+    {
+      "action": "Retain the missing raw evidence and resolve this check's stated dependency.",
+      "check_id": "executed_constraints",
+      "code": "MUTATION_EFFECTS_UNESTABLISHED",
+      "expected": null,
+      "instance_id": "executed_constraints:run:coverage",
+      "observed": null,
+      "reason": "Whole-run mutation compliance requires complete execution and effect coverage.",
+      "refs": [
+        {
+          "bytes": 17372,
+          "event_id": null,
+          "line": null,
+          "path": "completion.json",
+          "pointer": null,
+          "sha256": "0a146f76613121cbd707f3ee9c48433ccca0e065a76979444b46acd03bc8701f"
+        },
+        {
+          "bytes": 2812,
+          "event_id": null,
+          "line": null,
+          "path": "manifest.json",
+          "pointer": null,
+          "sha256": "ce7b29e17bd017371090d9844ca01dc289518d8c01651ae145c04963f69410fb"
+        },
+        {
+          "bytes": 8100,
+          "event_id": null,
+          "line": null,
+          "path": "outcome.json",
+          "pointer": null,
+          "sha256": "68e4935bb4f4666b1c1c1e1bf8f45700a89b945524931236936b32b9d8c20ddc"
+        },
+        {
+          "bytes": 547,
+          "event_id": null,
+          "line": null,
+          "path": "raw/model/final.txt",
+          "pointer": null,
+          "sha256": "2a942471d23dc6a1732907bb0dc3cdb1d678055e53a30b08a0ff9d19278fea51"
+        }
+      ],
+      "scope": "run",
+      "status": "unknown",
+      "subject_id": "coverage"
+    },
+    {
+      "action": "Retain the missing raw evidence and resolve this check's stated dependency.",
+      "check_id": "guard_execution_consistency",
+      "code": "TRACE_INCOMPLETE",
+      "expected": null,
+      "instance_id": "guard_execution_consistency:run:coverage",
+      "observed": null,
+      "reason": "Absence of dispatch can be established only with complete execution coverage.",
+      "refs": [
+        {
+          "bytes": 17372,
+          "event_id": null,
+          "line": null,
+          "path": "completion.json",
+          "pointer": null,
+          "sha256": "0a146f76613121cbd707f3ee9c48433ccca0e065a76979444b46acd03bc8701f"
+        },
+        {
+          "bytes": 2812,
+          "event_id": null,
+          "line": null,
+          "path": "manifest.json",
+          "pointer": null,
+          "sha256": "ce7b29e17bd017371090d9844ca01dc289518d8c01651ae145c04963f69410fb"
+        },
+        {
+          "bytes": 8100,
+          "event_id": null,
+          "line": null,
+          "path": "outcome.json",
+          "pointer": null,
+          "sha256": "68e4935bb4f4666b1c1c1e1bf8f45700a89b945524931236936b32b9d8c20ddc"
+        },
+        {
+          "bytes": 547,
+          "event_id": null,
+          "line": null,
+          "path": "raw/model/final.txt",
+          "pointer": null,
+          "sha256": "2a942471d23dc6a1732907bb0dc3cdb1d678055e53a30b08a0ff9d19278fea51"
+        }
+      ],
+      "scope": "run",
+      "status": "unknown",
+      "subject_id": "coverage"
+    },
+    {
+      "action": "Retain the missing raw evidence and resolve this check's stated dependency.",
+      "check_id": "trial_restoration",
+      "code": "MUTATION_EFFECTS_UNESTABLISHED",
+      "expected": null,
+      "instance_id": "trial_restoration:run:coverage",
+      "observed": null,
+      "reason": "Whole-run trial compliance requires complete execution coverage.",
+      "refs": [
+        {
+          "bytes": 17372,
+          "event_id": null,
+          "line": null,
+          "path": "completion.json",
+          "pointer": null,
+          "sha256": "0a146f76613121cbd707f3ee9c48433ccca0e065a76979444b46acd03bc8701f"
+        },
+        {
+          "bytes": 2812,
+          "event_id": null,
+          "line": null,
+          "path": "manifest.json",
+          "pointer": null,
+          "sha256": "ce7b29e17bd017371090d9844ca01dc289518d8c01651ae145c04963f69410fb"
+        },
+        {
+          "bytes": 8100,
+          "event_id": null,
+          "line": null,
+          "path": "outcome.json",
+          "pointer": null,
+          "sha256": "68e4935bb4f4666b1c1c1e1bf8f45700a89b945524931236936b32b9d8c20ddc"
+        },
+        {
+          "bytes": 547,
+          "event_id": null,
+          "line": null,
+          "path": "raw/model/final.txt",
+          "pointer": null,
+          "sha256": "2a942471d23dc6a1732907bb0dc3cdb1d678055e53a30b08a0ff9d19278fea51"
+        }
+      ],
+      "scope": "run",
+      "status": "unknown",
+      "subject_id": "coverage"
+    }
+  ],
+  "input_digest": "b280be62e66ff26187cce257ad9e280b0681463744e462e4a9f11e79a502b43f",
+  "input_id": "05-deepseek-deepseek-v4-1-flash-1017-flange_v1-r1",
+  "limitations": [
+    "Recorded consistency under capture-authenticity assumptions; no SDK replay or model call performed."
+  ],
+  "metrics": {
+    "cli_attempts": 27,
+    "events": 187,
+    "failed_cli_attempts": 0,
+    "model_calls": 20,
+    "model_request_bytes": 520294,
+    "model_response_bytes": 52753,
+    "model_tokens": null,
+    "model_visible_tool_bytes": 6636,
+    "raw_bytes": 764159,
+    "raw_files": 121,
+    "repeated_read_calls": 0,
+    "solve_attempts": 4,
+    "warning_thresholds": "disabled"
+  },
+  "observed_outcome": "execution_failure",
+  "policy_digest": "ac6eef301f23e9c924b7dce94f3dac91341465f4d8e57f7d4344a9ac080dfb0e",
+  "profile": "partlab-cli/9b202e1b",
+  "report_version": "partlab.eval/1",
+  "resource_limits": {
+    "max_events": 100000,
+    "max_file_bytes": 16777216,
+    "max_files": 4096,
+    "max_record_bytes": 2097152,
+    "max_total_bytes": 67108864
+  },
+  "run_id": "020fbcca-d374-4306-83be-aaec62399419",
+  "source_kind": "live_agent",
+  "summary": {
+    "capture_integrity": {
+      "members": [
+        "evidence_integrity:run:TRACE_INCOMPLETE",
+        "evidence_integrity:run:input-0"
+      ],
+      "reason": "Capture and supported evidence coverage.",
+      "status": "unknown"
+    },
+    "delivery": {
+      "members": [
+        "artifact_integrity:selected:selected",
+        "artifact_provenance:selected:selected",
+        "output_delivery:publication:selected",
+        "save_execution:selected:selected"
+      ],
+      "reason": "Producing save, immutable bytes and observed final destination.",
+      "status": "not_applicable"
+    },
+    "efficiency": {
+      "members": [],
+      "reason": "Measurements and diagnostic budgets do not change correctness.",
+      "status": "not_applicable"
+    },
+    "final_correctness": {
+      "members": [
+        "original_identity:selected:selected",
+        "default_load:selected:selected",
+        "analysis_validity:selected:selected",
+        "final_constraints:selected:selected",
+        "fresh_final_solve:selected:selected",
+        "target_sf:selected:selected",
+        "artifact_integrity:selected:selected",
+        "artifact_provenance:selected:selected",
+        "artifact_state:selected:selected",
+        "single_parameter:selected:selected"
+      ],
+      "reason": "Only the explicitly selected engineering result; historical incidents stay separate.",
+      "status": "not_applicable"
+    },
+    "process_compliance": {
+      "members": [
+        "original_identity:run:original",
+        "session_reset:baseline:initial",
+        "baseline_workflow:baseline:initial",
+        "original_identity:baseline:initial",
+        "default_load:baseline:initial",
+        "analysis_validity:baseline:initial",
+        "executed_constraints:candidate:x0009:thickness_mm:0",
+        "trial_restoration:trial:x0009:thickness_mm:0",
+        "executed_constraints:candidate:x0016:fillet_radius_mm:1",
+        "trial_restoration:trial:x0016:fillet_radius_mm:1",
+        "executed_constraints:candidate:x0023:hole_diameter_mm:2",
+        "trial_restoration:trial:x0023:hole_diameter_mm:2",
+        "executed_constraints:run:coverage",
+        "trial_restoration:run:coverage",
+        "guard_execution_consistency:run:coverage"
+      ],
+      "reason": "Initial workflow, original, every mutation, trials and guarded dispatch.",
+      "status": "unknown"
+    },
+    "repair_achievement": {
+      "members": [
+        "session_reset:baseline:initial",
+        "baseline_workflow:baseline:initial",
+        "original_identity:baseline:initial",
+        "default_load:baseline:initial",
+        "analysis_validity:baseline:initial",
+        "original_identity:selected:selected",
+        "default_load:selected:selected",
+        "analysis_validity:selected:selected",
+        "final_constraints:selected:selected",
+        "fresh_final_solve:selected:selected",
+        "target_sf:selected:selected",
+        "artifact_integrity:selected:selected",
+        "artifact_provenance:selected:selected",
+        "artifact_state:selected:selected",
+        "single_parameter:selected:selected",
+        "artifact_integrity:selected:selected",
+        "artifact_provenance:selected:selected",
+        "output_delivery:publication:selected",
+        "save_execution:selected:selected"
+      ],
+      "reason": "Execution failure does not establish a repaired deliverable.",
+      "status": "unknown"
+    },
+    "reporting_accuracy": {
+      "members": [
+        "claim_consistency:claim:structured",
+        "claim_consistency:claim:visible"
+      ],
+      "reason": "Structured and visible claims are checked independently.",
+      "status": "unknown"
+    }
+  },
+  "trusted_original_sha256": "0e6535b551bb5a441e207fd4d057774c14de0e40c55f7ada83c17fdbd8b7ab7f",
+  "warning_policy": {
+    "warning_budgets": {}
+  }
+}

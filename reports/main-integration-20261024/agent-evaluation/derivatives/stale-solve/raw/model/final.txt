@@ -1,0 +1,1 @@
+{"status":"repaired","initial_sf":1.428,"final_sf":3.072,"changed_parameter":{"name":"thickness_mm","from":3.0,"to":5},"artifact_id":"a0001"}

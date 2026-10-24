@@ -1,0 +1,95 @@
+{
+  "schema_version": "partlab.trace/0.1-proposal",
+  "capture_profile": "cosmon-eval/1",
+  "run_id": "887e0456-1101-49e2-98b2-f1508267cbff",
+  "evidence_kind": "preparation_check",
+  "created_at": "2026-10-24T02:02:53.799212+00:00",
+  "producer": {
+    "name": "cosmon_agent",
+    "version": "1",
+    "python": "3.12.3",
+    "binary_sha256": "9b202e1ba07861f52f12005108e81815ef14d92f2db3ba322fc51422746ab183"
+  },
+  "case": {
+    "part_name": "flange_v1",
+    "target_sf": 2.0,
+    "output_path": "outputs/flange_v1.json"
+  },
+  "original": {
+    "part_ref": {
+      "path": "inputs/part.json",
+      "sha256": "0e6535b551bb5a441e207fd4d057774c14de0e40c55f7ada83c17fdbd8b7ab7f",
+      "bytes": 901
+    },
+    "parameters": {
+      "thickness_mm": 2.0,
+      "hole_diameter_mm": 10.0,
+      "fillet_radius_mm": 1.5
+    },
+    "default_load": {
+      "face_id": "face_mating",
+      "force_N": 8000.0,
+      "direction": "-Z"
+    },
+    "revision": 1
+  },
+  "task_ref": {
+    "path": "inputs/task.md",
+    "sha256": "66c7a27bdfeae291aa42ecaa3681c2d53341d613369eaeb38b0bc5c78d805ebe",
+    "bytes": 5738
+  },
+  "policy_ref": {
+    "path": "inputs/policy.json",
+    "sha256": "f996919f8b31732fbdf11e4d17a2c07b2f22bb243d49b675eb2584e89bd9fffd",
+    "bytes": 887
+  },
+  "config": {
+    "max_trials": 6,
+    "max_model_turns": 48,
+    "max_tool_calls": 64,
+    "run_timeout_seconds": 300,
+    "model_timeout_seconds": 40,
+    "cli_timeout_seconds": 15,
+    "max_output_tokens": 2048,
+    "exploration_ranges": {
+      "bracket_v3": {
+        "thickness_mm": [
+          3.0,
+          12.0
+        ],
+        "hole_diameter_mm": [
+          2.0,
+          8.0
+        ],
+        "fillet_radius_mm": [
+          2.0,
+          10.0
+        ]
+      },
+      "flange_v1": {
+        "thickness_mm": [
+          2.0,
+          5.0
+        ],
+        "hole_diameter_mm": [
+          4.0,
+          10.0
+        ],
+        "fillet_radius_mm": [
+          1.5,
+          10.0
+        ]
+      }
+    },
+    "range_provenance": "Configurable exploration bounds; not an exhaustive feasible domain",
+    "objective": "first_verified_single_parameter_fix",
+    "routine_result_bytes": 2048,
+    "error_excerpt_chars": 512,
+    "evidence_kind": "preparation_check"
+  },
+  "capture": {
+    "model": "sdk_objects",
+    "cli": "bytes",
+    "hosted_tracing": false
+  }
+}

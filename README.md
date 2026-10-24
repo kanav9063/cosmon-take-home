@@ -62,6 +62,19 @@ use `--publish-dir runs/replay-001/outputs` to isolate replay artifacts.
 [RUN.md](RUN.md) contains the complete agent, negative-check and evaluation
 commands. Evaluation and offline tests require no API key.
 
+## Evaluation and reproducible checks
+
+The [evaluator](evaluation/README.md), [five-requirement rubric](evaluation/docs/EVAL_RUBRIC.md),
+raw examples and detailed scoring decisions are included in this repository.
+The combined checkout passes **22 agent tests and 156 evaluator tests**; the
+156 evaluator tests and all 19 expected report cases also pass in Docker with
+networking disabled. See the [consolidated verification](reports/main-integration-20261024/README.md).
+
+[Scout](evaluation/scout_setup/README.md) displays the evaluator’s findings;
+[Harbor](evaluation/docs/HARBOR_SETUP.md) checks the separate Docker execution
+and verification environments. Both are optional and have pinned dependencies.
+The Dockerfiles and task source are tracked; local images and environments are not.
+
 ## Design
 
 - **Seven tools:** open, inspect parameters, set one parameter, mesh, apply the
