@@ -1,0 +1,13 @@
+[project]
+name = "cosmon-take-home"
+version = "0.0.0"
+description = "PartLab take-home preparation; agent and evaluation implementation pending"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "openai-agents==0.24.0",
+    "openai==3.37.0",
+    "pydantic==2.14.1",
+]
+
+# Run from this checkout; no distributable package or build step is needed.
+# requirements.lock pins the complete dependency set for the verified environment.
